@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SINAPSE · weekly magazine of science, technology, and industry</title>
+<link rel="stylesheet" href="../assets/sinapse.css" />
+<meta name="description" content="SINAPSE — weekly magazine in English on science, technology, and industry. Editor: Jack Cid." />
+<meta property="og:title" content="SINAPSE" />
+<meta property="og:description" content="Weekly magazine in English on science, technology, and industry." />
+<meta property="og:type" content="website" />
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">SINAPSE<small>Science · Technology · Industry</small></div>
+  <div>
+    <div class="issue">
+      <strong>Weekly edition</strong>
+      Language: English<br/>
+      Editor: Jack Cid
+    </div>
+    <div class="lang-switch" aria-label="Language switcher">
+      <a href="../index.html" lang="es">ES</a>
+      <span class="sep">|</span>
+      <a class="active" href="./index.html" lang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <p>A weekly read in English on the discoveries, papers, and industry moves that matter in science and technology. No hype. With context. Paper-first.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="num">archive</span>
+    <h2>Published issues</h2>
+  </div>
+  <p class="lede" id="meta-line">Loading archive…</p>
+  <div class="issue-list" id="issue-list">
+    <!-- Filled from ../data/registro.json -->
+  </div>
+  <noscript>
+    <p class="empty">This page uses JavaScript to list issues. You can also browse the directory <a href="./issues/">/en/issues/</a>.</p>
+  </noscript>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="num">about</span>
+    <h2>About SINAPSE</h2>
+  </div>
+  <p>SINAPSE publishes on Tuesdays with the previous week's activity. Each issue has eight fixed sections: Pulse, Cover, Papers, Tech, Industry, Column, Datum of the week, and Technical appendix.</p>
+  <p>The editorial criteria — discipline rotation, geographic plurality of sources, rotating tones in the column — are detailed in the <a href="./editorial/guide.html">editorial guide</a>. The complete issue registry, with disciplines and regions covered, lives in <a href="../data/registro.json">data/registro.json</a>.</p>
+  <p>Editor contact: <a href="mailto:j.andres.cid@gmail.com">j.andres.cid@gmail.com</a>.</p>
+</section>
+
+<footer class="colophon">
+  <strong>SINAPSE</strong> · weekly magazine of science, technology, and industry.<br/>
+  Editor: Jack Cid · published via GitHub Pages · no tracking, no cookies.
+</footer>
+
+</div>
+
+<script>
+(async function () {
+  const list = document.getElementById('issue-list');
+  const meta = document.getElementById('meta-line');
+  try {
+    const res = await fetch('../data/registro.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const numeros = (data.numeros || []).slice().sort((a, b) => b.numero - a.numero);
+
+    if (!numeros.length) {
+      list.innerHTML = '<p class="empty">No issues published yet.</p>';
+      meta.textContent = '0 issues in archive.';
+      return;
+    }
+
+    meta.textContent = numeros.length + (numeros.length === 1 ? ' issue in archive.' : ' issues in archive.');
+
+    list.innerHTML = numeros.map(function (n) {
+      const num = String(n.numero).padStart(3, '0');
+      // Prefer English archivo if available, else fall back to translating the ES file name
+      const enFile = (n.i18n && n.i18n.en && n.i18n.en.archivo) || translateFilename(n.archivo);
+      const href = './issues/' + enFile;
+      const en = (n.i18n && n.i18n.en) || {};
+      const titulo = (en.portada && en.portada.titulo) || (n.portada && n.portada.titulo) || ('Issue ' + num);
+      const disciplina = (en.portada && en.portada.disciplina) || (n.portada && n.portada.disciplina) || '—';
+      const fecha = n.fecha || '';
+      const semana = en.semana || n.semana || '';
+      return '' +
+        '<a class="issue-row" href="' + href + '">' +
+          '<div class="num">Issue ' + num + '</div>' +
+          '<div>' +
+            '<h3>' + escapeHtml(titulo) + '</h3>' +
+            '<div class="meta">' + escapeHtml(disciplina) + (semana ? ' · ' + escapeHtml(semana) : '') + '</div>' +
+          '</div>' +
+          '<div class="date">' + escapeHtml(fecha) + '</div>' +
+        '</a>';
+    }).join('');
+  } catch (err) {
+    list.innerHTML =
+      '<p class="empty">Could not load the archive registry' +
+      ' (' + escapeHtml(String(err)) + ').<br/>' +
+      'If opening this file locally via <code>file://</code>, serve the directory with a static server ' +
+      '(e.g. <code>python3 -m http.server</code>) or deploy to GitHub Pages.</p>';
+    meta.textContent = '';
+  }
+
+  function translateFilename(esFile) {
+    if (!esFile) return '';
+    const m = {abril:'april', mayo:'may', junio:'june', julio:'july', agosto:'august',
+               septiembre:'september', octubre:'october', noviembre:'november',
+               diciembre:'december', enero:'january', febrero:'february', marzo:'march'};
+    return esFile.replace(/abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre|enero|febrero|marzo/g, w => m[w] || w);
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+})();
+</script>
+</body>
+</html>

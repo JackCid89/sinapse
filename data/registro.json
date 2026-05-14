@@ -109,7 +109,25 @@
         "Oceanía",
         "Japón directo (solo aludido en contexto)",
         "Corea del Sur directa (solo aludida en regulación)"
-      ]
+      ],
+      "i18n": {
+        "en": {
+          "archivo": "n001-april-2026.html",
+          "semana": "Week 17 (April 22-28, 2026)",
+          "portada": {
+            "titulo": "22 years later: India's Kalpakkam fast breeder reactor reaches criticality",
+            "disciplina": "Energy / Nuclear engineering",
+            "angulo": "Closing of the second step of India's Bhabha plan after 22 years of construction; analysis of the next steps (power ramp-up, FRFCF, thorium cycle) and geopolitical dimensions (proliferation, Non-Proliferation Treaty, comparison with Russia's BN-600, Japan's Monju, France's Superphénix)."
+          },
+          "columna": {
+            "titulo": "The reactor that took 22 years: why energy infrastructure doesn't accelerate"
+          },
+          "dato_semana": {
+            "cifra": "22 years",
+            "label": "from groundbreaking to first criticality"
+          }
+        }
+      }
     },
     {
       "numero": 2,
@@ -201,8 +219,31 @@
         "Oceanía",
         "India directa (solo en continuidad de la portada anterior)",
         "Sudeste asiático directo (Indonesia, Vietnam, Filipinas, Tailandia)"
-      ]
+      ],
+      "i18n": {
+        "en": {
+          "archivo": "n002-may-2026.html",
+          "semana": "Week 18 (April 29 – May 5, 2026)",
+          "portada": {
+            "titulo": "The first in vivo CRISPR crosses Phase 3: what HAELO proves and what it leaves open",
+            "disciplina": "Genetics / Biomedicine",
+            "angulo": "First Phase 3 trial of an in vivo CRISPR therapy (Intellia's lonvo-z) with 87% reduction in hereditary angioedema attacks; shift from ex vivo (Casgevy-style) to systemically administered editing; implications for pricing, durability and decade-scale pharmacovigilance."
+          },
+          "columna": {
+            "titulo": "The open body: what changes when gene editing happens inside"
+          },
+          "dato_semana": {
+            "cifra": "87%",
+            "label": "reduction in hereditary angioedema attacks"
+          }
+        }
+      }
     }
   ],
-  "notas_v3": "2026-05-13: la regla de \"al menos 1 fuente asiática\" se reformuló como pluralidad geográfica (≥3 regiones por número, priorizando las menos cubiertas). El objetivo es equilibrio, no preferencia por ninguna región."
+  "notas_v3": "2026-05-13: la regla de \"al menos 1 fuente asiática\" se reformuló como pluralidad geográfica (≥3 regiones por número, priorizando las menos cubiertas). El objetivo es equilibrio, no preferencia por ninguna región.",
+  "idiomas": [
+    "es",
+    "en"
+  ],
+  "notas_v4": "2026-05-13: el sitio se hizo bilingüe ES/EN. Cada número tiene archivo paralelo en /en/issues/. Las traducciones de metadatos viven en numeros[i].i18n.en."
 }
