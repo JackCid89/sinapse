@@ -117,6 +117,9 @@
     <li><strong>Pie chart up to 6 slices.</strong> With 7+ use stacked bar or treemap.</li>
     <li><strong>Stacked bar:</strong> sort largest to smallest left to right; segments &lt;5% require a callout.</li>
     <li><strong>Comparative bar chart</strong> across regions: sort by magnitude, not alphabetically, unless alphabetical order is informative.</li>
+    <li><strong>Descending order is mandatory.</strong> Pies, stacked bars, and legends are always sorted largest to smallest (the biggest slice/segment first, top or left). Exception: time series or natural sequences that demand a different order.</li>
+    <li><strong>Uniform label format: percentage first, absolute value second.</strong> Correct: <code>58 % · $1.50</code>. Incorrect: <code>$1.50 · 58 %</code>. The share is the primary metric; the absolute figure follows as reference.</li>
+    <li><strong>Horizontal separator lines</strong> in the SVG must have at least 18 px of air above and below any text. If the viewBox doesn't allow it, enlarge the viewBox.</li>
   </ul>
 </section>
 
