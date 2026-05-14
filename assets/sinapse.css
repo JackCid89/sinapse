@@ -31,8 +31,8 @@
     --display: "Instrument Serif", "Source Serif 4", Georgia, serif;
     --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --measure: 38rem;        /* ~608px @ 16px */
-    --measure-wide: 52rem;
+    --measure: 52rem;        /* ~832px @ 16px · ancho magazine estándar */
+    --measure-wide: 64rem;
     --fs-body: 18px;
     --leading: 1.65;
 
