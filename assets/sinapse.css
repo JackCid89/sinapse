@@ -225,3 +225,68 @@ footer.colophon strong{color:var(--ink)}
   background:var(--ink);color:var(--paper);border:none
 }
 .lang-switch span.sep{color:#bfb39a}
+
+/* ----------- Contraste (Counterpoint) — sección de Passiflora ----------- */
+.contraste{
+  border:1px solid var(--rule);background:var(--paper);
+  padding:28px 30px;border-radius:2px;
+  border-left:8px solid var(--accent);
+  position:relative
+}
+.contraste::before{
+  content:"✻";position:absolute;top:18px;right:22px;
+  color:var(--accent);font-size:18px;opacity:.55
+}
+.contraste h3{
+  font-family:var(--serif);font-size:24px;margin:0 0 6px;
+  font-weight:800;line-height:1.2
+}
+.contraste .by{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  color:var(--muted);margin-bottom:18px;text-transform:uppercase
+}
+.contraste .claim{
+  background:var(--soft);border-left:3px solid #b08a8a;
+  padding:10px 14px;margin:0 0 18px;font-family:var(--serif);
+  font-style:italic;font-size:15px;color:#3a3a3a;line-height:1.4
+}
+.contraste .claim em{font-style:normal;font-weight:700;color:#7a1a1a}
+.contraste .claim .source{
+  display:block;font-family:var(--mono);font-style:normal;
+  font-size:10px;letter-spacing:.1em;color:var(--muted);
+  text-transform:uppercase;margin-top:6px
+}
+.contraste p{margin:0 0 12px}
+.contraste .stat-card{
+  border:2px solid var(--ink);padding:16px 20px;margin:14px 0;
+  display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center
+}
+.contraste .stat-card .figure{
+  font-family:var(--serif);font-size:42px;font-weight:900;
+  letter-spacing:-.02em;line-height:1;color:var(--accent)
+}
+.contraste .stat-card .label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.15em;
+  color:var(--muted);text-transform:uppercase;margin-bottom:4px
+}
+.contraste .stat-card .desc{font-size:14px;color:#262626;line-height:1.4}
+.contraste figure{margin:18px 0;text-align:center}
+.contraste figure svg{max-width:100%;height:auto}
+.contraste figcaption{
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+  letter-spacing:.05em;margin-top:8px;text-align:center;line-height:1.4
+}
+.contraste .refs{
+  border-top:1px dashed #c4bda9;padding-top:12px;margin-top:18px;
+  font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.6
+}
+.contraste .refs strong{color:var(--ink);letter-spacing:.1em}
+.contraste .refs ol{margin:6px 0 0;padding-left:18px}
+.contraste .refs li{margin-bottom:4px}
+.contraste .signature{
+  font-family:var(--serif);font-style:italic;color:var(--muted);
+  font-size:14px;margin-top:14px;text-align:right
+}
+@media(max-width:680px){
+  .contraste .stat-card{grid-template-columns:1fr}
+}

@@ -235,8 +235,20 @@
           "dato_semana": {
             "cifra": "87%",
             "label": "reduction in hereditary angioedema attacks"
+          },
+          "contraste": {
+            "titulo": "Coffee won't save you from Alzheimer's — but the headlines really want it to",
+            "tipo_falacia": "Relative vs absolute risk confusion + healthy-user bias"
           }
         }
+      },
+      "contraste": {
+        "titulo": "El café no te salva del Alzheimer — pero los titulares quieren creerlo",
+        "medio_criticado": "Harvard Gazette · WBUR · varios",
+        "titular_criticado": "Drinking 2-3 cups of coffee a day tied to lower dementia risk",
+        "paper_original": "Zhang Y. et al., JAMA, abril 2026 — Coffee and Tea Intake, Dementia Risk, and Cognitive Function",
+        "tipo_falacia": "Confusión riesgo relativo vs absoluto + healthy-user bias",
+        "autora": "Passiflora Caerulea"
       }
     }
   ],
@@ -245,5 +257,23 @@
     "es",
     "en"
   ],
-  "notas_v4": "2026-05-13: el sitio se hizo bilingüe ES/EN. Cada número tiene archivo paralelo en /en/issues/. Las traducciones de metadatos viven en numeros[i].i18n.en."
+  "notas_v4": "2026-05-13: el sitio se hizo bilingüe ES/EN. Cada número tiene archivo paralelo en /en/issues/. Las traducciones de metadatos viven en numeros[i].i18n.en.",
+  "notas_v5": "2026-05-13: añadida sección 07 \"Contraste\" / \"Counterpoint\", columnista permanente Passiflora Caerulea. Las 9 secciones definitivas son ahora: Pulso, Portada, Papers, Tech, Industria, Columna (Jack), Contraste (Passiflora), Dato y Apéndice.",
+  "colaboradores": {
+    "editor": "Jack Cid",
+    "columnistas": [
+      {
+        "nombre": "Jack Cid",
+        "seccion": "Columna",
+        "rol": "Ensayo de opinión semanal"
+      },
+      {
+        "nombre": "Passiflora Caerulea",
+        "seccion": "Contraste / Counterpoint",
+        "rol": "Verificación semanal de titulares científicos en medios mainstream",
+        "voz": "ENTP — ágil, curiosa, irónica contenida, con datos y mini-gráficos SVG",
+        "desde": "2026-05-13"
+      }
+    ]
+  }
 }
