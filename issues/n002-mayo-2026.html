@@ -33,8 +33,9 @@
   <a href="#tech"><span>04</span>Tech</a>
   <a href="#industria"><span>05</span>Industria</a>
   <a href="#columna"><span>06</span>Columna</a>
-  <a href="#dato"><span>07</span>Dato</a>
-  <a href="#apendice"><span>08</span>Apéndice</a>
+  <a href="#contraste"><span>07</span>Contraste</a>
+  <a href="#dato"><span>08</span>Dato</a>
+  <a href="#apendice"><span>09</span>Apéndice</a>
 </nav>
 
 <!-- ============== 01 PULSO ============== -->
@@ -303,10 +304,92 @@
   </div>
 </section>
 
-<!-- ============== 07 DATO ============== -->
-<section id="dato">
+<!-- ============== 07 CONTRASTE ============== -->
+<section id="contraste">
   <div class="section-head">
     <span class="num">§ 07</span>
+    <h2>Contraste</h2>
+  </div>
+  <p class="lede">Cada semana, Passiflora Caerulea desarma un titular científico con cifras, contexto y un poco de mala fe constructiva.</p>
+
+  <div class="contraste">
+    <h3>El café no te salva del Alzheimer — pero los titulares quieren creerlo</h3>
+    <div class="by">Por Passiflora Caerulea</div>
+
+    <p class="claim">
+      "<em>Drinking 2–3 cups of coffee a day tied to lower dementia risk</em>"
+      <span class="source">Harvard Gazette · WBUR · y media docena más, abril 2026</span>
+    </p>
+
+    <p>Hay dos cosas que llevamos años haciendo bien: estudios epidemiológicos largos, y titulares que los traicionan. El paper de Zhang et al. en JAMA pertenece al primer grupo — 131 821 personas, 43 años de seguimiento, metodología en orden. El titular pertenece al segundo. Y la diferencia entre ambos no es académica: es cuánta gente, leyéndote a las siete de la mañana, decide cosas que va a sostener veinte años.</p>
+
+    <div class="stat-card">
+      <div>
+        <div class="label">Lo que dice el titular</div>
+        <div class="desc">"El café reduce el riesgo de demencia un 18 %"</div>
+        <div class="label" style="margin-top:10px">Lo que dice el paper</div>
+        <div class="desc">Reducción <strong>relativa</strong> del hazard de 18 % en una cohorte observacional. La reducción <strong>absoluta</strong> a 20 años, en este tipo de poblaciones, es de unos 2 puntos porcentuales.</div>
+      </div>
+      <div class="figure">≈ 2 pp</div>
+    </div>
+
+    <p>El truco se vende en una palabra: "18 %". Suena enorme, parece un cupón. Pero es un <em>hazard ratio</em> —una razón entre dos probabilidades pequeñas— y cuando se traduce a la métrica que le importa a alguien con cuerpo, la reducción absoluta de riesgo a 20 años, queda en unos dos puntos porcentuales. Es real. No es heroico. Nadie ha titulado jamás "El café podría reducir tu probabilidad de demencia de 12 a 9,8 % en dos décadas, en una correlación", porque ese titular no se comparte.</p>
+
+    <figure>
+      <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación visual de riesgo relativo vs riesgo absoluto">
+        <defs>
+          <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#8b1a1a" stroke-width="2"/>
+          </pattern>
+        </defs>
+        <!-- Eje -->
+        <line x1="40" y1="170" x2="580" y2="170" stroke="#1a1a1a" stroke-width="1"/>
+        <!-- Barras: incidencia acumulada de demencia a los 80 -->
+        <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">INCIDENCIA ACUMULADA DE DEMENCIA · COHORTE A 20 AÑOS</text>
+
+        <!-- Barra "rara vez" -->
+        <rect x="80" y="60" width="180" height="110" fill="#1a1a1a"/>
+        <text x="170" y="55" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="32" font-weight="900" fill="#1a1a1a">≈ 12 %</text>
+        <text x="170" y="190" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5b5b5b" letter-spacing="1">RARA VEZ CAFÉ</text>
+
+        <!-- Barra "2-3 tazas" -->
+        <rect x="340" y="80" width="180" height="90" fill="#8b1a1a"/>
+        <text x="430" y="75" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="32" font-weight="900" fill="#8b1a1a">≈ 9,8 %</text>
+        <text x="430" y="190" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#5b5b5b" letter-spacing="1">2–3 TAZAS / DÍA</text>
+
+        <!-- Diferencia -->
+        <line x1="260" y1="48" x2="340" y2="68" stroke="#5b5b5b" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="300" y="40" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#5b5b5b">Δ ≈ 2,2 pp</text>
+      </svg>
+      <figcaption>Estimación orientativa basada en incidencias reportadas en cohortes similares; la cifra exacta varía con edad, sexo y país. La reducción del 18 % está calculada sobre la primera columna, no sobre tu vida.</figcaption>
+    </figure>
+
+    <p>Bonus track: <strong>healthy-user bias</strong>. En una cohorte de enfermeras y profesionales sanitarios estadounidenses, quien bebe dos cafés diarios con regularidad es también quien duerme mejor, hace ejercicio, asiste a chequeos médicos, no rota turnos de noche y mantiene agenda. Los autores ajustan por lo que pueden medir; lo que no se mide tampoco se ajusta. Decir "el café causa menos demencia" desde aquí es como anunciar que llevar reloj de pulsera causa puntualidad: la correlación está, la causa anda por otro lado, y todo el que ha trabajado en una redacción lo sabe.</p>
+
+    <p>A favor del paper hay que decir que es honesto. La discusión, leída hasta el final, contiene la frase que en cualquier otro contexto habría matado al titular: <em>"results show an association rather than a direct causal relationship"</em>. Esa frase pesa, en un titular optimizado para SEO, lo mismo que el corcho de una botella de champán: estorba el ruido y se descarta.</p>
+
+    <p>Lo que queda es un ciclo. Cada 18 a 24 meses, el café te salva. Cada 18 a 24 meses, el café te mata. El menú alterna con vino tinto, chocolate negro, té verde y, en años flojos, aceite de oliva. Lo único que no cambia es el método: una cifra relativa grande, una pregunta causal sin respuesta, una rueda de prensa, una cita amable del autor, doce titulares y un domingo de tráfico.</p>
+
+    <p>Si te gusta el café, sigue tomándolo. Si no, no empieces para esquivar el Alzheimer — empezarás a esquivarlo el día siguiente, cuando salga el titular que diga lo contrario.</p>
+
+    <p class="signature">— P. C.</p>
+
+    <div class="refs">
+      <strong>Fuentes</strong>
+      <ol>
+        <li>Zhang Y. et al. "Coffee and Tea Intake, Dementia Risk, and Cognitive Function". <em>JAMA</em>, abril 2026. <a href="https://jamanetwork.com/journals/jama/fullarticle/2844764" target="_blank" rel="noopener">jamanetwork.com</a></li>
+        <li>Harvard Gazette · "Drinking 2-3 cups of coffee a day tied to lower dementia risk". <a href="https://news.harvard.edu/gazette/story/2026/02/drinking-2-3-cups-of-coffee-a-day-tied-to-lower-dementia-risk/" target="_blank" rel="noopener">news.harvard.edu</a></li>
+        <li>WBUR · "Top off your coffee: Study finds moderate caffeine intake may reduce dementia risk". <a href="https://www.wbur.org/news/2026/02/09/coffee-tea-caffeine-intake-dementia-risk-mass-general-study" target="_blank" rel="noopener">wbur.org</a></li>
+        <li>Shrank W., Patrick A., Brookhart M.A. "Healthy user and related biases in observational studies of preventive interventions". <em>J Gen Intern Med</em>, 2011 — para el lector que quiera profundizar en por qué este tipo de cohortes confunde tan a menudo.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 08 DATO ============== -->
+<section id="dato">
+  <div class="section-head">
+    <span class="num">§ 08</span>
     <h2>Dato de la semana</h2>
   </div>
   <div class="dato">
@@ -316,10 +399,10 @@
   </div>
 </section>
 
-<!-- ============== 08 APÉNDICE ============== -->
+<!-- ============== 09 APÉNDICE ============== -->
 <section id="apendice">
   <div class="section-head">
-    <span class="num">§ 08</span>
+    <span class="num">§ 09</span>
     <h2>Apéndice · fichas técnicas</h2>
   </div>
   <p class="lede">Detalle de los cuatro papers de la sección 03: resumen, metodología, limitaciones y enlace.</p>
