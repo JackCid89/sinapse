@@ -345,32 +345,37 @@
     <p>Vamos a hacer la cuenta a la que nadie quiere bajar: <strong>quién cobra cuánto por una hora de cómputo de un H100</strong>. Una instancia <em>p5.48xlarge</em> de AWS cuesta hoy ~$2,5/hora por GPU H100. El H100 consume ~700 W; la PUE típica de hyperscaler ronda 1,2, así que la carga real son ~840 W. En un mercado eléctrico mayorista de $50/MWh, la electricidad que respira el chip durante esa hora vale ~$0,042. La amortización del H100 (≈$30 000 a 5 años, 80 % utilización) suma ~$0,85. La inmobiliaria industrial cobra ~$0,15. Quedan, redondeando, unos <strong>$1,50 de margen por GPU-hora</strong> para el hyperscaler. Multiplíquelo por las decenas de miles de GPUs activas en una sola región y entenderá por qué Microsoft no necesita preocuparse por la tarifa eléctrica residencial de Virginia.</p>
 
     <figure>
-      <svg viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución del margen económico en una GPU-hora de cómputo en la nube">
+      <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución del margen económico en una GPU-hora de cómputo en la nube">
         <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">¿A DÓNDE VA EL DÓLAR DE UNA GPU-HORA EN LA NUBE?</text>
         <!-- Barra apilada horizontal -->
-        <g transform="translate(40,60)">
-          <!-- electricidad -->
+        <g transform="translate(40,55)">
+          <!-- electricidad (barra muy estrecha) -->
           <rect x="0" y="0" width="10" height="50" fill="#8b1a1a"/>
-          <text x="5" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">ELEC.</text>
-          <text x="5" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,04</text>
-          <!-- inmobiliaria -->
+          <!-- inmobiliaria (barra estrecha) -->
           <rect x="12" y="0" width="36" height="50" fill="#b08a8a"/>
-          <text x="30" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">INMOB.</text>
-          <text x="30" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,15</text>
-          <!-- nvidia (amortización H100) -->
+          <!-- nvidia (barra ancha, texto dentro) -->
           <rect x="50" y="0" width="200" height="50" fill="#1a1a1a"/>
-          <text x="150" y="30" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">NVIDIA (vía H100)</text>
-          <text x="150" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">AMORTIZ.</text>
-          <text x="150" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,85</text>
-          <!-- hyperscaler margen -->
+          <text x="150" y="22" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">NVIDIA (vía H100)</text>
+          <text x="150" y="40" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="700" fill="#fffdf8">$0,85</text>
+          <!-- hyperscaler (barra ancha, texto dentro) -->
           <rect x="252" y="0" width="320" height="50" fill="#5a3a3a"/>
-          <text x="412" y="30" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">HYPERSCALER · margen</text>
-          <text x="412" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">~60 %</text>
-          <text x="412" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$1,50</text>
+          <text x="412" y="22" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">HYPERSCALER · margen ~60 %</text>
+          <text x="412" y="40" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="700" fill="#fffdf8">$1,50</text>
+
+          <!-- Callout ELEC: línea guía desde centro de la barra estrecha -->
+          <line x1="5" y1="50" x2="5" y2="72" stroke="#8b1a1a" stroke-width="0.7"/>
+          <line x1="5" y1="72" x2="80" y2="72" stroke="#8b1a1a" stroke-width="0.7"/>
+          <text x="84" y="76" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a"><tspan font-weight="700">ELEC.</tspan> · $0,04</text>
+
+          <!-- Callout INMOB: línea guía desde centro -->
+          <line x1="30" y1="50" x2="30" y2="96" stroke="#b08a8a" stroke-width="0.7"/>
+          <line x1="30" y1="96" x2="80" y2="96" stroke="#b08a8a" stroke-width="0.7"/>
+          <text x="84" y="100" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a"><tspan font-weight="700">INMOB.</tspan> · $0,15</text>
         </g>
-        <!-- Etiquetas y total -->
-        <text x="40" y="180" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1">PRECIO LISTA AWS p5.48xlarge ≈ $2,50 / GPU-hora</text>
-        <text x="40" y="200" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">El operador eléctrico anfitrión cobra el 1,7 %. Las externalidades hídricas, viales y de transmisión no aparecen en la tarifa.</text>
+        <!-- Línea separadora y nota inferior -->
+        <line x1="40" y1="200" x2="560" y2="200" stroke="#d9d4c9" stroke-width="1"/>
+        <text x="40" y="220" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1">PRECIO LISTA AWS p5.48xlarge ≈ $2,50 / GPU-hora</text>
+        <text x="40" y="242" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">El operador eléctrico anfitrión cobra el 1,7 %. Las externalidades hídricas, viales y de transmisión no aparecen en la tarifa.</text>
       </svg>
       <figcaption>Cálculo orientativo a partir de tarifa pública AWS, especificaciones H100, PUE típica hyperscaler y mercado mayorista de electricidad ~$50/MWh.</figcaption>
     </figure>

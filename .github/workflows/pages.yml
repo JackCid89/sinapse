@@ -14,6 +14,11 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# Opt-in a Node.js 24 antes de que GitHub lo fuerce el 2 de junio 2026.
+# Quita el warning "Node.js 20 actions are deprecated" en cada run.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     environment:
@@ -22,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -33,7 +38,7 @@ jobs:
           echo "registro.json válido"
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: '.'
 
