@@ -333,3 +333,33 @@ footer.colophon strong{color:var(--ink)}
   .contraste .atlas dt{padding-top:10px;border-top:1px dashed #d9d4c9}
   .contraste .atlas dt:first-child{padding-top:0;border-top:none}
 }
+
+/* ----------- Teaser del Contraste (arriba del número) ----------- */
+aside.teaser-contraste{
+  border-left:4px solid var(--accent);
+  background:var(--soft);
+  padding:12px 18px;
+  margin:0 0 28px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap
+}
+aside.teaser-contraste .kicker{
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--paper);
+  background:var(--accent);padding:4px 8px;border-radius:2px;
+  white-space:nowrap;flex-shrink:0
+}
+aside.teaser-contraste a.teaser-link{
+  color:var(--ink);border:none;font-family:var(--serif);
+  font-size:16px;font-style:italic;font-weight:600;line-height:1.35
+}
+aside.teaser-contraste a.teaser-link::after{
+  content:" →";color:var(--accent);font-style:normal;font-weight:700
+}
+aside.teaser-contraste a.teaser-link:hover{color:var(--accent)}
+@media(max-width:680px){
+  aside.teaser-contraste{padding:10px 14px;gap:10px}
+  aside.teaser-contraste a.teaser-link{font-size:15px}
+}

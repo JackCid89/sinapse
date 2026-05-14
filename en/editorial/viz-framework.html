@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SINAPSE · Visualization framework</title>
+<link rel="stylesheet" href="../../assets/sinapse.css" />
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand"><a href="../index.html">SINAPSE</a><small>Science · Technology · Industry</small></div>
+  <div>
+    <div class="issue">
+      <strong>Visualization framework</strong>
+      Internal document · v1<br/>
+      May 2026
+    </div>
+    <div class="lang-switch" aria-label="Language switcher">
+      <a href="../../editorial/viz-framework.html" lang="es">ES</a>
+      <span class="sep">|</span>
+      <a class="active" href="./viz-framework.html" lang="en">EN</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="section-head"><span class="num">§ 00</span><h2>Why this document</h2></div>
+  <p>Every figure in SINAPSE competes for the reader's attention with the prose, the papers, and the next mobile notification. If a chart doesn't communicate faster and better than the equivalent paragraph, it shouldn't be there. This framework defines the operative rules every chart in the magazine must satisfy before publication, anchored to the consolidated tradition of the field (Tufte, Knaflic, Few, Cairo, FT/NYT graphics).</p>
+  <p>The automated validator (<code>scripts/validate-issue.py</code>) verifies the mechanically checkable rules. Those that require editorial judgment (chart-type selection, clarity of the message) remain the editor's responsibility at each close.</p>
+</section>
+
+<section>
+  <div class="section-head"><span class="num">§ 01</span><h2>Data integrity</h2></div>
+  <p><em>Reference: Edward Tufte · </em><em>The Visual Display of Quantitative Information</em><em> (1983, 2001).</em></p>
+  <ul>
+    <li><strong>High data-ink ratio.</strong> Maximize ink devoted to data; eliminate decoration, shadows, decorative gradients, 3D.</li>
+    <li><strong>Zero chartjunk.</strong> No element that does not carry verifiable quantitative or structural information.</li>
+    <li><strong>Honest scales.</strong> Bars always start at zero. Axis breaks must be explicitly marked.</li>
+    <li><strong>No area distortion.</strong> The area of a graphical element must be proportional to the data it represents. 3D pies, isometric perspectives, and decorative "roses" are forbidden.</li>
+    <li><strong>Lie factor &lt; 1.05.</strong> The size of an effect on the chart must not differ from the size in the data by more than 5%.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-head"><span class="num">§ 02</span><h2>Chart-type selection</h2></div>
+  <p><em>Reference: Financial Times Visual Vocabulary (Berow, Smith, Bremer) · Stephen Few · </em><em>Show Me the Numbers</em><em>.</em></p>
+  <p>Identify first the <strong>relation you want to show</strong>, then pick the type:</p>
+  <details open>
+    <summary>Decision table</summary>
+    <div class="body">
+      <dl>
+        <dt>Magnitude comparison</dt>
+        <dd>Horizontal bars when labels are long; vertical when the number of series is small and the X axis is ordinal or temporal.</dd>
+        <dt>Part-to-whole (sums to 100%)</dt>
+        <dd>Pie chart if ≤6 slices and at least one is clearly dominant. Stacked bar if 7+ slices or comparing several distributions side by side. Treemap if hierarchical.</dd>
+        <dt>Change over time</dt>
+        <dd>Line (not bars) with 5+ points. Slope chart to compare two points in time across multiple series.</dd>
+        <dt>Distribution of one variable</dt>
+        <dd>Histogram or density. Box plot only if the audience knows the construct.</dd>
+        <dt>Correlation between two variables</dt>
+        <dd>Scatter plot. Show coefficient and uncertainty.</dd>
+        <dt>Ranking</dt>
+        <dd>Horizontal bars sorted. Dot plot when order matters more than magnitudes.</dd>
+        <dt>Magnitudes against a reference</dt>
+        <dd>Bullet chart (Few) or lollipop with target marker.</dd>
+      </dl>
+    </div>
+  </details>
+</section>
+
+<section>
+  <div class="section-head"><span class="num">§ 03</span><h2>Cognitive load and design</h2></div>
+  <p><em>Reference: Cole Nussbaumer Knaflic · </em><em>Storytelling with Data</em><em> (2015).</em></p>
+  <ul>
+    <li><strong>One focal point per chart.</strong> Use preattentive attributes (saturated color, typographic weight) to draw the eye to the data that matters; the rest in gray/attenuated.</li>
+    <li><strong>Labels inside the figure</strong> when space allows. Side legend is second best; external caption is third.</li>
+    <li><strong>All segments of the same chart show their quantitative value</strong> — percentage, figure, or both. SINAPSE rule: never label only the largest or smallest.</li>
+    <li><strong>Minimum 10 px text on screen.</strong> If a label needs smaller font, rethink the chart type or assigned space.</li>
+    <li><strong>Eliminate gridlines</strong> unless the reader must read exact values. If present, in very light gray (<code>#d9d4c9</code>).</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-head"><span class="num">§ 04</span><h2>Truth and context</h2></div>
+  <p><em>Reference: Alberto Cairo · </em><em>The Truthful Art</em><em> (2016).</em></p>
+  <ul>
+    <li><strong>Every figure cites its source</strong> explicitly, inside the SVG or in the <code>figcaption</code>. No source, no publication.</li>
+    <li><strong>Explicit unit of measure</strong> on every axis and legend.</li>
+    <li><strong>Temporal and geographic coverage</strong> stated in the footer note.</li>
+    <li><strong>Approximations marked</strong> with <code>≈</code> or <code>~</code>; original calculations identified as such.</li>
+    <li><strong>If percentages don't sum to 100%</strong> due to rounding, state it in the footer note. If the gap is &gt;1%, it isn't rounding — recompute.</li>
+    <li><strong>Sample size</strong> present when applicable (n=…).</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-head"><span class="num">§ 05</span><h2>Accessibility</h2></div>
+  <p><em>Reference: WCAG 2.2 AA · ColorBrewer (Brewer, Harrower) · Color Universal Design (Okabe &amp; Ito).</em></p>
+  <ul>
+    <li><strong>Text/background contrast ≥ 4.5:1</strong> for normal text; ≥ 3:1 for large text (≥18 px).</li>
+    <li><strong>Color-blind-safe palette.</strong> The four SINAPSE tones (<code>#1a1a1a</code>, <code>#5a3a3a</code>, <code>#8b1a1a</code>, <code>#b08a8a</code>) form a monochromatic ramp safe for deuteranopia and protanopia. Don't add colors without purpose.</li>
+    <li><strong>Every <code>&lt;svg&gt;</code></strong> must have <code>role="img"</code> and a descriptive <code>aria-label</code> (not just the chart type).</li>
+    <li><strong>Information never solely in color.</strong> Series are also distinguished by text labels or pattern.</li>
+    <li><strong>Touch target ≥ 24 px</strong> for clickable elements if the chart is interactive (not our case yet).</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-head"><span class="num">§ 06</span><h2>SINAPSE-specific conventions</h2></div>
+  <ul>
+    <li><strong>Single palette:</strong> <code>--ink #1a1a1a</code>, <code>--accent #8b1a1a</code>, <code>--muted #5b5b5b</code>; derived tones <code>#5a3a3a</code> and <code>#b08a8a</code> for quantitative series. Background always <code>--paper #fffdf8</code>.</li>
+    <li><strong>Typography:</strong> serif (Source Serif Pro) for large numbers; mono (IBM Plex Mono) for labels and units; no sans-serif inside charts.</li>
+    <li><strong>Inline SVG only.</strong> No external images (PNG, JPG); no JS visualization libraries.</li>
+    <li><strong><code>viewBox</code> mandatory</strong>, no fixed <code>width</code>/<code>height</code> — charts must scale.</li>
+    <li><strong>Pie chart up to 6 slices.</strong> With 7+ use stacked bar or treemap.</li>
+    <li><strong>Stacked bar:</strong> sort largest to smallest left to right; segments &lt;5% require a callout.</li>
+    <li><strong>Comparative bar chart</strong> across regions: sort by magnitude, not alphabetically, unless alphabetical order is informative.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="section-head"><span class="num">§ 07</span><h2>Pre-publication checklist</h2></div>
+  <p>Every chart must pass this list before the issue's commit. The automated validator verifies the items marked <code>(auto)</code>; the rest require editorial review.</p>
+  <ol>
+    <li><code>(auto)</code> <code>&lt;svg&gt;</code> has <code>role="img"</code> and <code>aria-label</code>.</li>
+    <li><code>(auto)</code> <code>viewBox</code> declared; no hard-coded <code>width</code>/<code>height</code>.</li>
+    <li><code>(auto)</code> All segments of a pie/stacked bar show their numeric value.</li>
+    <li><code>(auto)</code> Pie/stacked bar percentages sum to 100 ± 1 pp.</li>
+    <li><code>(auto)</code> SVG text ≥ 9 px declared.</li>
+    <li><code>(auto)</code> Source citation present (in SVG or in <code>figcaption</code>).</li>
+    <li><code>(editor)</code> Chart type matches the relation shown.</li>
+    <li><code>(editor)</code> A clear focal point exists.</li>
+    <li><code>(editor)</code> Units and temporal/geographic coverage explicit.</li>
+    <li><code>(editor)</code> If there are approximations, marked with <code>≈</code>/<code>~</code>.</li>
+    <li><code>(editor)</code> Palette within SINAPSE tones; no extras.</li>
+  </ol>
+</section>
+
+<footer class="colophon">
+  <strong>SINAPSE</strong> · visualization framework · internal document.<br/>
+  Anchored to: Tufte (1983), Few (2004), Knaflic (2015), Cairo (2016), FT Visual Vocabulary, WCAG 2.2.<br/>
+  <a href="../index.html">← back to index</a> · <a href="./guide.html">editorial guide</a>
+</footer>
+
+</div>
+</body>
+</html>

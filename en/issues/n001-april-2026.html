@@ -26,6 +26,11 @@
   </div>
 </header>
 
+<aside class="teaser-contraste" aria-label="This week's Counterpoint preview">
+  <span class="kicker">Counterpoint · Passiflora</span>
+  <a class="teaser-link" href="#counterpoint">AI datacenters: what really had to be paid, and who is actually paying?</a>
+</aside>
+
 <nav class="toc" aria-label="Contents">
   <a href="#pulse"><span>01</span>Pulse</a>
   <a href="#cover"><span>02</span>Cover</a>
@@ -345,31 +350,51 @@
     <p>Let's do the math no one wants to do: <strong>who pockets what per H100 GPU-hour</strong>. An AWS <em>p5.48xlarge</em> instance lists today at ~$2.5/hour per H100. The H100 draws ~700 W; typical hyperscaler PUE is around 1.2, so real load is ~840 W. In a wholesale electricity market at $50/MWh, the electricity the chip breathes for that hour costs ~$0.042. H100 amortization (≈$30,000 over 5 years, 80% utilization) adds ~$0.85. The industrial-real-estate slice is ~$0.15. That leaves, rounded, about <strong>$1.50 of margin per GPU-hour</strong> for the hyperscaler. Multiply by tens of thousands of active GPUs in a single region and you'll see why Microsoft doesn't lose sleep over Virginia's residential tariffs.</p>
 
     <figure>
-      <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribution of economic margin per GPU-hour of cloud compute">
+      <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Where the dollar of a cloud GPU-hour goes: pie chart with four segments" data-pie-pcts="2,6,34,58">
         <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">WHERE DOES THE DOLLAR OF A CLOUD GPU-HOUR GO?</text>
-        <g transform="translate(40,55)">
-          <rect x="0" y="0" width="10" height="50" fill="#8b1a1a"/>
-          <rect x="12" y="0" width="36" height="50" fill="#b08a8a"/>
-          <rect x="50" y="0" width="200" height="50" fill="#1a1a1a"/>
-          <text x="150" y="22" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">NVIDIA (via H100)</text>
-          <text x="150" y="40" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="700" fill="#fffdf8">$0.85</text>
-          <rect x="252" y="0" width="320" height="50" fill="#5a3a3a"/>
-          <text x="412" y="22" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">HYPERSCALER · margin ~60 %</text>
-          <text x="412" y="40" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="700" fill="#fffdf8">$1.50</text>
 
-          <!-- ELEC callout -->
-          <line x1="5" y1="50" x2="5" y2="72" stroke="#8b1a1a" stroke-width="0.7"/>
-          <line x1="5" y1="72" x2="80" y2="72" stroke="#8b1a1a" stroke-width="0.7"/>
-          <text x="84" y="76" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a"><tspan font-weight="700">ELEC.</tspan> · $0.04</text>
+        <!-- Pie chart, center (200,145), radius 95 -->
+        <g>
+          <!-- ELEC: 2% -->
+          <path d="M 200,145 L 200,50 A 95,95 0 0,1 211.91,50.75 Z" fill="#8b1a1a" stroke="#fffdf8" stroke-width="1"/>
+          <!-- REAL EST: 6% -->
+          <path d="M 200,145 L 211.91,50.75 A 95,95 0 0,1 245.77,61.75 Z" fill="#b08a8a" stroke="#fffdf8" stroke-width="1"/>
+          <!-- NVIDIA: 34% -->
+          <path d="M 200,145 L 245.77,61.75 A 95,95 0 0,1 245.77,228.25 Z" fill="#1a1a1a" stroke="#fffdf8" stroke-width="1"/>
+          <!-- HYPERSCALER: 58% -->
+          <path d="M 200,145 L 245.77,228.25 A 95,95 0 1,1 200,50 Z" fill="#5a3a3a" stroke="#fffdf8" stroke-width="1"/>
 
-          <!-- REAL ESTATE callout -->
-          <line x1="30" y1="50" x2="30" y2="96" stroke="#b08a8a" stroke-width="0.7"/>
-          <line x1="30" y1="96" x2="80" y2="96" stroke="#b08a8a" stroke-width="0.7"/>
-          <text x="84" y="100" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a"><tspan font-weight="700">REAL EST.</tspan> · $0.15</text>
+          <!-- Inner labels on the big slices -->
+          <text x="265" y="148" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="16" font-weight="900" fill="#fffdf8">34 %</text>
+          <text x="155" y="180" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="22" font-weight="900" fill="#fffdf8">58 %</text>
         </g>
-        <line x1="40" y1="200" x2="560" y2="200" stroke="#d9d4c9" stroke-width="1"/>
-        <text x="40" y="220" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1">AWS p5.48xlarge LIST PRICE ≈ $2.50 / GPU-hour</text>
-        <text x="40" y="242" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">The host electricity operator collects 1.7%. Water, transmission, and road externalities don't appear on the bill.</text>
+
+        <!-- Right legend -->
+        <g transform="translate(370,55)">
+          <rect x="0" y="0" width="14" height="14" fill="#8b1a1a"/>
+          <text x="22" y="11" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">ELEC.</tspan></text>
+          <text x="22" y="27" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0.04 · 2 %</text>
+
+          <rect x="0" y="46" width="14" height="14" fill="#b08a8a"/>
+          <text x="22" y="57" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">REAL EST.</tspan></text>
+          <text x="22" y="73" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0.15 · 6 %</text>
+
+          <rect x="0" y="92" width="14" height="14" fill="#1a1a1a"/>
+          <text x="22" y="103" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">NVIDIA</tspan> (via H100)</text>
+          <text x="22" y="119" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0.85 · 34 %</text>
+
+          <rect x="0" y="138" width="14" height="14" fill="#5a3a3a"/>
+          <text x="22" y="149" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">HYPERSCALER</tspan></text>
+          <text x="22" y="165" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$1.50 · 58 %</text>
+
+          <line x1="0" y1="186" x2="200" y2="186" stroke="#1a1a1a" stroke-width="1"/>
+          <text x="0" y="204" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">TOTAL</tspan> · AWS list price</text>
+          <text x="0" y="222" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="900" fill="#1a1a1a">$2.50 · 100 %</text>
+        </g>
+
+        <line x1="40" y1="270" x2="560" y2="270" stroke="#d9d4c9" stroke-width="1"/>
+        <text x="40" y="290" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">The host electricity operator collects 2% of the total. The hyperscaler additionally reports ~60% operating margin</text>
+        <text x="40" y="307" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">on its portion. Water, transmission, and road externalities don't appear on the bill.</text>
       </svg>
       <figcaption>Indicative calculation from public AWS pricing, H100 specifications, typical hyperscaler PUE, and ~$50/MWh wholesale electricity.</figcaption>
     </figure>
