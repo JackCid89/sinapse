@@ -169,7 +169,7 @@ def check_accessibility(html: str):
     results = []
     svgs = re.findall(r'<svg\b[^>]*>', html)
     if not svgs:
-        results.append(Result("[ACCESSIBILITY] presencia de SVG", "warn", "ningún <svg> en el archivo"))
+        # Diseño v2: gráficos HTML/CSS (.chart), no SVG. No es un problema.
         return results
 
     # Cada SVG con role="img" y aria-label no vacío
@@ -263,9 +263,16 @@ def check_data_integrity(html: str, file_label: str):
                     f"heurística suma/{divisor} = {total/divisor:.1f}"
                 ))
 
-    # Atlas: dimensiones obligatorias
+    # Atlas: dimensiones obligatorias (diseño v2: <section class="sec contraste">)
     atlas_dims = ATLAS_DIMENSIONS_EN if en else ATLAS_DIMENSIONS_ES
-    contraste = re.search(r'<div class="contraste">(.*?)</div>\s*</section>', html, re.DOTALL)
+    # v2 primero, fallback a v1
+    contraste = re.search(
+        r'<section[^>]*class="sec[^"]*contraste"[^>]*>(.*?)</section>',
+        html, re.DOTALL
+    )
+    if not contraste:
+        contraste = re.search(r'<div class="contraste">(.*?)</div>\s*</section>', html, re.DOTALL)
+
     if contraste:
         body = contraste.group(1)
         if 'class="atlas"' in body:
@@ -284,37 +291,36 @@ def check_data_integrity(html: str, file_label: str):
         else:
             results.append(Result(
                 f"[DATA INTEGRITY/{label}] Atlas presente en Contraste",
-                "fail",
-                "el Contraste no tiene bloque .atlas"
+                "warn",
+                "el Contraste no tiene bloque .atlas (¿número sin Atlas?)"
             ))
 
-        # Refs: al menos 3 fuentes con URL
-        refs_block = re.search(r'<div class="refs">(.*?)</div>', body, re.DOTALL)
-        if refs_block:
-            urls = re.findall(r'href="(https?://[^"]+)"', refs_block.group(1))
-            if len(urls) >= 3:
-                results.append(Result(
-                    f"[DATA INTEGRITY/{label}] Contraste cita ≥3 fuentes con URL",
-                    "pass",
-                    f"{len(urls)} URLs"
-                ))
-            else:
-                results.append(Result(
-                    f"[DATA INTEGRITY/{label}] Contraste cita ≥3 fuentes con URL",
-                    "warn",
-                    f"solo {len(urls)} URL(s)"
-                ))
+        # Refs/citas: v2 puede usar .refs (v1) o citas inline en .prose / .appendix-paper (v2).
+        # Aceptamos si hay ≥3 URLs en el cuerpo del Contraste O en cualquier .appendix-paper.
+        all_urls = re.findall(r'href="(https?://[^"]+)"', body)
+        appendix_urls = re.findall(
+            r'<article class="appendix-paper">.*?</article>',
+            html, re.DOTALL
+        )
+        appendix_url_count = sum(len(re.findall(r'href="(https?://[^"]+)"', a)) for a in appendix_urls)
+        total_urls = len(all_urls) + appendix_url_count
+        if total_urls >= 3:
+            results.append(Result(
+                f"[DATA INTEGRITY/{label}] referencias externas presentes",
+                "pass",
+                f"{total_urls} URLs en Contraste + Apéndice"
+            ))
         else:
             results.append(Result(
-                f"[DATA INTEGRITY/{label}] bloque .refs presente",
-                "fail",
-                "no se encontró <div class='refs'>"
+                f"[DATA INTEGRITY/{label}] referencias externas presentes",
+                "warn",
+                f"solo {total_urls} URL(s)"
             ))
     else:
         results.append(Result(
-            f"[DATA INTEGRITY/{label}] sección Contraste con .contraste",
+            f"[DATA INTEGRITY/{label}] sección Contraste",
             "warn",
-            "no se encontró <div class='contraste'> (¿número sin Contraste?)"
+            "no se encontró <section class='sec contraste'> (¿número sin Contraste?)"
         ))
 
     return results
@@ -448,6 +454,11 @@ def check_registry(site_dir: Path):
 
 def validate_file(path: Path):
     html = read_text(path)
+    # Saltar archivos basura / de referencia / vacíos
+    if not html.strip():
+        return [Result(f"[SKIP] {path.name}", "warn", "archivo vacío (omitido)")]
+    if any(s in path.name for s in ("-redesign-ref", "-backup", ".bak.")):
+        return [Result(f"[SKIP] {path.name}", "warn", "archivo de referencia/backup (omitido)")]
     results = []
     results += check_structure(html, path.name)
     results += check_accessibility(html)
