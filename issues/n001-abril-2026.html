@@ -350,57 +350,57 @@
     <p>Vamos a hacer la cuenta a la que nadie quiere bajar: <strong>quién cobra cuánto por una hora de cómputo de un H100</strong>. Una instancia <em>p5.48xlarge</em> de AWS cuesta hoy ~$2,5/hora por GPU H100. El H100 consume ~700 W; la PUE típica de hyperscaler ronda 1,2, así que la carga real son ~840 W. En un mercado eléctrico mayorista de $50/MWh, la electricidad que respira el chip durante esa hora vale ~$0,042. La amortización del H100 (≈$30 000 a 5 años, 80 % utilización) suma ~$0,85. La inmobiliaria industrial cobra ~$0,15. Quedan, redondeando, unos <strong>$1,50 de margen por GPU-hora</strong> para el hyperscaler. Multiplíquelo por las decenas de miles de GPUs activas en una sola región y entenderá por qué Microsoft no necesita preocuparse por la tarifa eléctrica residencial de Virginia.</p>
 
     <figure>
-      <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución del dólar en una GPU-hora de cómputo en la nube: pie chart con cuatro segmentos" data-pie-pcts="2,6,34,58">
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución del dólar en una GPU-hora de cómputo en la nube: pie chart con cuatro segmentos en orden descendente" data-pie-pcts="58,34,6,2">
         <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">¿A DÓNDE VA EL DÓLAR DE UNA GPU-HORA EN LA NUBE?</text>
 
-        <!-- Pie chart, centro (200,145), radio 95 -->
+        <!-- Pie chart, centro (200,145), radio 95. Orden DESCENDENTE desde top, sentido horario -->
         <g>
-          <!-- ELEC: 2% -->
-          <path d="M 200,145 L 200,50 A 95,95 0 0,1 211.91,50.75 Z" fill="#8b1a1a" stroke="#fffdf8" stroke-width="1"/>
-          <!-- INMOB: 6% -->
-          <path d="M 200,145 L 211.91,50.75 A 95,95 0 0,1 245.77,61.75 Z" fill="#b08a8a" stroke="#fffdf8" stroke-width="1"/>
-          <!-- NVIDIA: 34% -->
-          <path d="M 200,145 L 245.77,61.75 A 95,95 0 0,1 245.77,228.25 Z" fill="#1a1a1a" stroke="#fffdf8" stroke-width="1"/>
           <!-- HYPERSCALER: 58% -->
-          <path d="M 200,145 L 245.77,228.25 A 95,95 0 1,1 200,50 Z" fill="#5a3a3a" stroke="#fffdf8" stroke-width="1"/>
+          <path d="M 200,145 L 200,50 A 95,95 0 1,1 154.23,228.25 Z" fill="#5a3a3a" stroke="#fffdf8" stroke-width="1"/>
+          <!-- NVIDIA: 34% -->
+          <path d="M 200,145 L 154.23,228.25 A 95,95 0 0,1 154.23,61.75 Z" fill="#1a1a1a" stroke="#fffdf8" stroke-width="1"/>
+          <!-- INMOB: 6% -->
+          <path d="M 200,145 L 154.23,61.75 A 95,95 0 0,1 188.09,50.75 Z" fill="#b08a8a" stroke="#fffdf8" stroke-width="1"/>
+          <!-- ELEC: 2% -->
+          <path d="M 200,145 L 188.09,50.75 A 95,95 0 0,1 200,50 Z" fill="#8b1a1a" stroke="#fffdf8" stroke-width="1"/>
 
           <!-- Etiquetas internas en slices grandes -->
-          <text x="265" y="148" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="16" font-weight="900" fill="#fffdf8">34 %</text>
-          <text x="155" y="180" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="22" font-weight="900" fill="#fffdf8">58 %</text>
+          <text x="155" y="160" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="22" font-weight="900" fill="#fffdf8">58 %</text>
+          <text x="245" y="148" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="16" font-weight="900" fill="#fffdf8">34 %</text>
         </g>
 
-        <!-- Leyenda lateral derecha -->
+        <!-- Leyenda lateral derecha · ORDEN DESCENDENTE, formato "% · $" -->
         <g transform="translate(370,55)">
-          <!-- ELEC -->
-          <rect x="0" y="0" width="14" height="14" fill="#8b1a1a"/>
-          <text x="22" y="11" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">ELEC.</tspan></text>
-          <text x="22" y="27" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,04 · 2 %</text>
-
-          <!-- INMOB -->
-          <rect x="0" y="46" width="14" height="14" fill="#b08a8a"/>
-          <text x="22" y="57" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">INMOB.</tspan></text>
-          <text x="22" y="73" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,15 · 6 %</text>
+          <!-- HYPERSCALER -->
+          <rect x="0" y="0" width="14" height="14" fill="#5a3a3a"/>
+          <text x="22" y="11" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">HYPERSCALER</tspan></text>
+          <text x="22" y="27" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">58 % · $1,50</text>
 
           <!-- NVIDIA -->
-          <rect x="0" y="92" width="14" height="14" fill="#1a1a1a"/>
-          <text x="22" y="103" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">NVIDIA</tspan> (vía H100)</text>
-          <text x="22" y="119" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,85 · 34 %</text>
+          <rect x="0" y="46" width="14" height="14" fill="#1a1a1a"/>
+          <text x="22" y="57" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">NVIDIA</tspan> (vía H100)</text>
+          <text x="22" y="73" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">34 % · $0,85</text>
 
-          <!-- HYPERSCALER -->
-          <rect x="0" y="138" width="14" height="14" fill="#5a3a3a"/>
-          <text x="22" y="149" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">HYPERSCALER</tspan></text>
-          <text x="22" y="165" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$1,50 · 58 %</text>
+          <!-- INMOB -->
+          <rect x="0" y="92" width="14" height="14" fill="#b08a8a"/>
+          <text x="22" y="103" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">INMOB.</tspan></text>
+          <text x="22" y="119" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">6 % · $0,15</text>
+
+          <!-- ELEC -->
+          <rect x="0" y="138" width="14" height="14" fill="#8b1a1a"/>
+          <text x="22" y="149" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">ELEC.</tspan></text>
+          <text x="22" y="165" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">2 % · $0,04</text>
 
           <!-- Total -->
           <line x1="0" y1="186" x2="200" y2="186" stroke="#1a1a1a" stroke-width="1"/>
           <text x="0" y="204" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">TOTAL</tspan> · precio lista AWS</text>
-          <text x="0" y="222" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="900" fill="#1a1a1a">$2,50 · 100 %</text>
+          <text x="0" y="222" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="900" fill="#1a1a1a">100 % · $2,50</text>
         </g>
 
-        <!-- Línea separadora y nota inferior -->
-        <line x1="40" y1="270" x2="560" y2="270" stroke="#d9d4c9" stroke-width="1"/>
-        <text x="40" y="290" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">El operador eléctrico anfitrión cobra el 2 % del precio total. El hyperscaler además reporta margen operativo del ~60 %</text>
-        <text x="40" y="307" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">sobre su porción. Las externalidades hídricas, viales y de transmisión no aparecen en la tarifa.</text>
+        <!-- Línea separadora bajada para no chocar con el TOTAL, y notas debajo -->
+        <line x1="40" y1="305" x2="560" y2="305" stroke="#d9d4c9" stroke-width="1"/>
+        <text x="40" y="325" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">El operador eléctrico anfitrión cobra el 2 % del precio total. El hyperscaler además reporta margen operativo del ~60 %</text>
+        <text x="40" y="342" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">sobre su porción. Las externalidades hídricas, viales y de transmisión no aparecen en la tarifa.</text>
       </svg>
       <figcaption>Cálculo orientativo a partir de tarifa pública AWS, especificaciones H100, PUE típica hyperscaler y mercado mayorista de electricidad ~$50/MWh.</figcaption>
     </figure>

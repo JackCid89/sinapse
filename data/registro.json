@@ -303,6 +303,142 @@
         },
         "autora": "Passiflora Caerulea"
       }
+    },
+    {
+      "numero": 3,
+      "fecha": "2026-05-12",
+      "semana": "Semana 19 (6-12 mayo 2026)",
+      "archivo": "n003-mayo-2026.html",
+      "portada": {
+        "titulo": "La tensión de Hubble ya no es ruido: el modelo estándar tiene que cambiar",
+        "disciplina": "Cosmología",
+        "angulo": "Confirmación de la tensión H0 con la medición H0DN a 5.8σ; consecuencias para extensiones de ΛCDM (EDE, Δ N_eff, gravedad modificada); roadmap Euclid/LSST/CMB-S4."
+      },
+      "papers_cubiertos": [
+        {
+          "titulo": "H0DN — medición conjunta de H_0 local",
+          "disciplina": "Cosmología",
+          "subtema": "tensión de Hubble",
+          "region": "Internacional"
+        },
+        {
+          "titulo": "McGill — interruptor molecular de grasa parda",
+          "disciplina": "Biomedicina",
+          "subtema": "termogénesis adaptativa",
+          "region": "Norteamérica (Canadá)"
+        },
+        {
+          "titulo": "Walker, Cleaves et al. — firma química de vida",
+          "disciplina": "Astrobiología",
+          "subtema": "biosignaturas universales",
+          "region": "Norteamérica + Japón"
+        },
+        {
+          "titulo": "UMBC — mecanismo común de enterovirus",
+          "disciplina": "Virología",
+          "subtema": "blanco antiviral pan-enteroviral",
+          "region": "Norteamérica"
+        }
+      ],
+      "tech_cubiertos": [
+        "Cuatro modelos chinos open en 12 días (GLM-5.1, MiniMax M2.7, Kimi K2.6, DeepSeek V4)",
+        "TSMC Symposium 2026 — A16, CoWoS-L, 70% CAGR capacidad N2+A16",
+        "ORCFLO Index — benchmark business-centric",
+        "NVIDIA + Foxconn ensamble GB200/GB300 en Jalisco, México"
+      ],
+      "industria_cubiertos": [
+        "TSMC capex 2026 $31.28B (máximo histórico)",
+        "EPIC Center TSMC+AMAT $5B (mayor R&D semi en US)",
+        "Taiwan $200B inversión semi US",
+        "Singapur SEA-LION sobre Qwen 3.5; Malasia MyAI sobre DeepSeek V4"
+      ],
+      "columna": {
+        "titulo": "La nueva Standard Oil del silicio",
+        "angulo": "Concentración TSMC (92% nodos ≤7nm) y paralelo con monopolio Standard Oil 1911; diferencia entre monopolio de recurso vs monopolio de saber-hacer; límites reales del friend-shoring.",
+        "tono": "Histórico-comparativo"
+      },
+      "contraste": {
+        "titulo": "Open weights no es open source: la geometría real de la 'IA abierta'",
+        "debate_estructural": "Open weights vs open source en IA; soberanía técnica del sur global",
+        "atlas_keys": {
+          "paises_titular": [
+            "EE.UU. (Meta, Mistral, OpenAI, Anthropic)",
+            "China (DeepSeek, Qwen, GLM, Kimi)"
+          ],
+          "paises_trama_real": [
+            "Singapur (SEA-LION/Qwen)",
+            "Malasia (MyAI/DeepSeek)",
+            "Brasil (Maritalk)",
+            "India (Bharat AI)",
+            "Emiratos (Falcon)",
+            "Vietnam (PhoGPT)",
+            "Kenia",
+            "Nigeria"
+          ],
+          "quien_cobra": "Chips (NVIDIA, SMIC), hyperscalers (AWS/Azure/GCP 60-70% margen), labs originadores, integradores locales",
+          "quien_paga": "Países sin auditoría de datasets heredan sesgos; lenguajes minoritarios; comunidades con datos sensibles sin marcos de protección",
+          "horizonte": "Convergencia técnica completa; divergencia regulatoria entre UE (AI Act/GPAI), US (mosaico), China (CAC), LATAM/África (sin marco)",
+          "brecha_regulatoria": "UE > China > US > India/Brasil > África subsahariana (excepto Sudáfrica)",
+          "punto_ciego": "Abierto ≠ soberano; sin datos abiertos + código + auditoría, la dependencia es invisible"
+        },
+        "autora": "Passiflora Caerulea"
+      },
+      "dato_semana": {
+        "cifra": "55 %",
+        "tema": "Proporción del mercado semiconductor global proyectado para 2030 destinada a IA/HPC, según TSMC ($825B de un mercado de $1.5T)"
+      },
+      "disciplinas_cubiertas": [
+        "Cosmología",
+        "Biomedicina/metabolismo",
+        "Astrobiología",
+        "Virología",
+        "IA/Open weights (Tech, Contraste)",
+        "Semiconductores (Tech, Industria)",
+        "Espacio (Pulso)"
+      ],
+      "disciplinas_NO_cubiertas": [
+        "Energía nuclear/limpia",
+        "Ecología/biodiversidad",
+        "Genética/CRISPR (cubierto en N°002)",
+        "Materiales/superconductividad (cubierto en N°002)",
+        "Ciencias del comportamiento",
+        "Geofísica/sismología",
+        "Química"
+      ],
+      "regiones_fuente": [
+        "Norteamérica (Caltech, JHU, McGill, UMBC, NVIDIA, Applied Materials)",
+        "Asia (Taiwan TSMC, China DeepSeek/Qwen/GLM/Kimi, Singapur, Malasia, Japón ELSI)",
+        "Europa (ESA SMILE, MPIA, NOIRLab parte UE)",
+        "Internacional (H0DN colaboración)"
+      ],
+      "regiones_NO_cubiertas": [
+        "América Latina (excepto mención Jalisco/Maritalk)",
+        "África (excepto mención Kenia/Nigeria)",
+        "Oriente Medio (excepto mención Emiratos)",
+        "Oceanía"
+      ],
+      "i18n": {
+        "en": {
+          "archivo": "n003-may-2026.html",
+          "semana": "Week 19 (May 6-12, 2026)",
+          "portada": {
+            "titulo": "The Hubble tension is no longer noise: the standard model has to change",
+            "disciplina": "Cosmology",
+            "angulo": "H0DN confirms the Hubble tension at 5.8σ; consequences for ΛCDM extensions (EDE, ΔN_eff, modified gravity); Euclid/LSST/CMB-S4 roadmap."
+          },
+          "columna": {
+            "titulo": "The new Standard Oil of silicon"
+          },
+          "contraste": {
+            "titulo": "Open weights is not open source: the real geometry of 'open AI'",
+            "debate_estructural": "Open weights vs open source in AI; technical sovereignty of the Global South"
+          },
+          "dato_semana": {
+            "cifra": "55 %",
+            "label": "of the 2030 semiconductor market, for AI and HPC"
+          }
+        }
+      }
     }
   ],
   "notas_v3": "2026-05-13: la regla de \"al menos 1 fuente asiática\" se reformuló como pluralidad geográfica (≥3 regiones por número, priorizando las menos cubiertas). El objetivo es equilibrio, no preferencia por ninguna región.",
@@ -329,5 +465,6 @@
       }
     ]
   },
-  "notas_v6": "2026-05-13: Pivote editorial del Contraste. De fact-check de titulares puntuales a desmontaje de debates estructurales con Atlas obligatorio (7 dimensiones fijas) y representación explícita de regiones no occidentales. N°001 cubre datacenters de IA, N°002 reemplaza café/Alzheimer por gain-of-function. El Contraste anterior (café/Alzheimer) queda como precedente histórico no publicado en el sitio."
+  "notas_v6": "2026-05-13: Pivote editorial del Contraste. De fact-check de titulares puntuales a desmontaje de debates estructurales con Atlas obligatorio (7 dimensiones fijas) y representación explícita de regiones no occidentales. N°001 cubre datacenters de IA, N°002 reemplaza café/Alzheimer por gain-of-function. El Contraste anterior (café/Alzheimer) queda como precedente histórico no publicado en el sitio.",
+  "notas_v7": "2026-05-13: N°003 generado retroactivamente (semana 19, 6-12 mayo). El scheduled task no se disparó el martes 12; se hace manual con la pipeline completa, incluyendo validador."
 }
