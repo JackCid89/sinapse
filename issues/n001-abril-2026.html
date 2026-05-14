@@ -2,518 +2,461 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SINAPSE · N.° 001 · Abril 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SINAPSE · N.º 001 · Abril 2026</title>
+<meta name="description" content="SINAPSE N.º 001 — semana 17 de 2026. Portada: el reactor reproductor rápido de Kalpakkam alcanza primera criticidad tras 22 años." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/sinapse.css" />
-<meta name="description" content="SINAPSE N.° 001 — semana 17 de 2026. Portada: el reactor reproductor rápido de Kalpakkam alcanza primera criticidad tras 22 años." />
 </head>
 <body>
-<div class="wrap">
 
-<header class="masthead">
-  <div class="brand"><a href="../index.html">SINAPSE</a><small>Ciencia · Tecnología · Industria</small></div>
-  <div>
-    <div class="issue">
-      <strong>N.° 001</strong>
-      Semana 17 · 22–28 abril 2026<br/>
-      Edición semanal en español
+<div class="progress" aria-hidden="true"><div class="bar" id="progBar"></div></div>
+
+<main class="page" id="top">
+
+  <header class="masthead">
+    <h1 class="wordmark"><a href="../index.html">sinapse<span class="dot">.</span></a></h1>
+    <div class="meta">
+      <strong>N.º 001</strong><br>
+      Semana 17 · 22–28 abr 2026<br>
+      Edición semanal · español
     </div>
-    <div class="lang-switch" aria-label="Selector de idioma">
-      <a class="active" href="./n001-abril-2026.html" lang="es">ES</a>
-      <span class="sep">|</span>
-      <a href="../en/issues/n001-april-2026.html" lang="en">EN</a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<aside class="teaser-contraste" aria-label="Avance del Contraste de esta semana">
-  <span class="kicker">Contraste · Passiflora</span>
-  <a class="teaser-link" href="#contraste">Datacenters de IA: ¿qué hubo realmente que pagar, y quién está pagando?</a>
-</aside>
-
-<nav class="toc" aria-label="Índice">
-  <a href="#pulso"><span>01</span>Pulso</a>
-  <a href="#portada"><span>02</span>Portada</a>
-  <a href="#papers"><span>03</span>Papers</a>
-  <a href="#tech"><span>04</span>Tech</a>
-  <a href="#industria"><span>05</span>Industria</a>
-  <a href="#columna"><span>06</span>Columna</a>
-  <a href="#contraste"><span>07</span>Contraste</a>
-  <a href="#dato"><span>08</span>Dato</a>
-  <a href="#apendice"><span>09</span>Apéndice</a>
-</nav>
-
-<!-- ============== 01 PULSO ============== -->
-<section id="pulso">
-  <div class="section-head">
-    <span class="num">§ 01</span>
-    <h2>Pulso</h2>
-  </div>
-  <p class="lede">Seis noticias breves para tomar el pulso de la semana en ciencia, tecnología e industria.</p>
-
-  <div class="pulse">
-    <div class="item">
-      <div class="nb">P-01</div>
-      <div>
-        <span class="tag">Energía</span><span class="tag">Asia</span><span class="tag">Ingeniería nuclear</span>
-        <h3>El PFBR de Kalpakkam alcanza primera criticidad</h3>
-        <p>El reactor reproductor rápido prototipo (500 MWe, refrigerado por sodio) inició cadena de fisión controlada el 6 de abril, 22 años después de comenzar su construcción. India se suma al pequeño grupo (Rusia, China) con reactores rápidos comerciales operando.</p>
-        <p class="plain">En claro: India encendió un reactor que fabrica más combustible nuclear del que gasta. Llevó 22 años de obra y todavía faltan al menos dos para que entregue electricidad a la red.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-02</div>
-      <div>
-        <span class="tag">IA</span><span class="tag">Industria</span>
-        <h3>OpenAI publica GPT-5.5 con foco en uso de computadoras</h3>
-        <p>Anunciado el 23 de abril, alcanza 78,7 % en OSWorld-Verified (navegación autónoma de sistemas operativos). Es la quinta actualización menor del año en seis semanas, lo que sugiere ciclo de iteración acelerado más que salto de capacidad.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-03</div>
-      <div>
-        <span class="tag">IA</span><span class="tag">Asia</span><span class="tag">Open weights</span>
-        <h3>DeepSeek libera V4-Pro y V4-Flash con contexto de 1 M tokens</h3>
-        <p>Versiones preview liberadas el 24 de abril. V4-Pro (1,6 T parámetros, 49 B activados) iguala a Claude Opus 4.6 en SWE-bench Verified (80,6 % vs 80,8 %) con peso abierto. V4-Pro requiere 27 % de FLOPs de inferencia y 10 % de KV-cache respecto a V3.2 en contexto largo.</p>
-        <p class="plain">En claro: un modelo abierto chino iguala al mejor cerrado en programación, usando un tercio del cómputo y una décima parte de la memoria de su predecesor cuando procesa textos muy largos.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-04</div>
-      <div>
-        <span class="tag">Espacio</span>
-        <h3>Cygnus XL parte hacia la EEI con carga científica</h3>
-        <p>Lanzado el 8 de abril, llevó equipo para experimentos de computación cuántica en microgravedad y ensayos de terapia con células madre. Es la primera vez que vuela la versión "XL" del carguero de Northrop Grumman.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-05</div>
-      <div>
-        <span class="tag">Astronomía</span><span class="tag">JWST</span>
-        <h3>Nubes de hielo de agua en Epsilon Indi Ab</h3>
-        <p>Imagen directa con JWST de un análogo joven de Júpiter a 12 años luz. Hay menos amoníaco del esperado: la hipótesis es que nubes parchadas lo enmascaran. El resultado tensiona los modelos atmosféricos vigentes para gigantes gaseosos templados.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-06</div>
-      <div>
-        <span class="tag">Microbiología</span><span class="tag">Clima</span>
-        <h3>Microbios marinos producen metano en aguas pobres en nutrientes</h3>
-        <p>El "metano paradoja" en océanos abiertos —presente donde no debería haber metanogénesis clásica— tiene una explicación: bacterias capaces de generarlo bajo limitación de fósforo. Reordena el inventario global de fuentes oceánicas de gases de efecto invernadero.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 02 PORTADA ============== -->
-<section id="portada">
-  <div class="section-head">
-    <span class="num">§ 02</span>
-    <h2>Portada</h2>
+  <div class="sub">
+    <span>Ciencia · Tecnología · Industria</span>
+    <span class="lang">
+      <a href="./n001-abril-2026.html" aria-current="page">ES</a> · <a href="../en/issues/n001-april-2026.html">EN</a>
+    </span>
   </div>
 
-  <article class="cover">
-    <div class="kicker">India · Energía · Ingeniería nuclear</div>
-    <h1>22 años después: el reactor reproductor rápido de Kalpakkam llega a la criticidad</h1>
-    <p class="deck">El 6 de abril de 2026 a las 20:25, el PFBR de 500 MWe inició cadena de fisión controlada. India entra al exclusivo club de los reactores rápidos comerciales —pero el camino que falta es más largo que el ya recorrido.</p>
-    <div class="byline">Por la redacción de SINAPSE · 28 de abril de 2026</div>
+  <p class="lede">
+    <strong>En esta edición —</strong> el reactor reproductor rápido de Kalpakkam alcanza primera criticidad tras 22 años. Más seis pulsos, cuatro papers, una columna sobre los <em>tiempos del software vs los de la energía</em>, y un contraste sobre quién paga el auge de los datacenters de IA.
+  </p>
 
-    <p>Lo que ocurrió esa noche en Kokkilamedu, en la costa de Tamil Nadu, fue técnicamente modesto: un reactor encendido a potencia mínima, suficiente para sostener la reacción en cadena pero no para producir un kilovatio útil. Lo que ocurrió institucionalmente fue lo contrario de modesto. India llevaba dos décadas tratando de cerrar una promesa hecha en los años setenta, cuando Homi Bhabha sostuvo que el país, pobre en uranio pero rico en torio, debía construir su propio camino nuclear. El <strong>Prototype Fast Breeder Reactor (PFBR)</strong>, segundo paso de un plan de tres etapas, es ese camino convertido en acero, sodio líquido y combustible MOX.</p>
+  <nav class="toc" aria-label="Índice">
+    <ol>
+      <li><a href="#pulso"><span class="num">01</span><span class="lead"></span><span>Pulso</span></a></li>
+      <li><a href="#portada"><span class="num">02</span><span class="lead"></span><span>Portada</span></a></li>
+      <li><a href="#papers"><span class="num">03</span><span class="lead"></span><span>Papers</span></a></li>
+      <li><a href="#tech"><span class="num">04</span><span class="lead"></span><span>Tech</span></a></li>
+      <li><a href="#industria"><span class="num">05</span><span class="lead"></span><span>Industria</span></a></li>
+      <li><a href="#columna"><span class="num">06</span><span class="lead"></span><span>Columna</span></a></li>
+      <li><a href="#contraste"><span class="num">07</span><span class="lead"></span><span>Contraste</span></a></li>
+      <li><a href="#dato"><span class="num">08</span><span class="lead"></span><span>Dato</span></a></li>
+      <li><a href="#apendice"><span class="num">09</span><span class="lead"></span><span>Apéndice</span></a></li>
+    </ol>
+  </nav>
 
-    <p>Un reactor reproductor rápido (<em>fast breeder</em>) hace lo que su nombre dice: produce más combustible fisible del que consume. El núcleo del PFBR opera con una mezcla de óxidos de uranio y plutonio, y está rodeado por un manto de uranio-238. Los neutrones rápidos —no moderados, a diferencia de los reactores convencionales de agua a presión— transmutan ese U-238 en plutonio-239, que es fisible. La promesa es geopolítica antes que técnica: un país sin grandes reservas de uranio puede multiplicar su inventario de combustible si logra reciclar el plutonio del manto y, eventualmente, transmutar torio-232 en uranio-233. Eso es la tercera etapa del plan Bhabha, todavía a futuro.</p>
-
-    <h3>La cuenta del tiempo</h3>
-
-    <p>Construir el PFBR llevó más tiempo del previsto por casi cualquier métrica. La primera piedra se colocó en octubre de 2004 con un objetivo de criticidad para 2010. El cronograma se desplazó nueve veces. Las causas se acumulan: reescritura de criterios sísmicos tras Fukushima en 2011, revisión completa del diseño del intercambiador de calor sodio-agua, problemas con bombas primarias de sodio, escasez crónica de combustible MOX cualificado y la lección dura —cara— de haber decidido construir antes de prototipar a escala. India ya operaba un reactor rápido experimental, el FBTR (40 MWt), desde 1985; pero saltar a 500 MWe era otro orden de complejidad.</p>
-
-    <p>El sodio líquido es el villano recurrente de cualquier proyecto de reactor rápido. Reacciona violentamente con agua, se incendia con el aire y se vuelve radiactivo en el flujo neutrónico. La industria carga con un historial de incidentes: el sódico Monju en Japón nunca se recuperó del incendio de 1995; Superphénix en Francia cerró en 1998 tras una década de problemas; el BN-600 ruso ha tenido más de una docena de fugas a lo largo de su vida. En ese contexto, llegar a primera criticidad sin incidente reportable es, ya, un logro de ingeniería.</p>
-
-    <h3>Qué se prueba ahora</h3>
-
-    <p>Primera criticidad no es generación eléctrica. Lo que viene son meses de ascenso de potencia escalonado: del rango cero a unos pocos megavatios térmicos para verificar coeficientes de reactividad, luego al 30 %, al 70 %, al 100 %. La conexión a la red eléctrica está prevista, según el Departamento de Energía Atómica, para finales de 2026 o 2027 si la fase de pruebas no encuentra sorpresas. Cada etapa exige verificar que el sodio circula como predicen los códigos de seguridad, que las barras de control caen en el tiempo previsto, que los detectores de fugas distinguen señal real de ruido.</p>
-
-    <blockquote>"La primera criticidad demuestra que el diseño funciona; la conexión a la red demostraría que la economía funciona; el reciclo del combustible demostraría que la promesa funciona. Estamos en el primer paso."</blockquote>
-
-    <p>El sistema económico tampoco está cerrado. El costo final del PFBR superará holgadamente los 100 mil millones de rupias frente a un presupuesto inicial de 35 mil millones. Para que el ciclo del torio cierre, India necesita además poner en marcha la planta de reprocesamiento de combustible irradiado FRFCF, también en Kalpakkam, todavía bajo construcción. Sin reprocesamiento, el combustible reproducido se queda guardado como residuo de alta actividad.</p>
-
-    <h3>Por qué importa fuera de India</h3>
-
-    <p>Los reactores rápidos vuelven a estar en agenda en países como Estados Unidos —donde TerraPower y Oklo intentan diseños distintos— Reino Unido, Francia y Corea del Sur. Su atractivo es múltiple: pueden quemar plutonio civil acumulado, reducir el volumen y la vida de los residuos, y prometer una utilización del recurso uranio entre 60 y 100 veces mayor que un PWR. Pero ningún país occidental opera un reactor rápido comercial hoy. Si el PFBR alcanza producción nominal sostenida en los próximos dos años, será el primer dato empírico contemporáneo —fuera de Rusia y China— sobre la economía de operar uno.</p>
-
-    <p>Lo no dicho en los comunicados oficiales es la otra cara: los reactores rápidos producen plutonio de alta calidad isotópica, técnicamente apto para uso militar. India, que no firmó el Tratado de No Proliferación, mantiene el PFBR fuera de salvaguardias de la AIEA. Eso no es nuevo —siempre lo fue— pero hace de la criticidad un evento que se mira con doble lente en Pakistán, en Washington y en Pekín.</p>
-
-    <h3>Lo que falta y lo que sigue abierto</h3>
-
-    <p>Tres preguntas son hoy las que importan. Primera: ¿cuánto tarda en llegar al 100 % de potencia y cuál es su factor de capacidad real durante el primer año? Reactores rápidos previos no superaron 30–60 %. Segunda: ¿cuándo entra en operación la planta FRFCF, sin la cual no hay ciclo cerrado? Tercera, la pregunta que nadie en India responde por escrito: ¿este reactor es el primero de una serie de seis prometidos en planes anteriores, o el último de su clase, sustituido por diseños nuevos? Lo que se sepa de aquí a dos años decidirá si la criticidad del 6 de abril marca el inicio de una nueva etapa nuclear o el cierre prolongado de una etapa anterior.</p>
-  </article>
-</section>
-
-<!-- ============== 03 PAPERS ============== -->
-<section id="papers">
-  <div class="section-head">
-    <span class="num">§ 03</span>
-    <h2>Papers</h2>
-  </div>
-  <p class="lede">Cuatro publicaciones recientes con resumen, autoría y por qué importa.</p>
-
-  <div class="papers">
-    <div class="paper">
-      <span class="tag">Astronomía</span><span class="tag">Atmósferas exoplanetarias</span>
-      <h3>Imagen directa de Epsilon Indi Ab revela nubes de hielo de agua y escasez de amoníaco</h3>
-      <div class="meta">Matthews et al. · Max-Planck-Institut für Astronomie · Nature · abril 2026</div>
-      <p>El equipo combinó observaciones JWST/MIRI y NIRSpec sobre Epsilon Indi Ab, un Júpiter joven (~3 M<sub>J</sub>) a 3,6 pc del Sol. Las espectroscopías de baja resolución muestran absorciones de H₂O consistentes con nubes de hielo, mientras que el amoníaco esperado por modelos de equilibrio termoquímico está sub-representado.</p>
-      <p class="why">Por qué importa: las atmósferas frías directamente imageables son un laboratorio crítico para validar modelos de gigantes gaseosos. Si el déficit de NH₃ se confirma, hay que revisar los códigos de transporte vertical y química de no-equilibrio que asumimos para enanas marrones y exoplanetas templados.</p>
+  <!-- ═══════════════ 01 PULSO ═══════════════ -->
+  <section class="sec" id="pulso">
+    <div class="sec-head">
+      <span class="sec-num">§ 01</span>
+      <h2 class="sec-title">Pulso</h2>
     </div>
+    <p class="sec-desc">Seis noticias breves para tomar el pulso de la semana en ciencia, tecnología e industria.</p>
 
-    <div class="paper">
-      <span class="tag">Cosmología</span><span class="tag">Asia</span><span class="tag">Simulación N-cuerpos</span>
-      <h3>HyperMillenium: la simulación cosmológica de mayor resolución hasta la fecha</h3>
-      <div class="meta">Equipo internacional liderado por la Academia China de Ciencias · ChinaXiv / Science Advances · abril 2026</div>
-      <p>Simulación N-cuerpos hidrodinámica con ~3 × 10¹³ partículas en un volumen de 3 Gpc/h, capaz de resolver halos de masa de galaxias enanas en el universo a gran escala. La primera tanda de resultados aborda la formación de cúmulos masivos a z &gt; 4 y la estadística de subhalos.</p>
-      <p class="why">Por qué importa: por primera vez una simulación abarca a la vez el régimen de cúmulos y el de galaxias enanas en el mismo volumen, sin necesidad de zoom-ins separados. Es el tipo de banco de pruebas que necesita Euclid y la próxima generación de surveys ópticos.</p>
+    <div class="pulso">
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">01</span>P-01</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Energía</span><span class="tag">Asia</span><span class="tag">Ingeniería nuclear</span></div>
+          <h3>El PFBR de Kalpakkam alcanza primera criticidad</h3>
+          <p>El reactor reproductor rápido prototipo (500&nbsp;MWe, refrigerado por sodio) inició cadena de fisión controlada el 6 de abril, 22 años después de comenzar su construcción. India se suma al pequeño grupo (Rusia, China) con reactores rápidos comerciales operando.</p>
+          <aside class="enclaro">India encendió un reactor que fabrica más combustible nuclear del que gasta. Llevó 22 años de obra y todavía faltan al menos dos para que entregue electricidad a la red.</aside>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">02</span>P-02</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">IA</span><span class="tag">Industria</span></div>
+          <h3>OpenAI publica GPT-5.5 con foco en uso de computadoras</h3>
+          <p>Anunciado el 23 de abril, alcanza 78,7&nbsp;% en OSWorld-Verified (navegación autónoma de sistemas operativos). Es la quinta actualización menor del año en seis semanas, lo que sugiere ciclo de iteración acelerado más que salto de capacidad.</p>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">03</span>P-03</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">IA</span><span class="tag">Asia</span><span class="tag">Open weights</span></div>
+          <h3>DeepSeek libera V4-Pro y V4-Flash con contexto de 1&nbsp;M tokens</h3>
+          <p>Versiones preview liberadas el 24 de abril. V4-Pro (1,6&nbsp;T parámetros, 49&nbsp;B activados) iguala a Claude Opus 4.6 en SWE-bench Verified (80,6&nbsp;% vs 80,8&nbsp;%) con peso abierto. V4-Pro requiere 27&nbsp;% de FLOPs de inferencia y 10&nbsp;% de KV-cache respecto a V3.2 en contexto largo.</p>
+          <aside class="enclaro">Un modelo abierto chino iguala al mejor cerrado en programación, usando un tercio del cómputo y una décima parte de la memoria de su predecesor cuando procesa textos muy largos.</aside>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">04</span>P-04</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Espacio</span></div>
+          <h3>Cygnus XL parte hacia la EEI con carga científica</h3>
+          <p>Lanzado el 8 de abril, llevó equipo para experimentos de computación cuántica en microgravedad y ensayos de terapia con células madre. Es la primera vez que vuela la versión «XL» del carguero de Northrop Grumman.</p>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">05</span>P-05</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Astronomía</span><span class="tag">JWST</span></div>
+          <h3>Nubes de hielo de agua en Epsilon Indi Ab</h3>
+          <p>Imagen directa con JWST de un análogo joven de Júpiter a 12 años luz. Hay menos amoníaco del esperado: la hipótesis es que nubes parchadas lo enmascaran. El resultado tensiona los modelos atmosféricos vigentes para gigantes gaseosos templados.</p>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">06</span>P-06</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Microbiología</span><span class="tag">Clima</span></div>
+          <h3>Microbios marinos producen metano en aguas pobres en nutrientes</h3>
+          <p>El «metano paradoja» en océanos abiertos —presente donde no debería haber metanogénesis clásica— tiene una explicación: bacterias capaces de generarlo bajo limitación de fósforo. Reordena el inventario global de fuentes oceánicas de gases de efecto invernadero.</p>
+        </div>
+      </article>
+
     </div>
+  </section>
 
-    <div class="paper">
-      <span class="tag">Computación cuántica</span><span class="tag">Corrección de errores</span>
-      <h3>Una arquitectura de QEC que reduce el umbral a ~10 000 qubits físicos</h3>
-      <div class="meta">Equipo Caltech / Oratomic · arXiv preprint · abril 2026</div>
-      <p>Propuesta de código de corrección que combina concatenación con codificación bosónica continua y rutas de magia distilada optimizadas. La proyección teórica indica que un computador cuántico tolerante a fallos útil para factorización RSA-2048 podría requerir 10 000 a 20 000 qubits físicos en lugar de los millones estimados antes.</p>
-      <p class="why">Por qué importa: si el resultado se sostiene tras revisión por pares, comprime entre 50× y 100× la barrera de hardware. Cambia los tiempos esperados para criptografía post-cuántica y obliga a tomar más en serio la migración a NIST-PQC en infraestructura crítica.</p>
+  <!-- ═══════════════ 02 PORTADA ═══════════════ -->
+  <section class="sec" id="portada">
+    <div class="sec-head"><span class="sec-num">§ 02</span><h2 class="sec-title">Portada</h2></div>
+
+    <p class="portada-meta">India · Energía · Ingeniería nuclear</p>
+    <h1 class="article-title">22 años después: el reactor reproductor rápido de Kalpakkam llega a la <em>criticidad</em></h1>
+    <p class="article-deck">El 6 de abril de 2026 a las 20:25, el PFBR de 500&nbsp;MWe inició cadena de fisión controlada. India entra al exclusivo club de los reactores rápidos comerciales —pero el camino que falta es más largo que el ya recorrido.</p>
+    <p class="byline"><span>Por la redacción de SINAPSE</span><span>28 de abril de 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">Lo que ocurrió esa noche en Kokkilamedu, en la costa de Tamil Nadu, fue técnicamente modesto: un reactor encendido a potencia mínima, suficiente para sostener la reacción en cadena pero no para producir un kilovatio útil. Lo que ocurrió institucionalmente fue lo contrario de modesto. India llevaba dos décadas tratando de cerrar una promesa hecha en los años setenta, cuando Homi Bhabha sostuvo que el país, pobre en uranio pero rico en torio, debía construir su propio camino nuclear.</p>
+
+      <p>Un reactor reproductor rápido (<em>fast breeder</em>) hace lo que su nombre dice: produce más combustible fisible del que consume. El núcleo del PFBR opera con una mezcla de óxidos de uranio y plutonio, y está rodeado por un manto de uranio-238. Los neutrones rápidos —no moderados— transmutan ese U-238 en plutonio-239, que es fisible.</p>
+
+      <h3>La cuenta del tiempo</h3>
+      <p>Construir el PFBR llevó más tiempo del previsto por casi cualquier métrica. La primera piedra se colocó en octubre de 2004 con un objetivo de criticidad para 2010. El cronograma se desplazó nueve veces. Las causas se acumulan: reescritura de criterios sísmicos tras Fukushima, revisión del intercambiador de calor sodio-agua, escasez de combustible MOX cualificado.</p>
+
+      <p>El sodio líquido es el villano recurrente. La industria carga con un historial de incidentes: Monju en Japón nunca se recuperó del incendio de 1995; Superphénix en Francia cerró en 1998; el BN-600 ruso ha tenido más de una docena de fugas. Llegar a primera criticidad sin incidente reportable es, ya, un logro de ingeniería.</p>
+
+      <h3>Qué se prueba ahora</h3>
+      <p>Primera criticidad no es generación eléctrica. Vienen meses de ascenso de potencia escalonado: 30&nbsp;%, 70&nbsp;%, 100&nbsp;%. La conexión a la red está prevista para finales de 2026 o 2027. El costo final superará los 100 mil millones de rupias frente a un presupuesto inicial de 35 mil.</p>
+
+      <p>Lo no dicho en los comunicados oficiales: los reactores rápidos producen plutonio de alta calidad isotópica, apto para uso militar. India, que no firmó el Tratado de No Proliferación, mantiene el PFBR fuera de salvaguardias de la AIEA.</p>
+
+      <h3>Tres preguntas abiertas</h3>
+      <p>Primera: ¿cuánto tarda en llegar al 100&nbsp;% de potencia y cuál es su factor de capacidad real durante el primer año? Reactores rápidos previos no superaron 30-60&nbsp;%. Segunda: ¿cuándo entra en operación la planta FRFCF, sin la cual no hay ciclo cerrado? Tercera: ¿este reactor es el primero de una serie de seis prometidos en planes anteriores, o el último de su clase?</p>
     </div>
+  </section>
 
-    <div class="paper">
-      <span class="tag">Paleontología</span><span class="tag">Asia</span><span class="tag">Evolución</span>
-      <h3>Una fauna transicional del Ediacarense tardío en Yunnan llena el "gap" hacia los filos modernos</h3>
-      <div class="meta">Equipo de la Universidad de Yunnan y Virginia Tech · Science · 2 de abril de 2026</div>
-      <p>Yacimiento del biota de Wenghui que documenta organismos con simetría bilateral y evidencia de tubos digestivos completos antes del límite Ediacárico-Cámbrico. La datación U-Pb sitúa la formación entre 551 y 543 Ma. El conjunto incluye al menos cuatro morfotipos no descritos antes.</p>
-      <p class="why">Por qué importa: ayuda a despejar si la "explosión cámbrica" fue tan abrupta como sugería el registro fósil, o si los planes corporales basales aparecieron decenas de millones de años antes y el registro es incompleto. Implicaciones para los relojes moleculares.</p>
+  <!-- ═══════════════ 03 PAPERS ═══════════════ -->
+  <section class="sec" id="papers">
+    <div class="sec-head"><span class="sec-num">§ 03</span><h2 class="sec-title">Papers</h2></div>
+    <p class="sec-desc">Cuatro publicaciones recientes con resumen, autoría y por qué importa.</p>
+
+    <div class="papers">
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Astronomía</span><span class="tag">Atmósferas exoplanetarias</span></div>
+        <h3>Imagen directa de Epsilon Indi Ab revela nubes de hielo de agua y escasez de amoníaco</h3>
+        <p class="cite">Matthews et al. · Max-Planck-Institut für Astronomie · <em>Nature</em> · abril 2026</p>
+        <p>Espectroscopía directa de un gigante gaseoso joven (~3 M<sub>J</sub>) a 3,6&nbsp;pc. Detección de H₂O en absorción consistente con nubes de hielo; déficit de NH₃ respecto a equilibrio químico.</p>
+        <p class="why">Las atmósferas frías directamente imageables son un laboratorio crítico para validar modelos de gigantes gaseosos. Si el déficit de NH₃ se confirma, hay que revisar los códigos de transporte vertical y química de no-equilibrio.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Cosmología</span><span class="tag">Asia</span><span class="tag">Simulación N-cuerpos</span></div>
+        <h3>HyperMillenium: la simulación cosmológica de mayor resolución hasta la fecha</h3>
+        <p class="cite">Equipo internacional liderado por la Academia China de Ciencias · ChinaXiv / <em>Science Advances</em> · abril 2026</p>
+        <p>Simulación N-cuerpos hidrodinámica con ~3 × 10¹³ partículas en 3&nbsp;Gpc/h, capaz de resolver halos de galaxias enanas en el universo a gran escala.</p>
+        <p class="why">Por primera vez una simulación abarca cluster y galaxias enanas en el mismo volumen sin zoom-ins separados. Banco de pruebas para Euclid y la próxima generación de surveys.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Computación cuántica</span><span class="tag">QEC</span></div>
+        <h3>Una arquitectura de QEC que reduce el umbral a ~10&nbsp;000 qubits físicos</h3>
+        <p class="cite">Equipo Caltech / Oratomic · arXiv preprint · abril 2026</p>
+        <p>Código de corrección que combina concatenación con codificación bosónica continua. Proyección: 10&nbsp;000 a 20&nbsp;000 qubits físicos para factorización RSA-2048, en lugar de millones.</p>
+        <p class="why">Si el resultado se sostiene tras revisión por pares, comprime 50-100× la barrera de hardware. Cambia los tiempos esperados para criptografía post-cuántica.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Paleontología</span><span class="tag">Asia</span><span class="tag">Evolución</span></div>
+        <h3>Una fauna transicional del Ediacarense tardío en Yunnan llena el «gap» hacia los filos modernos</h3>
+        <p class="cite">Universidad de Yunnan y Virginia Tech · <em>Science</em> · 2 de abril de 2026</p>
+        <p>Yacimiento del biota de Wenghui que documenta organismos con simetría bilateral y tubos digestivos completos antes del límite Ediacárico-Cámbrico. Datación U-Pb: 551–543&nbsp;Ma.</p>
+        <p class="why">Ayuda a despejar si la «explosión cámbrica» fue tan abrupta como sugería el registro fósil, o si los planes corporales basales aparecieron decenas de millones de años antes.</p>
+      </article>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============== 04 TECH ============== -->
-<section id="tech">
-  <div class="section-head">
-    <span class="num">§ 04</span>
-    <h2>Tech</h2>
-  </div>
-  <p class="lede">Lo que se mueve en IA, software y hardware esta semana.</p>
+  <!-- ═══════════════ 04 TECH ═══════════════ -->
+  <section class="sec" id="tech">
+    <div class="sec-head"><span class="sec-num">§ 04</span><h2 class="sec-title">Tech</h2></div>
+    <p class="sec-desc">Lo que se mueve en IA, software y hardware esta semana.</p>
 
-  <div class="grid2">
-    <div class="card">
-      <span class="tag">IA · OpenAI</span>
-      <h3>GPT-5.5: el foco se mueve al uso de computadoras</h3>
-      <p>OpenAI publicó el 23 de abril su sexta iteración del año (GPT-5.0 → 5.5). El benchmark destacado es OSWorld-Verified, que mide capacidad de operar interfaces gráficas reales: 78,7 %, frente al 71 % de la versión anterior. La compañía no ha publicado tarjeta detallada de capacidades sensibles.</p>
+    <div class="ti-grid">
+      <article class="ti-item">
+        <div class="ti-cat">IA<br>OpenAI</div>
+        <div class="ti-body">
+          <h3>GPT-5.5: el foco se mueve al uso de computadoras</h3>
+          <p>OpenAI publicó el 23 de abril su sexta iteración del año. El benchmark destacado es OSWorld-Verified: 78,7&nbsp;%, frente al 71&nbsp;% de la versión anterior. Sin tarjeta detallada de capacidades sensibles.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">IA<br>DeepSeek · Asia</div>
+        <div class="ti-body">
+          <h3>DeepSeek V4 baja el costo de inferencia en contexto largo</h3>
+          <p>V4-Pro (1,6&nbsp;T, 49&nbsp;B activados) y V4-Flash (284&nbsp;B, 13&nbsp;B activados): 27&nbsp;% de FLOPs y 10&nbsp;% de KV-cache vs V3.2 en 1M tokens. Codeforces 3&nbsp;206 (V4-Pro).</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">IA<br>Google</div>
+        <div class="ti-body">
+          <h3>Gemini 3.1 añade voz e imagen en tiempo real</h3>
+          <p>Análisis simultáneo de voz e imagen en el stream multimodal. En paralelo, una técnica de compresión reduce 6× la memoria de inferencia para modelos servidos a escala.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Hardware<br>NVIDIA</div>
+        <div class="ti-body">
+          <h3>Nemotron 3 Nano Omni: agentes multimodales abiertos</h3>
+          <p>Modelo abierto multimodal pequeño con razonamiento sobre stream continuo. Inferencia local en Jetson; ~9× mejor eficiencia que su antecesor en tareas agentivas.</p>
+        </div>
+      </article>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="tag">IA · DeepSeek</span><span class="tag">Asia</span>
-      <h3>DeepSeek V4 baja el costo de inferencia en contexto largo</h3>
-      <p>V4-Pro (1,6 T, 49 B activados) y V4-Flash (284 B, 13 B activados) introducen un mecanismo de atención que, en contexto de 1 M tokens, requiere 27 % de los FLOPs y 10 % del KV-cache de V3.2. Pesos disponibles en Hugging Face. Codeforces 3 206 (V4-Pro), por encima de GPT-5.4.</p>
+  <!-- ═══════════════ 05 INDUSTRIA ═══════════════ -->
+  <section class="sec" id="industria">
+    <div class="sec-head"><span class="sec-num">§ 05</span><h2 class="sec-title">Industria</h2></div>
+    <p class="sec-desc">Movimientos relevantes en M&amp;A, financiamiento y regulación.</p>
+
+    <div class="ti-grid">
+      <article class="ti-item">
+        <div class="ti-cat">M&amp;A<br>Semiconductores</div>
+        <div class="ti-body">
+          <h3>NVIDIA absorbe activos de Groq por ~20 mil millones</h3>
+          <p>El acuerdo integra al desarrollador de chips de inferencia Groq en el ecosistema NVIDIA. Una de las mayores transacciones M&amp;A en startups; representa solo ~0,4&nbsp;% de la valoración de NVIDIA.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Financiamiento<br>IoT</div>
+        <div class="ti-body">
+          <h3>Altair Semiconductor cierra ronda de 50&nbsp;M USD</h3>
+          <p>Fabricante israelí de chips IoT 5G, recientemente desprendido de Sony Semiconductor. Pitango Group lidera la ronda. Reposiciona a Altair como actor independiente en conectividad celular de baja potencia.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Foundry<br>Asia</div>
+        <div class="ti-body">
+          <h3>Rapidus consolida la mayor ronda del trimestre</h3>
+          <p>El proyecto japonés de foundry 2&nbsp;nm capta 17&nbsp;% del capital total levantado en el sector. Los 5 mayores deals representan 52,4&nbsp;% del capital.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Regulación<br>IA · Asia</div>
+        <div class="ti-body">
+          <h3>Tracker de políticas de IA en Asia se actualiza</h3>
+          <p>Repaso del 8 de abril detalla cómo China, Corea del Sur, Japón, India y Singapur ajustan marcos: licencias de modelos generativos en China, AI Basic Act surcoreano en vigor desde inicios de año.</p>
+        </div>
+      </article>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="tag">IA · Google</span>
-      <h3>Gemini 3.1 añade voz e imagen en tiempo real</h3>
-      <p>Google DeepMind incorpora análisis simultáneo de voz e imagen al stream multimodal. En paralelo, una técnica de compresión de pesos reduce 6× la memoria requerida en inferencia para modelos servidos a escala.</p>
+  <!-- ═══════════════ 06 COLUMNA ═══════════════ -->
+  <section class="sec columna" id="columna">
+    <div class="sec-head"><span class="sec-num">§ 06</span><h2 class="sec-title">Columna</h2></div>
+
+    <h1 class="article-title">El reactor que tardó 22 años: <em>por qué la infraestructura energética no se acelera</em></h1>
+    <p class="byline"><span>Por Jack Cid</span><span>28 de abril de 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">Hay una pregunta que aparece cada vez que un proyecto técnico larguísimo cruza una línea: ¿qué significa «tarde»? El PFBR de Kalpakkam tardó 22 años en alcanzar primera criticidad. Lo común es leerlo como fracaso de gestión, dieciséis años de retraso sobre un cronograma de seis. Pero esa lectura supone que el cronograma original era una predicción razonable. Casi nunca lo fue.</p>
+
+      <p>La industria del software vive la ilusión opuesta. Una funcionalidad nueva en GPT-5.5 sale seis semanas después de GPT-5.4 porque el mismo hardware corre la siguiente versión sin cambiar nada físico. El bit no se oxida, el transformador no necesita certificación, no hay sodio líquido a 550&nbsp;°C en una tubería de 30 metros. La infraestructura física se mide en otra escala porque obedece a otra ley: la de los sistemas que solo pueden fallar de forma costosa.</p>
+
+      <p>Mirar el PFBR junto a DeepSeek V4 esta misma semana es un ejercicio incómodo y útil. Los dos están en la frontera, los dos son del Sur global, los dos compiten contra países más ricos. Pero su métrica de progreso es radicalmente distinta. DeepSeek puede iterar diez versiones por año; Kalpakkam itera una vez por generación.</p>
+
+      <p>El error en software se parchea con un commit. El error en un reactor rápido se paga, en el peor de los casos, con la decadencia de toda una línea tecnológica. Monju lo demostró: un solo incendio de sodio en 1995 marcó tres décadas de marcha atrás del programa rápido japonés. La economía industrial castiga el error físico con una pendiente mucho más empinada que la economía digital.</p>
+
+      <p>En los próximos años escucharemos comparaciones entre la «velocidad de la IA» y la «lentitud de la energía». Conviene resistir esa narrativa. La IA puede acelerarse porque sus errores son baratos. La energía no puede, no porque le falte ambición sino porque sus errores son catastróficos. Cuando ambas se cruzan —en data centers que necesitan SMRs para 2028 que probablemente no existirán— el sistema más rápido tiene que aprender la cadencia del sistema más lento, no al revés.</p>
+
+      <p>22 años suena largo. En la escala de una infraestructura energética que durará 60, no lo es tanto. La pregunta no es por qué tardó tanto. Es si los próximos 60 valdrán la espera.</p>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="tag">Hardware · NVIDIA</span>
-      <h3>Nemotron 3 Nano Omni: agentes con vídeo, audio, imagen y texto</h3>
-      <p>NVIDIA libera un modelo abierto multimodal pequeño orientado a agentes con razonamiento sobre stream continuo. Apunta a inferencia local sobre Jetson y similares; la comunidad reporta 9× mejor eficiencia frente a su antecesor en tareas agentivas.</p>
+  <!-- ═══════════════ 07 CONTRASTE ═══════════════ -->
+  <section class="sec contraste" id="contraste">
+    <div class="sec-head"><span class="sec-num">§ 07</span><h2 class="sec-title">Contraste</h2></div>
+
+    <h1 class="article-title">Datacenters de IA: <em>¿qué hubo realmente que pagar, y quién está pagando?</em></h1>
+    <p class="byline"><span>Por Passiflora Caerulea</span><span>28 de abril de 2026</span></p>
+
+    <blockquote class="quote">
+      «La IA va a romper la red eléctrica» / «Los datacenters no consumen tanto, no exageremos».
+      <span class="quote-attr">Lugares comunes del debate, ambos lados, 2024–2026</span>
+    </blockquote>
+
+    <div class="prose">
+      <p>El debate público sobre los datacenters de IA ha encontrado dos formas de equivocarse al mismo tiempo. El catastrofismo: la IA va a colapsar la red eléctrica mundial. El desprecio: solo es un 2&nbsp;% del consumo global. Ambos discuten promedios globales sobre un fenómeno cuyo problema es <strong>local y distribucional</strong>.</p>
     </div>
-  </div>
-</section>
-
-<!-- ============== 05 INDUSTRIA ============== -->
-<section id="industria">
-  <div class="section-head">
-    <span class="num">§ 05</span>
-    <h2>Industria</h2>
-  </div>
-  <p class="lede">Movimientos relevantes en M&amp;A, financiamiento y regulación.</p>
-
-  <div class="grid2">
-    <div class="card">
-      <span class="tag">M&amp;A · Semiconductores</span>
-      <h3>NVIDIA absorbe activos de Groq por ~20 mil millones de USD</h3>
-      <p>El acuerdo, reportado en las últimas semanas, integra al desarrollador de chips de inferencia Groq en el ecosistema de NVIDIA. Es una de las transacciones más grandes en la historia de M&amp;A de startups, aunque representa solo el ~0,4 % de la valoración de NVIDIA.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">Financiamiento · IoT</span>
-      <h3>Altair Semiconductor cierra ronda de 50 M USD</h3>
-      <p>El fabricante israelí de chips para IoT 5G, recientemente desprendido de Sony Semiconductor, captó la ronda con Pitango Group como líder. Reposiciona a Altair como actor independiente en conectividad celular de baja potencia.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">Foundry · Asia</span>
-      <h3>Rapidus consolida la mayor ronda del trimestre</h3>
-      <p>El proyecto japonés de foundry de 2 nm capta sola 17 % del capital total levantado en el sector semiconductor en el trimestre. La concentración del mercado se mantiene: los 5 mayores deals representan 52,4 % del capital.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">Regulación · IA</span>
-      <h3>Tracker de políticas de IA en Asia se actualiza</h3>
-      <p>Repaso publicado el 8 de abril detalla cómo China, Corea del Sur, Japón, India y Singapur ajustan marcos de regulación: desde licencias de modelos generativos en China hasta el AI Basic Act surcoreano, vigente desde inicios de año.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 06 COLUMNA ============== -->
-<section id="columna">
-  <div class="column">
-    <div class="section-head">
-      <span class="num">§ 06</span>
-      <h2>Columna</h2>
-    </div>
-    <h3>El reactor que tardó 22 años: por qué la infraestructura energética no se acelera</h3>
-    <div class="by">Por Jack Cid</div>
-
-    <p>Hay una pregunta que aparece cada vez que un proyecto técnico larguísimo finalmente cruza una línea: ¿qué significa "tarde"? El PFBR de Kalpakkam tardó 22 años en alcanzar primera criticidad. Lo común es leerlo como fracaso de gestión, dieciséis años de retraso sobre un cronograma de seis. Pero esa lectura supone que el cronograma original era una predicción razonable. Casi nunca lo fue.</p>
-
-    <p>La industria del software vive la ilusión opuesta. Una funcionalidad nueva en GPT-5.5 sale seis semanas después de GPT-5.4 porque el mismo hardware corre la siguiente versión sin cambiar nada físico. El bit no se oxida, el transformador no necesita certificación, no hay sodio líquido a 550 °C en una tubería de 30 metros. La infraestructura física —reactores, redes eléctricas, ferrocarriles, canales, fábricas— se mide en otra escala porque obedece a otra ley: la de los sistemas que solo pueden fallar de forma costosa, y a los que por eso se les exige márgenes que el software no conoce.</p>
-
-    <p>Mirar el PFBR junto a DeepSeek V4 esta misma semana es un ejercicio incómodo y útil. Los dos están en la frontera, los dos son del Sur global, los dos compiten contra países más ricos. Pero su métrica de progreso es radicalmente distinta. DeepSeek puede iterar diez versiones por año; Kalpakkam itera una vez por generación. Cuando los discursos públicos comparan industrias —"si el AI avanza así de rápido, ¿por qué la energía no?"— suelen ignorar que la respuesta no está en pereza ni en burocracia, sino en la asimetría entre lo que cuesta corregir un error.</p>
-
-    <p>El error en software se parchea con un commit. El error en un reactor rápido se paga, en el peor de los casos, con la decadencia de toda una línea tecnológica. Monju lo demostró: un solo incendio de sodio en 1995 marcó tres décadas de marcha atrás del programa rápido japonés. Superphénix, el francés, nunca recuperó la confianza pública tras la década de sus operaciones. La economía industrial castiga el error físico con una pendiente mucho más empinada que la economía digital. Quien diseña reactores aprende a operar bajo esa restricción y, por tanto, a moverse despacio. No es defecto. Es el sistema funcionando como debe.</p>
-
-    <p>Esto no significa que no haya decisiones que cuestionar. La decisión india de saltar de un reactor experimental de 40 MWt a uno comercial de 500 MWe sin etapa intermedia es discutible —probablemente fue un error. La decisión de hacerlo todo "indígenamente", incluyendo bombas de sodio diseñadas en casa cuando había proveedores con décadas de experiencia, también lo es. Pero esas son decisiones políticas y estratégicas, no fallas de ingeniería. Apuntan a la otra capa: a la pregunta de si vale la pena pagar el precio de la autonomía cuando se podría ir más rápido importando.</p>
-
-    <p>La conexión que me interesa subrayar esta semana es esta: en los próximos años escucharemos comparaciones entre la "velocidad de la IA" y la "lentitud de la energía". Conviene resistir esa narrativa. La IA puede acelerarse porque sus errores son baratos. La energía no puede, no porque le falte ambición sino porque sus errores son catastróficos. Cuando ambas se cruzan —y ya están cruzándose, en data centers que necesitan reactores SMR para 2028 que probablemente no existirán—, el sistema más rápido tiene que aprender la cadencia del sistema más lento, no al revés.</p>
-
-    <p>22 años suena largo. En la escala de una infraestructura energética que durará 60, no lo es tanto. La pregunta no es por qué tardó tanto. Es si los próximos 60 valdrán la espera.</p>
-  </div>
-</section>
-
-<!-- ============== 07 CONTRASTE ============== -->
-<section id="contraste">
-  <div class="section-head">
-    <span class="num">§ 07</span>
-    <h2>Contraste</h2>
-  </div>
-  <p class="lede">Cada semana, Passiflora Caerulea desmonta un debate estructural de ciencia y tecnología con datos, cálculos propios y una ficha multidimensional.</p>
-
-  <div class="contraste">
-    <h3>Datacenters de IA: ¿qué hubo realmente que pagar, y quién está pagando?</h3>
-    <div class="by">Por Passiflora Caerulea</div>
-
-    <p class="claim">
-      "<em>AI is going to break the power grid</em>" / "<em>Los datacenters no consumen tanto, no exageremos</em>"
-      <span class="source">Lugares comunes del debate, ambos lados, 2024-2026</span>
-    </p>
-
-    <p>El debate público sobre los datacenters de IA ha encontrado, fiel a la tradición, dos formas de equivocarse al mismo tiempo. Por un lado, el catastrofismo: la IA va a colapsar la red eléctrica mundial. Por el otro, el desprecio: solo es un 2 % del consumo global, mírense lo que gasta Bitcoin antes de quejarse. Ambos comparten un defecto: discuten promedios globales sobre un fenómeno cuyo problema es <strong>local y distribucional</strong>. Por eso este Contraste empieza con un Atlas: porque la pregunta no es cuánta electricidad, sino dónde, quién la cobra, y quién termina pagando la factura completa.</p>
 
     <div class="atlas">
-      <h4>Atlas del problema</h4>
-      <dl class="atlas-grid">
+      <div class="atlas-head">Atlas del problema · 7 dimensiones</div>
+      <dl>
         <dt>Países en el titular</dt>
-        <dd><strong>EE. UU.</strong> (Virginia, Texas, Arizona), <strong>Irlanda</strong> (Dublín), <strong>China</strong> (Hebei, Guizhou), <strong>Singapur</strong>. Los hubs que dominan los informes de la AIE.</dd>
+        <dd><strong>EE.&nbsp;UU.</strong> (Virginia, Texas, Arizona), <strong>Irlanda</strong> (Dublín), <strong>China</strong> (Hebei, Guizhou), <strong>Singapur</strong>.</dd>
 
         <dt>Países en la trama real</dt>
-        <dd><strong>Chile</strong> (66 proyectos en 2026, vs 6 en 2017; Google detuvo Cerrillos por la demanda hídrica), <strong>México</strong> (279 MW operativos a abril 2026, protestas en Querétaro y Colón por consumo de agua en zona semiárida), <strong>Brasil</strong> (37 % de la capacidad LATAM), <strong>Uruguay</strong>, <strong>Paraguay</strong>, <strong>Kenia</strong> (hub África Oriental), <strong>Sudáfrica</strong>, <strong>Malasia</strong> (Johor desplazó a Singapur). La capacidad LATAM crece &gt;30 % anual.</dd>
+        <dd><strong>Chile</strong> (66 proyectos en 2026, vs 6 en 2017; Google detuvo Cerrillos por demanda hídrica), <strong>México</strong> (279&nbsp;MW operativos, protestas en Querétaro y Colón), <strong>Brasil</strong> (37&nbsp;% de capacidad LATAM), <strong>Uruguay</strong>, <strong>Paraguay</strong>, <strong>Kenia</strong>, <strong>Sudáfrica</strong>, <strong>Malasia</strong> (Johor desplazó a Singapur). LATAM crece &gt;30&nbsp;% anual.</dd>
 
         <dt>Quién cobra</dt>
-        <dd><strong>NVIDIA</strong>: ~75 % margen bruto en H100/Blackwell; captura ~70 % del valor del stack. <strong>Hyperscalers</strong> (AWS, Azure, GCP): 60-70 % margen operativo en cómputo. <strong>Inmobiliarias industriales</strong> (Equinix, Digital Realty): 10-15 % yield. <strong>Gobiernos anfitriones</strong>: impuestos típicamente con regímenes especiales que los reducen 40-90 %.</dd>
+        <dd><strong>NVIDIA</strong>: ~75&nbsp;% margen bruto en H100/Blackwell; captura ~70&nbsp;% del valor del stack. <strong>Hyperscalers</strong> (AWS, Azure, GCP): 60-70&nbsp;% margen operativo. <strong>Inmobiliarias industriales</strong> (Equinix, Digital Realty): 10-15&nbsp;% yield. <strong>Gobiernos anfitriones</strong>: regímenes que reducen impuestos 40-90&nbsp;%.</dd>
 
         <dt>Quién paga</dt>
-        <dd><strong>Tarifa residencial</strong>: Virginia del Norte +15-20 % desde 2022. <strong>Agua</strong>: Cerrillos (Chile) iba a consumir 7 mil millones de litros/año, equivalente al consumo de 80 000 personas. Colón (México), zona semiárida, en disputa abierta. <strong>Valor inmobiliario</strong>: -3 a -7 % en perímetro. <strong>Emisiones</strong>: Scope 2 reportado, Scope 3 del hardware fabricado en Taiwán/Corea típicamente omitido.</dd>
+        <dd><strong>Tarifa residencial</strong>: Virginia +15-20&nbsp;% desde 2022. <strong>Agua</strong>: Cerrillos iba a consumir 7&nbsp;mil millones de litros/año (equivalente a 80&nbsp;000 personas). <strong>Valor inmobiliario</strong>: -3 a -7&nbsp;% en perímetro. <strong>Emisiones Scope&nbsp;3</strong> del hardware fabricado en Asia, típicamente omitidas.</dd>
 
         <dt>Horizonte 5 / 10 años</dt>
-        <dd><strong>2030</strong>: consumo global de datacenters 3-4 % de la electricidad mundial (AIE, banda central 650-1 050 TWh). Cuello de botella migra del chip a la subestación. <strong>2035</strong>: si los SMRs no aterrizan, los hyperscalers compran energía geotérmica (Kenia, Islandia), hidráulica (Paraguay, RDC) y solar a gran escala (Chile, Marruecos). Si los modelos eficientes ganan (cf. DeepSeek V4 con 10 % del KV-cache), la demanda total se modera 2-3×.</dd>
+        <dd><strong>2030</strong>: 3-4&nbsp;% del consumo eléctrico global (AIE, 650-1&nbsp;050&nbsp;TWh). Cuello de botella migra del chip a la subestación. <strong>2035</strong>: si los SMRs no aterrizan, los hyperscalers compran geotérmica (Kenia, Islandia), hidráulica (Paraguay, RDC), solar (Chile, Marruecos). Si los modelos eficientes ganan, demanda total se modera 2-3×.</dd>
 
         <dt>Brecha regulatoria</dt>
-        <dd><strong>UE</strong>: AI Act + Energy Efficiency Directive obligan a reportar PUE y WUE. <strong>EE. UU.</strong>: estado a estado, sin marco federal. <strong>Asia</strong>: mixto (Singapur tuvo moratoria 2019-2022; Japón con incentivos). <strong>LATAM</strong>: prácticamente nula — sin obligación de reportar consumo hídrico ni huella; concesiones se negocian opacamente. <em>Esa asimetría no es accidente: es el motor de la geografía actual del despliegue.</em></dd>
+        <dd><strong>UE</strong>: AI Act + EED obligan a reportar PUE y WUE. <strong>EE.&nbsp;UU.</strong>: estado a estado, sin marco federal. <strong>Asia</strong>: mixto. <strong>LATAM</strong>: prácticamente nula — sin obligación de reportar consumo hídrico. <em>La asimetría no es accidente: es el motor de la geografía actual del despliegue.</em></dd>
 
         <dt>Punto ciego</dt>
-        <dd>El debate global discute promedios globales sobre un fenómeno que es <strong>regional y distribucional</strong>. Un datacenter de 100 MW es invisible en la matriz mundial y devastador en una comuna de 50 000 habitantes. La pregunta correcta no es "¿la IA va a romper la red?", sino "¿qué comunidad concreta paga la externalidad del próximo modelo?".</dd>
+        <dd>El debate global discute promedios globales sobre un fenómeno <strong>regional y distribucional</strong>. Un datacenter de 100&nbsp;MW es invisible en la matriz mundial y devastador en una comuna de 50&nbsp;000 habitantes. La pregunta correcta no es «¿la IA va a romper la red?», sino «¿qué comunidad concreta paga la externalidad del próximo modelo?».</dd>
       </dl>
     </div>
 
-    <div class="stat-card">
-      <div>
-        <div class="label">Lo que dicen los titulares</div>
-        <div class="desc">"Los datacenters van a duplicar el consumo eléctrico mundial"</div>
-        <div class="label" style="margin-top:10px">Lo que dicen las cifras</div>
-        <div class="desc">El consumo global pasa de 460 TWh (2022) a 650-1 050 TWh (2026, AIE). Eso es 2 % → 3-4 % del total. Pero el 80 % se concentra en menos de 12 hubs, y la mitad de esos hubs están fuera del debate público.</div>
+    <div class="chart">
+      <div class="chart-head">
+        <span><strong>¿A dónde va el dólar de una GPU-hora en la nube?</strong> · AWS p5.48xlarge ≈ $2,50</span>
+        <span>cálculo orientativo</span>
       </div>
-      <div class="figure">≈ 3 %</div>
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-lbl">Hyperscaler</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <span class="bar-val">58&nbsp;% · $1,50</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">NVIDIA (H100)</span>
+          <div class="bar-track"><div class="bar-fill" style="width:59%"></div></div>
+          <span class="bar-val">34&nbsp;% · $0,85</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Inmobiliaria</span>
+          <div class="bar-track"><div class="bar-fill" style="width:10%"></div></div>
+          <span class="bar-val">6&nbsp;% · $0,15</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Electricidad</span>
+          <div class="bar-track"><div class="bar-fill" style="width:3%"></div></div>
+          <span class="bar-val">2&nbsp;% · $0,04</span>
+        </div>
+      </div>
+      <p class="chart-foot">Cálculo a partir de tarifa pública AWS, especificaciones H100, PUE típica hyperscaler y mercado mayorista de electricidad ~$50/MWh. El operador eléctrico cobra el 2&nbsp;%.</p>
     </div>
 
-    <p>Vamos a hacer la cuenta a la que nadie quiere bajar: <strong>quién cobra cuánto por una hora de cómputo de un H100</strong>. Una instancia <em>p5.48xlarge</em> de AWS cuesta hoy ~$2,5/hora por GPU H100. El H100 consume ~700 W; la PUE típica de hyperscaler ronda 1,2, así que la carga real son ~840 W. En un mercado eléctrico mayorista de $50/MWh, la electricidad que respira el chip durante esa hora vale ~$0,042. La amortización del H100 (≈$30 000 a 5 años, 80 % utilización) suma ~$0,85. La inmobiliaria industrial cobra ~$0,15. Quedan, redondeando, unos <strong>$1,50 de margen por GPU-hora</strong> para el hyperscaler. Multiplíquelo por las decenas de miles de GPUs activas en una sola región y entenderá por qué Microsoft no necesita preocuparse por la tarifa eléctrica residencial de Virginia.</p>
+    <div class="prose">
+      <p>El cálculo deja al desnudo dos cosas. Primero: la electricidad es <strong>la línea menos rentable de toda la cadena</strong> — y aun así es la que dispara los conflictos locales. Segundo: cuando un hyperscaler decide entre Virginia, Querétaro o Quilicura, la diferencia operativa en la factura eléctrica es del orden de centavos por GPU-hora. Lo que mueve la decisión no es el precio del kilovatio, es la velocidad con la que un país firma el permiso ambiental.</p>
 
-    <figure>
-      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución del dólar en una GPU-hora de cómputo en la nube: pie chart con cuatro segmentos en orden descendente" data-pie-pcts="58,34,6,2">
-        <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">¿A DÓNDE VA EL DÓLAR DE UNA GPU-HORA EN LA NUBE?</text>
+      <p>Una comuna chilena con 50&nbsp;000 habitantes y un datacenter de 100&nbsp;MW carga ~280&nbsp;GWh/año de demanda concentrada y ~6&nbsp;mil millones de litros de agua si el enfriamiento es evaporativo. La huella se distribuye sobre todo el país en agregado y sobre 50&nbsp;000 personas en concreto. LATAM, África Subsahariana y partes del Sudeste Asiático están a punto de aprender esa diferencia a la mala.</p>
 
-        <!-- Pie chart, centro (200,145), radio 95. Orden DESCENDENTE desde top, sentido horario -->
-        <g>
-          <!-- HYPERSCALER: 58% -->
-          <path d="M 200,145 L 200,50 A 95,95 0 1,1 154.23,228.25 Z" fill="#5a3a3a" stroke="#fffdf8" stroke-width="1"/>
-          <!-- NVIDIA: 34% -->
-          <path d="M 200,145 L 154.23,228.25 A 95,95 0 0,1 154.23,61.75 Z" fill="#1a1a1a" stroke="#fffdf8" stroke-width="1"/>
-          <!-- INMOB: 6% -->
-          <path d="M 200,145 L 154.23,61.75 A 95,95 0 0,1 188.09,50.75 Z" fill="#b08a8a" stroke="#fffdf8" stroke-width="1"/>
-          <!-- ELEC: 2% -->
-          <path d="M 200,145 L 188.09,50.75 A 95,95 0 0,1 200,50 Z" fill="#8b1a1a" stroke="#fffdf8" stroke-width="1"/>
+      <p>Si te dicen que la IA va a romper la red, pídeles que te indiquen <em>cuál</em> red. Si te dicen que el consumo es trivial, pídeles que se lo digan al vecino de Cerrillos, al de Loudoun y al de Colón. El número global y el conflicto local viven en planetas distintos.</p>
 
-          <!-- Etiquetas internas en slices grandes -->
-          <text x="155" y="160" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="22" font-weight="900" fill="#fffdf8">58 %</text>
-          <text x="245" y="148" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="16" font-weight="900" fill="#fffdf8">34 %</text>
-        </g>
-
-        <!-- Leyenda lateral derecha · ORDEN DESCENDENTE, formato "% · $" -->
-        <g transform="translate(370,55)">
-          <!-- HYPERSCALER -->
-          <rect x="0" y="0" width="14" height="14" fill="#5a3a3a"/>
-          <text x="22" y="11" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">HYPERSCALER</tspan></text>
-          <text x="22" y="27" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">58 % · $1,50</text>
-
-          <!-- NVIDIA -->
-          <rect x="0" y="46" width="14" height="14" fill="#1a1a1a"/>
-          <text x="22" y="57" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">NVIDIA</tspan> (vía H100)</text>
-          <text x="22" y="73" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">34 % · $0,85</text>
-
-          <!-- INMOB -->
-          <rect x="0" y="92" width="14" height="14" fill="#b08a8a"/>
-          <text x="22" y="103" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">INMOB.</tspan></text>
-          <text x="22" y="119" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">6 % · $0,15</text>
-
-          <!-- ELEC -->
-          <rect x="0" y="138" width="14" height="14" fill="#8b1a1a"/>
-          <text x="22" y="149" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">ELEC.</tspan></text>
-          <text x="22" y="165" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">2 % · $0,04</text>
-
-          <!-- Total -->
-          <line x1="0" y1="186" x2="200" y2="186" stroke="#1a1a1a" stroke-width="1"/>
-          <text x="0" y="204" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1"><tspan font-weight="700">TOTAL</tspan> · precio lista AWS</text>
-          <text x="0" y="222" font-family="Source Serif Pro, Georgia, serif" font-size="14" font-weight="900" fill="#1a1a1a">100 % · $2,50</text>
-        </g>
-
-        <!-- Línea separadora bajada para no chocar con el TOTAL, y notas debajo -->
-        <line x1="40" y1="305" x2="560" y2="305" stroke="#d9d4c9" stroke-width="1"/>
-        <text x="40" y="325" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">El operador eléctrico anfitrión cobra el 2 % del precio total. El hyperscaler además reporta margen operativo del ~60 %</text>
-        <text x="40" y="342" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">sobre su porción. Las externalidades hídricas, viales y de transmisión no aparecen en la tarifa.</text>
-      </svg>
-      <figcaption>Cálculo orientativo a partir de tarifa pública AWS, especificaciones H100, PUE típica hyperscaler y mercado mayorista de electricidad ~$50/MWh.</figcaption>
-    </figure>
-
-    <p>El cálculo deja al desnudo dos cosas. Primero: la electricidad es <strong>la línea menos rentable de toda la cadena</strong> — y aun así es la que dispara los conflictos locales. Segundo: cuando un hyperscaler decide entre Virginia, Querétaro o Quilicura, la diferencia operativa en la factura eléctrica es del orden de centavos por GPU-hora. Lo que mueve la decisión no es el precio del kilovatio, es la velocidad con la que un país firma el permiso ambiental y el régimen fiscal de la zona económica especial. Por eso el mapa real del despliegue está siendo dibujado por marcos regulatorios débiles, no por geografía energética.</p>
-
-    <p>El problema con esa geografía no es ideológico. Una comuna chilena con 50 000 habitantes y un datacenter de 100 MW carga, en proporción, un peso desmesurado: ~280 GWh/año de demanda concentrada, ~6 mil millones de litros de agua si el enfriamiento es evaporativo, y un perímetro de degradación inmobiliaria y acústica que no es trivial. La huella se distribuye sobre todo el país en agregado y sobre 50 000 personas en concreto. Y esa diferencia, traducida a política pública, es la que LATAM, África Subsahariana y partes del Sudeste Asiático están a punto de aprender a la mala.</p>
-
-    <p>El horizonte realista es este: cinco años de despliegue acelerado con cuello de botella migrando del chip a la subestación; diez años en los que la eficiencia de los modelos (un orden de magnitud cada 18-24 meses, si DeepSeek V4 marca tendencia) decidirá si el sector se modera o entra en una espiral de demanda. Mientras tanto, el ratio se mantiene: la cadena de valor concentra el margen en menos de cuatro actores globales, y las externalidades se distribuyen en docenas de comunidades sin voz en el papel de cómputo que entrena el próximo modelo.</p>
-
-    <p>Si te dicen que la IA va a romper la red, pídeles que te indiquen <em>cuál</em> red. Si te dicen que el consumo es trivial, pídeles que se lo digan al vecino de Cerrillos, al de Loudoun y al de Colón. El número global y el conflicto local viven en planetas distintos. Solo uno aparece en los gráficos del CES; el otro pone tribunales.</p>
-
-    <p class="signature">— P. C.</p>
-
-    <div class="refs">
-      <strong>Fuentes</strong>
-      <ol>
-        <li>International Energy Agency · <em>Electricity 2024 / 2026 update</em>, proyección global del consumo de datacenters. <a href="https://www.iea.org/" target="_blank" rel="noopener">iea.org</a></li>
-        <li>BNamericas · <em>Latin America enters the Gigawatt era</em>, capacidad por país. <a href="https://www.bnamericas.com/en/features/latin-america-enters-the-gigawatt-era-brazil-mexico-and-chile-data-centers-capacity" target="_blank" rel="noopener">bnamericas.com</a></li>
-        <li>Global Voices · <em>The human cost of the data center push in Latin America</em>, abril 2026. <a href="https://globalvoices.org/2026/04/29/the-human-cost-of-the-data-center-push-in-latin-america/" target="_blank" rel="noopener">globalvoices.org</a></li>
-        <li>Nearshore Americas · <em>Water-Guzzling Data Centers Spark Outrage Across Latin America</em>. <a href="https://nearshoreamericas.com/water-guzzling-data-centers-spark-outrage-across-latin-america/" target="_blank" rel="noopener">nearshoreamericas.com</a></li>
-        <li>Mexico Business · <em>Mexico Hits 279MW in Data Centers, but Faces Energy Constraints</em>. <a href="https://mexicobusiness.news/cloudanddata/news/mexico-hits-279mw-data-centers-faces-energy-constraints" target="_blank" rel="noopener">mexicobusiness.news</a></li>
-        <li>Tarifas AWS p5.48xlarge públicas y especificaciones técnicas H100 — cálculo de margen por GPU-hora realizado para esta pieza.</li>
-      </ol>
+      <p style="text-align:right;font-style:italic;color:var(--ink-3)">— P. C.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============== 08 DATO ============== -->
-<section id="dato">
-  <div class="section-head">
-    <span class="num">§ 08</span>
-    <h2>Dato de la semana</h2>
-  </div>
-  <div class="dato">
-    <div class="figure">22 años</div>
-    <div class="label">de construcción a primera criticidad</div>
-    <p>Tiempo transcurrido entre el inicio formal de la construcción del reactor reproductor rápido prototipo de Kalpakkam (octubre de 2004) y su primera reacción de fisión en cadena controlada (6 de abril de 2026). El cronograma original preveía seis años. El sobrecosto final supera 3× el presupuesto inicial. India es ahora, junto a Rusia y China, uno de los tres países con un reactor rápido comercial en operación.</p>
-  </div>
-</section>
+  <!-- ═══════════════ 08 DATO ═══════════════ -->
+  <section class="sec" id="dato">
+    <div class="sec-head"><span class="sec-num">§ 08</span><h2 class="sec-title">Dato de la semana</h2></div>
 
-<!-- ============== 09 APÉNDICE ============== -->
-<section id="apendice">
-  <div class="section-head">
-    <span class="num">§ 09</span>
-    <h2>Apéndice · fichas técnicas</h2>
-  </div>
-  <p class="lede">Detalle de los cuatro papers de la sección 03: resumen, metodología, limitaciones y enlace.</p>
+    <div class="dato">
+      <p class="dato-num">22<span style="font-size:0.5em;vertical-align:0.4em">&nbsp;años</span></p>
+      <p class="dato-lbl">De construcción a primera criticidad</p>
+      <p class="dato-body">Tiempo transcurrido entre el inicio formal de la construcción del reactor reproductor rápido prototipo de Kalpakkam (octubre de 2004) y su primera reacción de fisión en cadena controlada (6 de abril de 2026). El cronograma original preveía seis años. El sobrecosto final supera 3× el presupuesto inicial. India es ahora, junto a Rusia y China, uno de los tres países con un reactor rápido comercial en operación.</p>
+    </div>
+  </section>
 
-  <details>
-    <summary>Paper 01 · Matthews et al. — Epsilon Indi Ab con JWST</summary>
-    <div class="body">
+  <!-- ═══════════════ 09 APÉNDICE ═══════════════ -->
+  <section class="sec" id="apendice">
+    <div class="sec-head"><span class="sec-num">§ 09</span><h2 class="sec-title">Apéndice · fichas técnicas</h2></div>
+    <p class="sec-desc">Detalle de los cuatro papers de la sección 03.</p>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 01</span>Matthews et al. — Epsilon Indi Ab con JWST</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Astronomía / atmósferas planetarias</strong></div>
+        <div>Región<strong>Europa · MPIA, Heidelberg</strong></div>
+        <div>Publicación<strong>Nature · abril 2026</strong></div>
+      </div>
       <dl>
-        <dt>Resumen</dt><dd>Espectroscopía directa de un gigante gaseoso joven (~3 M<sub>J</sub>) a 3,6 pc. Detección de H₂O en absorción consistente con nubes de hielo; déficit de NH₃ respecto a equilibrio químico.</dd>
-        <dt>Metodología</dt><dd>Coronografía con NIRCam y espectro 1–14 μm con MIRI/MRS y NIRSpec/IFU; ajuste de modelos atmosféricos auto-consistentes (ATMO, PICASO).</dd>
-        <dt>Limitaciones</dt><dd>Resolución espectral baja en algunas bandas; degeneración entre cobertura nubosa, gravedad y metalicidad; un solo objeto de muestra.</dd>
-        <dt>Disciplina</dt><dd>Astronomía / atmósferas planetarias</dd>
-        <dt>Región</dt><dd>Europa (MPIA, Heidelberg)</dd>
-        <dt>Enlace</dt><dd><a href="https://www.sciencedaily.com/releases/2026/04/260422044618.htm" target="_blank" rel="noopener">ScienceDaily · 22 abr 2026</a></dd>
+        <dt>Resumen</dt><dd>Espectroscopía directa de un gigante gaseoso joven (~3 M<sub>J</sub>) a 3,6&nbsp;pc. Detección de H₂O consistente con nubes de hielo; déficit de NH₃ respecto a equilibrio químico.</dd>
+        <dt>Metodología</dt><dd>Coronografía con NIRCam y espectro 1-14&nbsp;μm con MIRI/MRS y NIRSpec/IFU; ajuste de modelos atmosféricos auto-consistentes (ATMO, PICASO).</dd>
+        <dt>Limitaciones</dt><dd>Resolución espectral baja; degeneración entre cobertura nubosa, gravedad y metalicidad; un solo objeto de muestra.</dd>
+        <dt>Enlace</dt><dd><a href="https://www.sciencedaily.com/releases/2026/04/260422044618.htm" target="_blank" rel="noopener">sciencedaily.com</a></dd>
       </dl>
-    </div>
-  </details>
+    </article>
 
-  <details>
-    <summary>Paper 02 · HyperMillenium — simulación cosmológica</summary>
-    <div class="body">
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 02</span>HyperMillenium — simulación cosmológica</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Cosmología computacional</strong></div>
+        <div>Región<strong>Asia · China + internacional</strong></div>
+        <div>Publicación<strong>Science Advances · abril 2026</strong></div>
+      </div>
       <dl>
-        <dt>Resumen</dt><dd>Mayor simulación N-cuerpos hidrodinámica publicada hasta la fecha; resuelve simultáneamente halos de cúmulo y galaxias enanas en un volumen cosmológico.</dd>
-        <dt>Metodología</dt><dd>~3 × 10¹³ partículas en 3 Gpc/h con código GADGET-extendido; corridas en clúster Tianhe-3; modelos físicos para feedback estelar y AGN.</dd>
-        <dt>Limitaciones</dt><dd>Los modelos sub-grid de feedback aún dominan la incertidumbre en el régimen de galaxias enanas; aún no se publican todas las especies bariónicas.</dd>
-        <dt>Disciplina</dt><dd>Cosmología computacional</dd>
-        <dt>Región</dt><dd>Asia (China, equipo internacional)</dd>
-        <dt>Enlace</dt><dd><a href="https://en.wikipedia.org/wiki/2026_in_science" target="_blank" rel="noopener">Resumen anual 2026 in science</a></dd>
+        <dt>Resumen</dt><dd>Mayor simulación N-cuerpos hidrodinámica publicada; resuelve cluster y galaxias enanas en un volumen cosmológico.</dd>
+        <dt>Metodología</dt><dd>~3 × 10¹³ partículas en 3 Gpc/h con GADGET extendido; corridas en clúster Tianhe-3.</dd>
+        <dt>Limitaciones</dt><dd>Modelos sub-grid de feedback dominan incertidumbre en régimen de galaxias enanas.</dd>
+        <dt>Enlace</dt><dd><a href="https://en.wikipedia.org/wiki/2026_in_science" target="_blank" rel="noopener">2026 in science</a></dd>
       </dl>
-    </div>
-  </details>
+    </article>
 
-  <details>
-    <summary>Paper 03 · Caltech / Oratomic — QEC con ~10 000 qubits</summary>
-    <div class="body">
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 03</span>Caltech / Oratomic — QEC con ~10&nbsp;000 qubits</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Computación cuántica</strong></div>
+        <div>Región<strong>Norteamérica · Caltech</strong></div>
+        <div>Publicación<strong>arXiv preprint · abril 2026</strong></div>
+      </div>
       <dl>
-        <dt>Resumen</dt><dd>Arquitectura de corrección de errores que combina códigos bosónicos y concatenación; proyección teórica para factorización RSA-2048 en 10 000–20 000 qubits físicos.</dd>
-        <dt>Metodología</dt><dd>Análisis analítico y simulaciones numéricas de circuitos lógicos; uso reportado de IA para descubrir rutas de magia distilada con menor overhead.</dd>
-        <dt>Limitaciones</dt><dd>Sin demostración experimental aún; supone tasas de error de gates por debajo de 10⁻⁴; revisión por pares pendiente.</dd>
-        <dt>Disciplina</dt><dd>Computación cuántica</dd>
-        <dt>Región</dt><dd>Norteamérica (Caltech, EE. UU.)</dd>
-        <dt>Enlace</dt><dd><a href="https://phys.org/news/2026-04-quantum-built-qubits-team.html" target="_blank" rel="noopener">phys.org · abril 2026</a></dd>
+        <dt>Resumen</dt><dd>QEC combinando bosónica y concatenación; proyección de 10&nbsp;000-20&nbsp;000 qubits físicos para RSA-2048.</dd>
+        <dt>Metodología</dt><dd>Análisis analítico + simulaciones numéricas; uso reportado de IA para rutas de magia distilada.</dd>
+        <dt>Limitaciones</dt><dd>Sin demostración experimental; supone gates con error &lt; 10⁻⁴; revisión por pares pendiente.</dd>
+        <dt>Enlace</dt><dd><a href="https://phys.org/news/2026-04-quantum-built-qubits-team.html" target="_blank" rel="noopener">phys.org</a></dd>
       </dl>
-    </div>
-  </details>
+    </article>
 
-  <details>
-    <summary>Paper 04 · Yunnan — fauna transicional del Ediacarense tardío</summary>
-    <div class="body">
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 04</span>Yunnan — fauna transicional del Ediacarense tardío</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Paleontología / evolución temprana</strong></div>
+        <div>Región<strong>Asia · Yunnan, China</strong></div>
+        <div>Publicación<strong>Science · 2 de abril de 2026</strong></div>
+      </div>
       <dl>
-        <dt>Resumen</dt><dd>Yacimiento de Wenghui (Yunnan) con organismos bilateros y evidencia de tubos digestivos completos entre 551 y 543 Ma; al menos cuatro morfotipos no descritos antes.</dd>
-        <dt>Metodología</dt><dd>Mapeo estratigráfico, datación U-Pb sobre cenizas volcánicas asociadas, microscopía de barrido y reconstrucción 3D por micro-CT.</dd>
-        <dt>Limitaciones</dt><dd>Registro tafonómico restringido a un solo horizonte; relaciones filogenéticas con filos modernos aún ambiguas.</dd>
-        <dt>Disciplina</dt><dd>Paleontología / evolución temprana</dd>
-        <dt>Región</dt><dd>Asia (Yunnan, China)</dd>
-        <dt>Enlace</dt><dd><a href="https://en.wikipedia.org/wiki/2026_in_science" target="_blank" rel="noopener">Resumen anual 2026 in science</a></dd>
+        <dt>Resumen</dt><dd>Yacimiento de Wenghui con bilateros y tubos digestivos completos entre 551 y 543 Ma; cuatro morfotipos nuevos.</dd>
+        <dt>Metodología</dt><dd>Mapeo estratigráfico, datación U-Pb, microscopía de barrido, micro-CT.</dd>
+        <dt>Limitaciones</dt><dd>Un solo horizonte tafonómico; relaciones filogenéticas con filos modernos ambiguas.</dd>
+        <dt>Enlace</dt><dd><a href="https://en.wikipedia.org/wiki/2026_in_science" target="_blank" rel="noopener">2026 in science</a></dd>
       </dl>
-    </div>
-  </details>
-</section>
+    </article>
 
-<footer class="colophon">
-  <strong>SINAPSE</strong> · revista semanal de ciencia, tecnología e industria.<br/>
-  N.° 001 · Semana 17 · Edición del 28 de abril de 2026 · idioma: español.<br/>
-  Editor: Jack Cid · contacto: j.andres.cid@gmail.com · Próximo número: 5 de mayo de 2026.<br/>
-  Las cifras y autorías citadas se basan en notas y comunicados públicos disponibles al cierre de edición. <a href="../index.html">← volver al índice</a>
-</footer>
+  </section>
 
-</div>
+  <footer class="colofon">
+    <p><strong>SINAPSE</strong> — revista semanal de ciencia, tecnología e industria.</p>
+    <p>N.º 001 · Edición del 28 de abril de 2026 · Editor: Jack Cid · Próximo número: 5 de mayo de 2026.</p>
+    <p style="margin-top:1rem;font-style:italic;text-transform:none;letter-spacing:0;font-family:var(--serif);color:var(--ink-3)">Las cifras y autorías citadas se basan en notas y comunicados públicos disponibles al cierre de edición.</p>
+    <p style="margin-top:1.5rem"><a href="#top">↑ Volver al índice</a></p>
+  </footer>
+
+</main>
+
+<script src="../assets/reader-preferences.js" defer></script>
+<script>(function(){const bar=document.getElementById("progBar");if(!bar)return;function upd(){const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(h.scrollTop/max)*100:0)+"%";}window.addEventListener("scroll",upd,{passive:true});upd();})();</script>
 </body>
 </html>

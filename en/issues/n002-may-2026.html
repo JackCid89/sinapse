@@ -2,522 +2,520 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>SINAPSE · Issue 002 · May 2026</title>
-<link rel="stylesheet" href="../../assets/sinapse.css" />
 <meta name="description" content="SINAPSE Issue 002 — week 18 of 2026. Cover: the first in vivo CRISPR therapy to reach Phase 3 with efficacy, Intellia's lonvo-z, cuts HAE attacks by 87%." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../assets/sinapse.css" />
 </head>
 <body>
-<div class="wrap">
 
-<header class="masthead">
-  <div class="brand"><a href="../index.html">SINAPSE</a><small>Science · Technology · Industry</small></div>
-  <div>
-    <div class="issue">
-      <strong>Issue 002</strong>
-      Week 18 · April 29 – May 5, 2026<br/>
+<div class="progress" aria-hidden="true"><div class="bar" id="progBar"></div></div>
+
+<main class="page" id="top">
+
+  <header class="masthead">
+    <h1 class="wordmark"><a href="../index.html">sinapse<span class="dot">.</span></a></h1>
+    <div class="meta">
+      <strong>Issue 002</strong><br>
+      Week 18 · April 29 – May 5, 2026<br>
       Weekly edition · English
     </div>
-    <div class="lang-switch" aria-label="Language switcher">
-      <a href="../../issues/n002-mayo-2026.html" lang="es">ES</a>
-      <span class="sep">|</span>
-      <a class="active" href="./n002-may-2026.html" lang="en">EN</a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<aside class="teaser-contraste" aria-label="This week's Counterpoint preview">
-  <span class="kicker">Counterpoint · Passiflora</span>
-  <a class="teaser-link" href="#counterpoint">Gain of function: the most misnamed debate in contemporary biology</a>
-</aside>
-
-<nav class="toc" aria-label="Contents">
-  <a href="#pulse"><span>01</span>Pulse</a>
-  <a href="#cover"><span>02</span>Cover</a>
-  <a href="#papers"><span>03</span>Papers</a>
-  <a href="#tech"><span>04</span>Tech</a>
-  <a href="#industry"><span>05</span>Industry</a>
-  <a href="#column"><span>06</span>Column</a>
-  <a href="#counterpoint"><span>07</span>Counterpoint</a>
-  <a href="#datum"><span>08</span>Datum</a>
-  <a href="#appendix"><span>09</span>Appendix</a>
-</nav>
-
-<!-- ============== 01 PULSE ============== -->
-<section id="pulse">
-  <div class="section-head">
-    <span class="num">§ 01</span>
-    <h2>Pulse</h2>
-  </div>
-  <p class="lede">Seven short notes to take this week's pulse in science, technology, and industry.</p>
-
-  <div class="pulse">
-    <div class="item">
-      <div class="nb">P-01</div>
-      <div>
-        <span class="tag">Genetics</span><span class="tag">Biomedicine</span>
-        <h3>Intellia reports Phase 3 efficacy for its in vivo CRISPR edit</h3>
-        <p>On April 27 Intellia announced HAELO trial results for lonvo-z, an LNP-delivered inactivation of the <em>KLKB1</em> gene in hepatocytes. The therapy cut hereditary angioedema attack rates by 87% versus placebo at 24 weeks. It is the first in vivo CRISPR to hit a Phase 3 endpoint.</p>
-        <p class="plain">In plain terms: a single infusion modifies the patient's liver DNA to switch off the gene that triggers the attacks. Until now this kind of gene editing required a month in the hospital; now it fits in an IV bag.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-02</div>
-      <div>
-        <span class="tag">Robotics</span><span class="tag">Asia</span><span class="tag">Japan</span>
-        <h3>JAL begins humanoid trial at Haneda</h3>
-        <p>Japan Airlines Ground Service and GMO AI &amp; Robotics started on May 1 the first operational humanoid-robot deployment at a Japanese airport. The chosen platform is Unitree G1 units (130 cm, 35 kg) for baggage handling and cabin cleaning. The verification phase runs through 2028.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-03</div>
-      <div>
-        <span class="tag">Industry</span><span class="tag">AI</span>
-        <h3>Google commits up to $40 billion in Anthropic</h3>
-        <p>Announced April 24: a mix of cash and Google Cloud compute credit. Accelerates the concentration of private capital at the language-model frontier and consolidates the cross-dependency between Anthropic, AWS and GCP.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-04</div>
-      <div>
-        <span class="tag">AI</span><span class="tag">Meta</span>
-        <h3>Meta Superintelligence Labs ships Muse Spark</h3>
-        <p>First model from the lab founded after the $14B Scale AI deal; internal code-name was "Avocado". Meta projects 2026 capex between $115B and $135B, nearly double the prior year.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-05</div>
-      <div>
-        <span class="tag">Materials</span><span class="tag">Superconductivity</span>
-        <h3>Direct imaging of Cooper pairs in an ultracold gas</h3>
-        <p>Work in <em>Physical Review Letters</em> on April 15 directly visualizes pair correlations in a cold fermion system for the first time. The observed synchrony is not in classical BCS theory and supports collective mechanisms still to be modeled.</p>
-        <p class="plain">In plain terms: with atoms cooled to near absolute zero, physicists watched for the first time how two electrons "pair up" — the quantum trick that explains why some materials conduct electricity without resistance.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-06</div>
-      <div>
-        <span class="tag">Robotics</span><span class="tag">China</span>
-        <h3>A humanoid wins the Beijing E-Town half-marathon</h3>
-        <p>The "Lightning" robot from team Honor / Monkey King completed the autonomous 21.1 km race on April 19 in 50:26, below the human half-marathon record. It ran on swappable batteries and a hardened control stack for mixed terrain.</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="nb">P-07</div>
-      <div>
-        <span class="tag">AI</span><span class="tag">Anthropic</span>
-        <h3>Opus 4.7 GA; "Mythos" released to a partner circle</h3>
-        <p>Anthropic kept the Opus 4.6 pricing ($5 / $25 per million input/output tokens) and opened Opus 4.7 on API and partner clouds. In parallel it distributed "Mythos" to a limited group with a cybersecurity focus.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 02 COVER ============== -->
-<section id="cover">
-  <div class="section-head">
-    <span class="num">§ 02</span>
-    <h2>Cover</h2>
+  <div class="sub">
+    <span>Science · Technology · Industry</span>
+    <span class="lang">
+      <a href="../../issues/n002-mayo-2026.html">ES</a> · <a href="./n002-may-2026.html" aria-current="page">EN</a>
+    </span>
   </div>
 
-  <article class="cover">
-    <div class="kicker">USA · Genetics · Biomedicine</div>
-    <h1>The first in vivo CRISPR crosses Phase 3: what HAELO proves and what it leaves open</h1>
-    <p class="deck">A single infusion, one silenced liver protein, 87% fewer angioedema attacks. Intellia's lonvo-z isn't the first approved human gene-editing therapy, but it is the first to edit cells without removing them from the body — and to show meaningful clinical efficacy in a pivotal trial.</p>
-    <div class="byline">By the SINAPSE editorial team · May 5, 2026</div>
+  <p class="lede">
+    <strong>In this issue —</strong> the first <em>in vivo</em> CRISPR to cross Phase 3 with efficacy: one infusion, 87&nbsp;% fewer angioedema attacks. Plus seven pulses of the week, four papers, a column on <em>the open body</em>, and a counterpoint on who audits the labs nobody names.
+  </p>
 
-    <p>On April 27, Intellia Therapeutics announced results from HAELO, a Phase 3 trial enrolling 67 type I/II hereditary angioedema patients. The primary endpoint — monthly attack rate over 24 weeks — fell 87% versus placebo. The tougher secondary endpoint — total absence of attacks and prophylaxis over the same period — was met by 62% of lonvo-z recipients versus 11% on placebo. Intellia opened a rolling BLA with the FDA and projects commercial launch in the first half of 2027.</p>
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#pulse"><span class="num">01</span><span class="lead"></span><span>Pulse</span></a></li>
+      <li><a href="#cover"><span class="num">02</span><span class="lead"></span><span>Cover</span></a></li>
+      <li><a href="#papers"><span class="num">03</span><span class="lead"></span><span>Papers</span></a></li>
+      <li><a href="#tech"><span class="num">04</span><span class="lead"></span><span>Tech</span></a></li>
+      <li><a href="#industry"><span class="num">05</span><span class="lead"></span><span>Industry</span></a></li>
+      <li><a href="#column"><span class="num">06</span><span class="lead"></span><span>Column</span></a></li>
+      <li><a href="#counterpoint"><span class="num">07</span><span class="lead"></span><span>Counterpoint</span></a></li>
+      <li><a href="#datum"><span class="num">08</span><span class="lead"></span><span>Datum</span></a></li>
+      <li><a href="#appendix"><span class="num">09</span><span class="lead"></span><span>Appendix</span></a></li>
+    </ol>
+  </nav>
 
-    <p>What matters about HAELO isn't the disease. Hereditary angioedema affects between 1 in 50,000 and 1 in 100,000 people depending on country; effective prophylactics (lanadelumab, berotralstat) and acute treatments (icatibant, C1-inhibitor) already exist. What matters is the therapeutic architecture.</p>
+  <!-- ═══════════════ 01 PULSE ═══════════════ -->
+  <section class="sec" id="pulse">
+    <div class="sec-head">
+      <span class="sec-num">§ 01</span>
+      <h2 class="sec-title">Pulse</h2>
+    </div>
+    <p class="sec-desc">Seven short notes to take this week's pulse in science, technology, and industry.</p>
 
-    <h3>What lonvo-z actually does</h3>
+    <div class="pulso">
 
-    <p>The patient receives a single intravenous infusion. It contains lipid nanoparticles (LNPs) that physiologically concentrate in the liver via LDL-receptor uptake on hepatocytes. The LNPs encapsulate two RNAs: a messenger RNA encoding <em>S. pyogenes</em> Cas9 and a guide RNA targeting <em>KLKB1</em>, the prekallikrein gene. Once internalized by the hepatocyte, the cellular machinery translates the mRNA, the Cas9–sgRNA complex finds its target, cuts DNA, and non-homologous end-joining (NHEJ) repair leaves an indel that inactivates the gene.</p>
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">01</span>P-01</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Genetics</span><span class="tag">Biomedicine</span></div>
+          <h3>Intellia reports Phase 3 efficacy for its <em>in&nbsp;vivo</em> CRISPR edit</h3>
+          <p>On April 27 Intellia announced HAELO trial results for lonvo-z, an LNP-delivered inactivation of the <em>KLKB1</em> gene in hepatocytes. The therapy cut hereditary angioedema attack rates by 87&nbsp;% versus placebo at 24 weeks. It is the first <em>in vivo</em> CRISPR to hit a Phase&nbsp;3 endpoint.</p>
+          <aside class="enclaro">A single infusion modifies the patient's liver DNA to switch off the gene that triggers the attacks. Until now this kind of editing required a month in the hospital; now it fits in an IV bag.</aside>
+        </div>
+      </article>
 
-    <p>The interrupted cascade has been well understood since the 1990s: prekallikrein activates to kallikrein; kallikrein releases bradykinin from kininogen; bradykinin increases vascular permeability and triggers the attack. If prekallikrein isn't synthesized, the cascade doesn't start. The pharmacological elegance is choosing a target with clean biology and an organ — the liver — that LNPs reach by default. It was predictable this combination would be the first clinical success of the in vivo paradigm. It is.</p>
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">02</span>P-02</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Robotics</span><span class="tag">Asia</span><span class="tag">Japan</span></div>
+          <h3>JAL begins humanoid trial at Haneda</h3>
+          <p>Japan Airlines Ground Service and GMO AI &amp; Robotics started on May 1 the first operational humanoid-robot deployment at a Japanese airport. The chosen platform is Unitree G1 units (130&nbsp;cm, 35&nbsp;kg) for baggage handling and cabin cleaning. The verification phase runs through 2028.</p>
+        </div>
+      </article>
 
-    <h3>From ex vivo to in vivo: what changes</h3>
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">03</span>P-03</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Industry</span><span class="tag">AI</span></div>
+          <h3>Google commits up to $40 billion in Anthropic</h3>
+          <p>Announced April 24: a mix of cash and Google Cloud compute credit. Accelerates the concentration of private capital at the language-model frontier and consolidates the cross-dependency between Anthropic, AWS and GCP.</p>
+        </div>
+      </article>
 
-    <p>Casgevy, the first approved CRISPR therapy (FDA, December 2023), edits hematopoietic stem cells extracted from the patient, modifies them in the lab, and reinfuses them after myeloablative conditioning. The procedure takes months, requires specialized hospital infrastructure, costs near $1M per patient, and carries a toxicity profile inherited from autologous transplant.</p>
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">04</span>P-04</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">AI</span><span class="tag">Meta</span></div>
+          <h3>Meta Superintelligence Labs ships Muse Spark</h3>
+          <p>First model from the lab founded after the $14B Scale AI deal; internal code-name was “Avocado”. Meta projects 2026 capex between $115B and $135B, nearly double the prior year.</p>
+        </div>
+      </article>
 
-    <p>Lonvo-z is given as an outpatient infusion. The operational difference is radical: a bag, a vein, a room. Adverse events reported at 28 weeks were predominantly infusion reactions, headache, and fatigue — all mild or moderate; no serious events were attributed to lonvo-z. The difference between "hospitalize the patient to rebuild their marrow" and "deliver an IV bag" is not an incremental improvement. It is a change of category.</p>
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">05</span>P-05</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Materials</span><span class="tag">Superconductivity</span></div>
+          <h3>Direct imaging of Cooper pairs in an ultracold gas</h3>
+          <p>Work in <em>Physical Review Letters</em> on April 15 directly visualizes pair correlations in a cold fermion system for the first time. The observed synchrony is not in classical BCS theory and supports collective mechanisms still to be modeled.</p>
+          <aside class="enclaro">With atoms cooled to near absolute zero, physicists watched for the first time how two electrons "pair up" — the quantum trick that explains why some materials conduct electricity without resistance.</aside>
+        </div>
+      </article>
 
-    <h3>What the trial doesn't prove</h3>
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">06</span>P-06</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Robotics</span><span class="tag">China</span></div>
+          <h3>A humanoid wins the Beijing E-Town half-marathon</h3>
+          <p>The “Lightning” robot from team Honor / Monkey King completed the autonomous 21.1&nbsp;km race on April 19 in 50:26, below the human half-marathon record. It ran on swappable batteries and a hardened control stack for mixed terrain.</p>
+        </div>
+      </article>
 
-    <p>Three caveats matter, and Intellia's press releases tend not to emphasize them.</p>
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">07</span>P-07</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">AI</span><span class="tag">Anthropic</span></div>
+          <h3>Opus 4.7 GA; "Mythos" released to a partner circle</h3>
+          <p>Anthropic kept the Opus 4.6 pricing ($5 / $25 per million input/output tokens) and opened Opus 4.7 on API and partner clouds. In parallel it distributed "Mythos" to a limited group with a cybersecurity focus.</p>
+        </div>
+      </article>
 
-    <p>First, durability. NHEJ indels are permanent at the edited DNA level, but hepatocytes turn over: human hepatocyte half-life is on the order of 200 to 300 days. The liver maintains a renewal rate that, given enough kinetics, could gradually replace edited hepatocytes with unedited progenitors. Published follow-up reaches 28 weeks; whether plasma kallikrein stays suppressed at 5 or 10 years is unanswered, and that will decide if lonvo-z is <em>one</em> lifetime dose or <em>the first</em> of several.</p>
+    </div>
+  </section>
 
-    <p>Second, off-target editing. Intellia reports off-target profiles measured by targeted sequencing and unbiased methods (CIRCLE-seq, GUIDE-seq) that show low signals, but genome-scale and multi-tissue evaluation in living humans is methodologically hard. The question isn't whether off-target editing happens — it always does — but whether the frequency and affected loci lead to detectable clinical consequences over a decade.</p>
-
-    <p>Third, scaling to common diseases. The economics change when the patient isn't one in 50,000 but one in 500. The next private-sector targets — familial hypercholesterolemia (PCSK9), alpha-1 antitrypsin deficiency, hemochromatosis — widen the eligible universe by one to two orders of magnitude. That forces three discussions HAELO didn't touch: price (is $800,000 a dose sustainable for 500,000 patients?), liability for adverse effects 20 years out, and the pharmacovigilance architecture for treatments with irreversible DNA effects.</p>
-
-    <h3>Geopolitics and regulation</h3>
-
-    <p>The competitive picture has three protagonists: Intellia (Boston, MA), Verve Therapeutics (Boston, MA), and Beam Therapeutics (Cambridge, MA). Verve in 2025 produced sustained LDL reductions in its VERVE-102/103 familial-hypercholesterolemia trials; Beam reported preliminary alpha-1 data with base editing. The geographic concentration is striking. Outside Boston only China and, to a lesser extent, the UK and Switzerland show advanced-stage in vivo programs.</p>
-
-    <p>The regulatory challenge is new. The FDA will evaluate lonvo-z under the gene-therapy framework, but intravenous administration of a somatic editing system raises questions ex vivo approvals didn't answer: batch-to-batch traceability of Cas9 mutational bias, decade-long post-market pharmacovigilance requirements, and rules for how rare off-target variants might transfer into the population's genetic baseline.</p>
-
-    <h3>The thermometer that matters for the next 18 months</h3>
-
-    <p>Three readouts will decide whether HAELO was inflection or anecdote. The first, September 2026: Verve VERVE-102 12-month follow-up data measuring LDL durability for heterozygous familial hypercholesterolemia. The second, Q1 2027: the FDA decision on lonvo-z. The third, late 2027: the first Phase 2/3 in vivo trial in an indication with prevalence &gt;1 in 1,000 — likely alpha-1 antitrypsin or PCSK9.</p>
-
-    <p>If those three readouts converge positively, last week was the beginning of the therapeutic paradigm that will distinguish the next decade of clinical genomics from the previous one. If one fails, the model gets rethought. For now, an IV bag did what a month ago seemed to require a month in the hospital.</p>
-  </article>
-</section>
-
-<!-- ============== 03 PAPERS ============== -->
-<section id="papers">
-  <div class="section-head">
-    <span class="num">§ 03</span>
-    <h2>Papers</h2>
-  </div>
-  <p class="lede">Four recent publications with summary, authorship, and why they matter.</p>
-
-  <div class="papers">
-    <div class="paper">
-      <span class="tag">Materials</span><span class="tag">Superconductivity</span>
-      <h3>Direct imaging of fermion pairs in an ultracold atomic gas</h3>
-      <div class="meta">MIT-Harvard team · Physical Review Letters · April 15, 2026</div>
-      <p>Quantum-gas microscopy visualization of the spatial correlation between opposite-spin fermions in a controlled analog of the attractive Hubbard model. Observed pairs show submicron synchronized motion that does not appear in the standard BCS solution and approaches BEC-like strong-coupling regimes.</p>
-      <p class="why">Why it matters: BCS theory describes weak-coupling well but fails in the BCS-BEC crossover, relevant for understanding unconventional superconductors (cuprates, hydrides). Having a model system where you can see, particle by particle, how a pair emerges, gives a testbed for pairing theories beyond mean-field.</p>
+  <!-- ═══════════════ 02 COVER ═══════════════ -->
+  <section class="sec" id="cover">
+    <div class="sec-head">
+      <span class="sec-num">§ 02</span>
+      <h2 class="sec-title">Cover</h2>
     </div>
 
-    <div class="paper">
-      <span class="tag">Robotics</span><span class="tag">Embodied AI</span>
-      <h3>ELLMER: sensorimotor robot control with an LLM and RAG over curated knowledge</h3>
-      <div class="meta">University of Cambridge and collaborators · Nature Machine Intelligence · April 2026</div>
-      <p>Framework combining vision, force feedback, a reasoning large language model, retrieval-augmented generation over a curated robotic knowledge base, and a low-level controller. Demonstrates execution of unstructured kitchen tasks and manipulation under unanticipated human perturbations.</p>
-      <p class="why">Why it matters: generalization in robotics fails when the environment deviates from the training distribution. Pairing an LLM with a task knowledge base plus force control lets the robot reason about "what to do" without retraining the motor policy. One of the first peer-reviewed demonstrations that holds up outside the lab, not just in simulation.</p>
+    <p class="portada-meta">USA · Genetics · Biomedicine</p>
+    <h1 class="article-title">The first <em>in&nbsp;vivo</em> CRISPR crosses Phase 3: what HAELO proves and what it leaves open</h1>
+    <p class="article-deck">A single infusion, one silenced liver protein, 87&nbsp;% fewer angioedema attacks. Intellia's lonvo-z isn't the first approved human gene-editing therapy, but it is the first to edit cells without removing them from the body — and to show meaningful clinical efficacy in a pivotal trial.</p>
+    <p class="byline"><span>By the SINAPSE editorial team</span><span>May 5, 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">On April 27, Intellia Therapeutics announced results from HAELO, a Phase 3 trial enrolling 67 type I/II hereditary angioedema patients. The primary endpoint — monthly attack rate over 24 weeks — fell 87&nbsp;% versus placebo. The tougher secondary endpoint — total absence of attacks and prophylaxis over the same period — was met by 62&nbsp;% of lonvo-z recipients versus 11&nbsp;% on placebo. Intellia opened a rolling BLA with the FDA and projects commercial launch in the first half of 2027.</p>
+
+      <p>What matters about HAELO isn't the disease. Hereditary angioedema affects between 1 in 50,000 and 1 in 100,000 people depending on country; effective prophylactics (lanadelumab, berotralstat) and acute treatments (icatibant, C1-inhibitor) already exist. What matters is the therapeutic architecture.</p>
+
+      <h3>What lonvo-z actually does</h3>
+      <p>The patient receives a single intravenous infusion. It contains lipid nanoparticles (LNPs) that physiologically concentrate in the liver via LDL-receptor uptake on hepatocytes. The LNPs encapsulate two RNAs: a messenger RNA encoding <em>S. pyogenes</em> Cas9 and a guide RNA targeting <em>KLKB1</em>, the prekallikrein gene. Once internalized by the hepatocyte, the cellular machinery translates the mRNA, the Cas9–sgRNA complex finds its target, cuts DNA, and non-homologous end-joining (NHEJ) repair leaves an indel that inactivates the gene.</p>
+
+      <p>The interrupted cascade has been well understood since the 1990s: prekallikrein activates to kallikrein; kallikrein releases bradykinin from kininogen; bradykinin increases vascular permeability and triggers the attack. If prekallikrein isn't synthesized, the cascade doesn't start.</p>
+
+      <h3>From ex vivo to in vivo</h3>
+      <p>Casgevy, the first approved CRISPR therapy (FDA, December 2023), edits hematopoietic stem cells extracted from the patient, modifies them in the lab, and reinfuses them after myeloablative conditioning. The procedure takes months, requires specialized hospital infrastructure, costs near $1M per patient, and carries a toxicity profile inherited from autologous transplant.</p>
+
+      <p>Lonvo-z is given as an outpatient infusion. The operational difference is radical: a bag, a vein, a room. Adverse events reported at 28 weeks were predominantly infusion reactions, headache, and fatigue — all mild or moderate; no serious events were attributed to lonvo-z. The difference between "hospitalize the patient to rebuild their marrow" and "deliver an IV bag" is not an incremental improvement. It is a change of category.</p>
+
+      <h3>What the trial doesn't prove</h3>
+      <p>Three caveats matter. First, <strong>durability</strong>. NHEJ indels are permanent at the edited DNA level, but hepatocytes turn over: human hepatocyte half-life is on the order of 200 to 300 days. Whether plasma kallikrein stays suppressed at 5 or 10 years is unanswered.</p>
+
+      <p>Second, <strong>off-target editing</strong>. Intellia reports off-target profiles measured by CIRCLE-seq and GUIDE-seq with low signals, but genome-scale evaluation in living humans is methodologically hard.</p>
+
+      <p>Third, <strong>scaling to common diseases</strong>. The next targets — familial hypercholesterolemia (PCSK9), alpha-1 antitrypsin deficiency, hemochromatosis — widen the eligible universe by one to two orders of magnitude. That forces discussions HAELO didn't touch: price ($800,000/dose for 500,000 patients?), 20-year liability, and pharmacovigilance for treatments with irreversible DNA effects.</p>
+
+      <h3>Geopolitics and regulation</h3>
+      <p>The competitive picture has three protagonists: Intellia (Boston, MA), Verve Therapeutics (Boston, MA), and Beam Therapeutics (Cambridge, MA). The geographic concentration is striking. Outside Boston only China and, to a lesser extent, the UK and Switzerland show advanced-stage <em>in vivo</em> programs.</p>
+
+      <p>Three readouts will decide whether HAELO was inflection or anecdote. The first, September 2026: Verve VERVE-102 12-month follow-up data. The second, Q1 2027: the FDA decision on lonvo-z. The third, late 2027: the first Phase 2/3 <em>in vivo</em> trial in an indication with prevalence &gt;1 in 1,000. If those three converge positively, last week was the start of the therapeutic paradigm that will distinguish the next decade of clinical genomics from the previous one.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 03 PAPERS ═══════════════ -->
+  <section class="sec" id="papers">
+    <div class="sec-head">
+      <span class="sec-num">§ 03</span>
+      <h2 class="sec-title">Papers</h2>
+    </div>
+    <p class="sec-desc">Four recent publications with summary, authorship, and why they matter.</p>
+
+    <div class="papers">
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Materials</span><span class="tag">Superconductivity</span></div>
+        <h3>Direct imaging of fermion pairs in an ultracold atomic gas</h3>
+        <p class="cite">MIT-Harvard team · <em>Physical Review Letters</em> · April 15, 2026</p>
+        <p>Quantum-gas microscopy visualization of the spatial correlation between opposite-spin fermions in a controlled analog of the attractive Hubbard model. Observed pairs show submicron synchronized motion that does not appear in the standard BCS solution and approaches BEC-like strong-coupling regimes.</p>
+        <p class="why">BCS theory describes weak-coupling well but fails in the BCS-BEC crossover, relevant for understanding unconventional superconductors (cuprates, hydrides). Having a model system where you can see, particle by particle, how a pair emerges, gives a testbed for pairing theories beyond mean-field.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Robotics</span><span class="tag">Embodied AI</span></div>
+        <h3>ELLMER: sensorimotor robot control with an LLM and RAG over curated knowledge</h3>
+        <p class="cite">University of Cambridge and collaborators · <em>Nature Machine Intelligence</em> · April 2026</p>
+        <p>Framework combining vision, force feedback, a reasoning large language model, retrieval-augmented generation over a curated robotic knowledge base, and a low-level controller. Demonstrates execution of unstructured kitchen tasks under unanticipated human perturbations.</p>
+        <p class="why">Generalization in robotics fails when the environment deviates from training distribution. Pairing an LLM with a task knowledge base plus force control lets the robot reason about "what to do" without retraining the motor policy. One of the first peer-reviewed demonstrations that holds up outside the lab.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Ecology</span><span class="tag">Latin America</span><span class="tag">Climate change</span></div>
+        <h3>40 years of tree-diversity change in Amazonian and Andean forests</h3>
+        <p class="cite">Fadrique et al. · University of Liverpool and RAINFOR network · <em>Nature Ecology &amp; Evolution</em> · April 2026</p>
+        <p>Analysis of standardized inventories from more than 250 permanent plots across lowland and highland Amazonia and Andean forests over four decades. Results show an upward compositional reshuffle: species adapted to higher temperatures and seasonal drought gain ground over the historically dominant ones at each altitude.</p>
+        <p class="why">The "Amazon tipping point" debate has been largely model-driven. These primary data indicate the transition is not a future event: it has been happening at low speed for decades. Direct implications for terrestrial-carbon models and for conservation criteria that assume compositional stability.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Genetics</span><span class="tag">Latin America</span><span class="tag">Population health</span></div>
+        <h3>The genetic landscape of autism in Latin American populations</h3>
+        <p class="cite">MEXPLO-ASD consortium · <em>Nature Medicine</em> · April 28, 2026</p>
+        <p>Analysis of ASD-associated variants in more than 15,000 individuals from Mexico, Peru, Colombia, Brazil, and US-based Latino diaspora. The cohort contributes rare variants not described in European databases and shows substantial overlap with European-ancestry ASD architecture, against the hypothesis of a sharply different etiology.</p>
+        <p class="why">Clinical genomic reference bases are biased toward European ancestries; this work improves the equity of polygenic risk models for the continent. It also reduces the empirical base for hypotheses that assumed radically different genetic architectures for the same conditions across regions.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ 04 TECH ═══════════════ -->
+  <section class="sec" id="tech">
+    <div class="sec-head">
+      <span class="sec-num">§ 04</span>
+      <h2 class="sec-title">Tech</h2>
+    </div>
+    <p class="sec-desc">What's moving in AI, software, and hardware this week.</p>
+
+    <div class="ti-grid">
+
+      <article class="ti-item">
+        <div class="ti-cat">AI<br>Anthropic</div>
+        <div class="ti-body">
+          <h3>Opus 4.7 GA; "Mythos" to select partners</h3>
+          <p>Opus 4.7 replaces 4.6 with no price change ($5 / $25 per million input/output tokens) and ships on API, Bedrock, Vertex, and Foundry. In parallel, Anthropic opened to a closed circle a model described as its most capable, with a cybersecurity focus and commercial name "Mythos".</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">AI<br>Meta</div>
+        <div class="ti-body">
+          <h3>Muse Spark launches Meta Superintelligence Labs</h3>
+          <p>The first model from Meta's new division — founded after the $14B Scale AI deal — is presented with a long-horizon reasoning focus. The company projects 2026 capex between $115B and $135B; Reality Labs and Superintelligence Labs absorb most of the increase.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">AI<br>Google</div>
+        <div class="ti-body">
+          <h3>Agent platform for enterprise integrators</h3>
+          <p>On April 22 Google released a toolkit to build agents that use enterprise services (Workspace, Search, Cloud Functions). The move responds directly to Anthropic's Computer Use product and OpenAI's agent builder.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Hardware<br>Robotics · Asia</div>
+        <div class="ti-body">
+          <h3>Unitree G1 enters service at a Japanese airport</h3>
+          <p>The Haneda pilot with JAL Ground Service uses G1 units (130&nbsp;cm, 35&nbsp;kg, 2&nbsp;m/s, 2-hour battery) tuned by GMO AI &amp; Robotics. The public plan describes phased verification through 2028 before any mass productive deployment.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ 05 INDUSTRY ═══════════════ -->
+  <section class="sec" id="industry">
+    <div class="sec-head">
+      <span class="sec-num">§ 05</span>
+      <h2 class="sec-title">Industry</h2>
+    </div>
+    <p class="sec-desc">Notable moves in M&amp;A, funding, and regulation.</p>
+
+    <div class="ti-grid">
+
+      <article class="ti-item">
+        <div class="ti-cat">Funding<br>AI</div>
+        <div class="ti-body">
+          <h3>Google commits up to $40 billion in Anthropic</h3>
+          <p>The package combines cash and GCP compute credit. Adds to Amazon's accumulated $8B and consolidates a pattern where cloud providers are simultaneously customers, shareholders, and cross-creditors of frontier-model developers. Private capital concentration in four labs keeps intensifying.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Industrial policy<br>Asia</div>
+        <div class="ti-body">
+          <h3>South Korea weighs creating KSMC, its "national TSMC"</h3>
+          <p>An April Ministry of Industry proposal outlines a public-private contract foundry with an estimated $13.9B initial investment. The explicit argument is dependence on Samsung Foundry and SK Hynix, which serve some domestic competitors.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Capex<br>Semiconductors</div>
+        <div class="ti-body">
+          <h3>Samsung announces $73B in 2026 capex</h3>
+          <p>Memory, foundry, and R&amp;D split the bulk of the budget. The Taylor (Texas) fab advances to the 2&nbsp;nm milestone with $6.6B in CHIPS Act support. The figure leaves Samsung as the second-largest capital spender in the industry behind TSMC.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Regulation<br>Health</div>
+        <div class="ti-body">
+          <h3>FDA accepts rolling submission for lonvo-z</h3>
+          <p>Authorization of a rolling BLA lets Intellia submit dossier modules as they're ready. If the schedule holds, the first full review could close by late 2026, with possible conditional approval in H1 2027.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ 06 COLUMN ═══════════════ -->
+  <section class="sec columna" id="column">
+    <div class="sec-head">
+      <span class="sec-num">§ 06</span>
+      <h2 class="sec-title">Column</h2>
     </div>
 
-    <div class="paper">
-      <span class="tag">Ecology</span><span class="tag">Latin America</span><span class="tag">Climate change</span>
-      <h3>40 years of tree-diversity change in Amazonian and Andean forests</h3>
-      <div class="meta">Fadrique et al. · University of Liverpool and RAINFOR network · Nature Ecology &amp; Evolution · April 2026</div>
-      <p>Analysis of standardized inventories from more than 250 permanent plots across lowland and highland Amazonia and Andean forests over four decades. Results show an upward compositional reshuffle: species adapted to higher temperatures and seasonal drought gain ground over the historically dominant ones at each altitude.</p>
-      <p class="why">Why it matters: the "Amazon tipping point" debate has been largely model-driven. These primary data indicate the transition is not a future event: it has been happening at low speed for decades. Direct implications for terrestrial-carbon models and for conservation criteria that assume compositional stability.</p>
+    <h1 class="article-title">The open body: <em>what changes when gene editing happens inside</em></h1>
+    <p class="byline"><span>By Jack Cid</span><span>May 5, 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">There is a change better understood with an image than with a metric. Until April 27, an approved human CRISPR therapy looked like a transplant: cell extraction, manipulation in a sterile dish, myeloablative conditioning, reinfusion. After April 27 another image is available: a transparent plastic bag connected to a peripheral vein, an outpatient room, a couple of hours, and an enzymatic system that rides the bloodstream to the organ it touches.</p>
+
+      <p>It is the difference between operating on an organ and dosing a drug. The FDA, payers, patients, ethical regulators, and insurers have spent the last five years learning to handle the first. The serious question is whether they are ready for the second. The honest answer is no.</p>
+
+      <p>The first focus that shifts is who receives gene therapy. As long as editing was ex vivo, the population ceiling was set by infrastructure: a hospital capable of myeloablative conditioning edits dozens of patients a year, not thousands. Intravenous administration breaks that ceiling. The targets being discussed — familial hypercholesterolemia, alpha-1 antitrypsin, hemochromatosis, monogenic metabolic syndrome — widen eligibility by one to two orders of magnitude. When a somatic-genome therapy can reach half a million patients, the regulatory conversation stops being about individuals and starts being about populations.</p>
+
+      <p>The second focus is temporal asymmetry. A classical drug is discontinued when a population-level adverse effect appears; the effect fades as patients stop taking it. An indel introduced by NHEJ in hepatocytes does not fade: it persists as long as the edited hepatocytes or their progeny persist. If at year 7 pharmacovigilance picks up a mutational signal at an unanticipated locus, the answer is not to pull the product. The answer is to live with the consequence.</p>
+
+      <p>The third focus is geopolitical. Lonvo-z, VERVE-102, Beam BEAM-302, and the rest of the advanced-stage in vivo programs come from the same four-kilometer radius around Kendall Square. A pricing decision in Boston carries anthropological echoes that a pricing decision on a tablet does not. Global governance of the somatic genome, in the strong sense of the word, still doesn't exist.</p>
+
+      <p>What we are celebrating this week in medical terms is real: a safe and effective therapy for a disabling disease in a single dose. What we are opening in social terms is wide enough not to lose sight of. The open body of the next decade will not be the surgical one. It will be chemical, controlled by enzymes traveling in the bloodstream reading DNA.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 07 COUNTERPOINT ═══════════════ -->
+  <section class="sec contraste" id="counterpoint">
+    <div class="sec-head">
+      <span class="sec-num">§ 07</span>
+      <h2 class="sec-title">Counterpoint</h2>
     </div>
 
-    <div class="paper">
-      <span class="tag">Genetics</span><span class="tag">Latin America</span><span class="tag">Population health</span>
-      <h3>The genetic landscape of autism in Latin American populations</h3>
-      <div class="meta">MEXPLO-ASD consortium · Nature Medicine · April 28, 2026</div>
-      <p>Analysis of autism spectrum disorder (ASD)-associated variants in more than 15,000 individuals from Mexico, Peru, Colombia, Brazil, and US-based diaspora populations. The cohort contributes rare variants not described in European databases and shows substantial overlap with the European-ancestry ASD genetic architecture, against the hypothesis of a sharply different etiology.</p>
-      <p class="why">Why it matters: clinical genomic reference bases are biased toward European ancestries; this work improves the equity of polygenic risk models for the continent. It also reduces the empirical base for hypotheses that assumed radically different genetic architectures for the same conditions across regions.</p>
+    <h1 class="article-title">Gain of function: <em>the most misnamed debate in contemporary biology</em></h1>
+    <p class="byline"><span>By Passiflora Caerulea</span><span>May 5, 2026</span></p>
+
+    <blockquote class="quote">
+      «Gain-of-function research caused COVID» / «Gain-of-function research protects us from future pandemics».
+      <span class="quote-attr">Two camps speaking past each other in US Congressional testimony, 2023–2026</span>
+    </blockquote>
+
+    <div class="prose">
+      <p>Some debates start with the wrong name. "Gain of function" is, in molecular biology, an enormous label: any mutation that increases a function — from a slightly more efficient enzyme to a virus that learns to infect a new species. Political conversation, however, uses the term as a synonym for "research that might start a pandemic." That is a subset: what US regulation calls <em>Enhanced Potential Pandemic Pathogens</em> (ePPP). Conflating one with the other is not an academic detail.</p>
     </div>
-  </div>
-</section>
-
-<!-- ============== 04 TECH ============== -->
-<section id="tech">
-  <div class="section-head">
-    <span class="num">§ 04</span>
-    <h2>Tech</h2>
-  </div>
-  <p class="lede">What's moving in AI, software, and hardware this week.</p>
-
-  <div class="grid2">
-    <div class="card">
-      <span class="tag">AI · Anthropic</span>
-      <h3>Opus 4.7 GA; "Mythos" to select partners</h3>
-      <p>Opus 4.7 replaces 4.6 with no price change ($5 / $25 per million input/output tokens) and ships on API, Bedrock, Vertex, and Foundry. In parallel, Anthropic opened to a closed circle a model described as its most capable, with a cybersecurity focus and commercial name "Mythos".</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">AI · Meta</span>
-      <h3>Muse Spark launches Meta Superintelligence Labs</h3>
-      <p>The first model from Meta's new division — founded after the $14B Scale AI deal — is presented with a long-horizon reasoning focus. The company projects 2026 capex between $115B and $135B; Reality Labs and Superintelligence Labs absorb most of the increase.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">AI · Google</span>
-      <h3>Agent platform for enterprise integrators</h3>
-      <p>On April 22 Google released a toolkit to build agents that use enterprise services (Workspace, Search, Cloud Functions). The move responds directly to Anthropic's Computer Use product and OpenAI's agent builder.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">Hardware · Robotics</span><span class="tag">Asia</span>
-      <h3>Unitree G1 enters service at a Japanese airport</h3>
-      <p>The Haneda pilot with JAL Ground Service uses G1 units (130 cm, 35 kg, 2 m/s, 2-hour battery) tuned by GMO AI &amp; Robotics. The public plan describes phased verification through 2028 before any mass productive deployment.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 05 INDUSTRY ============== -->
-<section id="industry">
-  <div class="section-head">
-    <span class="num">§ 05</span>
-    <h2>Industry</h2>
-  </div>
-  <p class="lede">Notable moves in M&amp;A, funding, and regulation.</p>
-
-  <div class="grid2">
-    <div class="card">
-      <span class="tag">Funding · AI</span>
-      <h3>Google commits up to $40 billion in Anthropic</h3>
-      <p>The package combines cash and GCP compute credit. Adds to Amazon's accumulated $8B and consolidates a pattern where cloud providers are simultaneously customers, shareholders, and cross-creditors of frontier-model developers. Private capital concentration in four labs keeps intensifying.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">Industrial policy · Asia</span>
-      <h3>South Korea weighs creating KSMC, its "national TSMC"</h3>
-      <p>An April Ministry of Industry proposal outlines a public-private contract foundry with an estimated $13.9B initial investment. The explicit argument is dependence on Samsung Foundry and SK Hynix, which serve some domestic competitors.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">Capex · Semiconductors</span>
-      <h3>Samsung announces $73B in 2026 capex</h3>
-      <p>Memory, foundry, and R&amp;D split the bulk of the budget. The Taylor (Texas) fab advances to the 2 nm milestone with $6.6B in CHIPS Act support. The figure leaves Samsung as the second-largest capital spender in the industry behind TSMC.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">Regulation · Health</span>
-      <h3>FDA accepts rolling submission for lonvo-z</h3>
-      <p>Authorization of a rolling BLA lets Intellia submit dossier modules as they're ready. If the schedule holds, the first full review could close by late 2026, with possible conditional approval in H1 2027.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 06 COLUMN ============== -->
-<section id="column">
-  <div class="column">
-    <div class="section-head">
-      <span class="num">§ 06</span>
-      <h2>Column</h2>
-    </div>
-    <h3>The open body: what changes when gene editing happens inside</h3>
-    <div class="by">By Jack Cid</div>
-
-    <p>There is a change better understood with an image than with a metric. Until April 27, an approved human CRISPR therapy looked like a transplant: cell extraction, manipulation in a sterile dish, myeloablative conditioning, reinfusion. Three months, $1.2 million, specialized hospital team. After April 27 another image is available: a transparent plastic bag connected to a peripheral vein, an outpatient room, a couple of hours, and an enzymatic system that rides the bloodstream to the organ it touches and modifies DNA where it finds it.</p>
-
-    <p>It is the difference between operating on an organ and dosing a drug. The FDA, payers, patients, ethical regulators, and insurers have spent the last five years learning to handle the first. The serious question is whether they are ready for the second. The honest answer is no.</p>
-
-    <p>The first focus that shifts is who receives gene therapy. As long as editing was ex vivo, the population ceiling was set by infrastructure: a hospital capable of myeloablative conditioning edits dozens of patients a year, not thousands. That restricts eligibility to rare diseases with high individual suffering and a system willing to pay six- or seven-figure list prices. Intravenous administration breaks that ceiling. The targets being discussed in pipelines — familial hypercholesterolemia, alpha-1 antitrypsin, hemochromatosis, monogenic metabolic syndrome — widen eligibility by one to two orders of magnitude. When a somatic-genome therapy can reach half a million patients, the regulatory conversation stops being about individuals and starts being about populations.</p>
-
-    <p>The second focus is temporal asymmetry. A classical drug is discontinued when a population-level adverse effect appears; the effect fades as patients stop taking it. An indel introduced by NHEJ in hepatocytes does not fade: it persists as long as the edited hepatocytes or their progeny persist. If at year 7 pharmacovigilance picks up a mutational signal at an unanticipated locus, the answer is not to pull the product. The answer is to live with the consequence. Current pharmacovigilance frameworks were designed for drugs whose effects retreat when dosing stops. Somatic edits require monitoring frameworks measured in decades — and they don't have, today, the funding or the architecture to sustain that.</p>
-
-    <p>The third focus is geopolitical. Lonvo-z, VERVE-102, Beam BEAM-302, and the rest of the advanced-stage in vivo programs come from the same four-kilometer radius around Kendall Square. The protocols, the effective regulation, the reference prices, and the ethical culture are being set, practically, by one geography. That isn't new in pharma: insulin and penicillin were also born concentrated. What is new is that somatic therapies operate on the common substrate of the species. A pricing decision in Boston carries anthropological echoes that a pricing decision on a tablet does not. Global governance of the somatic genome, in the strong sense of the word, still doesn't exist.</p>
-
-    <p>There is a question the press is not yet asking clearly that will appear in the next 24 months: what percentage of harm do we accept in exchange for what percentage of benefit when both are irreversible? Under the ex vivo regime, the medical experiment looked like surgery: high risk, recovery afterward. Under the in vivo regime it looks like a partial inheritable decision: the edit doesn't cross the germline — it shouldn't — but it stays in the individual's somatic line, distributing risk and benefit across their entire useful life. Informed consent for a 50-year intervention does not look like informed consent for a 50-day one.</p>
-
-    <p>What we are celebrating this week in medical terms is real: a safe and effective therapy for a disabling disease in a single dose. What we are opening in social terms is wide enough not to lose sight of. The open body of the next decade will not be the surgical one. It will be chemical, controlled by enzymes traveling in the bloodstream reading DNA.</p>
-  </div>
-</section>
-
-<!-- ============== 07 COUNTERPOINT ============== -->
-<section id="counterpoint">
-  <div class="section-head">
-    <span class="num">§ 07</span>
-    <h2>Counterpoint</h2>
-  </div>
-  <p class="lede">Every week, Passiflora Caerulea unpacks a science headline with numbers, context, and just enough mischief.</p>
-
-  <div class="contraste">
-    <h3>Gain of function: the most misnamed debate in contemporary biology</h3>
-    <div class="by">By Passiflora Caerulea</div>
-
-    <p class="claim">
-      "<em>Gain-of-function research caused COVID</em>" / "<em>Gain-of-function research protects us from future pandemics</em>"
-      <span class="source">Two camps speaking past each other in US Congressional testimony, 2023-2026</span>
-    </p>
-
-    <p>Some debates start with the wrong name. "Gain of function" is, in molecular biology, an enormous label: any mutation that increases a function — from a slightly more efficient enzyme to a virus that learns to infect a new species. Political conversation, however, uses the term as a synonym for "research that might start a pandemic." That is a subset: what US regulation calls <em>Enhanced Potential Pandemic Pathogens</em> (ePPP). Conflating one with the other is not an academic detail: it's why almost nobody leaves the debate with the same definition they walked in with.</p>
 
     <div class="atlas">
-      <h4>Atlas of the problem</h4>
-      <dl class="atlas-grid">
+      <div class="atlas-head">Atlas of the problem · 7 dimensions</div>
+      <dl>
         <dt>Countries in the headline</dt>
-        <dd><strong>USA</strong> (NIH, NIAID, the Wuhan collaboration), <strong>China</strong> (Wuhan Institute of Virology), <strong>Netherlands</strong> (Fouchier, H5N1 ferret studies, 2011), <strong>United Kingdom</strong> (Pirbright, Porton Down). The names that appear in Congressional hearings and Nature reports.</dd>
+        <dd><strong>USA</strong> (NIH, NIAID), <strong>China</strong> (Wuhan Institute of Virology), <strong>Netherlands</strong> (Fouchier, H5N1 ferret studies, 2011), <strong>United Kingdom</strong> (Pirbright, Porton Down).</dd>
 
         <dt>Countries in the actual story</dt>
-        <dd><strong>India</strong> (BSL-4 under construction in Pune and Bhopal; 4 active BSL-3+), <strong>Philippines</strong> (announced BSL-4), <strong>Brazil</strong> (BSL-3+ at Fiocruz; no BSL-4), <strong>South Africa</strong> (NICD BSL-4), <strong>Kazakhstan</strong> (CRL biosafety), <strong>Pakistan</strong>, <strong>Saudi Arabia</strong>, <strong>Singapore</strong>, <strong>Australia</strong> (CSIRO). Of the 18 BSL-4 planned by 2030, most are in Asia. <em>The real map is running toward countries without external audits equivalent to those in the US or EU.</em></dd>
+        <dd><strong>India</strong> (BSL-4 under construction in Pune and Bhopal), <strong>Philippines</strong> (announced BSL-4), <strong>Brazil</strong> (BSL-3+ at Fiocruz), <strong>South Africa</strong> (NICD BSL-4), <strong>Kazakhstan</strong>, <strong>Pakistan</strong>, <strong>Saudi Arabia</strong>, <strong>Singapore</strong>, <strong>Australia</strong> (CSIRO). Of 18 BSL-4 planned by 2030, most are in Asia.</dd>
 
         <dt>Who profits</dt>
-        <dd><strong>NIH</strong>: ~$10-30M/year in grants directly classified as ePPP-relevant (figure disputed; much higher if GoF is taken broadly). <strong>Pharma</strong>: academic GoF feeds antiviral and pre-pandemic vaccine pipelines. <strong>National governments</strong>: legitimize biodefense programs with adjacent military budgets. <strong>Insurers and reinsurers</strong> (Munich Re, Swiss Re): underwrite pandemic bonds priced on the program's own estimates.</dd>
+        <dd><strong>NIH</strong>: ~$10-30M/year in ePPP-relevant grants. <strong>Pharma</strong>: academic GoF feeds antiviral and pre-pandemic vaccine pipelines. <strong>National governments</strong>: legitimize biodefense programs with adjacent military budgets. <strong>Insurers</strong> (Munich Re, Swiss Re): underwrite pandemic bonds priced on the program's own estimates.</dd>
 
         <dt>Who pays</dt>
-        <dd><strong>Communities near</strong> BSL-3+/4 labs with no notification framework for local authorities. <strong>Health systems</strong> that carry the response when an incident occurs. <strong>Countries without their own BSL-4</strong>: depend on others' findings and transparency to anticipate threats. <strong>Public trust in biomedicine</strong>: every uncommunicated incident erodes the political base of legitimate research.</dd>
+        <dd>Communities near BSL-3+/4 labs with no notification framework. Health systems that carry the response when an incident occurs. Countries without their own BSL-4: depend on others' findings and transparency. Public trust in biomedicine: every uncommunicated incident erodes the political base of legitimate research.</dd>
 
         <dt>5 / 10-year horizon</dt>
-        <dd><strong>2028-2030</strong>: 18 new BSL-4 enter operation (most in Asia); global population with a national BSL-4 rises from ~50% to ~70%. <strong>Multilateral framework</strong> (BWC/WHO): a new pandemic protocol is under negotiation; outcome uncertain. <strong>Technologies that change the frame</strong>: accessible synthetic biology and sequencing turn the question "who can do GoF?" from "which country?" to "which university lab?".</dd>
+        <dd><strong>2028–2030</strong>: 18 new BSL-4 enter operation (most in Asia); global population with a national BSL-4 rises from ~50&nbsp;% to ~70&nbsp;%. <strong>Multilateral framework</strong>: WHO Pandemic Accord under negotiation. Accessible synthetic biology turns the question "who can do GoF?" from "which country?" to "which university lab?".</dd>
 
         <dt>Regulatory gap</dt>
-        <dd><strong>USA</strong>: 2024 USG Policy on Dual-Use Research of Concern + ePPP (successor to P3CO). <strong>EU</strong>: nominally homogeneous ABSL framework, national implementation. <strong>UK</strong>: HSE under ACDP. <strong>China</strong>: opaque internal framework; no external audit access. <strong>India, Brazil, South Africa</strong>: frameworks under construction, no obligation for comparable external reporting. <strong>Biological Weapons Convention (BWC)</strong>: no independent verification mechanism since its inception in 1972. <em>No global body maintains a comprehensive BSL-3+/4 registry.</em></dd>
+        <dd><strong>USA</strong>: 2024 USG Policy on DURC + ePPP. <strong>EU</strong>: nominally homogeneous ABSL framework. <strong>UK</strong>: HSE under ACDP. <strong>China</strong>: opaque internal framework; no external audit access. <strong>India / Brazil / South Africa</strong>: frameworks under construction. <strong>BWC</strong>: no independent verification mechanism since 1972. <em>No global body maintains a comprehensive BSL-3+/4 registry.</em></dd>
 
         <dt>Blind spot</dt>
-        <dd>The public debate treats GoF as a binary moral question ("do it or not?") when the operative question is one <strong>of distributed governance</strong>: how it gets audited, how risk is shared, how an incident is reported, what consequences follow non-reporting. The right question isn't whether the research should exist, but under what transparency regime it is defensible.</dd>
+        <dd>The public debate treats GoF as a binary moral question when the operative question is one of <strong>distributed governance</strong>: how it gets audited, how risk is shared, how an incident is reported, what consequences follow non-reporting. The right question isn't whether the research should exist, but under what transparency regime it is defensible.</dd>
       </dl>
     </div>
 
-    <div class="stat-card">
-      <div>
-        <div class="label">What the public debate says</div>
-        <div class="desc">"GoF causes pandemics" / "GoF prevents them"</div>
-        <div class="label" style="margin-top:10px">What the available data says</div>
-        <div class="desc">~51 BSL-4 in operation in 27 countries; only ~25% score high on biosafety best-practice indicators. 18 additional BSL-4 planned by 2030. No comprehensive global registry exists.</div>
+    <div class="chart">
+      <div class="chart-head">
+        <span><strong>Operational BSL-4 by region</strong> · 2023–2026</span>
+        <span>n = 59 declared</span>
       </div>
-      <div class="figure">25 %</div>
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-lbl">Europe</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"><div class="qual" style="width:46%"></div></div></div>
+          <span class="bar-val">25 · 42&nbsp;%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">North America</span>
+          <div class="bar-track"><div class="bar-fill" style="width:56%"><div class="qual" style="width:38%"></div></div></div>
+          <span class="bar-val">14 · 24&nbsp;%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Asia</span>
+          <div class="bar-track"><div class="bar-fill" style="width:52%"><div class="qual" style="width:12%"></div></div></div>
+          <span class="bar-val">13 · 22&nbsp;%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Oceania</span>
+          <div class="bar-track"><div class="bar-fill" style="width:16%"><div class="qual" style="width:65%"></div></div></div>
+          <span class="bar-val">4 · 7&nbsp;%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Africa</span>
+          <div class="bar-track"><div class="bar-fill" style="width:12%"><div class="qual" style="width:8%"></div></div></div>
+          <span class="bar-val">3 · 5&nbsp;%</span>
+        </div>
+      </div>
+      <div class="chart-legend">
+        <span><span class="swatch" style="background:var(--ink)"></span>Operational BSL-4 count</span>
+        <span><span class="swatch" style="background:var(--accent)"></span>Share scoring high on best-practice indicators</span>
+      </div>
+      <p class="chart-foot">Source: Global BioLabs Report 2023 (King's College London + GMU); indicative figures, BSL-3+ and undeclared facilities not included.</p>
     </div>
 
-    <p>The temptation is to pick a side. If the word "Wuhan" rings a bell, you probably have one already. But the serious question is not whether research caused the previous pandemic — virologists and commissions will keep arguing that for years — but what happens over the next decade with the geography of facilities, the pattern of documented incidents, and regulatory asymmetry. The empirical picture is uncomfortable for both camps.</p>
+    <div class="prose">
+      <p>The picture leaves an uncomfortable conclusion for both sides: the question "should we do GoF?" is going out of style not because it has been answered, but because geography answered it for us. While the US debates moratoria, India builds two more BSL-4, China runs its own without external audit, and the Biological Weapons Convention still has no verification mechanism since 1972.</p>
 
-    <p>Whoever claims GoF "causes pandemics" as a general thesis needs to compare the number of documented natural zoonotic pandemics over the past 50 years (at least 7: SARS-1, MERS, H1N1 2009, human H5N1, post-2014 Ebola, Zika, COVID-19) with lab-leak incidents that have started pandemics (none confirmed by broad scientific consensus; suspicions in at least two historical cases: USSR smallpox 1971, contained to a focal outbreak; 1977 Russian flu, likely lab origin but limited). The number doesn't support the general claim.</p>
+      <p>If someone tells you GoF caused the previous pandemic, ask what evidence would change the claim. If someone tells you GoF prevents the next one, ask when it last did. If someone tells you the problem is only Wuhan, ask where the next BSL-4 will open. The three questions return different silences. All three are useful.</p>
 
-    <p>Whoever claims GoF "prevents pandemics" has the symmetric problem: after 20 years of program and billions of dollars, concrete predictive deliverables — deployed vaccines or antivirals that exist thanks to GoF studies on pandemic-potential pathogens — are countable, not abundant. Genomic surveillance of field samples, by contrast, has been the real engine of early detection of variants.</p>
-
-    <figure>
-      <svg viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Global distribution of BSL-4 laboratories by region and share scoring high on biosafety" data-stacked-pcts="42,24,22,7,5">
-        <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">OPERATIONAL BSL-4 BY REGION · 2023-2026</text>
-        <g transform="translate(40,55)">
-          <rect x="0" y="0" width="240" height="22" fill="#1a1a1a"/>
-          <rect x="0" y="0" width="60" height="22" fill="#8b1a1a"/>
-          <text x="0" y="-4" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">EUROPE · 25</text>
-          <text x="248" y="14" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">~42 %</text>
-          <rect x="0" y="42" width="135" height="22" fill="#1a1a1a"/>
-          <rect x="0" y="42" width="50" height="22" fill="#8b1a1a"/>
-          <text x="0" y="38" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">NORTH AMERICA · 14</text>
-          <text x="143" y="56" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">~24 %</text>
-          <rect x="0" y="84" width="125" height="22" fill="#1a1a1a"/>
-          <rect x="0" y="84" width="15" height="22" fill="#8b1a1a"/>
-          <text x="0" y="80" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">ASIA · 13</text>
-          <text x="133" y="98" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">~22 %</text>
-          <rect x="0" y="126" width="40" height="22" fill="#1a1a1a"/>
-          <rect x="0" y="126" width="25" height="22" fill="#8b1a1a"/>
-          <text x="0" y="122" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">OCEANIA · 4</text>
-          <text x="48" y="140" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">~7 %</text>
-          <rect x="0" y="168" width="30" height="22" fill="#1a1a1a"/>
-          <rect x="0" y="168" width="2" height="22" fill="#8b1a1a"/>
-          <text x="0" y="164" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">AFRICA · 3</text>
-          <text x="38" y="182" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">~5 %</text>
-        </g>
-        <g transform="translate(380,55)">
-          <rect x="0" y="0" width="14" height="14" fill="#1a1a1a"/>
-          <text x="20" y="11" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">Operational BSL-4 count</text>
-          <rect x="0" y="22" width="14" height="14" fill="#8b1a1a"/>
-          <text x="20" y="33" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">Share scoring high on</text>
-          <text x="20" y="47" font-family="IBM Plex Mono, monospace" font-size="10" fill="#1a1a1a">best-practice indicators (~25 %)</text>
-        </g>
-        <!-- Separator line and source caption, below all bars -->
-        <line x1="40" y1="265" x2="560" y2="265" stroke="#d9d4c9" stroke-width="1"/>
-        <text x="40" y="282" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">Source: Global BioLabs Report 2023 (King's College London + GMU); indicative figures, BSL-3+ and undeclared facilities not included.</text>
-      </svg>
-      <figcaption>The absolute number grows where external auditing is tightest (Europe, NA). It will grow faster in the coming years where it is not comparable.</figcaption>
-    </figure>
-
-    <p>The picture leaves an uncomfortable conclusion for both sides: the question "should we do GoF?" is going out of style not because it has been answered, but because geography answered it for us. While the US debates moratoria, India builds two more BSL-4, China runs its own without external audit, and the Biological Weapons Convention still has no verification mechanism since 1972. What is decided in a Congressional hearing affects ~25% of global BSL-4 and an even smaller share of BSL-3+.</p>
-
-    <p>The next concrete horizon is the WHO Pandemic Accord negotiation and the outcome of the rules the White House announced reviewing in 2025-2026. If a multilateral framework with some external verification mechanism closes, the "GoF yes or no" debate stops being the useful front. If it doesn't, the right question for the next five years is the uncomfortable one: which countries take on the reputational cost of demanding transparency, and in exchange for what? It's a diplomatic question, not a virological one. That's why it has been stuck for decades.</p>
-
-    <p>If someone tells you GoF caused the previous pandemic, ask what evidence would change the claim. If someone tells you GoF prevents the next one, ask when it last did. If someone tells you the problem is only Wuhan, ask where the next BSL-4 will open. The three questions return different silences. All three are useful.</p>
-
-    <p class="signature">— P. C.</p>
-
-    <div class="refs">
-      <strong>Sources</strong>
-      <ol>
-        <li>Global BioLabs Report 2023, King's College London &amp; George Mason University. Interactive map: <a href="https://www.globalbiolabs.org/map" target="_blank" rel="noopener">globalbiolabs.org</a></li>
-        <li>Mapping BSL-3/BSL-4 laboratories, <em>Journal of Public Health</em>, 2025. <a href="https://link.springer.com/article/10.1007/s10389-025-02492-3" target="_blank" rel="noopener">springer.com</a></li>
-        <li>US Government Policy for Oversight of Dual Use Research of Concern and Pathogens with Enhanced Pandemic Potential (2024 policy). <a href="https://osp.od.nih.gov/policies/national-science-advisory-board-for-biosecurity-nsabb/gain-of-function-research/" target="_blank" rel="noopener">osp.od.nih.gov</a></li>
-        <li>CRS Report R47114 · Oversight of Gain-of-Function Research with Pathogens. <a href="https://www.congress.gov/crs-product/R47114" target="_blank" rel="noopener">congress.gov</a></li>
-        <li>Bulletin of the Atomic Scientists · "The keys to a better gain-of-function policy", April 2026. <a href="https://thebulletin.org/2026/04/the-keys-to-a-better-gain-of-function-policy-accountability-and-a-fair-and-rigorous-risk-assessment/" target="_blank" rel="noopener">thebulletin.org</a></li>
-        <li>Biological Weapons Convention (BWC), UNODA. <a href="https://disarmament.unoda.org/biological-weapons/" target="_blank" rel="noopener">disarmament.unoda.org</a></li>
-      </ol>
+      <p style="text-align:right;font-style:italic;color:var(--ink-3)">— P. C.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============== 08 DATUM ============== -->
-<section id="datum">
-  <div class="section-head">
-    <span class="num">§ 08</span>
-    <h2>Datum of the week</h2>
-  </div>
-  <div class="dato">
-    <div class="figure">87%</div>
-    <div class="label">reduction in hereditary angioedema attacks</div>
-    <p>Reduction in the monthly attack rate observed with lonvo-z (Intellia) versus placebo in the HAELO Phase 3 trial, across 67 patients followed for 24 weeks. 62% of recipients ended fully free of attacks and prophylactic treatment over the period, versus 11% on placebo. It is the first demonstration of meaningful clinical efficacy in a pivotal trial for an in vivo CRISPR therapy.</p>
-  </div>
-</section>
+  <!-- ═══════════════ 08 DATUM ═══════════════ -->
+  <section class="sec" id="datum">
+    <div class="sec-head">
+      <span class="sec-num">§ 08</span>
+      <h2 class="sec-title">Datum of the week</h2>
+    </div>
 
-<!-- ============== 09 APPENDIX ============== -->
-<section id="appendix">
-  <div class="section-head">
-    <span class="num">§ 09</span>
-    <h2>Appendix · technical sheets</h2>
-  </div>
-  <p class="lede">Detail of the four papers from section 03: summary, methodology, limitations, link.</p>
+    <div class="dato">
+      <p class="dato-num">87<span style="font-size:0.5em;vertical-align:0.4em">%</span></p>
+      <p class="dato-lbl">Reduction in hereditary angioedema attacks</p>
+      <p class="dato-body">Reduction in the monthly attack rate observed with lonvo-z (Intellia) versus placebo in the HAELO Phase 3 trial, across 67 patients followed for 24 weeks. 62&nbsp;% of recipients ended fully free of attacks and prophylactic treatment over the period, versus 11&nbsp;% on placebo. It is the first demonstration of meaningful clinical efficacy in a pivotal trial for an <em>in vivo</em> CRISPR therapy.</p>
+    </div>
+  </section>
 
-  <details>
-    <summary>Paper 01 · Cooper pairs in an ultracold atomic gas</summary>
-    <div class="body">
+  <!-- ═══════════════ 09 APPENDIX ═══════════════ -->
+  <section class="sec" id="appendix">
+    <div class="sec-head">
+      <span class="sec-num">§ 09</span>
+      <h2 class="sec-title">Appendix · technical sheets</h2>
+    </div>
+    <p class="sec-desc">Detail of the four papers from section 03: summary, methodology, limitations, link.</p>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 01</span>Cooper pairs in an ultracold atomic gas</h3>
+      <div class="appendix-meta">
+        <div>Discipline<strong>Condensed matter</strong></div>
+        <div>Region<strong>North America · MIT–Harvard</strong></div>
+        <div>Publication<strong>Phys. Rev. Lett. · April 15, 2026</strong></div>
+      </div>
       <dl>
         <dt>Summary</dt><dd>Direct quantum-gas microscopy imaging of pair correlations in a fermionic atomic gas in the BCS-BEC crossover; pairs show submicron synchronized motion not described by the mean-field BCS solution.</dd>
-        <dt>Methodology</dt><dd>Fermionic atomic system (likely <sup>6</sup>Li or <sup>40</sup>K) in an optical lattice; Feshbach resonance to tune the attractive interaction; quantum-gas microscopy for single-particle resolution; statistical analysis of second- and higher-order correlations.</dd>
+        <dt>Methodology</dt><dd>Fermionic atomic system (likely <sup>6</sup>Li or <sup>40</sup>K) in an optical lattice; Feshbach resonance to tune the attractive interaction; quantum-gas microscopy for single-particle resolution.</dd>
         <dt>Limitations</dt><dd>Simplified attractive Hubbard model; no phonon dynamics; extrapolation to solid-state limited by absence of an ionic lattice.</dd>
-        <dt>Discipline</dt><dd>Condensed matter / superconductivity</dd>
-        <dt>Region</dt><dd>North America (MIT-Harvard)</dd>
-        <dt>Link</dt><dd><a href="https://www.sciencedaily.com/releases/2026/04/260427050550.htm" target="_blank" rel="noopener">ScienceDaily · Apr 27, 2026</a></dd>
+        <dt>Link</dt><dd><a href="https://www.sciencedaily.com/releases/2026/04/260427050550.htm" target="_blank" rel="noopener">sciencedaily.com</a></dd>
       </dl>
-    </div>
-  </details>
+    </article>
 
-  <details>
-    <summary>Paper 02 · ELLMER — sensorimotor control with LLM and RAG</summary>
-    <div class="body">
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 02</span>ELLMER — sensorimotor control with LLM and RAG</h3>
+      <div class="appendix-meta">
+        <div>Discipline<strong>Robotics / embodied AI</strong></div>
+        <div>Region<strong>Europe · United Kingdom</strong></div>
+        <div>Publication<strong>Nature Machine Intelligence · April 2026</strong></div>
+      </div>
       <dl>
         <dt>Summary</dt><dd>Manipulator-robot control framework integrating a reasoning LLM, RAG over a curated task knowledge base, vision, and force feedback to solve unstructured tasks.</dd>
-        <dt>Methodology</dt><dd>Hierarchical composition: LLM as semantic planner → RAG as curated-base query → impedance controller with vision and force as the low-level motor loop; tests in a kitchen environment with unanticipated human perturbations.</dd>
+        <dt>Methodology</dt><dd>Hierarchical composition: LLM as semantic planner → RAG as curated-base query → impedance controller with vision and force as the low-level motor loop.</dd>
         <dt>Limitations</dt><dd>LLM inference latency limits fine reactivity; manually curated knowledge base; generalization to different embodiments not demonstrated.</dd>
-        <dt>Discipline</dt><dd>Robotics / embodied AI</dd>
-        <dt>Region</dt><dd>Europe (United Kingdom)</dd>
-        <dt>Link</dt><dd><a href="https://www.nature.com/articles/s42256-025-01005-x" target="_blank" rel="noopener">Nature Machine Intelligence</a></dd>
+        <dt>Link</dt><dd><a href="https://www.nature.com/articles/s42256-025-01005-x" target="_blank" rel="noopener">nature.com</a></dd>
       </dl>
-    </div>
-  </details>
+    </article>
 
-  <details>
-    <summary>Paper 03 · Fadrique et al. — 40 years of Amazon-Andean forests</summary>
-    <div class="body">
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 03</span>Fadrique et al. — 40 years of Amazon-Andean forests</h3>
+      <div class="appendix-meta">
+        <div>Discipline<strong>Ecology / climate change</strong></div>
+        <div>Region<strong>Latin America · multinational RAINFOR</strong></div>
+        <div>Publication<strong>Nature Ecology &amp; Evolution · April 2026</strong></div>
+      </div>
       <dl>
         <dt>Summary</dt><dd>Compositional reshuffle of Amazonian and Andean forests over 40 years: species tolerant of heat and seasonal drought gain ground over the historically dominant ones at each altitude.</dd>
-        <dt>Methodology</dt><dd>Standardized inventories of the RAINFOR network on &gt;250 permanent plots; DBH measurement, species-level identification, compositional turnover modeling with weighted Bray-Curtis indices.</dd>
+        <dt>Methodology</dt><dd>Standardized inventories of the RAINFOR network on &gt;250 permanent plots; DBH measurement, species-level identification, compositional turnover modeling.</dd>
         <dt>Limitations</dt><dd>Uneven sampling density; missing plots in some critical regions like the southeastern Amazon; partial attribution between climate and land-use effects.</dd>
-        <dt>Discipline</dt><dd>Ecology / climate change</dd>
-        <dt>Region</dt><dd>Latin America (multinational RAINFOR network)</dd>
-        <dt>Link</dt><dd><a href="https://www.sciencedaily.com/releases/2026/01/260125081133.htm" target="_blank" rel="noopener">ScienceDaily · RAINFOR coverage</a></dd>
+        <dt>Link</dt><dd><a href="https://www.sciencedaily.com/releases/2026/01/260125081133.htm" target="_blank" rel="noopener">sciencedaily.com</a></dd>
       </dl>
-    </div>
-  </details>
+    </article>
 
-  <details>
-    <summary>Paper 04 · Autism genetics in Latin American populations</summary>
-    <div class="body">
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 04</span>Autism genetics in Latin American populations</h3>
+      <div class="appendix-meta">
+        <div>Discipline<strong>Human genetics / population health</strong></div>
+        <div>Region<strong>Latin America · MEXPLO-ASD consortium</strong></div>
+        <div>Publication<strong>Nature Medicine · April 28, 2026</strong></div>
+      </div>
       <dl>
         <dt>Summary</dt><dd>Characterization of ASD-associated variants in &gt;15,000 individuals from Mexico, Peru, Colombia, Brazil, and US-based Latino diaspora; identification of new rare variants and substantial overlap with European architecture.</dd>
         <dt>Methodology</dt><dd>Exome sequencing in affected-parents trios; rare-variant burden analysis (<em>de novo</em> and inherited); polygenic scores transferred from European cohorts with population-structure adjustment.</dd>
         <dt>Limitations</dt><dd>Uneven geographic coverage between countries; heterogeneity of clinical diagnostic criteria; sample size still below the detection threshold for low-penetrance rare variants.</dd>
-        <dt>Discipline</dt><dd>Human genetics / population health</dd>
-        <dt>Region</dt><dd>Latin America (MEXPLO-ASD consortium)</dd>
-        <dt>Link</dt><dd><a href="https://www.nature.com/nm/" target="_blank" rel="noopener">Nature Medicine · April 2026</a></dd>
+        <dt>Link</dt><dd><a href="https://www.nature.com/nm/" target="_blank" rel="noopener">nature.com/nm</a></dd>
       </dl>
-    </div>
-  </details>
-</section>
+    </article>
 
-<footer class="colophon">
-  <strong>SINAPSE</strong> · weekly magazine of science, technology, and industry.<br/>
-  Issue 002 · Week 18 · Edition of May 5, 2026 · language: English.<br/>
-  Editor: Jack Cid · contact: j.andres.cid@gmail.com · Next issue: May 12, 2026.<br/>
-  Figures and authorships cited are based on public notes and press releases available at press time. <a href="../index.html">← back to index</a>
-</footer>
+  </section>
 
-</div>
+  <footer class="colofon">
+    <p><strong>SINAPSE</strong> — weekly magazine of science, technology, and industry.</p>
+    <p>Issue 002 · Edition of May 5, 2026 · Editor: Jack Cid · Next issue: May 12, 2026.</p>
+    <p style="margin-top:1rem;font-style:italic;text-transform:none;letter-spacing:0;font-family:var(--serif);color:var(--ink-3)">Figures and authorships cited are based on public notes and press releases available at press time.</p>
+    <p style="margin-top:1.5rem"><a href="#top">↑ Back to index</a></p>
+  </footer>
+
+</main>
+
+<script src="../../assets/reader-preferences.js" defer></script>
+<script>(function(){const bar=document.getElementById("progBar");if(!bar)return;function upd(){const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(h.scrollTop/max)*100:0)+"%";}window.addEventListener("scroll",upd,{passive:true});upd();})();</script>
 </body>
 </html>
