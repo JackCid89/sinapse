@@ -31,14 +31,14 @@
     --display: "Instrument Serif", "Source Serif 4", Georgia, serif;
     --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --measure: 52rem;        /* ~832px @ 16px · ancho magazine estándar */
+    --measure: 42rem;        /* ~672px @ 16px · default Sinapse */
     --measure-wide: 64rem;
-    --fs-body: 18px;
-    --leading: 1.65;
+    --fs-body: 17px;
+    --leading: 1.78;  /* spacious por default */
 
     --gap: 1.25rem;
-    --gap-lg: 2.5rem;
-    --gap-xl: 4rem;
+    --gap-lg: 3.5rem;  /* spacious */
+    --gap-xl: 5.5rem;  /* spacious */
   }
   /* Palette identities — override hue + accent triad */
   [data-palette="aurora"]{

@@ -26,9 +26,9 @@
   const DEFAULTS = {
     palette: 'aurora',      // aurora · vermilion · verde · tinta
     theme:   'paper',       // paper · sepia · eink
-    fontSize: 18,           // 15-22 px
-    measure: 38,            // 32-52 rem (ancho de columna)
-    density: 'regular'      // compact · regular · spacious
+    fontSize: 17,           // 15-22 px
+    measure: 42,            // 32-52 rem (ancho de columna)
+    density: 'spacious'     // compact · regular · spacious
   };
 
   const PALETTES = [
