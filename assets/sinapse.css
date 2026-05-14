@@ -210,3 +210,18 @@ footer.colophon strong{color:var(--ink)}
   .issue-row{grid-template-columns:1fr;gap:4px}
   .issue-row .date{text-align:left}
 }
+
+/* ----------- Selector de idioma ----------- */
+.lang-switch{
+  font-family:var(--mono);font-size:11px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);
+  margin-top:8px;display:flex;gap:6px;align-items:center
+}
+.lang-switch a{
+  color:var(--muted);border:none;padding:2px 6px;border-radius:2px
+}
+.lang-switch a:hover{color:var(--accent)}
+.lang-switch a.active{
+  background:var(--ink);color:var(--paper);border:none
+}
+.lang-switch span.sep{color:#bfb39a}
