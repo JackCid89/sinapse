@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SINAPSE · revista semanal de ciencia, tecnología e industria</title>
+<link rel="stylesheet" href="./assets/sinapse.css" />
+<meta name="description" content="SINAPSE — revista semanal en español sobre ciencia, tecnología e industria. Editor: Jack Cid." />
+<meta property="og:title" content="SINAPSE" />
+<meta property="og:description" content="Revista semanal en español de ciencia, tecnología e industria." />
+<meta property="og:type" content="website" />
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="brand">SINAPSE<small>Ciencia · Tecnología · Industria</small></div>
+  <div class="issue">
+    <strong>Edición semanal</strong>
+    Idioma: español<br/>
+    Editor: Jack Cid
+  </div>
+</header>
+
+<section class="hero">
+  <p>Una lectura semanal, en español, sobre los descubrimientos, papers y movimientos de industria que importan en ciencia y tecnología. Sin hype. Con contexto. Paper-first.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="num">archivo</span>
+    <h2>Números publicados</h2>
+  </div>
+  <p class="lede" id="meta-line">Cargando archivo…</p>
+  <div class="issue-list" id="issue-list">
+    <!-- Se rellena desde data/registro.json -->
+  </div>
+  <noscript>
+    <p class="empty">Esta página usa JavaScript para listar los números. También puedes navegar directamente al directorio <a href="./issues/">/issues/</a>.</p>
+  </noscript>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="num">acerca</span>
+    <h2>Sobre SINAPSE</h2>
+  </div>
+  <p>SINAPSE se publica los martes con la actividad de la semana anterior. Cada número tiene ocho secciones fijas: Pulso, Portada, Papers, Tech, Industria, Columna, Dato de la semana y Apéndice técnico.</p>
+  <p>Los criterios editoriales —rotación de disciplinas, equilibrio geográfico (con presencia obligada de fuentes asiáticas), tonos rotativos en la columna— están detallados en la <a href="./editorial/guia.html">guía editorial</a>. El registro completo de números, con sus disciplinas y regiones cubiertas, vive en <a href="./data/registro.json">data/registro.json</a>.</p>
+  <p>Contacto del editor: <a href="mailto:j.andres.cid@gmail.com">j.andres.cid@gmail.com</a>.</p>
+</section>
+
+<footer class="colophon">
+  <strong>SINAPSE</strong> · revista semanal de ciencia, tecnología e industria.<br/>
+  Editor: Jack Cid · sitio publicado vía GitHub Pages · sin tracking, sin cookies.<br/>
+  Política editorial: paper-first, contexto siempre, sin hype.
+</footer>
+
+</div>
+
+<script>
+(async function () {
+  const list = document.getElementById('issue-list');
+  const meta = document.getElementById('meta-line');
+  try {
+    const res = await fetch('./data/registro.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const numeros = (data.numeros || []).slice().sort((a, b) => b.numero - a.numero);
+
+    if (!numeros.length) {
+      list.innerHTML = '<p class="empty">Aún no hay números publicados.</p>';
+      meta.textContent = '0 números en archivo.';
+      return;
+    }
+
+    meta.textContent = numeros.length + (numeros.length === 1 ? ' número en archivo.' : ' números en archivo.');
+
+    list.innerHTML = numeros.map(function (n) {
+      const num = String(n.numero).padStart(3, '0');
+      const archivo = n.archivo
+        ? n.archivo.replace(/^sinapse-/, '').replace(/^\//, '')
+        : ('n' + num + '.html');
+      const href = './issues/' + archivo;
+      const titulo = (n.portada && n.portada.titulo) || ('N.° ' + num);
+      const disciplina = (n.portada && n.portada.disciplina) || '—';
+      const fecha = n.fecha || '';
+      const semana = n.semana || '';
+      return '' +
+        '<a class="issue-row" href="' + href + '">' +
+          '<div class="num">N.° ' + num + '</div>' +
+          '<div>' +
+            '<h3>' + escapeHtml(titulo) + '</h3>' +
+            '<div class="meta">' + escapeHtml(disciplina) + (semana ? ' · ' + escapeHtml(semana) : '') + '</div>' +
+          '</div>' +
+          '<div class="date">' + escapeHtml(fecha) + '</div>' +
+        '</a>';
+    }).join('');
+  } catch (err) {
+    list.innerHTML =
+      '<p class="empty">No se pudo cargar el archivo del registro' +
+      ' (' + escapeHtml(String(err)) + ').<br/>' +
+      'Si abres este archivo localmente con <code>file://</code>, sirve el directorio con un servidor estático ' +
+      '(p. ej. <code>python3 -m http.server</code>) o despliégalo en GitHub Pages.</p>';
+    meta.textContent = '';
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+    });
+  }
+})();
+</script>
+</body>
+</html>
