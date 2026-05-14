@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sinapse · ejemplo mínimo</title>
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Hoja de estilos del sistema Sinapse -->
+<link rel="stylesheet" href="../assets/sinapse.css" />
+</head>
+<body>
+
+<!-- Barra de progreso de lectura -->
+<div class="progress" aria-hidden="true"><div class="bar" id="progBar"></div></div>
+
+<main class="page" id="top">
+
+  <!-- ═══════════ Cabecera ═══════════ -->
+  <header class="masthead">
+    <h1 class="wordmark"><a href="/">sinapse<span class="dot">.</span></a></h1>
+    <div class="meta">
+      <strong>N.º 002</strong><br>
+      Semana 18 · 29 abr – 5 may 2026<br>
+      Edición semanal · español
+    </div>
+  </header>
+
+  <div class="sub">
+    <span>Ciencia · Tecnología · Industria</span>
+    <span class="lang">
+      <a href="#" aria-current="page">ES</a> · <a href="#">EN</a>
+    </span>
+  </div>
+
+  <p class="lede">
+    <strong>En esta edición —</strong> texto introductorio en cursiva, una o dos
+    frases que adelantan los hitos de la edición.
+  </p>
+
+  <!-- ═══════════ Índice ═══════════ -->
+  <nav class="toc" aria-label="Índice">
+    <ol>
+      <li><a href="#pulso"><span class="num">01</span><span class="lead"></span><span>Pulso</span></a></li>
+      <li><a href="#portada"><span class="num">02</span><span class="lead"></span><span>Portada</span></a></li>
+      <li><a href="#dato"><span class="num">03</span><span class="lead"></span><span>Dato</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ═══════════ Sección · noticia breve (Pulso) ═══════════ -->
+  <section class="sec" id="pulso">
+    <div class="sec-head">
+      <span class="sec-num">§ 01</span>
+      <h2 class="sec-title">Pulso</h2>
+    </div>
+    <p class="sec-desc">Noticias breves de la semana.</p>
+
+    <div class="pulso">
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">01</span>P-01</div>
+        <div class="pulso-body">
+          <div class="tags">
+            <span class="tag">Categoría A</span>
+            <span class="tag">Categoría B</span>
+          </div>
+          <h3>Titular de la noticia breve en serif a una o dos líneas</h3>
+          <p>Cuerpo de la noticia en dos o tres frases. Reglas: nada de
+          adjetivos vacíos, una cifra concreta, un actor concreto, un horizonte
+          concreto.</p>
+
+          <!-- Callout opcional "En claro" -->
+          <aside class="enclaro">
+            Explicación en lenguaje llano para lectores no técnicos.
+          </aside>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">02</span>P-02</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Categoría C</span></div>
+          <h3>Segundo titular, esta vez sin "En claro"</h3>
+          <p>Cuerpo de la noticia breve.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════ Sección · artículo largo (Portada/Columna) ═══════════ -->
+  <section class="sec" id="portada">
+    <div class="sec-head">
+      <span class="sec-num">§ 02</span>
+      <h2 class="sec-title">Portada</h2>
+    </div>
+
+    <p class="portada-meta">País · Disciplina · Subdisciplina</p>
+    <h1 class="article-title">Titular del artículo principal: <em>cursiva en acento</em> para énfasis tipográfico</h1>
+    <p class="article-deck">Bajada del artículo en cursiva, dos o tres líneas que resumen
+    el porqué de la cobertura.</p>
+    <p class="byline"><span>Por la redacción</span><span>5 may 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">El primer párrafo lleva la clase <code>dropcap</code> y empieza con
+      capitular tipográfica en color acento. Mantén este párrafo con la noticia
+      bruta: qué pasó, cuándo, magnitud y endpoint.</p>
+
+      <p>Los párrafos siguientes son cuerpo normal. Itálicas para términos
+      técnicos como <em>in vivo</em>; <strong>negrita</strong> solo para abrir
+      enumeraciones tipo «Primero, …», «Segundo, …», «Tercero, …».</p>
+
+      <h3>Subepígrafe de sección</h3>
+      <p>Los subepígrafes llevan un filete corto en color acento sobre la
+      línea — viene automático en <code>.prose h3::before</code>.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ Sección · Dato de la semana ═══════════ -->
+  <section class="sec" id="dato">
+    <div class="sec-head">
+      <span class="sec-num">§ 03</span>
+      <h2 class="sec-title">Dato de la semana</h2>
+    </div>
+
+    <div class="dato">
+      <p class="dato-num">87<span style="font-size:0.5em;vertical-align:0.4em">%</span></p>
+      <p class="dato-lbl">Reducción de ataques de angioedema</p>
+      <p class="dato-body">Texto explicativo en una o dos frases. Cita de
+      la fuente, cohorte y período de seguimiento.</p>
+    </div>
+  </section>
+
+  <footer class="colofon">
+    <p><strong>Sinapse</strong> — revista semanal de ciencia, tecnología e industria.</p>
+    <p>N.º 002 · Edición del 5 de mayo de 2026 · Editor: Jack Cid.</p>
+    <p style="margin-top:1rem"><a href="#top">↑ Volver al índice</a></p>
+  </footer>
+
+</main>
+
+<!-- Preferencias de lectura del usuario (botón flotante abajo-derecha) -->
+<script src="../assets/reader-preferences.js" defer></script>
+
+<!-- Barra de progreso de lectura -->
+<script>
+(function(){
+  const bar = document.getElementById('progBar');
+  function upd(){
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', upd, {passive:true});
+  upd();
+})();
+</script>
+
+</body>
+</html>

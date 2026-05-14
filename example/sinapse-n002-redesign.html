@@ -1,0 +1,1328 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SINAPSE · N.º 002 · Mayo 2026 — rediseño</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+  :root{
+    /* ─── Palette identity (set via [data-palette]) ─────────────
+       Default: Aurora — cool ivory + indigo ink + ultramarine accent. */
+    --hue: 255;
+    --paper-c: 0.008;
+    --ink-c: 0.020;
+    --accent: oklch(0.50 0.19 262);
+    --accent-soft: oklch(0.93 0.05 262);
+    --hl: oklch(0.95 0.04 255);
+
+    /* ─── Theme (light/sepia/eink) ───────────────────────────── */
+    --paper: oklch(0.972 var(--paper-c) var(--hue));
+    --paper-2: oklch(0.948 var(--paper-c) var(--hue));
+    --ink: oklch(0.20 var(--ink-c) var(--hue));
+    --ink-2: oklch(0.40 var(--ink-c) var(--hue));
+    --ink-3: oklch(0.58 calc(var(--ink-c) * 0.7) var(--hue));
+    --rule: oklch(0.84 calc(var(--ink-c) * 0.6) var(--hue));
+    --rule-2: oklch(0.91 calc(var(--ink-c) * 0.5) var(--hue));
+
+    --serif: "Source Serif 4", "Iowan Old Style", "Charter", Georgia, serif;
+    --display: "Instrument Serif", "Source Serif 4", Georgia, serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --measure: 38rem;        /* ~608px @ 16px */
+    --measure-wide: 52rem;
+    --fs-body: 18px;
+    --leading: 1.65;
+
+    --gap: 1.25rem;
+    --gap-lg: 2.5rem;
+    --gap-xl: 4rem;
+  }
+  /* Palette identities — override hue + accent triad */
+  [data-palette="aurora"]{
+    --hue: 255; --paper-c: 0.008; --ink-c: 0.020;
+    --accent: oklch(0.50 0.19 262);
+    --accent-soft: oklch(0.93 0.05 262);
+    --hl: oklch(0.95 0.04 255);
+  }
+  [data-palette="vermilion"]{
+    --hue: 40; --paper-c: 0.010; --ink-c: 0.018;
+    --accent: oklch(0.58 0.22 32);
+    --accent-soft: oklch(0.93 0.07 35);
+    --hl: oklch(0.95 0.06 75);
+  }
+  [data-palette="verde"]{
+    --hue: 120; --paper-c: 0.010; --ink-c: 0.020;
+    --accent: oklch(0.46 0.13 140);
+    --accent-soft: oklch(0.92 0.06 140);
+    --hl: oklch(0.94 0.05 120);
+  }
+  [data-palette="tinta"]{
+    --hue: 90; --paper-c: 0.003; --ink-c: 0.005;
+    --accent: oklch(0.78 0.20 118);
+    --accent-soft: oklch(0.92 0.10 118);
+    --hl: oklch(0.95 0.10 115);
+  }
+
+  /* Theme controls brightness (light/sepia/eink); palette still drives hue+accent */
+  [data-theme="sepia"]{
+    --paper: oklch(0.92 0.030 var(--hue));
+    --paper-2: oklch(0.90 0.032 var(--hue));
+    --ink: oklch(0.27 0.025 var(--hue));
+    --ink-2: oklch(0.43 0.022 var(--hue));
+    --ink-3: oklch(0.58 0.018 var(--hue));
+    --rule: oklch(0.78 0.025 var(--hue));
+    --rule-2: oklch(0.84 0.020 var(--hue));
+  }
+  [data-theme="eink"]{
+    --paper: oklch(0.18 0.008 var(--hue));
+    --paper-2: oklch(0.22 0.010 var(--hue));
+    --ink: oklch(0.94 0.008 var(--hue));
+    --ink-2: oklch(0.78 0.010 var(--hue));
+    --ink-3: oklch(0.62 0.012 var(--hue));
+    --rule: oklch(0.34 0.012 var(--hue));
+    --rule-2: oklch(0.28 0.012 var(--hue));
+    --accent-soft: oklch(0.30 0.08 var(--hue));
+    --hl: oklch(0.28 0.05 var(--hue));
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{background:var(--paper);}
+  body{
+    font-family:var(--serif);
+    font-size:var(--fs-body);
+    line-height:var(--leading);
+    color:var(--ink);
+    background:var(--paper);
+    font-feature-settings:"kern","liga","onum","ss01";
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    transition:background 0.3s ease, color 0.3s ease;
+  }
+  ::selection{background:var(--accent-soft);color:var(--ink)}
+
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:0.18em;text-decoration-thickness:0.06em}
+  a:hover{text-decoration-color:var(--accent);color:var(--accent)}
+
+  /* ───────── Page ───────── */
+  .page{
+    max-width:var(--measure);
+    margin:0 auto;
+    padding:5rem 1.5rem 6rem;
+  }
+  .wide{max-width:var(--measure-wide);margin:0 auto}
+
+  /* ───────── Masthead ───────── */
+  .masthead{
+    border-top:2px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding:1rem 0 0.8rem;
+    margin-bottom:2.5rem;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:0.5rem 1rem;
+    align-items:end;
+  }
+  .wordmark{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(3rem, 8vw, 4.8rem);
+    line-height:0.85;
+    letter-spacing:-0.005em;
+    margin:0;
+  }
+  .wordmark a{text-decoration:none;color:var(--ink)}
+  .wordmark .dot{color:var(--accent);font-style:normal;margin-left:-0.05em}
+  .masthead .meta{
+    font-family:var(--mono);
+    font-size:11px;
+    line-height:1.5;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-2);
+    text-align:right;
+  }
+  .masthead .meta strong{color:var(--ink);font-weight:500}
+
+  .sub{
+    font-family:var(--mono);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--ink-2);
+    margin:0 0 1rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem 1.5rem;
+    align-items:baseline;
+  }
+  .sub .lang a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .sub .lang a[aria-current]{color:var(--ink);border-color:var(--ink)}
+
+  /* ───────── TOC ───────── */
+  .toc{
+    margin:1.75rem 0 0;
+    border-top:1px solid var(--rule);
+    padding-top:1rem;
+  }
+  .toc ol{
+    list-style:none;padding:0;margin:0;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    column-gap:1.5rem;row-gap:0.35rem;
+    font-family:var(--mono);font-size:12px;
+  }
+  .toc a{
+    display:flex;justify-content:space-between;gap:0.75rem;
+    padding:0.25rem 0;
+    text-decoration:none;color:var(--ink-2);
+    border-bottom:1px dotted transparent;
+  }
+  .toc a:hover{color:var(--ink);border-bottom-color:var(--rule)}
+  .toc .num{color:var(--ink-3);font-variant-numeric:tabular-nums}
+  .toc .lead{flex:1;border-bottom:1px dotted var(--rule-2);margin:0 0.5rem;align-self:end;height:1px;transform:translateY(-3px)}
+
+  .lede{
+    margin:2rem 0 0;
+    font-style:italic;
+    color:var(--ink-2);
+    font-size:1.05rem;
+    line-height:1.55;
+    border-left:2px solid var(--accent);
+    padding:0.1rem 0 0.1rem 1rem;
+  }
+  .lede strong{font-style:normal;color:var(--ink)}
+
+  /* ───────── Section anchors ───────── */
+  section.sec{
+    margin-top:var(--gap-xl);
+    padding-top:2rem;
+    border-top:1px solid var(--ink);
+    scroll-margin-top:1rem;
+  }
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:1.5rem;
+  }
+  .sec-num{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--ink-3);
+    text-transform:uppercase;
+  }
+  .sec-title{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(2.2rem, 4.8vw, 3rem);
+    line-height:1;
+    margin:0;
+    letter-spacing:-0.005em;
+  }
+  .sec-desc{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--ink-2);
+    font-size:1rem;
+    max-width:32rem;
+    margin:-0.5rem 0 2rem;
+  }
+
+  /* ───────── Tags ───────── */
+  .tags{
+    display:flex;flex-wrap:wrap;gap:0.4rem;
+    font-family:var(--mono);font-size:10px;
+    text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--ink-2);
+    margin:0 0 0.6rem;
+  }
+  .tag{
+    display:inline-block;
+    padding:2px 7px 1px;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--ink-2);
+    background:transparent;
+    line-height:1.4;
+  }
+  .tag.accent{color:var(--accent);border-color:var(--accent)}
+
+  /* ───────── Pulso ───────── */
+  .pulso{display:flex;flex-direction:column;gap:2rem}
+  .pulso-item{
+    display:grid;
+    grid-template-columns:3.5rem 1fr;
+    gap:1.25rem;
+    padding-bottom:1.75rem;
+    border-bottom:1px solid var(--rule-2);
+  }
+  .pulso-item:last-child{border-bottom:0;padding-bottom:0}
+  .pulso-num{
+    font-family:var(--mono);font-size:10px;
+    color:var(--ink-3);letter-spacing:0.1em;
+    padding-top:0.25rem;
+  }
+  .pulso-num .ord{
+    display:block;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:2.2rem;
+    color:var(--ink);
+    line-height:1;
+    margin-bottom:0.25rem;
+    font-feature-settings:"onum";
+  }
+  .pulso-body h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.25rem;
+    line-height:1.25;
+    margin:0 0 0.5rem;
+    font-variation-settings:"opsz" 24;
+    text-wrap:pretty;
+  }
+  .pulso-body p{margin:0.5rem 0 0}
+  .enclaro{
+    margin-top:0.85rem;
+    padding:0.7rem 0.9rem;
+    background:var(--hl);
+    border-left:2px solid var(--accent);
+    font-size:0.95rem;
+    line-height:1.55;
+    color:var(--ink);
+  }
+  .enclaro::before{
+    content:"En claro";
+    display:block;
+    font-family:var(--mono);font-size:9px;
+    text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--accent);
+    margin-bottom:0.25rem;
+  }
+
+  /* ───────── Cover article (Portada) ───────── */
+  .portada-meta{
+    font-family:var(--mono);font-size:11px;
+    text-transform:uppercase;letter-spacing:0.1em;
+    color:var(--ink-2);
+    margin:0 0 0.75rem;
+  }
+  .article-title{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(2.4rem, 5.5vw, 3.6rem);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    margin:0 0 1rem;
+    text-wrap:balance;
+  }
+  .article-title em{font-style:italic;color:var(--accent)}
+  .article-deck{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:1.2rem;
+    line-height:1.5;
+    color:var(--ink-2);
+    margin:0 0 1.5rem;
+    text-wrap:pretty;
+  }
+  .byline{
+    font-family:var(--mono);font-size:11px;
+    text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--ink-3);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:0.6rem 0;
+    margin:0 0 2rem;
+    display:flex;justify-content:space-between;gap:1rem;
+    flex-wrap:wrap;
+  }
+  .prose p{margin:0 0 1rem;text-wrap:pretty;hyphens:auto;-webkit-hyphens:auto}
+  .prose p + p{text-indent:0}
+  .prose h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.3rem;
+    line-height:1.25;
+    margin:2.5rem 0 0.75rem;
+    font-variation-settings:"opsz" 24;
+  }
+  .prose h3::before{
+    content:"";
+    display:block;
+    width:2.5rem;height:2px;
+    background:var(--accent);
+    margin-bottom:0.7rem;
+  }
+  .dropcap::first-letter{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:400;
+    float:left;
+    font-size:5.5rem;
+    line-height:0.8;
+    padding:0.35rem 0.5rem 0 0;
+    color:var(--accent);
+  }
+
+  /* ───────── Papers ───────── */
+  .papers{display:grid;gap:2.5rem}
+  .paper{
+    padding:1.5rem 0;
+    border-top:1px solid var(--rule);
+  }
+  .paper h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.3rem;
+    line-height:1.25;
+    margin:0.3rem 0 0.5rem;
+    text-wrap:pretty;
+  }
+  .paper .cite{
+    font-family:var(--mono);font-size:11px;
+    color:var(--ink-3);letter-spacing:0.04em;
+    margin:0 0 1rem;
+  }
+  .paper .why{
+    margin-top:0.85rem;
+    padding-left:1rem;
+    border-left:2px solid var(--accent-soft);
+    color:var(--ink-2);
+    font-style:italic;
+  }
+  .paper .why::before{
+    content:"Por qué importa · ";
+    font-family:var(--mono);
+    font-style:normal;font-size:10px;
+    text-transform:uppercase;letter-spacing:0.1em;
+    color:var(--accent);
+    margin-right:0.15rem;
+  }
+
+  /* ───────── Tech / Industria (denser) ───────── */
+  .ti-grid{display:grid;gap:1.75rem}
+  .ti-item{
+    display:grid;
+    grid-template-columns:6.5rem 1fr;
+    gap:1.25rem;
+    align-items:baseline;
+    padding-bottom:1.5rem;
+    border-bottom:1px solid var(--rule-2);
+  }
+  .ti-item:last-child{border-bottom:0}
+  .ti-cat{
+    font-family:var(--mono);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--ink-3);
+    line-height:1.4;
+  }
+  .ti-body h3{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.15rem;
+    line-height:1.3;
+    margin:0 0 0.5rem;
+    text-wrap:pretty;
+  }
+  .ti-body p{margin:0;color:var(--ink-2)}
+
+  /* ───────── Columna ───────── */
+  .columna .article-title{font-style:italic}
+  .columna .prose p:first-of-type::first-letter{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:400;
+    float:left;
+    font-size:4.5rem;
+    line-height:0.85;
+    padding:0.2rem 0.4rem 0 0;
+    color:var(--ink);
+  }
+  .columna .prose p{font-size:1.02rem}
+
+  /* ───────── Contraste ───────── */
+  .contraste .lede{font-size:1.1rem}
+  .contraste .quote{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.15rem;
+    line-height:1.5;
+    color:var(--ink);
+    padding:1rem 0 1rem 1.25rem;
+    margin:1.5rem 0;
+    border-left:3px solid var(--accent);
+  }
+  .quote-attr{
+    display:block;
+    font-family:var(--mono);font-style:normal;font-size:10px;
+    text-transform:uppercase;letter-spacing:0.1em;
+    color:var(--ink-3);
+    margin-top:0.5rem;
+  }
+  .atlas{
+    margin:2rem 0;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding:0.5rem 0;
+  }
+  .atlas-head{
+    font-family:var(--mono);font-size:10px;
+    text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--ink-3);
+    padding:0.5rem 0;
+    border-bottom:1px solid var(--rule-2);
+  }
+  .atlas dl{
+    display:grid;
+    grid-template-columns:9rem 1fr;
+    gap:0.5rem 1.5rem;
+    margin:0;
+    padding:1rem 0;
+  }
+  .atlas dt{
+    font-family:var(--mono);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--accent);
+    padding-top:0.35rem;
+    line-height:1.4;
+  }
+  .atlas dd{
+    margin:0 0 1.25rem;
+    font-size:0.98rem;
+    line-height:1.55;
+    color:var(--ink);
+  }
+  .atlas dd strong{font-weight:600}
+  .atlas dd em{font-style:italic;color:var(--ink-2)}
+
+  .chart{
+    margin:2.5rem 0;
+    padding:1.5rem 0;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .chart-head{
+    font-family:var(--mono);font-size:10px;
+    text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--ink-3);
+    margin-bottom:1rem;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  }
+  .chart-head strong{color:var(--ink);font-weight:500}
+  .bars{display:flex;flex-direction:column;gap:0.7rem}
+  .bar-row{
+    display:grid;
+    grid-template-columns:5.5rem 1fr 3.5rem;
+    gap:0.85rem;
+    align-items:center;
+    font-family:var(--mono);font-size:11px;
+    color:var(--ink);
+  }
+  .bar-lbl{letter-spacing:0.04em}
+  .bar-track{
+    position:relative;height:18px;
+    background:transparent;
+    border-bottom:1px solid var(--rule-2);
+  }
+  .bar-fill{
+    position:absolute;left:0;top:2px;bottom:2px;
+    background:var(--ink);
+  }
+  .bar-fill .qual{
+    position:absolute;left:0;top:0;bottom:0;
+    background:var(--accent);
+  }
+  .bar-val{
+    font-variant-numeric:tabular-nums;
+    color:var(--ink-2);
+    text-align:right;
+  }
+  .chart-legend{
+    margin-top:1rem;
+    font-family:var(--mono);font-size:10px;
+    color:var(--ink-3);text-transform:uppercase;letter-spacing:0.08em;
+    display:flex;gap:1.25rem;flex-wrap:wrap;
+  }
+  .swatch{display:inline-block;width:10px;height:10px;vertical-align:-1px;margin-right:0.4rem}
+  .chart-foot{
+    margin-top:0.85rem;
+    font-size:0.85rem;font-style:italic;color:var(--ink-3);
+  }
+
+  .sources{
+    margin-top:2.5rem;
+    padding:1.25rem 0;
+    border-top:1px solid var(--rule);
+    font-size:0.9rem;
+    color:var(--ink-2);
+  }
+  .sources h4{
+    font-family:var(--mono);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--ink-3);
+    margin:0 0 0.75rem;
+    font-weight:500;
+  }
+  .sources ol{padding-left:1.5rem;margin:0;line-height:1.5}
+  .sources li{margin-bottom:0.4rem}
+
+  /* ───────── Dato ───────── */
+  .dato{
+    text-align:center;
+    padding:3rem 0 2.5rem;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .dato-num{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(9rem, 24vw, 18rem);
+    line-height:0.85;
+    letter-spacing:-0.03em;
+    color:var(--accent);
+    margin:0;
+  }
+  .dato-lbl{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+    margin:1rem 0 0;
+  }
+  .dato-body{
+    max-width:32rem;
+    margin:1.5rem auto 0;
+    font-size:0.98rem;
+    color:var(--ink-2);
+    line-height:1.6;
+  }
+
+  /* ───────── Apéndice ───────── */
+  .appendix-paper{
+    margin-bottom:2.5rem;
+    padding:1.5rem 0;
+    border-top:1px solid var(--rule);
+  }
+  .appendix-paper h3{
+    font-family:var(--serif);font-weight:600;
+    font-size:1.15rem;line-height:1.3;
+    margin:0 0 0.5rem;
+    display:flex;align-items:baseline;gap:0.6rem;
+    text-wrap:pretty;
+  }
+  .appendix-paper h3 .pnum{
+    font-family:var(--mono);font-size:10px;font-weight:500;
+    letter-spacing:0.12em;color:var(--accent);
+    text-transform:uppercase;flex-shrink:0;
+    line-height:1.4;padding-top:0.2rem;
+  }
+  .appendix-meta{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:0.5rem 1rem;
+    font-family:var(--mono);font-size:10px;
+    text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--ink-3);
+    border-top:1px solid var(--rule-2);
+    border-bottom:1px solid var(--rule-2);
+    padding:0.75rem 0;
+    margin:1rem 0;
+  }
+  .appendix-meta strong{
+    display:block;
+    color:var(--ink);font-weight:500;
+    font-family:var(--serif);
+    font-size:0.92rem;
+    text-transform:none;letter-spacing:0;
+    margin-top:0.15rem;
+    font-style:italic;
+  }
+  .appendix-paper dl{
+    display:grid;
+    grid-template-columns:7rem 1fr;
+    gap:0.4rem 1.25rem;
+    margin:0.75rem 0 0;
+    font-size:0.95rem;
+  }
+  .appendix-paper dt{
+    font-family:var(--mono);font-size:10px;
+    text-transform:uppercase;letter-spacing:0.1em;
+    color:var(--ink-3);padding-top:0.3rem;
+  }
+  .appendix-paper dd{margin:0 0 0.8rem;color:var(--ink-2);line-height:1.55}
+
+  /* ───────── Colofón ───────── */
+  .colofon{
+    margin-top:5rem;
+    padding-top:2rem;
+    border-top:2px solid var(--ink);
+    font-family:var(--mono);
+    font-size:11px;
+    line-height:1.7;
+    color:var(--ink-2);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .colofon strong{font-family:var(--serif);font-style:italic;text-transform:none;letter-spacing:0;color:var(--ink);font-size:0.95rem}
+  .colofon a{color:var(--ink-2)}
+
+  /* ───────── Reading progress ───────── */
+  .progress{
+    position:fixed;top:0;left:0;right:0;height:2px;z-index:50;
+    background:transparent;
+    pointer-events:none;
+  }
+  .progress .bar{
+    height:100%;width:0%;
+    background:var(--accent);
+    transition:width 0.1s linear;
+  }
+
+  /* ───────── Density modes ───────── */
+  [data-density="compact"]{--leading:1.55;--gap-xl:3rem;--gap-lg:2rem}
+  [data-density="spacious"]{--leading:1.78;--gap-xl:5.5rem;--gap-lg:3.5rem}
+
+  /* ───────── Mobile ───────── */
+  @media (max-width:640px){
+    .page{padding:2.5rem 1.25rem 4rem}
+    .toc ol{grid-template-columns:1fr}
+    .pulso-item{grid-template-columns:1fr;gap:0.5rem}
+    .pulso-num{display:flex;align-items:baseline;gap:0.75rem;padding-top:0}
+    .pulso-num .ord{font-size:1.4rem;margin:0}
+    .ti-item{grid-template-columns:1fr;gap:0.4rem}
+    .atlas dl{grid-template-columns:1fr;gap:0.25rem}
+    .atlas dt{padding-top:0.4rem}
+    .atlas dd{margin-bottom:1rem}
+    .appendix-meta{grid-template-columns:1fr}
+    .appendix-paper dl{grid-template-columns:1fr;gap:0.2rem}
+    .bar-row{grid-template-columns:4.5rem 1fr 2.8rem;font-size:10px}
+  }
+
+  /* ───────── Print ───────── */
+  @media print{
+    :root{--paper:#fff;--ink:#111}
+    body{font-size:11pt}
+    .page{max-width:none;padding:0 0 1cm}
+    .progress, [data-twk]{display:none !important}
+    section.sec{break-inside:avoid-page;break-before:auto}
+    .pulso-item,.paper,.ti-item,.appendix-paper{break-inside:avoid}
+    a{color:#111}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><div class="bar" id="progBar"></div></div>
+
+<main class="page" id="top">
+
+  <header class="masthead">
+    <h1 class="wordmark"><a href="#top">sinapse<span class="dot">.</span></a></h1>
+    <div class="meta">
+      <strong>N.º 002</strong><br>
+      Semana 18 · 29 abr – 5 may 2026<br>
+      Edición semanal · español
+    </div>
+  </header>
+
+  <div class="sub">
+    <span>Ciencia · Tecnología · Industria</span>
+    <span class="lang">
+      <a href="#" aria-current="page">ES</a> · <a href="#">EN</a>
+    </span>
+  </div>
+
+  <p class="lede">
+    <strong>En esta edición —</strong> el primer CRISPR <em>in vivo</em> en cruzar la Fase 3 con eficacia: una sola infusión, 87&nbsp;% menos ataques de angioedema. Más siete pulsos de la semana, cuatro papers, una columna sobre <em>el cuerpo abierto</em> y un contraste sobre quién audita los laboratorios que nadie nombra.
+  </p>
+
+  <nav class="toc" aria-label="Índice">
+    <ol>
+      <li><a href="#pulso"><span class="num">01</span><span class="lead"></span><span>Pulso</span></a></li>
+      <li><a href="#portada"><span class="num">02</span><span class="lead"></span><span>Portada</span></a></li>
+      <li><a href="#papers"><span class="num">03</span><span class="lead"></span><span>Papers</span></a></li>
+      <li><a href="#tech"><span class="num">04</span><span class="lead"></span><span>Tech</span></a></li>
+      <li><a href="#industria"><span class="num">05</span><span class="lead"></span><span>Industria</span></a></li>
+      <li><a href="#columna"><span class="num">06</span><span class="lead"></span><span>Columna</span></a></li>
+      <li><a href="#contraste"><span class="num">07</span><span class="lead"></span><span>Contraste</span></a></li>
+      <li><a href="#dato"><span class="num">08</span><span class="lead"></span><span>Dato</span></a></li>
+      <li><a href="#apendice"><span class="num">09</span><span class="lead"></span><span>Apéndice</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ═══════════════ 01 PULSO ═══════════════ -->
+  <section class="sec" id="pulso">
+    <div class="sec-head">
+      <span class="sec-num">§ 01</span>
+      <h2 class="sec-title">Pulso</h2>
+    </div>
+    <p class="sec-desc">Siete noticias breves para tomar el pulso de la semana en ciencia, tecnología e industria.</p>
+
+    <div class="pulso">
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">01</span>P-01</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Genética</span><span class="tag">Biomedicina</span></div>
+          <h3>Intellia anuncia eficacia en Fase 3 para su edición CRISPR <em>in&nbsp;vivo</em></h3>
+          <p>El 27 de abril Intellia comunicó los resultados del ensayo HAELO con lonvo-z, terapia de inactivación del gen <em>KLKB1</em> en hepatocitos vía LNP. La terapia redujo en 87&nbsp;% la tasa de ataques de angioedema hereditario frente a placebo a 24&nbsp;semanas. Es el primer CRISPR <em>in vivo</em> que llega a un endpoint de Fase&nbsp;3.</p>
+          <aside class="enclaro">Una sola infusión modifica el ADN del hígado del paciente para apagar el gen que dispara los ataques. Antes este tipo de edición requería un mes de hospital; ahora cabe en una bolsa intravenosa.</aside>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">02</span>P-02</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Robótica</span><span class="tag">Asia</span><span class="tag">Japón</span></div>
+          <h3>JAL inicia ensayo con humanoides en Haneda</h3>
+          <p>Japan Airlines Ground Service y GMO AI &amp; Robotics arrancaron el 1 de mayo el primer despliegue operativo de robots humanoides en aeropuerto japonés. La plataforma elegida son unidades Unitree G1 (130&nbsp;cm, 35&nbsp;kg) para tareas de manejo de equipaje y limpieza de cabina. La fase de verificación está prevista hasta 2028.</p>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">03</span>P-03</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Industria</span><span class="tag">IA</span></div>
+          <h3>Google invierte hasta 40&nbsp;mil millones de USD en Anthropic</h3>
+          <p>Anuncio del 24 de abril: la inversión combina efectivo y crédito de cómputo en Google Cloud. Acelera la concentración de capital privado en la frontera de modelos de lenguaje y consolida la dependencia cruzada entre Anthropic, AWS y GCP.</p>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">04</span>P-04</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">IA</span><span class="tag">Meta</span></div>
+          <h3>Meta Superintelligence Labs estrena Muse Spark</h3>
+          <p>Primer modelo del laboratorio fundado tras el acuerdo de 14&nbsp;mil millones con Scale AI; el código interno era “Avocado”. Meta proyecta capex 2026 entre 115 y 135&nbsp;mil millones de USD, casi el doble del año anterior.</p>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">05</span>P-05</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Materiales</span><span class="tag">Superconductividad</span></div>
+          <h3>Imagen directa de pares de Cooper en un gas ultrafrío</h3>
+          <p>Trabajo publicado en <em>Physical Review Letters</em> el 15 de abril visualiza por primera vez correlaciones de pares en un sistema de fermiones fríos. La sincronía observada no figura en la teoría BCS clásica y refuerza la hipótesis de mecanismos colectivos pendientes de modelar.</p>
+          <aside class="enclaro">Con átomos enfriados casi al cero absoluto, los físicos vieron por primera vez cómo dos electrones se «emparejan» — el truco cuántico que explica por qué algunos materiales conducen electricidad sin resistencia.</aside>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">06</span>P-06</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">Robótica</span><span class="tag">China</span></div>
+          <h3>Un humanoide gana el medio maratón de Beijing E-Town</h3>
+          <p>El robot «Lightning» del equipo Honor / Monkey King completó la prueba autónoma de 21,1&nbsp;km el 19 de abril en 50:26, por debajo del récord humano del medio maratón. Operó sobre baterías intercambiables y un stack de control reforzado para terreno mixto.</p>
+        </div>
+      </article>
+
+      <article class="pulso-item">
+        <div class="pulso-num"><span class="ord">07</span>P-07</div>
+        <div class="pulso-body">
+          <div class="tags"><span class="tag">IA</span><span class="tag">Anthropic</span></div>
+          <h3>Opus 4.7 disponible y «Mythos» liberado a un círculo de partners</h3>
+          <p>Anthropic mantuvo la tarifa de Opus 4.6 (5&nbsp;USD por millón de tokens de entrada, 25&nbsp;USD de salida) y abrió Opus 4.7 en API y nubes asociadas. En paralelo, distribuyó «Mythos» a un grupo limitado, con énfasis en aplicaciones de ciberseguridad.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ 02 PORTADA ═══════════════ -->
+  <section class="sec" id="portada">
+    <div class="sec-head">
+      <span class="sec-num">§ 02</span>
+      <h2 class="sec-title">Portada</h2>
+    </div>
+
+    <p class="portada-meta">EE.&nbsp;UU. · Genética · Biomedicina</p>
+    <h1 class="article-title">El primer CRISPR <em>in&nbsp;vivo</em> cruza la Fase&nbsp;3: qué demuestra y qué deja abierto el ensayo HAELO</h1>
+    <p class="article-deck">Una sola infusión, una proteína silenciada en hígado, 87&nbsp;% menos ataques de angioedema. Lonvo-z, de Intellia, no es la primera terapia con edición genética humana, pero sí la primera que edita las células sin sacarlas del cuerpo y demuestra eficacia clínica significativa en estudio pivotal.</p>
+    <p class="byline"><span>Por la redacción de Sinapse</span><span>5 de mayo de 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">El 27 de abril, Intellia Therapeutics comunicó los resultados de HAELO, un ensayo de Fase&nbsp;3 con 67 pacientes de angioedema hereditario tipo I/II. La métrica primaria —tasa mensual de ataques durante 24 semanas— se redujo en 87&nbsp;% frente a placebo. La métrica secundaria más exigente, ausencia total de ataques y de profilaxis durante el mismo período, la alcanzó el 62&nbsp;% de los tratados con lonvo-z y solo el 11&nbsp;% del brazo placebo. Intellia inició una BLA en formato <em>rolling</em> con la FDA y proyecta lanzamiento comercial en el primer semestre de 2027.</p>
+
+      <p>Lo importante de HAELO no es la enfermedad. El angioedema hereditario afecta a entre 1 de 50&nbsp;000 y 1 de 100&nbsp;000 personas, según país; ya existen profilaxis efectivas (lanadelumab, berotralstat) y tratamientos agudos (icatibant, C1-inhibidor). Lo importante es la arquitectura terapéutica.</p>
+
+      <h3>Qué hace exactamente lonvo-z</h3>
+      <p>El paciente recibe una sola infusión intravenosa. Esta contiene nanopartículas lipídicas (LNP) que se concentran fisiológicamente en el hígado tras la captura por receptores LDL en hepatocitos. Las LNP encapsulan dos ARN: un ARN mensajero que codifica la nucleasa Cas9 de <em>S.&nbsp;pyogenes</em> y un ARN guía dirigido al gen <em>KLKB1</em>, que codifica la precalicreína. Una vez internalizada por el hepatocito, la maquinaria celular traduce el ARNm, el complejo Cas9–sgRNA encuentra su diana, corta el ADN y la reparación por unión de extremos no homólogos (NHEJ) deja una indel que inactiva el gen.</p>
+      <p>La cascada que se interrumpe es bien conocida desde los años 90: precalicreína se activa a calicreína; la calicreína libera bradicinina del cininógeno; la bradicinina aumenta la permeabilidad vascular y produce el ataque. Si la precalicreína no se sintetiza, la cascada no arranca. La elegancia farmacológica está en haber elegido un blanco con biología limpia y un órgano —el hígado— al que las LNP llegan por defecto. Era predecible que esta combinación sería el primer caso clínico exitoso del paradigma <em>in vivo</em>. Lo es.</p>
+
+      <h3>De <em>ex vivo</em> a <em>in vivo</em>: lo que cambia</h3>
+      <p>Casgevy, la primera terapia CRISPR aprobada (FDA, diciembre 2023), edita células madre hematopoyéticas extraídas del paciente, las modifica en laboratorio y las reinfunde tras un acondicionamiento mieloablativo. El procedimiento dura meses, requiere infraestructura hospitalaria especializada, tiene costo cercano al millón de dólares por paciente y un perfil de toxicidad heredado del trasplante autólogo.</p>
+      <p>Lonvo-z se administra en una infusión ambulatoria. La diferencia operativa es radical: una bolsa, una vena, una sala. Los eventos adversos reportados a 28 semanas fueron predominantemente reacciones a la infusión, cefalea y fatiga, todos leves o moderados; no hubo eventos serios atribuidos a lonvo-z. La diferencia entre «hospitalizar al paciente para reconstruir su médula» y «administrar una bolsa intravenosa» no es una mejora incremental. Es un cambio de categoría.</p>
+
+      <h3>Qué no demuestra el ensayo</h3>
+      <p>Tres caveats importan, y los comunicados de Intellia tienden a no enfatizarlos.</p>
+      <p><strong>Primero, durabilidad.</strong> Las indels del NHEJ son permanentes a nivel del ADN editado, pero los hepatocitos se renuevan: la vida media de un hepatocito humano es del orden de 200 a 300 días. La población hepática mantiene una tasa de recambio que, con cinética suficiente, podría ir reemplazando los hepatocitos editados por progenitores no editados. El seguimiento publicado llega a 28 semanas; la pregunta de si la concentración plasmática de calicreína sigue suprimida a 5 o 10 años no está respondida y es la que determinará si lonvo-z es <em>una</em> dosis para toda la vida o <em>la primera</em> de varias.</p>
+      <p><strong>Segundo, edición fuera del blanco (<em>off-target</em>).</strong> Intellia reporta perfiles de off-target medidos por secuenciación dirigida y métodos no sesgados (CIRCLE-seq, GUIDE-seq) que muestran señales bajas, pero la evaluación a escala genómica y multi-tisular en humanos vivos es metodológicamente difícil. La pregunta no es si hay edición fuera del blanco —siempre la hay— sino si la frecuencia y los loci afectados llevan a consecuencias clínicas detectables a década.</p>
+      <p><strong>Tercero, escalado a enfermedades comunes.</strong> La economía cambia cuando el paciente no es uno entre 50&nbsp;000 sino uno entre 500. Los próximos blancos previstos en el sector privado —hipercolesterolemia familiar (PCSK9), déficit de alfa-1 antitripsina, hemocromatosis— amplían el universo elegible en uno o dos órdenes de magnitud. Eso obliga a discutir tres cosas que HAELO no tocó: precio (¿800&nbsp;000&nbsp;USD por dosis es sostenible para 500&nbsp;000 pacientes?), responsabilidad por efectos adversos a 20 años y arquitectura de farmacovigilancia para tratamientos con efecto irreversible al ADN.</p>
+
+      <h3>Geopolítica y regulación</h3>
+      <p>El cuadro competitivo contiene tres protagonistas: Intellia (Boston, MA), Verve Therapeutics (Boston, MA) y Beam Therapeutics (Cambridge, MA). Verve obtuvo en 2025 reducciones sostenidas de LDL en sus ensayos VERVE-102/103 de hipercolesterolemia familiar; Beam reportó datos preliminares en alfa-1 con base editing. La concentración geográfica es notoria. Fuera de Boston solo China y, en menor medida, Reino Unido y Suiza presentan programas <em>in vivo</em> en estado avanzado.</p>
+      <p>Reguladoramente el desafío es nuevo. La FDA evaluará lonvo-z bajo el marco de terapias génicas, pero la administración intravenosa de un sistema de edición somática plantea preguntas que las aprobaciones <em>ex vivo</em> no respondieron: trazabilidad lote a lote del bias mutacional de Cas9, requisitos de farmacovigilancia poscomercialización a década, y reglas para la transferencia de variantes raras detectadas off-target a la base genética poblacional.</p>
+
+      <h3>El termómetro de los próximos 18 meses</h3>
+      <p>Tres lecturas marcarán si HAELO fue inflexión o anécdota. La primera, en septiembre de 2026: dato de Verve VERVE-102 a 12 meses de seguimiento, que medirá durabilidad en LDL para hipercolesterolemia familiar heterocigota. La segunda, primer trimestre de 2027: decisión de la FDA sobre lonvo-z. La tercera, finales de 2027: primer ensayo Fase 2/3 <em>in vivo</em> en una indicación con prevalencia &gt;1 / 1&nbsp;000, probablemente alfa-1 antitripsina o PCSK9.</p>
+      <p>Si esas tres lecturas convergen positivamente, lo de la semana pasada habrá sido el comienzo del paradigma terapéutico que distinguirá la próxima década de la genómica clínica de la anterior. Si una se cae, el modelo se replantea. Por ahora, una bolsa intravenosa hizo lo que hace un mes parecía requerir un mes de hospital.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 03 PAPERS ═══════════════ -->
+  <section class="sec" id="papers">
+    <div class="sec-head">
+      <span class="sec-num">§ 03</span>
+      <h2 class="sec-title">Papers</h2>
+    </div>
+    <p class="sec-desc">Cuatro publicaciones recientes con resumen, autoría y por qué importan.</p>
+
+    <div class="papers">
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Materiales</span><span class="tag">Superconductividad</span></div>
+        <h3>Imagen directa de pares de fermiones en un gas ultrafrío atómico</h3>
+        <p class="cite">Equipo MIT–Harvard · <em>Physical Review Letters</em> · 15 abr 2026</p>
+        <p>Visualización por microscopía de gas cuántico de la correlación espacial entre fermiones de espines opuestos en un análogo controlado del modelo de Hubbard atractivo. Los pares observados muestran movimientos sincronizados a escala submicrónica que no aparecen en la solución BCS estándar y se acercan a regímenes de acoplamiento fuerte tipo BEC.</p>
+        <p class="why">La teoría BCS describe bien el régimen de acoplamiento débil pero falla en el cruzado BCS-BEC, relevante para entender superconductores no convencionales (cupratos, hidruros). Tener un sistema modelo donde se ve, partícula a partícula, cómo emerge la pareja, da un banco de pruebas para teorías de pareo más allá del campo medio.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Robótica</span><span class="tag">Embodied&nbsp;AI</span></div>
+        <h3>ELLMER: control sensoriomotor de robots con LLM y RAG sobre conocimiento curado</h3>
+        <p class="cite">Universidad de Cambridge y colaboradores · <em>Nature Machine Intelligence</em> · abr 2026</p>
+        <p>Marco que combina visión, fuerza, un modelo de lenguaje grande con capacidad de razonamiento, recuperación aumentada con base de conocimiento robótica curada y un controlador de bajo nivel. Demuestra ejecución de tareas no estructuradas en cocina y manipulación con perturbaciones humanas no anticipadas.</p>
+        <p class="why">La generalización en robótica falla cuando el entorno se aparta de la distribución de entrenamiento. Acoplar un LLM con una base de conocimiento sobre tarea más control de fuerza permite al robot razonar «qué hacer» sin reentrenar la política motora. Es una de las primeras demostraciones publicadas en revista que sostiene resultados decentes fuera de laboratorio, no solo en simulador.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Ecología</span><span class="tag">América&nbsp;Latina</span><span class="tag">Cambio&nbsp;climático</span></div>
+        <h3>40 años de cambios de diversidad arbórea en bosques de Amazonía y Andes</h3>
+        <p class="cite">Fadrique et&nbsp;al. · U. de Liverpool / red RAINFOR · <em>Nature Ecology &amp; Evolution</em> · abr 2026</p>
+        <p>Análisis de inventarios estandarizados de más de 250 parcelas permanentes en cuenca amazónica baja, alta y bosques andinos sobre cuatro décadas. Los resultados muestran una reorganización composicional ascendente: especies adaptadas a temperaturas más altas y a sequía estacional ganan cobertura a expensas de las históricamente dominantes en cada altitud.</p>
+        <p class="why">El debate sobre el «<em>tipping point</em>» amazónico se ha basado en gran medida en modelos. Estos datos primarios indican que la transición no es un evento futuro: lleva décadas ocurriendo a baja velocidad. Tiene implicaciones directas para los modelos de carbono terrestre y para los criterios de conservación que asumen estabilidad composicional.</p>
+      </article>
+
+      <article class="paper">
+        <div class="tags"><span class="tag">Genética</span><span class="tag">América&nbsp;Latina</span><span class="tag">Salud&nbsp;poblacional</span></div>
+        <h3>El paisaje genético del autismo en poblaciones latinoamericanas</h3>
+        <p class="cite">Consorcio MEXPLO-ASD · <em>Nature Medicine</em> · 28 abr 2026</p>
+        <p>Análisis de variantes asociadas a trastorno del espectro autista (TEA) en más de 15&nbsp;000 individuos de México, Perú, Colombia, Brasil y poblaciones diaspóricas en EE.&nbsp;UU. La cohorte aporta variantes raras no descritas en bases europeas y muestra solapamiento sustancial con la arquitectura genética del TEA en poblaciones de ascendencia europea, contra la hipótesis de una etiología genética muy diferenciada.</p>
+        <p class="why">Las bases genómicas clínicas usadas para diagnóstico están sesgadas hacia ancestrías europeas; el resultado mejora la equidad de los modelos de riesgo poligénico para el continente. Reduce a la vez la base empírica de las hipótesis que asumían arquitecturas genéticas radicalmente distintas para las mismas patologías entre regiones.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ 04 TECH ═══════════════ -->
+  <section class="sec" id="tech">
+    <div class="sec-head">
+      <span class="sec-num">§ 04</span>
+      <h2 class="sec-title">Tech</h2>
+    </div>
+    <p class="sec-desc">Lo que se mueve en IA, software y hardware esta semana.</p>
+
+    <div class="ti-grid">
+      <article class="ti-item">
+        <div class="ti-cat">IA<br>Anthropic</div>
+        <div class="ti-body">
+          <h3>Opus 4.7 disponible; «Mythos» a partners selectos</h3>
+          <p>Opus 4.7 reemplaza a 4.6 sin cambios de tarifa (5 / 25&nbsp;USD por millón de tokens entrada / salida) y se distribuye en API, Bedrock, Vertex y Foundry. En paralelo, Anthropic abrió a un círculo cerrado un modelo descrito como su más capaz, con énfasis en ciberseguridad y nombre comercial «Mythos».</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">IA<br>Meta</div>
+        <div class="ti-body">
+          <h3>Muse Spark inaugura Meta Superintelligence Labs</h3>
+          <p>El primer modelo de la nueva división de Meta —fundada tras el acuerdo de 14&nbsp;mil millones con Scale AI— se presenta enfocado en razonamiento de larga duración. La compañía proyecta capex 2026 entre 115 y 135&nbsp;mil millones de USD; Reality Labs y Superintelligence Labs absorben la mayoría del incremento.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">IA<br>Google</div>
+        <div class="ti-body">
+          <h3>Plataforma de agentes para integradores corporativos</h3>
+          <p>Google liberó el 22 de abril un conjunto de herramientas para construir agentes con uso de servicios empresariales (Workspace, Search, Cloud Functions). El movimiento responde frontalmente al producto Computer Use de Anthropic y al builder de agentes de OpenAI.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Hardware<br>Asia</div>
+        <div class="ti-body">
+          <h3>Unitree G1 entra a operación en aeropuerto japonés</h3>
+          <p>El piloto de Haneda con JAL Ground Service usa unidades G1 (130&nbsp;cm, 35&nbsp;kg, 2&nbsp;m/s, 2&nbsp;h autonomía) optimizadas por GMO AI &amp; Robotics. El plan público describe verificación escalonada hasta 2028 antes de cualquier despliegue productivo masivo.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 05 INDUSTRIA ═══════════════ -->
+  <section class="sec" id="industria">
+    <div class="sec-head">
+      <span class="sec-num">§ 05</span>
+      <h2 class="sec-title">Industria</h2>
+    </div>
+    <p class="sec-desc">Movimientos relevantes en M&amp;A, financiamiento y regulación.</p>
+
+    <div class="ti-grid">
+      <article class="ti-item">
+        <div class="ti-cat">Financiamiento<br>IA</div>
+        <div class="ti-body">
+          <h3>Google compromete hasta 40&nbsp;mil millones de USD en Anthropic</h3>
+          <p>El paquete combina efectivo y crédito de cómputo en GCP. Suma a los 8&nbsp;mil millones acumulados de Amazon y consolida un patrón en el que los proveedores de nube son a la vez clientes, accionistas y deudores cruzados con los desarrolladores de modelos frontera. La concentración de capital privado en cuatro laboratorios continúa intensificándose.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Política<br>Asia</div>
+        <div class="ti-body">
+          <h3>Corea del Sur evalúa la creación de KSMC, su «TSMC nacional»</h3>
+          <p>Propuesta del Ministerio de Industria publicada en abril plantea una <em>foundry</em> contractual público-privada con inversión inicial estimada en 13,9&nbsp;mil millones de USD. El argumento explícito es la dependencia de Samsung Foundry y SK Hynix, que sirven en parte a competidores domésticos.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Capex<br>Semis</div>
+        <div class="ti-body">
+          <h3>Samsung anuncia 73&nbsp;mil millones en gasto de capital 2026</h3>
+          <p>Memoria, foundry y R&amp;D se reparten el grueso del presupuesto. La planta de Taylor (Texas) avanza al hito de 2&nbsp;nm con apoyo de 6,6&nbsp;mil millones de la CHIPS Act. La cifra deja a Samsung como segundo mayor gastador de capital de la industria detrás de TSMC.</p>
+        </div>
+      </article>
+      <article class="ti-item">
+        <div class="ti-cat">Regulación<br>Salud</div>
+        <div class="ti-body">
+          <h3>FDA acepta sumisión <em>rolling</em> para lonvo-z</h3>
+          <p>La autorización de un BLA <em>rolling</em> permite a Intellia entregar módulos del expediente conforme están listos. Si el cronograma se cumple, la primera revisión completa podría cerrar a finales de 2026, con posible aprobación condicional en el primer semestre de 2027.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 06 COLUMNA ═══════════════ -->
+  <section class="sec columna" id="columna">
+    <div class="sec-head">
+      <span class="sec-num">§ 06</span>
+      <h2 class="sec-title">Columna</h2>
+    </div>
+
+    <h1 class="article-title">El cuerpo abierto: lo que cambia cuando la edición genética se hace dentro</h1>
+    <p class="byline"><span>Por Jack Cid</span><span>5 may 2026</span></p>
+
+    <div class="prose">
+      <p>Hay un cambio que se entiende mejor con una imagen que con una métrica. Hasta el 27 de abril, una terapia CRISPR humana aprobada se parecía a un trasplante: extracción de células, manipulación en una placa estéril, acondicionamiento mieloablativo, reinfusión. Tres meses, 1,2&nbsp;millones de dólares, equipo hospitalario especializado. Después del 27 de abril hay otra imagen disponible: una bolsa de plástico transparente conectada a una vena periférica, sala ambulatoria, un par de horas, y un sistema enzimático que viaja con la circulación hasta el órgano que toca y modifica el ADN allí donde lo encuentra.</p>
+      <p>Es la diferencia entre operar un órgano y dosificar un medicamento. La FDA, los pagadores, los pacientes, los reguladores éticos y los aseguradores han pasado los últimos cinco años aprendiendo a manejar la primera. La pregunta seria es si están preparados para la segunda. La respuesta honesta es que no.</p>
+      <p>El primer foco que cambia es el de quién recibe terapia génica. Mientras la edición fue <em>ex vivo</em>, el techo poblacional estaba dado por la infraestructura: un hospital con capacidad para acondicionamiento mieloablativo edita decenas de pacientes al año, no miles. Eso restringe la elegibilidad a enfermedades raras con alto sufrimiento individual y un sistema dispuesto a pagar precios catalogados en seis o siete cifras. La administración intravenosa rompe ese techo. Los blancos que se discuten en las <em>pipelines</em> —hipercolesterolemia familiar, alfa-1 antitripsina, hemocromatosis, síndrome metabólico monogénico— amplían la elegibilidad en uno o dos órdenes de magnitud. Cuando una terapia que altera el genoma somático puede llegar al medio millón de pacientes, la conversación regulatoria deja de ser sobre individuos y pasa a ser sobre poblaciones.</p>
+      <p>El segundo foco es la asimetría temporal. Una terapia farmacológica clásica se descontinúa cuando aparece un efecto adverso poblacional; el efecto se atenúa cuando los pacientes dejan de tomar el medicamento. Una indel introducida por NHEJ en hepatocitos no se atenúa: persiste mientras los hepatocitos editados o sus descendencias persistan. Si la farmacovigilancia detecta a los 7 años una señal mutacional en un locus no anticipado, la respuesta no es retirar el producto del mercado. La respuesta es vivir con la consecuencia. Los marcos de farmacovigilancia actuales fueron diseñados para fármacos cuyos efectos retroceden al detenerse la dosis. Las ediciones somáticas requieren marcos de seguimiento que duran décadas y no tienen, hoy, ni la financiación ni la arquitectura para sostenerse.</p>
+      <p>El tercer foco es geopolítico. Lonvo-z, VERVE-102, Beam BEAM-302 y los demás programas <em>in vivo</em> en Fase clínica avanzada vienen del mismo radio de cuatro kilómetros en torno a Kendall Square. Los protocolos, la regulación efectiva, los precios de referencia y la cultura ética los está fijando, en términos prácticos, una geografía. Eso no es nuevo en la industria farmacéutica: la insulina y la penicilina también nacieron concentradas. Lo nuevo es que las terapias somáticas operan sobre el sustrato común de la especie. Una decisión de precio en Boston tiene ecos antropológicos que una decisión de precio sobre un comprimido no tiene. La gobernanza global del genoma somático, en el sentido fuerte de la palabra, sigue sin existir.</p>
+      <p>Hay una pregunta que la prensa todavía no formula con claridad y que aparecerá en los próximos 24 meses: ¿qué porcentaje de daño aceptamos a cambio de qué porcentaje de beneficio cuando ambos son irreversibles? Bajo el régimen <em>ex vivo</em> el experimento médico se parecía a una operación: riesgo alto, recuperación luego. Bajo el régimen <em>in vivo</em> se parece a una decisión hereditaria parcial: la edición no atraviesa la línea germinal —no debería— pero permanece en la línea somática del individuo, distribuyendo riesgo y beneficio a lo largo de toda su vida útil. El consentimiento informado para una intervención cuyo horizonte es de 50 años no se parece al de uno cuyo horizonte es de 50 días.</p>
+      <p>Lo que celebramos esta semana en términos médicos es real: una terapia segura y efectiva para una enfermedad invalidante con una sola dosis. Lo que abrimos en términos sociales es tan ancho que conviene no perderlo de vista. El cuerpo abierto de la próxima década no será el quirúrgico. Será el químico, controlado por enzimas que viajan con la sangre y leen ADN.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 07 CONTRASTE ═══════════════ -->
+  <section class="sec contraste" id="contraste">
+    <div class="sec-head">
+      <span class="sec-num">§ 07 · Passiflora</span>
+      <h2 class="sec-title">Contraste</h2>
+    </div>
+    <p class="sec-desc">Cada semana, Passiflora Caerulea desarma un titular científico con cifras, contexto y un poco de mala fe constructiva.</p>
+
+    <h1 class="article-title"><em>Gain of function</em>: el debate más mal nombrado de la biología contemporánea</h1>
+    <p class="byline"><span>Por Passiflora Caerulea</span><span>5 may 2026</span></p>
+
+    <blockquote class="quote">
+      «<em>Gain-of-function research caused COVID</em>» / «La investigación con ganancia de función nos protege de futuras pandemias».
+      <span class="quote-attr">Dos campos cruzados en testimonio ante el Congreso de EE.&nbsp;UU., 2023–2026</span>
+    </blockquote>
+
+    <div class="prose">
+      <p>Hay debates donde el problema empieza por el nombre. «Gain of function» es, en biología molecular, una etiqueta enorme: cualquier mutación que aumenta una función — desde una enzima un poco más eficiente hasta un virus que aprende a infectar otra especie. La conversación política, sin embargo, usa el término como sinónimo de «investigación que podría iniciar una pandemia». Eso es un subconjunto: lo que la regulación estadounidense llama <em>Enhanced Potential Pandemic Pathogens</em> (ePPP). Confundir uno con otro no es un detalle académico: es la razón por la que casi nadie sale del debate con la misma definición con la que entró.</p>
+    </div>
+
+    <div class="atlas">
+      <div class="atlas-head">Atlas del problema · GoF / ePPP</div>
+      <dl>
+        <dt>Países en el titular</dt>
+        <dd><strong>EE.&nbsp;UU.</strong> (NIH, NIAID, Wuhan colaborativo), <strong>China</strong> (Wuhan Institute of Virology), <strong>Países Bajos</strong> (Fouchier, H5N1 ferret studies, 2011), <strong>Reino Unido</strong> (Pirbright, Porton Down). Los nombres que aparecen en las audiencias del Congreso y en los reportes de <em>Nature</em>.</dd>
+
+        <dt>Países en la trama real</dt>
+        <dd><strong>India</strong> (BSL-4 en construcción en Pune y Bhopal; 4 BSL-3+ activos), <strong>Filipinas</strong> (BSL-4 anunciado), <strong>Brasil</strong> (BSL-3+ en Fiocruz; sin BSL-4), <strong>Sudáfrica</strong> (NICD BSL-4), <strong>Kazajstán</strong> (CRL bioseguridad), <strong>Pakistán</strong>, <strong>Arabia Saudí</strong>, <strong>Singapur</strong>, <strong>Australia</strong> (CSIRO). De los 18 BSL-4 planeados para 2030, la mayoría son en Asia. <em>El mapa real está corriendo hacia países sin auditoría externa equivalente a la que tienen EE.&nbsp;UU. o la UE.</em></dd>
+
+        <dt>Quién cobra</dt>
+        <dd><strong>NIH</strong>: ~10–30&nbsp;M&nbsp;USD/año en grants directamente clasificados como ePPP-relevant. <strong>Industria farmacéutica</strong>: GoF académico alimenta pipelines de antivirales y vacunas pre-pandémicas. <strong>Gobiernos nacionales</strong>: legitiman programas de defensa biológica con presupuesto militar adyacente. <strong>Aseguradoras y reaseguradoras</strong> (Munich Re, Swiss Re): emiten bonos pandémicos cuyo pricing depende de las propias estimaciones del programa.</dd>
+
+        <dt>Quién paga</dt>
+        <dd><strong>Comunidades cercanas</strong> a labs BSL-3+/4 sin marco de aviso a autoridades locales. <strong>Sistemas sanitarios</strong> que cargan con la respuesta cuando ocurre un incidente. <strong>Países sin BSL-4 propio</strong>: dependen del hallazgo y la transparencia ajenos. <strong>Confianza pública en biomedicina</strong>: cada incidente no comunicado erosiona la base política de la investigación legítima.</dd>
+
+        <dt>Horizonte 5/10 años</dt>
+        <dd><strong>2028–2030</strong>: 18 nuevos BSL-4 entran en operación (mayoría en Asia); población global con un BSL-4 nacional pasa de ~50&nbsp;% a ~70&nbsp;%. <strong>Marco multilateral</strong> (BWC/OMS): nuevo protocolo pandémico bajo negociación; resultado incierto. <strong>Tecnologías que cambian el marco</strong>: biología sintética y secuenciación accesibles hacen que la pregunta «¿quién puede hacer GoF?» pase de «¿qué país?» a «¿qué laboratorio universitario?».</dd>
+
+        <dt>Brecha regulatoria</dt>
+        <dd><strong>EE.&nbsp;UU.</strong>: 2024 USG Policy on Dual-Use Research of Concern + ePPP. <strong>UE</strong>: marco ABSL homogéneo nominalmente, implementación nacional. <strong>Reino Unido</strong>: HSE bajo ACDP. <strong>China</strong>: marco interno opaco; sin acceso externo a auditorías. <strong>India, Brasil, Sudáfrica</strong>: marcos en construcción, sin obligación de reportes externos comparables. <strong>BWC</strong>: sin mecanismo de verificación independiente desde 1972. <em>Ningún organismo global mantiene un registro comprehensivo de BSL-3+/4.</em></dd>
+
+        <dt>Punto ciego</dt>
+        <dd>El debate público trata GoF como una pregunta moral binaria («¿hacerlo o no hacerlo?») cuando la pregunta operativa es <strong>de gobernanza distribuida</strong>: cómo se audita, cómo se comparte el riesgo, cómo se notifica un incidente, qué consecuencias hay para no notificarlo. La pregunta correcta no es si la investigación debe existir, sino bajo qué régimen de transparencia es defendible.</dd>
+      </dl>
+    </div>
+
+    <div class="chart">
+      <div class="chart-head">
+        <span><strong>BSL-4 en operación por región</strong> · 2023–2026</span>
+        <span>n&nbsp;=&nbsp;59</span>
+      </div>
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-lbl">Europa</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"><div class="qual" style="width:25%"></div></div></div>
+          <span class="bar-val">25 · 42 %</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Norteamérica</span>
+          <div class="bar-track"><div class="bar-fill" style="width:56%"><div class="qual" style="width:25%"></div></div></div>
+          <span class="bar-val">14 · 24 %</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Asia</span>
+          <div class="bar-track"><div class="bar-fill" style="width:52%"><div class="qual" style="width:25%"></div></div></div>
+          <span class="bar-val">13 · 22 %</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">Oceanía</span>
+          <div class="bar-track"><div class="bar-fill" style="width:16%"><div class="qual" style="width:25%"></div></div></div>
+          <span class="bar-val">4 · 7 %</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-lbl">África</span>
+          <div class="bar-track"><div class="bar-fill" style="width:12%"><div class="qual" style="width:25%"></div></div></div>
+          <span class="bar-val">3 · 5 %</span>
+        </div>
+      </div>
+      <div class="chart-legend">
+        <span><span class="swatch" style="background:var(--ink)"></span>N.º de BSL-4 en operación</span>
+        <span><span class="swatch" style="background:var(--accent)"></span>Fracción con buenas prácticas (~25 %)</span>
+      </div>
+      <p class="chart-foot">Fuente: Global BioLabs Report 2023 (King's College London + GMU). Cifras orientativas; no incluyen BSL-3+ ni instalaciones no declaradas. <em>El número absoluto crece donde la auditoría externa es más fina (Europa, NA). Crecerá más rápido los próximos años donde no es comparable.</em></p>
+    </div>
+
+    <div class="prose">
+      <p>La tentación es elegir bando. Si te suena la palabra «Wuhan», probablemente ya tienes uno. Pero la pregunta seria no es si la investigación causó la pandemia anterior — eso lo seguirán discutiendo virólogos y comisiones durante años — sino qué pasa en la próxima década con la geografía de las instalaciones, el patrón de incidentes documentados y la asimetría regulatoria. El cuadro empírico es incómodo para ambos campos.</p>
+      <p>Quien afirma que GoF «causa pandemias» como tesis general necesita comparar el número de pandemias zoonóticas naturales documentadas en los últimos 50 años (al menos 7: SARS-1, MERS, H1N1 2009, H5N1 humano, Ébola post-2014, Zika, COVID-19) con incidentes de fuga de laboratorio que hayan iniciado pandemias (ninguno confirmado por consenso científico amplio, sospechas en al menos dos casos históricos: viruela URSS 1971 contenido a focal, gripe rusa 1977 origen probablemente lab pero limitada). El número no permite la afirmación general.</p>
+      <p>Quien afirma que GoF «previene pandemias» tiene un problema simétrico: tras 20 años de programa y miles de millones de dólares, los hallazgos predictivos concretos —vacunas o antivirales desplegados que existan gracias a estudios GoF de pathogens pandémicos— son contables, no abundantes. La vigilancia genómica de muestras de campo, en cambio, ha sido el motor real de detección temprana de variantes.</p>
+      <p>El cuadro deja una conclusión incómoda para los dos lados: la pregunta de «¿debe hacerse GoF?» está pasando de moda no porque se haya respondido, sino porque la geografía la respondió por nosotros. Mientras EE.&nbsp;UU. discute moratorias, India construye dos BSL-4 más, China opera el suyo sin auditoría externa, y la convención global de armas biológicas sigue sin mecanismo de verificación desde 1972. Lo que se decide en una audiencia del Congreso afecta a ~25&nbsp;% de los BSL-4 globales y a un porcentaje todavía menor de los BSL-3+.</p>
+      <p>El siguiente horizonte concreto está en la negociación del Pandemic Accord de la OMS y en el resultado de las reglas que la Casa Blanca anunció revisar en 2025–2026. Si se cierra un marco multilateral que incluya algún mecanismo de verificación externa, el debate «GoF sí o no» deja de ser el frente útil. Si no se cierra, la pregunta correcta para los próximos cinco años es la incómoda: ¿qué países asumen el coste reputacional de exigir transparencia, y a cambio de qué? Es una pregunta diplomática, no virológica. Por eso lleva atascada décadas.</p>
+      <p>Si te dicen que GoF causó la pandemia anterior, pregunta qué dato cambia la afirmación. Si te dicen que GoF previene la próxima, pregunta cuál fue la última vez. Si te dicen que el problema es solo Wuhan, pregunta dónde abrirá el próximo BSL-4. Las tres preguntas devuelven silencios distintos. Las tres son útiles.</p>
+      <p style="text-align:right;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--ink-3);margin-top:2rem">— P.&nbsp;C.</p>
+    </div>
+
+    <div class="sources">
+      <h4>Fuentes</h4>
+      <ol>
+        <li>Global BioLabs Report 2023, King's College London &amp; George Mason University. <a href="https://www.globalbiolabs.org/map">globalbiolabs.org/map</a></li>
+        <li>Mapping BSL-3/BSL-4 laboratories, <em>Journal of Public Health</em>, 2025.</li>
+        <li>US Government Policy for Oversight of Dual Use Research of Concern and Pathogens with Enhanced Pandemic Potential (2024).</li>
+        <li>CRS Report R47114 · Oversight of Gain-of-Function Research with Pathogens.</li>
+        <li>Bulletin of the Atomic Scientists · «The keys to a better gain-of-function policy», abr 2026.</li>
+        <li>Convención sobre Armas Biológicas (BWC), UNODA.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 08 DATO ═══════════════ -->
+  <section class="sec" id="dato">
+    <div class="sec-head">
+      <span class="sec-num">§ 08</span>
+      <h2 class="sec-title">Dato de la semana</h2>
+    </div>
+
+    <div class="dato">
+      <p class="dato-num">87<span style="font-size:0.5em;vertical-align:0.4em">%</span></p>
+      <p class="dato-lbl">Reducción de ataques de angioedema hereditario</p>
+      <p class="dato-body">Reducción de la tasa mensual de ataques observada con lonvo-z (Intellia) frente a placebo en el ensayo HAELO de Fase 3, sobre 67 pacientes seguidos durante 24 semanas. El 62 % de los receptores quedó completamente libre de ataques y de tratamientos profilácticos en el período, frente al 11 % en el brazo placebo. Es la primera demostración de eficacia clínica significativa en estudio pivotal para una terapia CRISPR de edición <em>in vivo</em>.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ 09 APÉNDICE ═══════════════ -->
+  <section class="sec" id="apendice">
+    <div class="sec-head">
+      <span class="sec-num">§ 09</span>
+      <h2 class="sec-title">Apéndice · fichas técnicas</h2>
+    </div>
+    <p class="sec-desc">Detalle de los cuatro papers de la sección 03: resumen, metodología, limitaciones y enlace.</p>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 01</span>Pares de Cooper en gas atómico ultrafrío</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Materia condensada</strong></div>
+        <div>Región<strong>Norteamérica · MIT–Harvard</strong></div>
+        <div>Publicación<strong>Phys. Rev. Lett. · 15 abr 2026</strong></div>
+      </div>
+      <dl>
+        <dt>Resumen</dt>
+        <dd>Imagen directa por microscopía de gas cuántico de correlaciones de pareo en un gas atómico fermiónico en el cruzado BCS-BEC; los pares muestran un movimiento sincronizado submicrónico no descrito por la solución BCS de campo medio.</dd>
+        <dt>Metodología</dt>
+        <dd>Sistema atómico de fermiones (probable <sup>6</sup>Li o <sup>40</sup>K) en red óptica; resonancia de Feshbach para sintonizar la interacción atractiva; microscopía de gas cuántico para resolución unitaria de partícula; análisis estadístico de correlaciones de orden dos y superior.</dd>
+        <dt>Limitaciones</dt>
+        <dd>Modelo Hubbard atractivo simplificado; sin cinética de fonones; extrapolación al estado sólido limitada por la ausencia de red iónica.</dd>
+        <dt>Enlace</dt>
+        <dd><a href="https://www.sciencedaily.com/releases/2026/04/260427050550.htm">sciencedaily.com · 27 abr 2026</a></dd>
+      </dl>
+    </article>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 02</span>ELLMER — control sensoriomotor con LLM y RAG</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Robótica / IA encarnada</strong></div>
+        <div>Región<strong>Europa · Reino Unido</strong></div>
+        <div>Publicación<strong>Nat. Mach. Intell. · abr 2026</strong></div>
+      </div>
+      <dl>
+        <dt>Resumen</dt>
+        <dd>Marco de control para robot manipulador que integra LLM razonador, RAG sobre conocimiento curado de tareas, visión y retroalimentación de fuerza para resolver tareas no estructuradas.</dd>
+        <dt>Metodología</dt>
+        <dd>Composición jerárquica: LLM como planificador semántico → RAG como consulta a base curada → controlador de impedancia con visión y fuerza como bucle motor de bajo nivel; pruebas en cocina con perturbaciones humanas no anticipadas.</dd>
+        <dt>Limitaciones</dt>
+        <dd>Latencia de inferencia del LLM limita reactividad fina; base de conocimiento curada manualmente; generalización a embodiments distintos no demostrada.</dd>
+        <dt>Enlace</dt>
+        <dd><a href="https://www.nature.com/articles/s42256-025-01005-x">nature.com/nmi</a></dd>
+      </dl>
+    </article>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 03</span>Fadrique et al. · 40 años de bosques amazónico-andinos</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Ecología / clima</strong></div>
+        <div>Región<strong>América Latina · RAINFOR</strong></div>
+        <div>Publicación<strong>Nat. Ecol. Evol. · abr 2026</strong></div>
+      </div>
+      <dl>
+        <dt>Resumen</dt>
+        <dd>Reorganización composicional del bosque amazónico y andino a lo largo de 40 años: especies tolerantes a calor y sequía estacional ganan cobertura sobre las históricamente dominantes en cada altitud.</dd>
+        <dt>Metodología</dt>
+        <dd>Inventarios estandarizados de la red RAINFOR sobre &gt;250 parcelas permanentes; medición de DAP, identificación a nivel de especie, modelado de turnover composicional con índices de Bray-Curtis ponderados.</dd>
+        <dt>Limitaciones</dt>
+        <dd>Densidad de muestreo desigual; ausencia de parcelas en algunas regiones críticas como sudeste amazónico; atribución climática vs uso del suelo aún parcial.</dd>
+        <dt>Enlace</dt>
+        <dd><a href="https://www.sciencedaily.com/releases/2026/01/260125081133.htm">sciencedaily.com · cobertura RAINFOR</a></dd>
+      </dl>
+    </article>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 04</span>Genética del autismo en poblaciones latinoamericanas</h3>
+      <div class="appendix-meta">
+        <div>Disciplina<strong>Genética humana</strong></div>
+        <div>Región<strong>América Latina · MEXPLO-ASD</strong></div>
+        <div>Publicación<strong>Nat. Medicine · 28 abr 2026</strong></div>
+      </div>
+      <dl>
+        <dt>Resumen</dt>
+        <dd>Caracterización de variantes asociadas a TEA en &gt;15&nbsp;000 individuos de México, Perú, Colombia, Brasil y diáspora latina en EE.&nbsp;UU.; identificación de variantes raras nuevas y solapamiento sustancial con arquitectura europea.</dd>
+        <dt>Metodología</dt>
+        <dd>Secuenciación de exoma en trios afectado-padres; análisis de carga de variantes raras (<em>de novo</em> y heredadas); puntajes poligénicos transferidos desde cohortes europeas con ajuste por estructura poblacional.</dd>
+        <dt>Limitaciones</dt>
+        <dd>Cobertura geográfica desigual entre países; heterogeneidad de criterios diagnósticos clínicos; tamaño muestral aún por debajo del umbral de detección de variantes raras de baja penetrancia.</dd>
+        <dt>Enlace</dt>
+        <dd><a href="https://www.nature.com/nm/">nature.com/nm · abr 2026</a></dd>
+      </dl>
+    </article>
+  </section>
+
+  <!-- ═══════════════ COLOFÓN ═══════════════ -->
+  <footer class="colofon">
+    <p><strong>Sinapse</strong> — revista semanal de ciencia, tecnología e industria.</p>
+    <p>N.º 002 · Semana 18 · Edición del 5 de mayo de 2026 · Idioma: español.</p>
+    <p>Editor: Jack Cid · contacto: <a href="mailto:j.andres.cid@gmail.com">j.andres.cid@gmail.com</a> · Próximo número: 12 de mayo de 2026.</p>
+    <p style="margin-top:1rem;font-style:italic;text-transform:none;letter-spacing:0;font-family:var(--serif);color:var(--ink-3)">Las cifras y autorías citadas se basan en notas y comunicados públicos disponibles al cierre de edición.</p>
+    <p style="margin-top:1.5rem"><a href="#top">↑ Volver al índice</a></p>
+  </footer>
+
+</main>
+
+<div id="tweaks-root"></div>
+
+<script>
+  // Reading progress bar
+  (function(){
+    const bar = document.getElementById('progBar');
+    function upd(){
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+      bar.style.width = p + '%';
+    }
+    window.addEventListener('scroll', upd, {passive:true});
+    upd();
+  })();
+
+  // Theme/scale state — applied to <html>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "palette": "aurora",
+    "theme": "sepia",
+    "fontSize": 17,
+    "measure": 38,
+    "density": "regular"
+  }/*EDITMODE-END*/;
+
+  function applyTweaks(t){
+    const root = document.documentElement;
+    root.setAttribute('data-palette', t.palette);
+    root.setAttribute('data-theme', t.theme);
+    root.setAttribute('data-density', t.density);
+    root.style.setProperty('--fs-body', t.fontSize + 'px');
+    root.style.setProperty('--measure', t.measure + 'rem');
+  }
+  applyTweaks(TWEAK_DEFAULTS);
+</script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+  const { useState } = React;
+
+  function TweaksApp(){
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    React.useEffect(() => { applyTweaks(t); }, [t]);
+
+    return (
+      <TweaksPanel title="Tweaks · Sinapse">
+        <TweakSection label="Identidad" />
+        <TweakSelect label="Paleta" value={t.palette}
+                    options={['aurora','vermilion','verde','tinta']}
+                    onChange={(v) => setTweak('palette', v)} />
+        <TweakRadio label="Modo" value={t.theme}
+                    options={['paper','sepia','eink']}
+                    onChange={(v) => setTweak('theme', v)} />
+        <TweakSection label="Lectura" />
+        <TweakSlider label="Tamaño cuerpo" value={t.fontSize} min={15} max={22} step={1} unit="px"
+                     onChange={(v) => setTweak('fontSize', v)} />
+        <TweakSlider label="Ancho de columna" value={t.measure} min={32} max={52} step={1} unit="rem"
+                     onChange={(v) => setTweak('measure', v)} />
+        <TweakRadio label="Densidad" value={t.density}
+                    options={['compact','regular','spacious']}
+                    onChange={(v) => setTweak('density', v)} />
+      </TweaksPanel>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksApp />);
+</script>
+
+</body>
+</html>
