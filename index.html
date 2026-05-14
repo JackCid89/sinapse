@@ -2,121 +2,102 @@
 <html lang="es">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>SINAPSE · revista semanal de ciencia, tecnología e industria</title>
-<link rel="stylesheet" href="./assets/sinapse.css" />
 <meta name="description" content="SINAPSE — revista semanal en español sobre ciencia, tecnología e industria. Editor: Jack Cid." />
-<meta property="og:title" content="SINAPSE" />
-<meta property="og:description" content="Revista semanal en español de ciencia, tecnología e industria." />
-<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./assets/sinapse.css" />
 </head>
 <body>
-<div class="wrap">
 
-<header class="masthead">
-  <div class="brand">SINAPSE<small>Ciencia · Tecnología · Industria</small></div>
-  <div>
-    <div class="issue">
-      <strong>Edición semanal</strong>
-      Idioma: español<br/>
+<main class="page" id="top">
+
+  <header class="masthead">
+    <h1 class="wordmark"><a href="./index.html">sinapse<span class="dot">.</span></a></h1>
+    <div class="meta">
+      <strong>Edición semanal</strong><br>
+      Idioma: español<br>
       Editor: Jack Cid
     </div>
-    <div class="lang-switch" aria-label="Selector de idioma">
-      <a class="active" href="./index.html" lang="es">ES</a>
-      <span class="sep">|</span>
-      <a href="./en/index.html" lang="en">EN</a>
+  </header>
+
+  <div class="sub">
+    <span>Ciencia · Tecnología · Industria</span>
+    <span class="lang">
+      <a href="./index.html" aria-current="page">ES</a> · <a href="./en/index.html">EN</a>
+    </span>
+  </div>
+
+  <p class="lede">
+    <strong>SINAPSE —</strong> una lectura semanal, en español, sobre los descubrimientos, papers y movimientos de industria que importan en ciencia y tecnología. Sin hype. Con contexto. <em>Paper-first.</em>
+  </p>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">archivo</span><h2 class="sec-title">Números publicados</h2></div>
+    <p class="sec-desc" id="meta-line">Cargando archivo…</p>
+    <div id="issue-list"></div>
+    <noscript>
+      <p style="color:var(--ink-3);font-style:italic">Esta página usa JavaScript para listar los números. También puedes navegar el directorio <a href="./issues/">/issues/</a>.</p>
+    </noscript>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">acerca</span><h2 class="sec-title">Sobre SINAPSE</h2></div>
+    <div class="prose">
+      <p>SINAPSE se publica los martes con la actividad de la semana anterior. Cada número tiene nueve secciones fijas: <em>Pulso, Portada, Papers, Tech, Industria, Columna, Contraste, Dato de la semana, Apéndice</em>.</p>
+      <p>Los criterios editoriales —rotación de disciplinas, pluralidad geográfica de fuentes, tonos rotativos en la columna— están detallados en la <a href="./editorial/guia.html">guía editorial</a>. El marco de visualización vive en <a href="./editorial/viz-framework.html">viz-framework</a>. El registro completo de números, con sus disciplinas y regiones cubiertas, en <a href="./data/registro.json">data/registro.json</a>.</p>
+      <p>Contacto del editor: <a href="mailto:j.andres.cid@gmail.com">j.andres.cid@gmail.com</a>.</p>
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="hero">
-  <p>Una lectura semanal, en español, sobre los descubrimientos, papers y movimientos de industria que importan en ciencia y tecnología. Sin hype. Con contexto. Paper-first.</p>
-</section>
+  <footer class="colofon">
+    <p><strong>SINAPSE</strong> — revista semanal de ciencia, tecnología e industria.</p>
+    <p>Editor: Jack Cid · publicado vía GitHub Pages · sin tracking, sin cookies.</p>
+  </footer>
 
-<section>
-  <div class="section-head">
-    <span class="num">archivo</span>
-    <h2>Números publicados</h2>
-  </div>
-  <p class="lede" id="meta-line">Cargando archivo…</p>
-  <div class="issue-list" id="issue-list">
-    <!-- Se rellena desde data/registro.json -->
-  </div>
-  <noscript>
-    <p class="empty">Esta página usa JavaScript para listar los números. También puedes navegar directamente al directorio <a href="./issues/">/issues/</a>.</p>
-  </noscript>
-</section>
-
-<section>
-  <div class="section-head">
-    <span class="num">acerca</span>
-    <h2>Sobre SINAPSE</h2>
-  </div>
-  <p>SINAPSE se publica los martes con la actividad de la semana anterior. Cada número tiene ocho secciones fijas: Pulso, Portada, Papers, Tech, Industria, Columna, Dato de la semana y Apéndice técnico.</p>
-  <p>Los criterios editoriales —rotación de disciplinas, pluralidad geográfica de fuentes, tonos rotativos en la columna— están detallados en la <a href="./editorial/guia.html">guía editorial</a>. El registro completo de números, con sus disciplinas y regiones cubiertas, vive en <a href="./data/registro.json">data/registro.json</a>.</p>
-  <p>Contacto del editor: <a href="mailto:j.andres.cid@gmail.com">j.andres.cid@gmail.com</a>.</p>
-</section>
-
-<footer class="colophon">
-  <strong>SINAPSE</strong> · revista semanal de ciencia, tecnología e industria.<br/>
-  Editor: Jack Cid · sitio publicado vía GitHub Pages · sin tracking, sin cookies.
-</footer>
-
-</div>
+</main>
 
 <script>
 (async function () {
   const list = document.getElementById('issue-list');
   const meta = document.getElementById('meta-line');
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);}
   try {
     const res = await fetch('./data/registro.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     const numeros = (data.numeros || []).slice().sort((a, b) => b.numero - a.numero);
-
     if (!numeros.length) {
-      list.innerHTML = '<p class="empty">Aún no hay números publicados.</p>';
+      list.innerHTML = '<p style="color:var(--ink-3);font-style:italic">Aún no hay números publicados.</p>';
       meta.textContent = '0 números en archivo.';
       return;
     }
-
     meta.textContent = numeros.length + (numeros.length === 1 ? ' número en archivo.' : ' números en archivo.');
-
-    list.innerHTML = numeros.map(function (n) {
+    list.innerHTML = numeros.map(n => {
       const num = String(n.numero).padStart(3, '0');
-      const archivo = n.archivo
-        ? n.archivo.replace(/^sinapse-/, '').replace(/^\//, '')
-        : ('n' + num + '.html');
+      const archivo = n.archivo ? n.archivo.replace(/^sinapse-/, '').replace(/^\//, '') : ('n' + num + '.html');
       const href = './issues/' + archivo;
-      const titulo = (n.portada && n.portada.titulo) || ('N.° ' + num);
+      const titulo = (n.portada && n.portada.titulo) || ('N.º ' + num);
       const disciplina = (n.portada && n.portada.disciplina) || '—';
       const fecha = n.fecha || '';
-      const semana = n.semana || '';
-      return '' +
-        '<a class="issue-row" href="' + href + '">' +
-          '<div class="num">N.° ' + num + '</div>' +
-          '<div>' +
-            '<h3>' + escapeHtml(titulo) + '</h3>' +
-            '<div class="meta">' + escapeHtml(disciplina) + (semana ? ' · ' + escapeHtml(semana) : '') + '</div>' +
-          '</div>' +
-          '<div class="date">' + escapeHtml(fecha) + '</div>' +
-        '</a>';
+      return `<a href="${href}" style="display:grid;grid-template-columns:90px 1fr 180px;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule-2);align-items:baseline;text-decoration:none;color:var(--ink)">
+        <div style="font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase">N.º ${num}</div>
+        <div>
+          <h3 style="font-family:var(--display);font-style:italic;font-size:24px;margin:0 0 6px;font-weight:400;line-height:1.25;color:var(--ink)">${escapeHtml(titulo)}</h3>
+          <div style="font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.05em">${escapeHtml(disciplina)}</div>
+        </div>
+        <div style="font-family:var(--mono);font-size:12px;text-align:right;color:var(--ink-3)">${escapeHtml(fecha)}</div>
+      </a>`;
     }).join('');
   } catch (err) {
-    list.innerHTML =
-      '<p class="empty">No se pudo cargar el archivo del registro' +
-      ' (' + escapeHtml(String(err)) + ').<br/>' +
-      'Si abres este archivo localmente con <code>file://</code>, sirve el directorio con un servidor estático ' +
-      '(p. ej. <code>python3 -m http.server</code>) o despliégalo en GitHub Pages.</p>';
+    list.innerHTML = '<p style="color:var(--ink-3);font-style:italic">No se pudo cargar el registro (' + escapeHtml(String(err)) + '). Sirve el sitio con un servidor estático para verlo.</p>';
     meta.textContent = '';
-  }
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
-    });
   }
 })();
 </script>
+
+<script src="./assets/reader-preferences.js" defer></script>
 </body>
 </html>
