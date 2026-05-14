@@ -78,7 +78,7 @@ Resumen mínimo (detalle en [`editorial/guia.html`](./editorial/guia.html)):
 - **Sin hype.** Nada de "revolucionario" o "sin precedentes" sin datos detrás.
 - **Paper-first.** Siempre enlazar la fuente primaria.
 - **Contexto siempre.** Qué había antes, qué problema resuelve, cuáles son las limitaciones.
-- **Rotación.** Ni la portada ni los papers repiten disciplinas de los dos números anteriores; al menos 1 fuente asiática por número; tonos rotativos en la columna.
+- **Rotación.** Ni la portada ni los papers repiten disciplinas de los dos números anteriores; pluralidad geográfica (al menos 3 regiones distintas por número, priorizando las menos cubiertas); tonos rotativos en la columna.
 
 ## Licencia
 

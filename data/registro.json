@@ -3,13 +3,13 @@
   "idioma": "es",
   "editor": "Jack Cid",
   "creado": "2026-04-28",
-  "ultima_actualizacion": "2026-05-05",
+  "ultima_actualizacion": "2026-05-13",
   "notas_bootstrap": "Registro generado en el primer ciclo del scheduled task tras detectar que los archivos de referencia (estructura editorial, registro previo y N.° anterior) no existían en outputs/. Esta entrada N.° 001 inaugura la serie y servirá como base para la rotación temática de los siguientes números.",
   "notas_v2": "2026-05-02: la salida del scheduled task se reorganizó como static site (carpeta sinapse-site/) listo para GitHub Pages. Estructura: index.html (raíz), issues/, assets/sinapse.css, data/registro.json, editorial/guia.html.",
   "reglas_rotacion": {
     "portada": "No repetir la misma disciplina que los últimos 2 números.",
     "papers": "Al menos 2 disciplinas que NO estaban en el número anterior.",
-    "fuentes": "Al menos 1 paper o noticia de una región asiática.",
+    "fuentes": "Pluralidad geográfica: cada número debe representar al menos 3 regiones distintas (Norteamérica, Europa, Asia, América Latina, África, Oriente Medio, Oceanía). Priorizar las regiones NO cubiertas en los dos números anteriores. Evitar la sobre-representación de cualquier región, incluida la occidental.",
     "columna_tonos": [
       "Reflexivo-conectivo",
       "Crítico-provocador",
@@ -203,5 +203,6 @@
         "Sudeste asiático directo (Indonesia, Vietnam, Filipinas, Tailandia)"
       ]
     }
-  ]
+  ],
+  "notas_v3": "2026-05-13: la regla de \"al menos 1 fuente asiática\" se reformuló como pluralidad geográfica (≥3 regiones por número, priorizando las menos cubiertas). El objetivo es equilibrio, no preferencia por ninguna región."
 }
