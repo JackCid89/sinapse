@@ -33,8 +33,9 @@
   <a href="#tech"><span>04</span>Tech</a>
   <a href="#industria"><span>05</span>Industria</a>
   <a href="#columna"><span>06</span>Columna</a>
-  <a href="#dato"><span>07</span>Dato</a>
-  <a href="#apendice"><span>08</span>Apéndice</a>
+  <a href="#contraste"><span>07</span>Contraste</a>
+  <a href="#dato"><span>08</span>Dato</a>
+  <a href="#apendice"><span>09</span>Apéndice</a>
 </nav>
 
 <!-- ============== 01 PULSO ============== -->
@@ -52,6 +53,7 @@
         <span class="tag">Energía</span><span class="tag">Asia</span><span class="tag">Ingeniería nuclear</span>
         <h3>El PFBR de Kalpakkam alcanza primera criticidad</h3>
         <p>El reactor reproductor rápido prototipo (500 MWe, refrigerado por sodio) inició cadena de fisión controlada el 6 de abril, 22 años después de comenzar su construcción. India se suma al pequeño grupo (Rusia, China) con reactores rápidos comerciales operando.</p>
+        <p class="plain">En claro: India encendió un reactor que fabrica más combustible nuclear del que gasta. Llevó 22 años de obra y todavía faltan al menos dos para que entregue electricidad a la red.</p>
       </div>
     </div>
 
@@ -70,6 +72,7 @@
         <span class="tag">IA</span><span class="tag">Asia</span><span class="tag">Open weights</span>
         <h3>DeepSeek libera V4-Pro y V4-Flash con contexto de 1 M tokens</h3>
         <p>Versiones preview liberadas el 24 de abril. V4-Pro (1,6 T parámetros, 49 B activados) iguala a Claude Opus 4.6 en SWE-bench Verified (80,6 % vs 80,8 %) con peso abierto. V4-Pro requiere 27 % de FLOPs de inferencia y 10 % de KV-cache respecto a V3.2 en contexto largo.</p>
+        <p class="plain">En claro: un modelo abierto chino iguala al mejor cerrado en programación, usando un tercio del cómputo y una décima parte de la memoria de su predecesor cuando procesa textos muy largos.</p>
       </div>
     </div>
 
@@ -284,10 +287,122 @@
   </div>
 </section>
 
-<!-- ============== 07 DATO ============== -->
-<section id="dato">
+<!-- ============== 07 CONTRASTE ============== -->
+<section id="contraste">
   <div class="section-head">
     <span class="num">§ 07</span>
+    <h2>Contraste</h2>
+  </div>
+  <p class="lede">Cada semana, Passiflora Caerulea desmonta un debate estructural de ciencia y tecnología con datos, cálculos propios y una ficha multidimensional.</p>
+
+  <div class="contraste">
+    <h3>Datacenters de IA: ¿qué hubo realmente que pagar, y quién está pagando?</h3>
+    <div class="by">Por Passiflora Caerulea</div>
+
+    <p class="claim">
+      "<em>AI is going to break the power grid</em>" / "<em>Los datacenters no consumen tanto, no exageremos</em>"
+      <span class="source">Lugares comunes del debate, ambos lados, 2024-2026</span>
+    </p>
+
+    <p>El debate público sobre los datacenters de IA ha encontrado, fiel a la tradición, dos formas de equivocarse al mismo tiempo. Por un lado, el catastrofismo: la IA va a colapsar la red eléctrica mundial. Por el otro, el desprecio: solo es un 2 % del consumo global, mírense lo que gasta Bitcoin antes de quejarse. Ambos comparten un defecto: discuten promedios globales sobre un fenómeno cuyo problema es <strong>local y distribucional</strong>. Por eso este Contraste empieza con un Atlas: porque la pregunta no es cuánta electricidad, sino dónde, quién la cobra, y quién termina pagando la factura completa.</p>
+
+    <div class="atlas">
+      <h4>Atlas del problema</h4>
+      <dl class="atlas-grid">
+        <dt>Países en el titular</dt>
+        <dd><strong>EE. UU.</strong> (Virginia, Texas, Arizona), <strong>Irlanda</strong> (Dublín), <strong>China</strong> (Hebei, Guizhou), <strong>Singapur</strong>. Los hubs que dominan los informes de la AIE.</dd>
+
+        <dt>Países en la trama real</dt>
+        <dd><strong>Chile</strong> (66 proyectos en 2026, vs 6 en 2017; Google detuvo Cerrillos por la demanda hídrica), <strong>México</strong> (279 MW operativos a abril 2026, protestas en Querétaro y Colón por consumo de agua en zona semiárida), <strong>Brasil</strong> (37 % de la capacidad LATAM), <strong>Uruguay</strong>, <strong>Paraguay</strong>, <strong>Kenia</strong> (hub África Oriental), <strong>Sudáfrica</strong>, <strong>Malasia</strong> (Johor desplazó a Singapur). La capacidad LATAM crece &gt;30 % anual.</dd>
+
+        <dt>Quién cobra</dt>
+        <dd><strong>NVIDIA</strong>: ~75 % margen bruto en H100/Blackwell; captura ~70 % del valor del stack. <strong>Hyperscalers</strong> (AWS, Azure, GCP): 60-70 % margen operativo en cómputo. <strong>Inmobiliarias industriales</strong> (Equinix, Digital Realty): 10-15 % yield. <strong>Gobiernos anfitriones</strong>: impuestos típicamente con regímenes especiales que los reducen 40-90 %.</dd>
+
+        <dt>Quién paga</dt>
+        <dd><strong>Tarifa residencial</strong>: Virginia del Norte +15-20 % desde 2022. <strong>Agua</strong>: Cerrillos (Chile) iba a consumir 7 mil millones de litros/año, equivalente al consumo de 80 000 personas. Colón (México), zona semiárida, en disputa abierta. <strong>Valor inmobiliario</strong>: -3 a -7 % en perímetro. <strong>Emisiones</strong>: Scope 2 reportado, Scope 3 del hardware fabricado en Taiwán/Corea típicamente omitido.</dd>
+
+        <dt>Horizonte 5 / 10 años</dt>
+        <dd><strong>2030</strong>: consumo global de datacenters 3-4 % de la electricidad mundial (AIE, banda central 650-1 050 TWh). Cuello de botella migra del chip a la subestación. <strong>2035</strong>: si los SMRs no aterrizan, los hyperscalers compran energía geotérmica (Kenia, Islandia), hidráulica (Paraguay, RDC) y solar a gran escala (Chile, Marruecos). Si los modelos eficientes ganan (cf. DeepSeek V4 con 10 % del KV-cache), la demanda total se modera 2-3×.</dd>
+
+        <dt>Brecha regulatoria</dt>
+        <dd><strong>UE</strong>: AI Act + Energy Efficiency Directive obligan a reportar PUE y WUE. <strong>EE. UU.</strong>: estado a estado, sin marco federal. <strong>Asia</strong>: mixto (Singapur tuvo moratoria 2019-2022; Japón con incentivos). <strong>LATAM</strong>: prácticamente nula — sin obligación de reportar consumo hídrico ni huella; concesiones se negocian opacamente. <em>Esa asimetría no es accidente: es el motor de la geografía actual del despliegue.</em></dd>
+
+        <dt>Punto ciego</dt>
+        <dd>El debate global discute promedios globales sobre un fenómeno que es <strong>regional y distribucional</strong>. Un datacenter de 100 MW es invisible en la matriz mundial y devastador en una comuna de 50 000 habitantes. La pregunta correcta no es "¿la IA va a romper la red?", sino "¿qué comunidad concreta paga la externalidad del próximo modelo?".</dd>
+      </dl>
+    </div>
+
+    <div class="stat-card">
+      <div>
+        <div class="label">Lo que dicen los titulares</div>
+        <div class="desc">"Los datacenters van a duplicar el consumo eléctrico mundial"</div>
+        <div class="label" style="margin-top:10px">Lo que dicen las cifras</div>
+        <div class="desc">El consumo global pasa de 460 TWh (2022) a 650-1 050 TWh (2026, AIE). Eso es 2 % → 3-4 % del total. Pero el 80 % se concentra en menos de 12 hubs, y la mitad de esos hubs están fuera del debate público.</div>
+      </div>
+      <div class="figure">≈ 3 %</div>
+    </div>
+
+    <p>Vamos a hacer la cuenta a la que nadie quiere bajar: <strong>quién cobra cuánto por una hora de cómputo de un H100</strong>. Una instancia <em>p5.48xlarge</em> de AWS cuesta hoy ~$2,5/hora por GPU H100. El H100 consume ~700 W; la PUE típica de hyperscaler ronda 1,2, así que la carga real son ~840 W. En un mercado eléctrico mayorista de $50/MWh, la electricidad que respira el chip durante esa hora vale ~$0,042. La amortización del H100 (≈$30 000 a 5 años, 80 % utilización) suma ~$0,85. La inmobiliaria industrial cobra ~$0,15. Quedan, redondeando, unos <strong>$1,50 de margen por GPU-hora</strong> para el hyperscaler. Multiplíquelo por las decenas de miles de GPUs activas en una sola región y entenderá por qué Microsoft no necesita preocuparse por la tarifa eléctrica residencial de Virginia.</p>
+
+    <figure>
+      <svg viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución del margen económico en una GPU-hora de cómputo en la nube">
+        <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">¿A DÓNDE VA EL DÓLAR DE UNA GPU-HORA EN LA NUBE?</text>
+        <!-- Barra apilada horizontal -->
+        <g transform="translate(40,60)">
+          <!-- electricidad -->
+          <rect x="0" y="0" width="10" height="50" fill="#8b1a1a"/>
+          <text x="5" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">ELEC.</text>
+          <text x="5" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,04</text>
+          <!-- inmobiliaria -->
+          <rect x="12" y="0" width="36" height="50" fill="#b08a8a"/>
+          <text x="30" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">INMOB.</text>
+          <text x="30" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,15</text>
+          <!-- nvidia (amortización H100) -->
+          <rect x="50" y="0" width="200" height="50" fill="#1a1a1a"/>
+          <text x="150" y="30" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">NVIDIA (vía H100)</text>
+          <text x="150" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">AMORTIZ.</text>
+          <text x="150" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0,85</text>
+          <!-- hyperscaler margen -->
+          <rect x="252" y="0" width="320" height="50" fill="#5a3a3a"/>
+          <text x="412" y="30" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">HYPERSCALER · margen</text>
+          <text x="412" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">~60 %</text>
+          <text x="412" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$1,50</text>
+        </g>
+        <!-- Etiquetas y total -->
+        <text x="40" y="180" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1">PRECIO LISTA AWS p5.48xlarge ≈ $2,50 / GPU-hora</text>
+        <text x="40" y="200" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">El operador eléctrico anfitrión cobra el 1,7 %. Las externalidades hídricas, viales y de transmisión no aparecen en la tarifa.</text>
+      </svg>
+      <figcaption>Cálculo orientativo a partir de tarifa pública AWS, especificaciones H100, PUE típica hyperscaler y mercado mayorista de electricidad ~$50/MWh.</figcaption>
+    </figure>
+
+    <p>El cálculo deja al desnudo dos cosas. Primero: la electricidad es <strong>la línea menos rentable de toda la cadena</strong> — y aun así es la que dispara los conflictos locales. Segundo: cuando un hyperscaler decide entre Virginia, Querétaro o Quilicura, la diferencia operativa en la factura eléctrica es del orden de centavos por GPU-hora. Lo que mueve la decisión no es el precio del kilovatio, es la velocidad con la que un país firma el permiso ambiental y el régimen fiscal de la zona económica especial. Por eso el mapa real del despliegue está siendo dibujado por marcos regulatorios débiles, no por geografía energética.</p>
+
+    <p>El problema con esa geografía no es ideológico. Una comuna chilena con 50 000 habitantes y un datacenter de 100 MW carga, en proporción, un peso desmesurado: ~280 GWh/año de demanda concentrada, ~6 mil millones de litros de agua si el enfriamiento es evaporativo, y un perímetro de degradación inmobiliaria y acústica que no es trivial. La huella se distribuye sobre todo el país en agregado y sobre 50 000 personas en concreto. Y esa diferencia, traducida a política pública, es la que LATAM, África Subsahariana y partes del Sudeste Asiático están a punto de aprender a la mala.</p>
+
+    <p>El horizonte realista es este: cinco años de despliegue acelerado con cuello de botella migrando del chip a la subestación; diez años en los que la eficiencia de los modelos (un orden de magnitud cada 18-24 meses, si DeepSeek V4 marca tendencia) decidirá si el sector se modera o entra en una espiral de demanda. Mientras tanto, el ratio se mantiene: la cadena de valor concentra el margen en menos de cuatro actores globales, y las externalidades se distribuyen en docenas de comunidades sin voz en el papel de cómputo que entrena el próximo modelo.</p>
+
+    <p>Si te dicen que la IA va a romper la red, pídeles que te indiquen <em>cuál</em> red. Si te dicen que el consumo es trivial, pídeles que se lo digan al vecino de Cerrillos, al de Loudoun y al de Colón. El número global y el conflicto local viven en planetas distintos. Solo uno aparece en los gráficos del CES; el otro pone tribunales.</p>
+
+    <p class="signature">— P. C.</p>
+
+    <div class="refs">
+      <strong>Fuentes</strong>
+      <ol>
+        <li>International Energy Agency · <em>Electricity 2024 / 2026 update</em>, proyección global del consumo de datacenters. <a href="https://www.iea.org/" target="_blank" rel="noopener">iea.org</a></li>
+        <li>BNamericas · <em>Latin America enters the Gigawatt era</em>, capacidad por país. <a href="https://www.bnamericas.com/en/features/latin-america-enters-the-gigawatt-era-brazil-mexico-and-chile-data-centers-capacity" target="_blank" rel="noopener">bnamericas.com</a></li>
+        <li>Global Voices · <em>The human cost of the data center push in Latin America</em>, abril 2026. <a href="https://globalvoices.org/2026/04/29/the-human-cost-of-the-data-center-push-in-latin-america/" target="_blank" rel="noopener">globalvoices.org</a></li>
+        <li>Nearshore Americas · <em>Water-Guzzling Data Centers Spark Outrage Across Latin America</em>. <a href="https://nearshoreamericas.com/water-guzzling-data-centers-spark-outrage-across-latin-america/" target="_blank" rel="noopener">nearshoreamericas.com</a></li>
+        <li>Mexico Business · <em>Mexico Hits 279MW in Data Centers, but Faces Energy Constraints</em>. <a href="https://mexicobusiness.news/cloudanddata/news/mexico-hits-279mw-data-centers-faces-energy-constraints" target="_blank" rel="noopener">mexicobusiness.news</a></li>
+        <li>Tarifas AWS p5.48xlarge públicas y especificaciones técnicas H100 — cálculo de margen por GPU-hora realizado para esta pieza.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 08 DATO ============== -->
+<section id="dato">
+  <div class="section-head">
+    <span class="num">§ 08</span>
     <h2>Dato de la semana</h2>
   </div>
   <div class="dato">
@@ -297,10 +412,10 @@
   </div>
 </section>
 
-<!-- ============== 08 APÉNDICE ============== -->
+<!-- ============== 09 APÉNDICE ============== -->
 <section id="apendice">
   <div class="section-head">
-    <span class="num">§ 08</span>
+    <span class="num">§ 09</span>
     <h2>Apéndice · fichas técnicas</h2>
   </div>
   <p class="lede">Detalle de los cuatro papers de la sección 03: resumen, metodología, limitaciones y enlace.</p>

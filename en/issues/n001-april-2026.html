@@ -33,8 +33,9 @@
   <a href="#tech"><span>04</span>Tech</a>
   <a href="#industry"><span>05</span>Industry</a>
   <a href="#column"><span>06</span>Column</a>
-  <a href="#datum"><span>07</span>Datum</a>
-  <a href="#appendix"><span>08</span>Appendix</a>
+  <a href="#counterpoint"><span>07</span>Counterpoint</a>
+  <a href="#datum"><span>08</span>Datum</a>
+  <a href="#appendix"><span>09</span>Appendix</a>
 </nav>
 
 <!-- ============== 01 PULSE ============== -->
@@ -52,6 +53,7 @@
         <span class="tag">Energy</span><span class="tag">Asia</span><span class="tag">Nuclear engineering</span>
         <h3>India's Kalpakkam PFBR reaches first criticality</h3>
         <p>The 500 MWe sodium-cooled prototype fast breeder reactor began a controlled fission chain on April 6, twenty-two years after construction started. India joins the small club (Russia, China) with commercial fast breeders in operation.</p>
+        <p class="plain">In plain terms: India switched on a reactor that breeds more nuclear fuel than it burns. Twenty-two years in the making, and still at least two years from delivering electricity to the grid.</p>
       </div>
     </div>
 
@@ -70,6 +72,7 @@
         <span class="tag">AI</span><span class="tag">Asia</span><span class="tag">Open weights</span>
         <h3>DeepSeek ships V4-Pro and V4-Flash with 1M-token context</h3>
         <p>Preview versions released April 24. V4-Pro (1.6T parameters, 49B activated) matches Claude Opus 4.6 on SWE-bench Verified (80.6% vs 80.8%) with open weights. At 1M-token context, V4-Pro needs 27% of the inference FLOPs and 10% of the KV-cache of V3.2.</p>
+        <p class="plain">In plain terms: an open Chinese model now matches the top closed one in coding, using a third of the compute and a tenth of the memory of its predecessor on very long inputs.</p>
       </div>
     </div>
 
@@ -284,10 +287,116 @@
   </div>
 </section>
 
-<!-- ============== 07 DATUM ============== -->
-<section id="datum">
+<!-- ============== 07 COUNTERPOINT ============== -->
+<section id="counterpoint">
   <div class="section-head">
     <span class="num">§ 07</span>
+    <h2>Counterpoint</h2>
+  </div>
+  <p class="lede">Every week, Passiflora Caerulea unpacks a structural debate in science and technology with data, original calculations, and a multidimensional atlas.</p>
+
+  <div class="contraste">
+    <h3>AI datacenters: what really had to be paid, and who is actually paying?</h3>
+    <div class="by">By Passiflora Caerulea</div>
+
+    <p class="claim">
+      "<em>AI is going to break the power grid</em>" / "<em>Datacenters don't consume that much, let's not exaggerate</em>"
+      <span class="source">Stock phrases of the debate, both sides, 2024-2026</span>
+    </p>
+
+    <p>The public debate over AI datacenters has found, true to tradition, two ways to be wrong at the same time. On one side, catastrophism: AI will collapse the world's power grid. On the other, dismissal: it's only 2% of global consumption, look at Bitcoin before you complain. Both share a flaw: they argue with global averages about a phenomenon whose problem is <strong>local and distributional</strong>. That's why this Counterpoint opens with an Atlas: because the question is not how much electricity, but where, who profits from it, and who ends up paying the full bill.</p>
+
+    <div class="atlas">
+      <h4>Atlas of the problem</h4>
+      <dl class="atlas-grid">
+        <dt>Countries in the headline</dt>
+        <dd><strong>USA</strong> (Virginia, Texas, Arizona), <strong>Ireland</strong> (Dublin), <strong>China</strong> (Hebei, Guizhou), <strong>Singapore</strong>. The hubs that dominate IEA reports.</dd>
+
+        <dt>Countries in the actual story</dt>
+        <dd><strong>Chile</strong> (66 projects in 2026, up from 6 in 2017; Google halted Cerrillos over water demand), <strong>Mexico</strong> (279 MW operational by April 2026, protests in Querétaro and Colón over water consumption in semi-arid zones), <strong>Brazil</strong> (37% of LATAM capacity), <strong>Uruguay</strong>, <strong>Paraguay</strong>, <strong>Kenya</strong> (East Africa hub), <strong>South Africa</strong>, <strong>Malaysia</strong> (Johor displaced Singapore). LATAM capacity is growing &gt;30% per year.</dd>
+
+        <dt>Who profits</dt>
+        <dd><strong>NVIDIA</strong>: ~75% gross margin on H100/Blackwell; captures ~70% of stack value. <strong>Hyperscalers</strong> (AWS, Azure, GCP): 60-70% operating margin on compute. <strong>Industrial real estate</strong> (Equinix, Digital Realty): 10-15% yield. <strong>Host governments</strong>: taxes typically under special regimes that reduce them by 40-90%.</dd>
+
+        <dt>Who pays</dt>
+        <dd><strong>Residential tariffs</strong>: Northern Virginia +15-20% since 2022. <strong>Water</strong>: Cerrillos (Chile) was to consume 7 billion liters/year, equivalent to 80,000 people. Colón (Mexico), semi-arid, in open dispute. <strong>Real estate</strong>: -3 to -7% in perimeter. <strong>Emissions</strong>: Scope 2 reported, Scope 3 from hardware fabricated in Taiwan/Korea typically omitted.</dd>
+
+        <dt>5 / 10-year horizon</dt>
+        <dd><strong>2030</strong>: global datacenter consumption 3-4% of world electricity (IEA central band 650-1,050 TWh). Bottleneck migrates from chip to substation. <strong>2035</strong>: if SMRs don't land, hyperscalers buy geothermal (Kenya, Iceland), hydro (Paraguay, DRC) and large-scale solar (Chile, Morocco). If efficient models win (cf. DeepSeek V4 at 10% of the KV-cache), total demand moderates 2-3×.</dd>
+
+        <dt>Regulatory gap</dt>
+        <dd><strong>EU</strong>: AI Act + Energy Efficiency Directive require reporting PUE and WUE. <strong>USA</strong>: state by state, no federal framework. <strong>Asia</strong>: mixed (Singapore had a moratorium 2019-2022; Japan with incentives). <strong>LATAM</strong>: virtually none — no obligation to report water consumption or footprint; concessions are negotiated opaquely. <em>That asymmetry is not accidental: it is the engine of today's deployment geography.</em></dd>
+
+        <dt>Blind spot</dt>
+        <dd>The global debate argues global averages about a phenomenon that is <strong>regional and distributional</strong>. A 100 MW datacenter is invisible in the world matrix and devastating in a 50,000-resident municipality. The right question isn't "is AI going to break the grid?", but "which specific community pays the externality of the next model?".</dd>
+      </dl>
+    </div>
+
+    <div class="stat-card">
+      <div>
+        <div class="label">What the headlines say</div>
+        <div class="desc">"Datacenters are about to double world electricity consumption"</div>
+        <div class="label" style="margin-top:10px">What the numbers say</div>
+        <div class="desc">Global consumption rises from 460 TWh (2022) to 650-1,050 TWh (2026, IEA). That's 2% → 3-4% of the total. But 80% is concentrated in fewer than 12 hubs, and half of those hubs are outside the public debate.</div>
+      </div>
+      <div class="figure">≈ 3 %</div>
+    </div>
+
+    <p>Let's do the math no one wants to do: <strong>who pockets what per H100 GPU-hour</strong>. An AWS <em>p5.48xlarge</em> instance lists today at ~$2.5/hour per H100. The H100 draws ~700 W; typical hyperscaler PUE is around 1.2, so real load is ~840 W. In a wholesale electricity market at $50/MWh, the electricity the chip breathes for that hour costs ~$0.042. H100 amortization (≈$30,000 over 5 years, 80% utilization) adds ~$0.85. The industrial-real-estate slice is ~$0.15. That leaves, rounded, about <strong>$1.50 of margin per GPU-hour</strong> for the hyperscaler. Multiply by tens of thousands of active GPUs in a single region and you'll see why Microsoft doesn't lose sleep over Virginia's residential tariffs.</p>
+
+    <figure>
+      <svg viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribution of economic margin per GPU-hour of cloud compute">
+        <text x="40" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5b5b5b" letter-spacing="2">WHERE DOES THE DOLLAR OF A CLOUD GPU-HOUR GO?</text>
+        <g transform="translate(40,60)">
+          <rect x="0" y="0" width="10" height="50" fill="#8b1a1a"/>
+          <text x="5" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">ELEC.</text>
+          <text x="5" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0.04</text>
+          <rect x="12" y="0" width="36" height="50" fill="#b08a8a"/>
+          <text x="30" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">REAL EST.</text>
+          <text x="30" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0.15</text>
+          <rect x="50" y="0" width="200" height="50" fill="#1a1a1a"/>
+          <text x="150" y="30" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">NVIDIA (via H100)</text>
+          <text x="150" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">AMORTIZ.</text>
+          <text x="150" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$0.85</text>
+          <rect x="252" y="0" width="320" height="50" fill="#5a3a3a"/>
+          <text x="412" y="30" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fffdf8" letter-spacing="1">HYPERSCALER · margin</text>
+          <text x="412" y="78" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5b5b5b">~60 %</text>
+          <text x="412" y="92" text-anchor="middle" font-family="Source Serif Pro, Georgia, serif" font-size="13" font-weight="700" fill="#1a1a1a">$1.50</text>
+        </g>
+        <text x="40" y="180" font-family="IBM Plex Mono, monospace" font-size="11" fill="#1a1a1a" letter-spacing="1">AWS p5.48xlarge LIST PRICE ≈ $2.50 / GPU-hour</text>
+        <text x="40" y="200" font-family="Source Serif Pro, Georgia, serif" font-size="12" fill="#5b5b5b" font-style="italic">The host electricity operator collects 1.7%. Water, transmission, and road externalities don't appear on the bill.</text>
+      </svg>
+      <figcaption>Indicative calculation from public AWS pricing, H100 specifications, typical hyperscaler PUE, and ~$50/MWh wholesale electricity.</figcaption>
+    </figure>
+
+    <p>The calculation lays bare two things. First: electricity is <strong>the least profitable line in the entire chain</strong> — and yet it is the one that triggers local conflict. Second: when a hyperscaler chooses between Virginia, Querétaro, and Quilicura, the operational difference on the electricity bill is on the order of cents per GPU-hour. What moves the decision is not the kilowatt price, but how fast a country signs the environmental permit and the special economic zone's tax regime. That's why the real deployment map is being drawn by weak regulatory frameworks, not by energy geography.</p>
+
+    <p>The problem with that geography is not ideological. A Chilean municipality of 50,000 with a 100 MW datacenter bears, proportionally, a disproportionate weight: ~280 GWh/year of concentrated demand, ~6 billion liters of water if cooling is evaporative, and a perimeter of real-estate and acoustic degradation that is not trivial. The footprint spreads across the whole country in the aggregate and onto 50,000 people in particular. And that difference, translated into public policy, is what LATAM, sub-Saharan Africa, and parts of Southeast Asia are about to learn the hard way.</p>
+
+    <p>The realistic horizon is this: five years of accelerated deployment with the bottleneck migrating from chip to substation; ten years in which model efficiency (one order of magnitude every 18-24 months, if DeepSeek V4 marks the trend) will decide whether the sector moderates or enters a demand spiral. Meanwhile, the ratio holds: the value chain concentrates margin in fewer than four global actors, and externalities distribute across dozens of communities with no voice in the compute paper that trains the next model.</p>
+
+    <p>If someone tells you AI is going to break the grid, ask them <em>which</em> grid. If someone tells you the consumption is trivial, ask them to tell that to the neighbor in Cerrillos, in Loudoun, and in Colón. The global figure and the local conflict live on different planets. Only one shows up in the CES charts; the other puts up lawsuits.</p>
+
+    <p class="signature">— P. C.</p>
+
+    <div class="refs">
+      <strong>Sources</strong>
+      <ol>
+        <li>International Energy Agency · <em>Electricity 2024 / 2026 update</em>, global datacenter consumption projection. <a href="https://www.iea.org/" target="_blank" rel="noopener">iea.org</a></li>
+        <li>BNamericas · <em>Latin America enters the Gigawatt era</em>, capacity by country. <a href="https://www.bnamericas.com/en/features/latin-america-enters-the-gigawatt-era-brazil-mexico-and-chile-data-centers-capacity" target="_blank" rel="noopener">bnamericas.com</a></li>
+        <li>Global Voices · <em>The human cost of the data center push in Latin America</em>, April 2026. <a href="https://globalvoices.org/2026/04/29/the-human-cost-of-the-data-center-push-in-latin-america/" target="_blank" rel="noopener">globalvoices.org</a></li>
+        <li>Nearshore Americas · <em>Water-Guzzling Data Centers Spark Outrage Across Latin America</em>. <a href="https://nearshoreamericas.com/water-guzzling-data-centers-spark-outrage-across-latin-america/" target="_blank" rel="noopener">nearshoreamericas.com</a></li>
+        <li>Mexico Business · <em>Mexico Hits 279MW in Data Centers, but Faces Energy Constraints</em>. <a href="https://mexicobusiness.news/cloudanddata/news/mexico-hits-279mw-data-centers-faces-energy-constraints" target="_blank" rel="noopener">mexicobusiness.news</a></li>
+        <li>Public AWS p5.48xlarge tariffs and H100 technical specifications — margin-per-GPU-hour calculation performed for this piece.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 08 DATUM ============== -->
+<section id="datum">
+  <div class="section-head">
+    <span class="num">§ 08</span>
     <h2>Datum of the week</h2>
   </div>
   <div class="dato">
@@ -297,10 +406,10 @@
   </div>
 </section>
 
-<!-- ============== 08 APPENDIX ============== -->
+<!-- ============== 09 APPENDIX ============== -->
 <section id="appendix">
   <div class="section-head">
-    <span class="num">§ 08</span>
+    <span class="num">§ 09</span>
     <h2>Appendix · technical sheets</h2>
   </div>
   <p class="lede">Detail of the four papers from section 03: summary, methodology, limitations, link.</p>

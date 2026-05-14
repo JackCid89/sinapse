@@ -125,8 +125,40 @@
           "dato_semana": {
             "cifra": "22 years",
             "label": "from groundbreaking to first criticality"
+          },
+          "contraste": {
+            "titulo": "AI datacenters: what really had to be paid, and who is actually paying?",
+            "debate_estructural": "AI datacenter boom: cost, benefit, and regional distribution"
           }
         }
+      },
+      "contraste": {
+        "titulo": "Datacenters de IA: ¿qué hubo realmente que pagar, y quién está pagando?",
+        "debate_estructural": "Auge de los datacenters de IA: costo, beneficio y distribución regional",
+        "atlas_keys": {
+          "paises_titular": [
+            "EE.UU. (Virginia, Texas, Arizona)",
+            "Irlanda",
+            "China (Hebei, Guizhou)",
+            "Singapur"
+          ],
+          "paises_trama_real": [
+            "Chile",
+            "México",
+            "Brasil",
+            "Uruguay",
+            "Paraguay",
+            "Kenia",
+            "Sudáfrica",
+            "Malasia"
+          ],
+          "quien_cobra": "NVIDIA (~75% margen bruto en H100); hyperscalers AWS/Azure/GCP (60-70%); inmobiliarias industriales (10-15%)",
+          "quien_paga": "Tarifa residencial Virginia +15-20%; consumo de agua Chile/México en zonas semiáridas; -3 a -7% valor inmobiliario perímetro",
+          "horizonte": "2030: 3-4% consumo eléctrico mundial; cuello de botella migra a subestación. 2035: SMRs o energía geotérmica/hidráulica en LATAM/África",
+          "brecha_regulatoria": "UE (AI Act, EED) > EE.UU. (estado a estado) > Asia (mixto) > LATAM (casi nula)",
+          "punto_ciego": "El debate global discute promedios globales sobre un fenómeno regional y distribucional"
+        },
+        "autora": "Passiflora Caerulea"
       }
     },
     {
@@ -237,17 +269,38 @@
             "label": "reduction in hereditary angioedema attacks"
           },
           "contraste": {
-            "titulo": "Coffee won't save you from Alzheimer's — but the headlines really want it to",
-            "tipo_falacia": "Relative vs absolute risk confusion + healthy-user bias"
+            "titulo": "Gain of function: the most misnamed debate in contemporary biology",
+            "debate_estructural": "Gain-of-function research (ePPP) and global biosafety governance"
           }
         }
       },
       "contraste": {
-        "titulo": "El café no te salva del Alzheimer — pero los titulares quieren creerlo",
-        "medio_criticado": "Harvard Gazette · WBUR · varios",
-        "titular_criticado": "Drinking 2-3 cups of coffee a day tied to lower dementia risk",
-        "paper_original": "Zhang Y. et al., JAMA, abril 2026 — Coffee and Tea Intake, Dementia Risk, and Cognitive Function",
-        "tipo_falacia": "Confusión riesgo relativo vs absoluto + healthy-user bias",
+        "titulo": "Gain of function: el debate más mal nombrado de la biología contemporánea",
+        "debate_estructural": "Investigación con ganancia de función (ePPP) y gobernanza global de bioseguridad",
+        "atlas_keys": {
+          "paises_titular": [
+            "EE.UU. (NIH, NIAID)",
+            "China (WIV)",
+            "Países Bajos (Fouchier)",
+            "Reino Unido (Pirbright, Porton Down)"
+          ],
+          "paises_trama_real": [
+            "India",
+            "Filipinas",
+            "Brasil",
+            "Sudáfrica",
+            "Kazajstán",
+            "Pakistán",
+            "Arabia Saudí",
+            "Singapur",
+            "Australia"
+          ],
+          "quien_cobra": "NIH $10-30M/año ePPP-relevant; pharma vía pipelines pre-pandémicos; gobiernos vía presupuesto militar adyacente; reaseguradoras vía bonos pandémicos",
+          "quien_paga": "Comunidades cercanas a BSL-3+/4 sin marco de aviso; sistemas sanitarios; países sin BSL-4 propio; confianza pública en biomedicina",
+          "horizonte": "2028-2030: 18 BSL-4 nuevos (mayoría Asia); población global con BSL-4 nacional 50% → 70%. Tecnologías sintéticas cambian el frame: la pregunta pasa de país a laboratorio universitario",
+          "brecha_regulatoria": "EE.UU. (2024 DURC/ePPP) > UE (ABSL nacional) > Reino Unido (HSE/ACDP) > India/Brasil/Sudáfrica (en construcción) > China (opaco); BWC sin verificación desde 1972",
+          "punto_ciego": "El debate trata GoF como pregunta moral binaria cuando es pregunta de gobernanza distribuida (auditoría, notificación, consecuencias)"
+        },
         "autora": "Passiflora Caerulea"
       }
     }
@@ -275,5 +328,6 @@
         "desde": "2026-05-13"
       }
     ]
-  }
+  },
+  "notas_v6": "2026-05-13: Pivote editorial del Contraste. De fact-check de titulares puntuales a desmontaje de debates estructurales con Atlas obligatorio (7 dimensiones fijas) y representación explícita de regiones no occidentales. N°001 cubre datacenters de IA, N°002 reemplaza café/Alzheimer por gain-of-function. El Contraste anterior (café/Alzheimer) queda como precedente histórico no publicado en el sitio."
 }
