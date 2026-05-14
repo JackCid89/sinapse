@@ -37,6 +37,9 @@ jobs:
           python3 -c "import json; json.load(open('data/registro.json'))"
           echo "registro.json válido"
 
+      - name: Validate issues (estructura, accesibilidad, datos, geometría, editorial)
+        run: python3 scripts/validate-issue.py --site .
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
