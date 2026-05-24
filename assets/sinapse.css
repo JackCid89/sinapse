@@ -879,3 +879,14 @@
     min-width:0;
   }
   .reader-prefs .seg.palette button{ padding-left:8px } /* preserva el original */
+
+  /* Fix 2026-05-24: aire arriba de cada pulso-item. El gap de 2rem
+     entre items + padding-bottom 1.75rem dejaban que las chips de
+     .tags del siguiente item se sentaran visualmente sobre la línea
+     separadora (especialmente con etiquetas largas tipo "CIENCIA
+     PLANETARIA"). Añadimos 0.6rem de aire arriba y reducimos el
+     gap del contenedor para mantener la densidad total. Aplica
+     desde el segundo item en adelante para no separar el primero
+     del .sec-head. */
+  .pulso{ gap:1.25rem }
+  .pulso-item + .pulso-item{ padding-top:0.85rem }
