@@ -28,8 +28,7 @@
     theme:   'paper',       // paper · sepia · eink
     fontSize: 17,           // 15-22 px
     measure: 42,            // 32-52 rem (ancho de columna)
-    density: 'spacious',    // compact · regular · spacious
-    dyslexia: 'off'         // off · on (Lexend + BDA Style Guide 2023)
+    density: 'spacious'     // compact · regular · spacious
   };
 
   const PALETTES = [
@@ -51,11 +50,6 @@
     { id: 'spacious', label: 'Aireada'  }
   ];
 
-  const DYSLEXIA = [
-    { id: 'off', label: 'Estándar' },
-    { id: 'on',  label: 'Dislexia' }
-  ];
-
   /* ─── State ─── */
   function load(){
     try{
@@ -71,7 +65,6 @@
     html.setAttribute('data-palette', state.palette);
     html.setAttribute('data-theme',   state.theme);
     html.setAttribute('data-density', state.density);
-    html.setAttribute('data-dyslexia', state.dyslexia || 'off');
     html.style.setProperty('--fs-body', state.fontSize + 'px');
     html.style.setProperty('--measure', state.measure + 'rem');
   }
@@ -312,21 +305,9 @@
     gD.appendChild(seg(DENSITIES, state.density, v => setKey('density', v)));
     panel.appendChild(gD);
 
-    // Accesibilidad: dislexia
-    const gA = document.createElement('div'); gA.className = 'group';
-    const lA = document.createElement('label'); lA.className = 'row';
-    lA.innerHTML = '<span>Accesibilidad</span><span class="v">' +
-      (DYSLEXIA.find(d => d.id === state.dyslexia)?.label || 'Estándar') + '</span>';
-    gA.appendChild(lA);
-    gA.appendChild(seg(DYSLEXIA, state.dyslexia, v => setKey('dyslexia', v), 'dys'));
-    const hint = document.createElement('p'); hint.className = 'dys-hint';
-    hint.textContent = 'Lexend + BDA: tracking, line-height, sin cursivas ni capitular.';
-    gA.appendChild(hint);
-    panel.appendChild(gA);
-
     // Footer
     const foot = document.createElement('div'); foot.className = 'foot';
-    const fL = document.createElement('span'); fL.textContent = 'Sinapse · v1.1';
+    const fL = document.createElement('span'); fL.textContent = 'Sinapse · v1';
     const fR = document.createElement('button'); fR.type = 'button'; fR.textContent = 'Restablecer';
     fR.addEventListener('click', reset);
     foot.appendChild(fL); foot.appendChild(fR);

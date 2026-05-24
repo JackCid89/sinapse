@@ -3,7 +3,7 @@
   "idioma": "es",
   "editor": "Jack Cid",
   "creado": "2026-04-28",
-  "ultima_actualizacion": "2026-05-24",
+  "ultima_actualizacion": "2026-05-13",
   "notas_bootstrap": "Registro generado en el primer ciclo del scheduled task tras detectar que los archivos de referencia (estructura editorial, registro previo y N.° anterior) no existían en outputs/. Esta entrada N.° 001 inaugura la serie y servirá como base para la rotación temática de los siguientes números.",
   "notas_v2": "2026-05-02: la salida del scheduled task se reorganizó como static site (carpeta sinapse-site/) listo para GitHub Pages. Estructura: index.html (raíz), issues/, assets/sinapse.css, data/registro.json, editorial/guia.html.",
   "reglas_rotacion": {
@@ -439,150 +439,6 @@
           }
         }
       }
-    },
-    {
-      "numero": 4,
-      "fecha": "2026-05-19",
-      "semana": "Semana 20 (13-19 mayo 2026)",
-      "archivo": "n004-mayo-2026.html",
-      "portada": {
-        "titulo": "La vacuna RTS,S funciona en el mundo real: ahora hay que pagarla",
-        "disciplina": "Salud global / Inmunización",
-        "angulo": "Diez años después del primer ensayo de fase III, la evaluación poblacional de The Lancet del 8 de mayo confirma reducción significativa de muertes infantiles en los primeros despliegues reales en Ghana, Kenia y Malaui. Veinticuatro países africanos en calendario, 10M niños población objetivo anual. Cuello de botella ya no es la evidencia: es la financiación (Gavi 2026-2030 pidió 8 500M USD; compromiso a mayo por debajo). El R21/Matrix-M de Serum Institute alivia la presión de oferta."
-      },
-      "papers_cubiertos": [
-        {
-          "titulo": "Subsidencia más que duplica el ascenso del mar en costas pobladas",
-          "disciplina": "Geodesia / climatología costera",
-          "subtema": "Descomposición VLM (InSAR + GPS) en componente eustática vs subsidencia local",
-          "region": "Megaciudades costeras tropicales y subtropicales (Asia, África)"
-        },
-        {
-          "titulo": "Intensificación de lluvia extrema en África ecuatorial",
-          "disciplina": "Hidroclimatología",
-          "subtema": "Multi-modelo CMIP6 + ERA5 sobre eventos > p99 R10mm; driver Clausius-Clapeyron",
-          "region": "África ecuatorial, Sahel, África oriental"
-        },
-        {
-          "titulo": "Phocaeicola dorei reduce fibrosis hepática vía depuración de neutrófilos",
-          "disciplina": "Biomedicina / microbiota",
-          "subtema": "Eje intestino-hígado; modelos murinos + cohortes MASLD humanas",
-          "region": "Norteamérica + Europa"
-        }
-      ],
-      "tech_cubiertos": [
-        "IBM Nighthawk — 120 qubits + decodificador FPGA AMD 10× más rápido",
-        "CATL — sodio-ion en EV finales de 2026, objetivo 600+ km",
-        "Birsa-101 — primera CRISPR india entra a ensayo para anemia falciforme (CSIR-IGIB + Serum Institute)",
-        "Comisión Europea — primer esquema de calificación de eficiencia de centros de datos, umbral 1 MW"
-      ],
-      "industria_cubiertos": [
-        "ASML × Tata Electronics — partnership estratégico para chips en India (16 mayo)",
-        "TSMC — demanda IA estresa nodo N2, Apple/Qualcomm/MediaTek diversifican selectivamente a Intel/Samsung",
-        "BYD + Volkswagen — Brasil podría duplicar matriculación EV 2026 con ensamble local",
-        "India — PFBR 500 MWe alcanza criticidad nominal, cierre del ciclo torio-plutonio"
-      ],
-      "columna": {
-        "titulo": "El apocalipsis cuántico no es un problema de Bitcoin: es un problema de todo lo que envías por internet",
-        "angulo": "Desmontaje del encuadre bitcoin-céntrico de la prensa sobre la amenaza cuántica. Lista exhaustiva de servicios que se rompen con Shor (HTTPS/TLS 1.3, SSH, VPN, DNSSEC, firma de código, X.509, S/MIME, PGP, Signal con harvest-now-decrypt-later, WebAuthn/FIDO2/passkeys, EMV, 5G, e-passport). Distinción asimétrica vs simétrica (Grover sólo cuadrático). Cierre sobre BIP-361 de Jameson Lopp y la 'halving cuántico' que congelaría 1,7M BTC (incluido ~1M de Satoshi), 8,6 % de la oferta circulante.",
-        "tono": "Crítico-provocador"
-      },
-      "dato_semana": {
-        "cifra": "1 050 TWh",
-        "tema": "Consumo eléctrico global proyectado de centros de datos para 2026. Trayectoria: 460 TWh (2022) → 540 (2023) → 660 (2024) → 870 (2025) → 1 050 (2026 proy.). CAGR 23 %, +128 % en cuatro años. Si fueran país, quinto consumidor mundial (entre Japón y Rusia)."
-      },
-      "disciplinas_cubiertas": [
-        "Salud global / inmunización (portada)",
-        "Climatología costera / geodesia (papers)",
-        "Hidroclimatología (papers)",
-        "Biomedicina / microbiota (papers)",
-        "Geofísica / tectónica (Pulso)",
-        "Ciencia planetaria (Pulso)",
-        "Computación cuántica (Pulso, Tech, Columna)",
-        "Criptografía / seguridad informática (Columna)",
-        "Baterías / EV (Pulso, Tech, Industria)",
-        "Semiconductores (Pulso, Tech, Industria)",
-        "Biotech / CRISPR (Tech)",
-        "Minería / minerales críticos (Contraste)"
-      ],
-      "disciplinas_NO_cubiertas": [
-        "Cosmología (cubierta en N°003)",
-        "Astronomía",
-        "Astrobiología (cubierta en N°003)",
-        "Paleontología (cubierta en N°001)",
-        "Robótica (cubierta en N°002)",
-        "Ecología / cambio climático directo (cubierto en N°002)",
-        "Materiales / superconductividad (cubierto en N°002)",
-        "Virología (cubierta en N°003)",
-        "Neurociencia",
-        "Química",
-        "Ciencias del comportamiento"
-      ],
-      "regiones_fuente": [
-        "África (RTS,S Ghana/Kenia/Malaui en portada; rift Kafue Zambia; lluvia extrema continental)",
-        "Asia (ASML+Tata India; CATL+BYD China; PFBR India; Tianzhou 10 China; Birsa-101 India)",
-        "América Latina (BYD Brasil ensamblaje; Chile/Argentina/Bolivia/Brasil en Contraste como triángulo del litio)",
-        "Norteamérica (Psyche/NASA; IBM Nighthawk; papers Nature)",
-        "Europa (ASML; Comisión Europea data centres)"
-      ],
-      "regiones_NO_cubiertas": [
-        "Oriente Medio (sólo aludido)",
-        "Oceanía (sólo Australia mencionada brevemente en Contraste)",
-        "Sudeste asiático directo (Indonesia y Filipinas aparecen en Atlas pero sin pieza propia)"
-      ],
-      "i18n": {
-        "en": {
-          "archivo": "n004-may-2026.html",
-          "semana": "Week 20 (May 13-19, 2026)",
-          "portada": {
-            "titulo": "The RTS,S malaria vaccine works in the real world: now someone has to pay for it",
-            "disciplina": "Global health / Immunisation",
-            "angulo": "Ten years after the first Phase III trial, The Lancet's May 8 population-level evaluation confirms significant child mortality reduction in the first real deployments in Ghana, Kenya and Malawi. Twenty-four African countries have folded RTS,S or R21/Matrix-M into immunisation calendars; 10M children annual target. The bottleneck is no longer evidence — it's funding (Gavi 2026-2030 asked for USD 8.5B; pledges fall short)."
-          },
-          "columna": {
-            "titulo": "The quantum apocalypse is not a Bitcoin problem: it's a problem with everything you send over the internet"
-          },
-          "dato_semana": {
-            "cifra": "1,050 TWh",
-            "label": "projected global data-centre electricity use, 2026"
-          },
-          "contraste": {
-            "titulo": "The second extraction: how the energy transition is rewriting the colonial geography of minerals",
-            "debate_estructural": "Critical minerals: who captures the margin between mine and cathode?"
-          }
-        }
-      },
-      "contraste": {
-        "titulo": "La segunda extracción: cómo la transición energética reescribe la geografía colonial de los minerales",
-        "debate_estructural": "Minerales críticos para la transición energética: quién captura el margen entre la mina y el cátodo",
-        "atlas_keys": {
-          "paises_titular": [
-            "China",
-            "Estados Unidos",
-            "UE",
-            "Indonesia (como 'el país que se planta')"
-          ],
-          "paises_trama_real": [
-            "Chile",
-            "Argentina",
-            "Bolivia",
-            "RDC",
-            "Indonesia",
-            "Filipinas",
-            "Australia",
-            "Sudáfrica",
-            "Brasil",
-            "Marruecos",
-            "Madagascar"
-          ],
-          "quien_cobra": "Procesadores intermedios chinos (90 %): Tianqi, Ganfeng, Huayou. Fabricantes de celdas (CATL, BYD, LG Energy, Panasonic, Samsung SDI; 15-25 % margen bruto). Marcas auto en último eslabón con margen más fino. Mineros capturan spot, no margen industrial.",
-          "quien_paga": "Comunidades indígenas y locales en zonas mineras (agua salares andinos, salud cobre/cobalto, restitución diferida). Consumidores finales en mercados subvencionados vía impuestos. El aprendizaje industrial no se queda en el país productor.",
-          "horizonte": "5 años: prohibiciones de exportar mineral en bruto se extienden de Indonesia a Chile, Brasil y RDC. 10 años: capacidad cátodo y celda fuera de China supera 20 % global sólo si política industrial occidental sostiene la inversión. Reciclaje empieza a madurar como negocio urbano 2032-2035.",
-          "brecha_regulatoria": "Trazabilidad mineral inconsistente; ESG voluntario; UE Battery Regulation exige huella de carbono y reciclaje pero no captura margen; sin tratado multilateral marco; OMC discute aranceles de exportación con la lentitud habitual.",
-          "punto_ciego": "El reciclaje. Si la economía circular madura, parte del problema extractivo se neutraliza, pero el margen vuelve a moverse — del mineral al know-how de refinado urbano, hoy en plantas piloto europeas, japonesas y chinas. La pregunta de soberanía se desplaza, no desaparece."
-        },
-        "autora": "Passiflora Caerulea"
-      }
     }
   ],
   "notas_v3": "2026-05-13: la regla de \"al menos 1 fuente asiática\" se reformuló como pluralidad geográfica (≥3 regiones por número, priorizando las menos cubiertas). El objetivo es equilibrio, no preferencia por ninguna región.",
@@ -610,6 +466,5 @@
     ]
   },
   "notas_v6": "2026-05-13: Pivote editorial del Contraste. De fact-check de titulares puntuales a desmontaje de debates estructurales con Atlas obligatorio (7 dimensiones fijas) y representación explícita de regiones no occidentales. N°001 cubre datacenters de IA, N°002 reemplaza café/Alzheimer por gain-of-function. El Contraste anterior (café/Alzheimer) queda como precedente histórico no publicado en el sitio.",
-  "notas_v7": "2026-05-13: N°003 generado retroactivamente (semana 19, 6-12 mayo). El scheduled task no se disparó el martes 12; se hace manual con la pipeline completa, incluyendo validador.",
-  "notas_v8": "2026-05-24: N°004 (semana 20, 13-19 mayo). Añadido modo dislexia opcional a reader-preferences.js (Lexend + BDA Style Guide 2023, off por defecto, persistido en localStorage como state.dyslexia). Bloque CSS [data-dyslexia=\"on\"] anexado a sinapse.css. Backups .bak.20260524 conservados en assets/. Polish del panel: gap/padding de los segmentos aumentados para evitar solapamientos de etiquetas largas (Sepia, Vermellón, Aireada)."
+  "notas_v7": "2026-05-13: N°003 generado retroactivamente (semana 19, 6-12 mayo). El scheduled task no se disparó el martes 12; se hace manual con la pipeline completa, incluyendo validador."
 }
