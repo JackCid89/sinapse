@@ -15,7 +15,11 @@
       },
       "i18n": {
         "en": {
-          "archivo": "n001-april-2026.html"
+          "archivo": "n001-april-2026.html",
+          "portada": {
+            "titulo": "22 years later: India's Kalpakkam fast breeder reactor reaches criticality",
+            "disciplina": "Energy / Nuclear engineering"
+          }
         }
       }
     },
@@ -29,7 +33,11 @@
       },
       "i18n": {
         "en": {
-          "archivo": "n002-may-2026.html"
+          "archivo": "n002-may-2026.html",
+          "portada": {
+            "titulo": "The first in vivo CRISPR crosses Phase 3: what HAELO proves and what it leaves open",
+            "disciplina": "Genetics / Biomedicine"
+          }
         }
       }
     },
@@ -43,7 +51,11 @@
       },
       "i18n": {
         "en": {
-          "archivo": "n003-may-2026.html"
+          "archivo": "n003-may-2026.html",
+          "portada": {
+            "titulo": "The Hubble tension is no longer noise: the standard model has to change",
+            "disciplina": "Cosmology"
+          }
         }
       }
     },
@@ -57,7 +69,11 @@
       },
       "i18n": {
         "en": {
-          "archivo": "n004-may-2026.html"
+          "archivo": "n004-may-2026.html",
+          "portada": {
+            "titulo": "The RTS,S malaria vaccine works in the real world: now someone has to pay for it",
+            "disciplina": "Global health / Immunisation"
+          }
         }
       }
     }
