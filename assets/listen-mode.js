@@ -15,10 +15,10 @@
   var T = LANG === "en"
     ? { play: "▶ Listen", pause: "⏸ Pause", ready: "ready", end: "end",
         section: "section", noTTS: "TTS not supported", close: "hide player",
-        voice: "Voice", hint: "Browser voice — the cloned-voice MP3 replaces it when available" }
+        voice: "Voice", open: "open player", hint: "Browser voice — the cloned-voice MP3 replaces it when available" }
     : { play: "▶ Escuchar", pause: "⏸ Pausa", ready: "listo", end: "fin",
         section: "sección", noTTS: "sin soporte TTS", close: "ocultar reproductor",
-        voice: "Voz", hint: "Voz del navegador — el MP3 con voz clonada la reemplaza cuando existe" };
+        voice: "Voz", open: "abrir reproductor", hint: "Voz del navegador — el MP3 con voz clonada la reemplaza cuando existe" };
 
   var EXCLUDE = ".tags,.chart,.atlas,.atlas-map,.atlas-map-v2,.bars,.refs," +
                 ".toc,.reader-prefs,figure,svg,.sec-num,.pulso-num,.ti-cat,.byline";
@@ -66,12 +66,24 @@
                             "aria-label": LANG === "en" ? "Audio player" : "Reproductor de audio" });
     inner.forEach(function (n) { bar.appendChild(n); });
     var close = el("button", { class: "lb-close", title: T.close, "aria-label": T.close, text: "✕" });
+    var chip = el("button", { class: "lb-chip", title: T.open, "aria-label": T.open, text: "🎧" });
+    chip.style.display = "none";
     close.addEventListener("click", function () {
-      bar.remove();
-      try { sessionStorage.setItem("sinapse-audio-hidden", "1"); } catch (e) {}
+      bar.style.display = "none"; chip.style.display = "flex";
+      try { sessionStorage.setItem("sinapse-audio-min", "1"); } catch (e) {}
+    });
+    chip.addEventListener("click", function () {
+      chip.style.display = "none"; bar.style.display = "flex";
+      try { sessionStorage.removeItem("sinapse-audio-min"); } catch (e) {}
     });
     bar.appendChild(close);
     document.body.appendChild(bar);
+    document.body.appendChild(chip);
+    try {
+      if (sessionStorage.getItem("sinapse-audio-min")) {
+        bar.style.display = "none"; chip.style.display = "flex";
+      }
+    } catch (e) {}
     return bar;
   }
 
@@ -206,7 +218,6 @@
   }
 
   function init() {
-    try { if (sessionStorage.getItem("sinapse-audio-hidden")) return; } catch (e) {}
     if (!document.querySelector("section.sec")) return;
     var src = document.body.getAttribute("data-audio");
     if (src && /^https?:/.test(src)) {
