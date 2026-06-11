@@ -890,3 +890,47 @@
      del .sec-head. */
   .pulso{ gap:1.25rem }
   .pulso-item + .pulso-item{ padding-top:0.85rem }
+
+  /* ════════════════════════════════════════════════════════════════════
+     v2.3 (2026-06-10) · BLOQUE 1 · .atlas-map-v2 — mapas con geometría real
+     Generados por scripts/make-map.py (Natural Earth 110m). El SVG usa
+     tokens del sistema → responde a paleta y tema sin configuración.
+     ════════════════════════════════════════════════════════════════════ */
+  .atlas-map-v2{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:1.4rem 0 1.2rem;margin:2rem 0}
+  .atlas-map-v2 .amap-head{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem}
+  .atlas-map-v2 .amap-head strong{color:var(--ink);font-weight:500}
+  .atlas-map-v2 figure{margin:0}
+  .atlas-map-v2 svg{width:100%;height:auto;display:block}
+  .atlas-map-v2 .map-base,.atlas-map-v2 .map-hl{transition:fill .3s}
+  .amap-grid{display:grid;grid-template-columns:1fr;gap:1.2rem}
+  @media (min-width:860px){ .amap-grid.amap-side{grid-template-columns:3fr 2fr;align-items:center} }
+  .amap-stats{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.65rem}
+  .amap-stats li{display:grid;grid-template-columns:14px 1fr;gap:.6rem;align-items:baseline;font-size:.85rem;color:var(--ink-2)}
+  .amap-stats .swatch{width:11px;height:11px;border-radius:2px;background:var(--accent);transform:translateY(1px)}
+  .amap-stats li.t2 .swatch{opacity:.58}
+  .amap-stats li.t3 .swatch{opacity:.30}
+  .amap-stats .who{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+  .amap-stats .num{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600}
+  .amap-foot{font-size:.78rem;font-family:var(--mono);color:var(--ink-3);margin-top:1rem;line-height:1.5}
+  .amap-callout{border-left:2px solid var(--accent);padding:.2rem 0 .2rem 1rem;margin-top:1rem}
+  .amap-callout .n{font-family:var(--display);font-size:2rem;line-height:1.1;color:var(--ink)}
+  .amap-callout .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+  /* ════════════════════════════════════════════════════════════════════
+     v2.3 (2026-06-10) · BLOQUE 2 · .listen-bar — modo escucha (podcast)
+     Inyectada por assets/listen-mode.js. Si existe el MP3 del número
+     (data-audio en <body>), usa <audio>; si no, speechSynthesis.
+     ════════════════════════════════════════════════════════════════════ */
+  .listen-bar{position:fixed;left:50%;bottom:1.1rem;transform:translateX(-50%);width:min(41rem,calc(100vw - 2rem));display:flex;align-items:center;gap:.7rem;background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:.55rem .8rem;box-shadow:0 6px 24px rgba(0,0,0,.14);font-family:var(--mono);font-size:11.5px;color:var(--ink-2);z-index:50}
+  .listen-bar button{font:inherit;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink);border-radius:999px;cursor:pointer;padding:6px 12px;white-space:nowrap}
+  .listen-bar button:hover{border-color:var(--accent);color:var(--accent)}
+  .listen-bar button.lb-primary{background:var(--accent);border-color:var(--accent);color:var(--paper);min-width:5.6rem}
+  .listen-bar select{font:inherit;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink-2);border-radius:8px;padding:5px 6px;max-width:8.5rem}
+  .listen-bar .lb-close{border:none;background:none;color:var(--ink-3);padding:2px 6px;font-size:14px}
+  .listen-bar audio{flex:1;height:36px;min-width:0}
+  .lb-progress{flex:1;height:4px;background:var(--paper-2);border-radius:2px;overflow:hidden;min-width:3rem}
+  .lb-progress i{display:block;height:100%;width:0%;background:var(--accent);transition:width .4s}
+  .lb-status{color:var(--ink-3);white-space:nowrap}
+  .is-reading{background:var(--accent-soft);border-radius:4px;box-shadow:0 0 0 6px var(--accent-soft);transition:background .3s}
+  @media (max-width:560px){ .listen-bar{flex-wrap:wrap} .lb-status{display:none} }
+  @media print{ .listen-bar{display:none} }
