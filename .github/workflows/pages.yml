@@ -15,12 +15,42 @@ concurrency:
   cancel-in-progress: false
 
 # Opt-in a Node.js 24 antes de que GitHub lo fuerce el 2 de junio 2026.
-# Quita el warning "Node.js 20 actions are deprecated" en cada run.
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
+  # ── Validación por capas: si falla, NO se despliega ────────────────────
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-java@v4          # vnu (Nu HTML Checker) necesita Java 17+
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Instalar herramientas de validación
+        run: pip install html5validator jsonschema
+
+      - name: Pipeline de validación (STANDARDS + EDITORIAL + DATA + LINKS)
+        run: python3 scripts/validate-pro.py --site .
+
+      # No bloqueante: URLs externas caídas no frenan el número
+      - name: Enlaces externos (lychee)
+        uses: lycheeverse/lychee-action@v2
+        continue-on-error: true
+        with:
+          args: --no-progress --exclude-mail "issues/*.html" "en/issues/*.html"
+          fail: false
+
   deploy:
+    needs: validate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,14 +61,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Validate registro.json
-        run: |
-          python3 -c "import json; json.load(open('data/registro.json'))"
-          echo "registro.json válido"
-
-      - name: Validate issues (estructura, accesibilidad, datos, geometría, editorial)
-        run: python3 scripts/validate-issue.py --site .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
