@@ -922,7 +922,7 @@
      del número (data-audio en <body>) usa <audio>; si no, speechSynthesis.
      ════════════════════════════════════════════════════════════════════ */
   .listen-bar{
-    position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;
+    position:fixed;left:1.25rem;bottom:1.25rem;z-index:59;
     display:flex;align-items:center;gap:.65rem;
     background:color-mix(in oklab, var(--paper) 88%, transparent);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
@@ -946,7 +946,7 @@
   .lb-rate:hover,.lb-gear:hover,.lb-close:hover{color:var(--accent)}
   .lb-gear,.lb-close{border:none;background:none;color:var(--ink-3);cursor:pointer;padding:4px 2px;font-size:13px;line-height:1}
   .lb-pop{
-    position:absolute;bottom:calc(100% + .6rem);right:0;
+    position:absolute;bottom:calc(100% + .6rem);left:0;
     background:var(--paper);border:1px solid var(--rule);border-radius:12px;
     padding:.7rem .8rem;box-shadow:0 6px 20px rgba(0,0,0,.14);
     display:none;flex-direction:column;gap:.5rem;min-width:13rem;
@@ -957,6 +957,17 @@
   .listen-bar audio{height:36px;width:min(15rem,52vw)}
   .is-reading{background:var(--accent-soft);border-radius:4px;box-shadow:0 0 0 6px var(--accent-soft);transition:background .3s}
   @media (max-width:560px){
-    .listen-bar{right:.75rem;left:.75rem;bottom:.75rem;max-width:none}
+    .listen-bar{left:.75rem;right:4.4rem;bottom:.75rem;max-width:none}
   }
   @media print{ .listen-bar{display:none} }
+
+  .lb-chip{
+    position:fixed;left:1.25rem;bottom:1.25rem;z-index:59;
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid var(--rule);background:var(--paper);color:var(--ink-2);
+    font-size:16px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lb-chip:hover{color:var(--accent);border-color:var(--accent)}
+  @media (max-width:560px){ .lb-chip{left:.75rem;bottom:.75rem} }
+  @media print{ .lb-chip{display:none} }
