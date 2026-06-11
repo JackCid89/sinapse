@@ -917,20 +917,46 @@
   .amap-callout .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
 
   /* ════════════════════════════════════════════════════════════════════
-     v2.3 (2026-06-10) · BLOQUE 2 · .listen-bar — modo escucha (podcast)
-     Inyectada por assets/listen-mode.js. Si existe el MP3 del número
-     (data-audio en <body>), usa <audio>; si no, speechSynthesis.
+     v2.3.1 (2026-06-11) · BLOQUE 2 · .listen-bar — modo escucha (podcast)
+     Pill minimal inyectado por assets/listen-mode.js. Si existe el MP3
+     del número (data-audio en <body>) usa <audio>; si no, speechSynthesis.
      ════════════════════════════════════════════════════════════════════ */
-  .listen-bar{position:fixed;left:50%;bottom:1.1rem;transform:translateX(-50%);width:min(41rem,calc(100vw - 2rem));display:flex;align-items:center;gap:.7rem;background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:.55rem .8rem;box-shadow:0 6px 24px rgba(0,0,0,.14);font-family:var(--mono);font-size:11.5px;color:var(--ink-2);z-index:50}
-  .listen-bar button{font:inherit;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink);border-radius:999px;cursor:pointer;padding:6px 12px;white-space:nowrap}
-  .listen-bar button:hover{border-color:var(--accent);color:var(--accent)}
-  .listen-bar button.lb-primary{background:var(--accent);border-color:var(--accent);color:var(--paper);min-width:5.6rem}
-  .listen-bar select{font:inherit;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink-2);border-radius:8px;padding:5px 6px;max-width:8.5rem}
-  .listen-bar .lb-close{border:none;background:none;color:var(--ink-3);padding:2px 6px;font-size:14px}
-  .listen-bar audio{flex:1;height:36px;min-width:0}
-  .lb-progress{flex:1;height:4px;background:var(--paper-2);border-radius:2px;overflow:hidden;min-width:3rem}
+  .listen-bar{
+    position:fixed;right:1.25rem;bottom:1.25rem;z-index:60;
+    display:flex;align-items:center;gap:.65rem;
+    background:color-mix(in oklab, var(--paper) 88%, transparent);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border:1px solid var(--rule);border-radius:999px;
+    padding:.45rem .65rem .45rem .45rem;
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
+    font-family:var(--mono);font-size:11px;color:var(--ink-2);
+    max-width:min(22rem,calc(100vw - 2.5rem));
+  }
+  .listen-bar .lb-play{
+    width:38px;height:38px;border-radius:50%;flex:none;
+    border:none;background:var(--accent);color:var(--paper);
+    font-size:13px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .15s ease;
+  }
+  .listen-bar .lb-play:hover{transform:scale(1.06)}
+  .lb-progress{flex:1;min-width:5.5rem;height:3px;background:var(--rule-2);border-radius:2px;overflow:hidden;cursor:default}
   .lb-progress i{display:block;height:100%;width:0%;background:var(--accent);transition:width .4s}
-  .lb-status{color:var(--ink-3);white-space:nowrap}
+  .lb-rate{border:none;background:none;color:var(--ink-3);cursor:pointer;padding:4px 2px;font:inherit;letter-spacing:.02em}
+  .lb-rate:hover,.lb-gear:hover,.lb-close:hover{color:var(--accent)}
+  .lb-gear,.lb-close{border:none;background:none;color:var(--ink-3);cursor:pointer;padding:4px 2px;font-size:13px;line-height:1}
+  .lb-pop{
+    position:absolute;bottom:calc(100% + .6rem);right:0;
+    background:var(--paper);border:1px solid var(--rule);border-radius:12px;
+    padding:.7rem .8rem;box-shadow:0 6px 20px rgba(0,0,0,.14);
+    display:none;flex-direction:column;gap:.5rem;min-width:13rem;
+  }
+  .lb-pop.open{display:flex}
+  .lb-pop label{display:flex;align-items:center;justify-content:space-between;gap:.6rem;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;font-size:10px}
+  .lb-pop select{font:inherit;font-size:11px;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink);border-radius:8px;padding:4px 6px;max-width:9rem}
+  .listen-bar audio{height:36px;width:min(15rem,52vw)}
   .is-reading{background:var(--accent-soft);border-radius:4px;box-shadow:0 0 0 6px var(--accent-soft);transition:background .3s}
-  @media (max-width:560px){ .listen-bar{flex-wrap:wrap} .lb-status{display:none} }
+  @media (max-width:560px){
+    .listen-bar{right:.75rem;left:.75rem;bottom:.75rem;max-width:none}
+  }
   @media print{ .listen-bar{display:none} }

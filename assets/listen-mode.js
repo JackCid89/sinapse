@@ -14,9 +14,11 @@
   var LANG = (document.documentElement.lang || "es").slice(0, 2);
   var T = LANG === "en"
     ? { play: "▶ Listen", pause: "⏸ Pause", ready: "ready", end: "end",
-        section: "section", noTTS: "TTS not supported", close: "hide player" }
+        section: "section", noTTS: "TTS not supported", close: "hide player",
+        voice: "Voice", hint: "Browser voice — the cloned-voice MP3 replaces it when available" }
     : { play: "▶ Escuchar", pause: "⏸ Pausa", ready: "listo", end: "fin",
-        section: "sección", noTTS: "sin soporte TTS", close: "ocultar reproductor" };
+        section: "sección", noTTS: "sin soporte TTS", close: "ocultar reproductor",
+        voice: "Voz", hint: "Voz del navegador — el MP3 con voz clonada la reemplaza cuando existe" };
 
   var EXCLUDE = ".tags,.chart,.atlas,.atlas-map,.atlas-map-v2,.bars,.refs," +
                 ".toc,.reader-prefs,figure,svg,.sec-num,.pulso-num,.ti-cat,.byline";
@@ -75,7 +77,9 @@
 
   function mountAudio(src) {
     var a = el("audio", { controls: "", preload: "none", src: src });
-    buildBar([a]);
+    var bar = buildBar([a]);
+    // si el MP3 remoto falla (release borrada, sin red), caer a TTS
+    a.addEventListener("error", function () { bar.remove(); mountTTS(); });
   }
 
   function mountTTS() {
@@ -90,20 +94,27 @@
     var prefs = {};
     try { prefs = JSON.parse(localStorage.getItem("sinapse-audio") || "{}"); } catch (e) {}
 
-    var btn = el("button", { class: "lb-primary", text: T.play });
-    var prev = el("button", { title: "⏮", text: "⏮" });
-    var next = el("button", { title: "⏭", text: "⏭" });
-    var rate = el("select", {});
-    [0.85, 1, 1.15, 1.3, 1.5].forEach(function (r) {
-      var o = el("option", { value: r, text: r + "×" });
-      if (r === (prefs.rate || 1)) o.selected = true;
-      rate.appendChild(o);
-    });
+    var RATES = [1, 1.15, 1.3, 1.5, 0.85];
+    var ri = Math.max(0, RATES.indexOf(prefs.rate || 1));
+    var btn = el("button", { class: "lb-play", title: T.play, "aria-label": T.play, text: "▶" });
+    var progWrap = el("span", { class: "lb-progress", role: "progressbar" }, [el("i", {})]);
+    var rate = el("button", { class: "lb-rate", title: "velocidad", text: RATES[ri] + "×" });
+    var gear = el("button", { class: "lb-gear", title: T.voice, "aria-label": T.voice, text: "⚙" });
     var voice = el("select", {});
-    var progWrap = el("span", { class: "lb-progress" }, [el("i", {})]);
-    var status = el("span", { class: "lb-status", text: T.ready });
-    buildBar([btn, prev, next, rate, voice, progWrap, status]);
+    var pop = el("div", { class: "lb-pop" }, [
+      el("label", { text: T.voice }), voice,
+      el("label", { class: "lb-hint", text: T.hint })
+    ]);
+    buildBar([btn, progWrap, rate, gear, pop]);
     var prog = progWrap.firstChild;
+    var status = { textContent: "" };           // estado solo para aria
+    gear.addEventListener("click", function () { pop.classList.toggle("open"); });
+    rate.addEventListener("click", function () {
+      ri = (ri + 1) % RATES.length;
+      rate.textContent = RATES[ri] + "×";
+      savePrefs();
+      if (playing) { synth.cancel(); speak(); }
+    });
 
     function loadVoices() {
       voice.innerHTML = "";
@@ -145,7 +156,7 @@
     }
     function stop(msg) {
       playing = false; synth.cancel(); mark(null);
-      btn.textContent = T.play;
+      btn.textContent = "▶"; btn.title = T.play;
       status.textContent = msg || T.ready;
       if (msg === T.end) { pi = 0; si = 0; prog.style.width = "0%"; }
     }
@@ -156,7 +167,7 @@
       if (si === 0) mark(q.el);
       var u = new SpeechSynthesisUtterance(q.parts[si]);
       u.lang = LANG;
-      u.rate = parseFloat(rate.value);
+      u.rate = RATES[ri];
       var v = synth.getVoices().find(function (x) { return x.name === voice.value; });
       if (v) u.voice = v;
       u.onend = function () {
@@ -169,12 +180,12 @@
     }
     function savePrefs() {
       try { localStorage.setItem("sinapse-audio",
-        JSON.stringify({ rate: parseFloat(rate.value), voice: voice.value })); } catch (e) {}
+        JSON.stringify({ rate: RATES[ri], voice: voice.value })); } catch (e) {}
     }
 
     btn.addEventListener("click", function () {
       if (playing) { stop(); return; }
-      playing = true; btn.textContent = T.pause;
+      playing = true; btn.textContent = "⏸"; btn.title = T.pause;
       synth.cancel(); speak(); update();
     });
     function jump(dir) {
@@ -188,9 +199,6 @@
       if (playing) speak(); else mark(queue[pi].el);
       update();
     }
-    prev.addEventListener("click", function () { jump(-1); });
-    next.addEventListener("click", function () { jump(1); });
-    rate.addEventListener("change", function () { savePrefs(); if (playing) { synth.cancel(); speak(); } });
     voice.addEventListener("change", function () { savePrefs(); if (playing) { synth.cancel(); speak(); } });
 
     // Chrome se duerme en utterances largas / pestaña en background
@@ -201,7 +209,11 @@
     try { if (sessionStorage.getItem("sinapse-audio-hidden")) return; } catch (e) {}
     if (!document.querySelector("section.sec")) return;
     var src = document.body.getAttribute("data-audio");
-    if (src) {
+    if (src && /^https?:/.test(src)) {
+      // URL absoluta (GitHub Releases): sin preflight CORS — el <audio>
+      // nativo streamea con range requests y su onerror cubre el fallback.
+      mountAudio(src);
+    } else if (src) {
       fetch(src, { method: "HEAD" }).then(function (r) {
         if (r.ok) mountAudio(src); else mountTTS();
       }).catch(mountTTS);
