@@ -11,3 +11,5 @@
 
 # Logs
 *.log
+# guiones intermedios de audio (se regeneran)
+*.guion-*.txt
