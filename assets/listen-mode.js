@@ -91,7 +91,7 @@
     var a = el("audio", { controls: "", preload: "none", src: src });
     var bar = buildBar([a]);
     // si el MP3 remoto falla (release borrada, sin red), caer a TTS
-    a.addEventListener("error", function () { bar.remove(); mountTTS(); });
+    a.addEventListener("error", function () { bar.remove(); maybeTTS(); });
   }
 
   function mountTTS() {
@@ -217,18 +217,27 @@
     setInterval(function () { if (playing && synth.speaking) { synth.pause(); synth.resume(); } }, 9000);
   }
 
+  function maybeTTS() {
+    if (document.body.getAttribute("data-audio-tts") === "1") mountTTS();
+    // si no, no se monta nada: sin audio hasta que exista el MP3 con voz clonada
+  }
+
   function init() {
     if (!document.querySelector("section.sec")) return;
     var src = document.body.getAttribute("data-audio");
+    // Política de producción: SOLO se ofrece audio cuando existe el MP3 con la
+    // voz clonada de Jack (data-audio). NO se cae a la voz del navegador: en
+    // producción suena mal. El TTS del navegador queda como herramienta de
+    // prueba, activable con <body data-audio-tts="1">.
     if (src && /^https?:/.test(src)) {
-      // URL absoluta (GitHub Releases): sin preflight CORS — el <audio>
-      // nativo streamea con range requests y su onerror cubre el fallback.
-      mountAudio(src);
+      mountAudio(src);                 // Release MP3 (streaming con range)
     } else if (src) {
       fetch(src, { method: "HEAD" }).then(function (r) {
-        if (r.ok) mountAudio(src); else mountTTS();
-      }).catch(mountTTS);
-    } else mountTTS();
+        if (r.ok) mountAudio(src); else maybeTTS();
+      }).catch(maybeTTS);
+    } else {
+      maybeTTS();
+    }
   }
 
   if (document.readyState === "loading")

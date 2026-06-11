@@ -727,6 +727,27 @@
     a{color:#111}
   }
 
+
+  /* ── v2.3.2 · colores semánticos de mapa (categorías) ──────────────────
+     Triada independiente de la paleta para que las categorías sean siempre
+     distinguibles. Usada por make-map.py (.map-c1..4) y la leyenda .amap-stats. */
+  :root{
+    --map-c1:oklch(0.55 0.17 255);   /* categoría 1 — azul */
+    --map-c2:oklch(0.60 0.13 165);   /* categoría 2 — verde-teal */
+    --map-c3:oklch(0.70 0.14 55);    /* categoría 3 — ámbar */
+    --map-c4:oklch(0.55 0.16 350);   /* categoría 4 — magenta */
+  }
+  [data-theme="eink"]{
+    --map-c1:oklch(0.72 0.15 255);
+    --map-c2:oklch(0.76 0.13 165);
+    --map-c3:oklch(0.80 0.14 75);
+    --map-c4:oklch(0.72 0.16 350);
+  }
+  .amap-stats li.c1 .swatch{background:var(--map-c1);opacity:1}
+  .amap-stats li.c2 .swatch{background:var(--map-c2);opacity:1}
+  .amap-stats li.c3 .swatch{background:var(--map-c3);opacity:1}
+  .amap-stats li.c4 .swatch{background:var(--map-c4);opacity:1}
+
   /* ═════════════════════════════════════════════════════════════════════
      ACCESIBILIDAD · Modo dislexia (añadido v2.1 · 2026-05-24)
 
@@ -879,6 +900,15 @@
     min-width:0;
   }
   .reader-prefs .seg.palette button{ padding-left:8px } /* preserva el original */
+
+  /* Fix 2026-06-11: la paleta tiene 4 opciones; a 4 columnas en un panel de
+     300px el texto se cortaba ("Auror", "Verme"). Forzamos 2 columnas y
+     dejamos que el nombre completo respire (swatch + palabra entera). */
+  .reader-prefs .seg.palette{ grid-template-columns:repeat(2,minmax(0,1fr)) !important }
+  .reader-prefs .seg.palette button{
+    overflow:visible; text-overflow:clip; white-space:nowrap; min-width:0;
+  }
+  .reader-prefs .seg.palette .sw{ flex:none }
 
   /* Fix 2026-05-24: aire arriba de cada pulso-item. El gap de 2rem
      entre items + padding-bottom 1.75rem dejaban que las chips de
