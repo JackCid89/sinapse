@@ -20,7 +20,11 @@ Instalación (una vez, en el Mac):
 
     python3 -m venv ~/.venvs/sinapse-tts && source ~/.venvs/sinapse-tts/bin/activate
 
-    # Motor calidad (Chatterbox en MPS):
+    # Motor recomendado (Qwen3-TTS · MLX nativo, Apache-2.0, el más rápido en M4):
+    pip install mlx-audio soundfile numpy
+    #   primera vez baja el modelo (~2-4 GB) a ~/.cache/huggingface
+
+    # Alternativa (Chatterbox en MPS, más lento):
     pip install chatterbox-tts torch torchaudio
 
     # Motor rápido (Kokoro ONNX):
@@ -107,6 +111,51 @@ def engine_chatterbox(chunks, lang, ref, workdir):
     return files
 
 
+def engine_qwen3_mlx(chunks, lang, ref, ref_text, workdir):
+    """Qwen3-TTS vía mlx-audio (MLX nativo, Apple Silicon). Apache-2.0.
+    Clona con ref_audio + ref_text. Carga el modelo UNA vez y sintetiza
+    todos los trozos; mucho más rápido que recargar el CLI por trozo."""
+    import soundfile as sf
+    from mlx_audio.tts.utils import load_model
+
+    repo = os.environ.get("SINAPSE_QWEN_MODEL",
+                          "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16")
+    print(f"[qwen3-mlx] {repo} · {len(chunks)} trozos · lang={lang}")
+    if not ref or not Path(ref).exists():
+        sys.exit("qwen3 necesita --ref (voz de referencia .wav de ~10 s).")
+    if not ref_text:
+        # transcripción de la referencia: editorial/voces/jack-cid-<lang>.txt
+        cand = Path(ref).with_suffix(".txt")
+        if cand.exists():
+            ref_text = cand.read_text(encoding="utf-8").strip()
+        else:
+            sys.exit("qwen3 necesita --ref-text (transcripción de la referencia) "
+                     "o un .txt junto al .wav de referencia.")
+
+    model = load_model(repo)
+    files, silence = [], None
+    for i, c in enumerate(chunks):
+        if not c:                                  # pausa entre párrafos
+            if silence is None:
+                silence = workdir / "sil.wav"
+                sf.write(str(silence), [0.0] * int(24000 * 0.5), 24000)
+            files.append(silence)
+            continue
+        # la API de mlx-audio devuelve segmentos con .audio (np.float32) y .sample_rate
+        segs = list(model.generate(text=c, ref_audio=str(ref), ref_text=ref_text,
+                                    temperature=0.7, top_p=0.9, top_k=50,
+                                    verbose=False))
+        import numpy as np
+        audio = np.concatenate([sgmt.audio for sgmt in segs])
+        sr = segs[0].sample_rate
+        f = workdir / f"seg{i:04d}.wav"
+        sf.write(str(f), audio, sr)
+        files.append(f)
+        if (i + 1) % 10 == 0 or i == len(chunks) - 1:
+            print(f"  {i + 1}/{len(chunks)}")
+    return files
+
+
 def engine_kokoro(chunks, lang, voice, workdir):
     import soundfile as sf
     from kokoro_onnx import Kokoro
@@ -146,11 +195,13 @@ def stitch(files, out: Path):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("guion", help=".guion-es.txt / .guion-en.txt de make-podcast.py")
-    p.add_argument("--engine", choices=["chatterbox", "kokoro"], default="chatterbox")
+    p.add_argument("--engine", choices=["qwen3", "chatterbox", "kokoro"], default="qwen3")
     p.add_argument("--lang", default=None, help="es/en (default: del nombre del guion)")
     p.add_argument("--ref", default=None,
                    help="chatterbox: wav/flac de 10-20 s con la voz fija de la revista")
     p.add_argument("--voice", default=None, help="kokoro: ef_dora/em_alex/em_santa/af_heart…")
+    p.add_argument("--ref-text", dest="ref_text", default=None,
+                   help="qwen3: transcripción de la voz de referencia")
     p.add_argument("--out", default=None)
     args = p.parse_args()
 
@@ -166,7 +217,9 @@ def main():
 
     with tempfile.TemporaryDirectory() as td:
         wd = Path(td)
-        if args.engine == "chatterbox":
+        if args.engine == "qwen3":
+            files = engine_qwen3_mlx(chunks, lang, args.ref, args.ref_text, wd)
+        elif args.engine == "chatterbox":
             files = engine_chatterbox(chunks, lang, args.ref, wd)
         else:
             files = engine_kokoro(chunks, lang, args.voice, wd)
