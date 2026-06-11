@@ -221,9 +221,11 @@ def main():
     guion = Path(args.issue).with_suffix(f".guion-{lang}.txt")
     guion.write_text(script, encoding="utf-8")
     print(f"Guion → {guion}  ({n_chars:,} caracteres, ~{n_chars // 950} min de audio)")
-    print("Costo estimado por número:")
-    for name, usd_m in PRICES.items():
-        print(f"  {name:<18} ${n_chars * usd_m / 1e6:.3f}")
+    print("Costo: $0.00 — la síntesis es local (sinapse-tts-mac.py · Chatterbox/Kokoro).")
+    if os.environ.get("SHOW_CLOUD_PRICES"):
+        print("Referencia nube (si algún día se usa --engine openai):")
+        for name, usd_m in PRICES.items():
+            print(f"  {name:<18} ${n_chars * usd_m / 1e6:.3f}")
 
     if args.dry_run or not args.engine:
         return
