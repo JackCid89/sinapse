@@ -219,6 +219,13 @@ def check_data_integrity(html: str, file_label: str):
     # usar esa lista como fuente de verdad. Si no, fallback a regex sobre el texto.
     svg_blocks = re.findall(r'<svg\b.*?</svg>', html, re.DOTALL)
     for i, svg in enumerate(svg_blocks):
+        # 0) Mapas geográficos (data-viz="map"): exentos de la heurística de
+        #    porcentajes — sus cifras viven en HTML adyacente, no en el SVG.
+        if re.search(r'<svg\b[^>]*data-viz="map"', svg):
+            results.append(Result(
+                f"[DATA INTEGRITY/{label}] SVG #{i+1} es mapa (data-viz=\"map\") — exento de suma de %"
+            ))
+            continue
         # 1) Atributo declarativo (preferido)
         m = re.search(r'data-(?:pie|stacked)-pcts="([\d,\.\s]+)"', svg)
         if m:

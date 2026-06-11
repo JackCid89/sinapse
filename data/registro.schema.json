@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jackcid89.github.io/sinapse/data/registro.schema.json",
+  "title": "SINAPSE · registro.json (público/slim)",
+  "description": "Contrato de datos del índice público. El validador de capa DATA lo comprueba con jsonschema. No añadir campos: el JS del index solo consume estos.",
+  "type": "object",
+  "required": ["revista", "idiomas", "numeros"],
+  "additionalProperties": false,
+  "properties": {
+    "revista": { "const": "SINAPSE" },
+    "idiomas": {
+      "type": "array",
+      "items": { "enum": ["es", "en"] },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "numeros": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/numero" }
+    }
+  },
+  "$defs": {
+    "portada": {
+      "type": "object",
+      "required": ["titulo", "disciplina"],
+      "additionalProperties": false,
+      "properties": {
+        "titulo": { "type": "string", "minLength": 1 },
+        "disciplina": { "type": "string", "minLength": 1 }
+      }
+    },
+    "numero": {
+      "type": "object",
+      "required": ["numero", "fecha", "archivo", "portada", "i18n"],
+      "additionalProperties": false,
+      "properties": {
+        "numero": { "type": "integer", "minimum": 1 },
+        "fecha": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "ISO 8601; debe caer en martes (lo comprueba el validador editorial)."
+        },
+        "archivo": {
+          "type": "string",
+          "pattern": "^n\\d{3}-[a-z]+-2\\d{3}\\.html$"
+        },
+        "portada": { "$ref": "#/$defs/portada" },
+        "i18n": {
+          "type": "object",
+          "required": ["en"],
+          "additionalProperties": false,
+          "description": "i18n.en es OBLIGATORIO; si falta, la home EN muestra titulares en ES (bug 25-may-2026).",
+          "properties": {
+            "en": {
+              "type": "object",
+              "required": ["archivo", "portada"],
+              "additionalProperties": false,
+              "properties": {
+                "archivo": {
+                  "type": "string",
+                  "pattern": "^n\\d{3}-[a-z]+-2\\d{3}\\.html$"
+                },
+                "portada": { "$ref": "#/$defs/portada" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
