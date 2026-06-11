@@ -46,6 +46,7 @@ La primera ejecución descarga los pesos de Chatterbox (~4 GB) a ~/.cache/huggin
 """
 
 import argparse
+import os
 import re
 import subprocess
 import sys
@@ -111,20 +112,19 @@ def engine_chatterbox(chunks, lang, ref, workdir):
     return files
 
 
-def engine_qwen3_mlx(chunks, lang, ref, ref_text, workdir):
-    """Qwen3-TTS vía mlx-audio (MLX nativo, Apple Silicon). Apache-2.0.
-    Clona con ref_audio + ref_text. Carga el modelo UNA vez y sintetiza
-    todos los trozos; mucho más rápido que recargar el CLI por trozo."""
-    import soundfile as sf
+def engine_qwen3_mlx(text, lang, ref, ref_text, workdir):
+    """Qwen3-TTS vía mlx-audio (MLX nativo, Apple Silicon, Apache-2.0).
+    Usa la API real: mlx_audio.tts.generate.generate_audio(...), que carga el
+    modelo una vez, segmenta el texto internamente y une todo (join_audio).
+    Clona con ref_audio + ref_text. Devuelve [wav_unico] para stitch()."""
+    from mlx_audio.tts.generate import generate_audio
     from mlx_audio.tts.utils import load_model
 
     repo = os.environ.get("SINAPSE_QWEN_MODEL",
                           "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16")
-    print(f"[qwen3-mlx] {repo} · {len(chunks)} trozos · lang={lang}")
     if not ref or not Path(ref).exists():
         sys.exit("qwen3 necesita --ref (voz de referencia .wav de ~10 s).")
     if not ref_text:
-        # transcripción de la referencia: editorial/voces/jack-cid-<lang>.txt
         cand = Path(ref).with_suffix(".txt")
         if cand.exists():
             ref_text = cand.read_text(encoding="utf-8").strip()
@@ -132,28 +132,20 @@ def engine_qwen3_mlx(chunks, lang, ref, ref_text, workdir):
             sys.exit("qwen3 necesita --ref-text (transcripción de la referencia) "
                      "o un .txt junto al .wav de referencia.")
 
+    print(f"[qwen3-mlx] {repo} · lang={lang} · cargando modelo (1ª vez descarga)…")
     model = load_model(repo)
-    files, silence = [], None
-    for i, c in enumerate(chunks):
-        if not c:                                  # pausa entre párrafos
-            if silence is None:
-                silence = workdir / "sil.wav"
-                sf.write(str(silence), [0.0] * int(24000 * 0.5), 24000)
-            files.append(silence)
-            continue
-        # la API de mlx-audio devuelve segmentos con .audio (np.float32) y .sample_rate
-        segs = list(model.generate(text=c, ref_audio=str(ref), ref_text=ref_text,
-                                    temperature=0.7, top_p=0.9, top_k=50,
-                                    verbose=False))
-        import numpy as np
-        audio = np.concatenate([sgmt.audio for sgmt in segs])
-        sr = segs[0].sample_rate
-        f = workdir / f"seg{i:04d}.wav"
-        sf.write(str(f), audio, sr)
-        files.append(f)
-        if (i + 1) % 10 == 0 or i == len(chunks) - 1:
-            print(f"  {i + 1}/{len(chunks)}")
-    return files
+    generate_audio(
+        text=text, model=model,
+        ref_audio=str(ref), ref_text=ref_text,
+        lang_code=lang, temperature=0.7,
+        join_audio=True, audio_format="wav",
+        file_prefix="qwen_out", output_path=str(workdir),
+        verbose=False,
+    )
+    wav = Path(workdir) / "qwen_out.wav"
+    if not wav.exists():
+        sys.exit("qwen3: no se generó el wav (revisá la salida de mlx-audio).")
+    return [wav]
 
 
 def engine_kokoro(chunks, lang, voice, workdir):
@@ -211,14 +203,18 @@ def main():
     out = Path(args.out or guion.with_suffix(".mp3"))
     out.parent.mkdir(parents=True, exist_ok=True)
 
-    chunks = chunk_text(text)
-    n = sum(len(c) for c in chunks)
-    print(f"{guion.name}: {n:,} chars → {len(chunks)} trozos → {out}")
+    if args.engine == "qwen3":
+        print(f"{guion.name}: {len(text):,} chars → {out} (Qwen3/MLX segmenta internamente)")
+        chunks = None
+    else:
+        chunks = chunk_text(text)
+        n = sum(len(c) for c in chunks)
+        print(f"{guion.name}: {n:,} chars → {len(chunks)} trozos → {out}")
 
     with tempfile.TemporaryDirectory() as td:
         wd = Path(td)
         if args.engine == "qwen3":
-            files = engine_qwen3_mlx(chunks, lang, args.ref, args.ref_text, wd)
+            files = engine_qwen3_mlx(text, lang, args.ref, args.ref_text, wd)
         elif args.engine == "chatterbox":
             files = engine_chatterbox(chunks, lang, args.ref, wd)
         else:

@@ -110,7 +110,8 @@ for ES_FILE in "${LIST[@]}"; do
   REF_ES=""; REF_EN=""
   case "$ENGINE" in qwen3|chatterbox) REF_ES="--ref $VOCES/jack-cid-es.wav"; REF_EN="--ref $VOCES/jack-cid-en.wav";; esac
 
-  echo "  · sintetizando ES (puede tardar 30-45 min)…"
+  [ "$ENGINE" = qwen3 ] && EST="~3-5 min con MLX" || EST="puede tardar 30-45 min"
+  echo "  · sintetizando ES ($EST)…"
   python3 scripts/sinapse-tts-mac.py "${ES_FILE%.html}.guion-es.txt" \
       --engine "$ENGINE" $REF_ES --out "/tmp/sinapse-audio/${NUM}-es.mp3" \
       || die "Falló la síntesis ES de ${NUM} (ver $LOG)"
