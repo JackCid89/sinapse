@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SINAPSE · No. 005 · June 2026</title>
+<meta name="description" content="SINAPSE No. 005 — week 24 of 2026. Cover: China's JUNO observatory delivers its first result and measures two neutrino parameters better than all prior physics combined. Passiflora's Counterpoint takes apart what 'banning a model' actually means." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../assets/sinapse.css?v=20260616a" />
+</head>
+<body data-audio="../../assets/audio/n005-june-2026.mp3?v=20260616a">
+
+<div class="progress" aria-hidden="true"><div class="bar" id="progBar"></div></div>
+
+<main class="page" id="top">
+
+  <header class="masthead">
+    <h1 class="wordmark"><a href="../index.html">sinapse<span class="dot">.</span></a></h1>
+    <div class="meta">
+      <strong>No. 005</strong><br>
+      Week 24 · June 10–16, 2026<br>
+      Weekly edition · English
+    </div>
+  </header>
+
+  <div class="sub">
+    <span>Science · Technology · Industry</span>
+    <span class="lang">
+      <a href="../../issues/n005-junio-2026.html">ES</a> · <a href="./n005-june-2026.html" aria-current="page">EN</a>
+    </span>
+  </div>
+
+  <p class="lede">
+    <strong>In this issue —</strong> China's underground JUNO observatory publishes its first result and already measures two neutrino-oscillation parameters more precisely than all prior physics combined; an international team releases the first complete connectome of the fly's central nervous system; Osaka builds an electrolyser that regulates itself without a battery; and India gets its first national heat-index atlas. The column explains, without shortcuts, what a chip that computes with light instead of electrons actually does — and where it falls short. And Passiflora's Counterpoint goes for the jugular on the word of the week: in the same week a country bans a model out of fear of China, a lab bans its own model out of fear of biology. Both are called "banning AI." They are not the same thing.
+  </p>
+
+  <nav class="toc" aria-label="Table of contents">
+    <ol>
+      <li><a href="#pulse"><span class="num">01</span><span class="lead"></span><span>Pulse</span></a></li>
+      <li><a href="#cover"><span class="num">02</span><span class="lead"></span><span>Cover</span></a></li>
+      <li><a href="#papers"><span class="num">03</span><span class="lead"></span><span>Papers</span></a></li>
+      <li><a href="#tech"><span class="num">04</span><span class="lead"></span><span>Tech</span></a></li>
+      <li><a href="#industry"><span class="num">05</span><span class="lead"></span><span>Industry</span></a></li>
+      <li><a href="#column"><span class="num">06</span><span class="lead"></span><span>Column</span></a></li>
+      <li><a href="#counterpoint"><span class="num">07</span><span class="lead"></span><span>Counterpoint</span></a></li>
+      <li><a href="#datum"><span class="num">08</span><span class="lead"></span><span>Datum</span></a></li>
+      <li><a href="#appendix"><span class="num">09</span><span class="lead"></span><span>Appendix</span></a></li>
+    </ol>
+  </nav>
+
+  <section class="sec" id="pulse">
+    <div class="sec-head"><span class="sec-num">§ 01</span><h2 class="sec-title">Pulse</h2></div>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">01</span>P-01</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">Physics</span><span class="tag">Japan</span><span class="tag">Quantum</span></div>
+        <h3>RIKEN proposes a "one-way street" for quantum sound</h3>
+        <p>A team at the Japanese institute describes a scheme in which two quantum systems synchronise in a single direction — a one-way street for phonons, the quanta of vibration. The asymmetry comes from deliberately breaking the time-reversal symmetry of the coupling.</p>
+        <aside class="enclaro">In plain terms: normally, when two oscillators fall into step, the influence runs both ways. Here A drags B, but B does not drag A. Useful for moving energy or information in one direction with no backflow.</aside>
+      </div>
+    </article>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">02</span>P-02</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">Astronomy</span><span class="tag">Chile</span><span class="tag">Surveys</span></div>
+        <h3>The Rubin Observatory is already bagging asteroids by the tens of thousands</h3>
+        <p>With the main <em>Legacy Survey of Space and Time</em> campaign under way from Cerro Pachón, early data from the Chilean-US observatory have catalogued more than 11,000 new asteroids before the ten-year survey even hits its stride. It is, its team says, "the tip of the iceberg".</p>
+      </div>
+    </article>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">03</span>P-03</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">Space</span><span class="tag">Africa</span><span class="tag">Climate</span></div>
+        <h3>The African Union opens its own satellite weather facility</h3>
+        <p>AMSAF, built with the European Union, begins operating to give the continent's meteorological services direct access to early-warning satellite data. Africa's bottleneck was never the orbital data — it was always the chain that turns it into a usable warning on the ground.</p>
+      </div>
+    </article>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">04</span>P-04</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">AI</span><span class="tag">Gulf</span><span class="tag">Infrastructure</span></div>
+        <h3>The Gulf buys compute the way it once bought refineries</h3>
+        <p>Saudi Arabia holds to its ~USD 100bn commitment in AI infrastructure, and the UAE runs one of the most powerful compute labs outside the West. The bet is to turn cheap energy into data centres, and data into rent — the same logic as oil, with a different fluid.</p>
+      </div>
+    </article>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">05</span>P-05</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">Ecology</span><span class="tag">Indonesia</span><span class="tag">Climate</span></div>
+        <h3>Cyclone Senyar hits the planet's rarest great ape</h3>
+        <p>Landslides tied to the cyclone buried dozens of Tapanuli orangutans, the most endangered great-ape species, confined to a single forest fragment in Sumatra. An uncomfortable reminder: extinction doesn't always arrive by chainsaw; sometimes it arrives by the climate we've already changed.</p>
+      </div>
+    </article>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">06</span>P-06</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">Space</span><span class="tag">USA</span><span class="tag">Propulsion</span></div>
+        <h3>One propellant for two different space thrusters</h3>
+        <p>MIT researchers show that a single fuel can power both a chemical thruster (strong, brief push) and an electric one (weak, sustained push). For a small satellite, carrying one tank instead of two changes which missions fit inside the mass budget.</p>
+      </div>
+    </article>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">07</span>P-07</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">Biomedicine</span><span class="tag">Neuroimmunology</span><span class="tag">Alzheimer's</span></div>
+        <h3>Blood-cancer mutations may help ignite Alzheimer's</h3>
+        <p>A study links clonal haematopoiesis — mutations that accumulate with age in blood stem cells — to excessively inflammatory immune cells in the brain, capable of pushing the pathology of Alzheimer's disease.</p>
+        <aside class="enclaro">In plain terms: with age, some bone-marrow cells acquire mutations and multiply. If their immune descendants reach the brain "irritated", they feed the inflammation that accompanies Alzheimer's. It connects two diseases of ageing that seemed unrelated.</aside>
+      </div>
+    </article>
+
+    <article class="pulso-item">
+      <div class="pulso-num"><span class="ord">08</span>P-08</div>
+      <div class="pulso-body">
+        <div class="tags"><span class="tag">AI</span><span class="tag">Behavioural science</span><span class="tag">Cognition</span></div>
+        <h3>Large models flunk a classic attention test</h3>
+        <p>Given an attention test borrowed from psychology, the best language models name colours correctly in short lists, but their performance collapses as the task lengthens. A useful result: it measures a concrete crack in these systems' attention rather than proclaiming that they "reason" or "don't reason".</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec" id="cover">
+    <div class="sec-head"><span class="sec-num">§ 02</span><h2 class="sec-title">Cover</h2></div>
+
+    <p class="portada-meta">China · Particle physics · Neutrinos</p>
+    <h1 class="article-title">JUNO already measures neutrinos better than anyone: <em>now it goes after the order of their masses</em></h1>
+    <p class="article-deck">Guangdong's underground detector publishes its first result in <em>Nature</em>. With two months of data it sharpens two oscillation parameters beyond all prior physics. The hard part — ordering the three masses — comes later.</p>
+    <p class="byline"><span>By the SINAPSE editorial team</span><span>June 16, 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">Seven hundred metres under a mountain in Guangdong hangs a twelve-metre acrylic sphere filled with twenty thousand tonnes of liquid scintillator, wrapped in nearly forty-five thousand photomultiplier tubes watching the dark for flashes. This is the Jiangmen Underground Neutrino Observatory (JUNO), run by the Institute of High Energy Physics of the Chinese Academy of Sciences with an international collaboration. On June 10, its first physics result appeared as the cover article in <em>Nature</em>: with just 59 days of data taken between August and November 2025, JUNO measures two of the six parameters that describe how neutrinos change identity, with the uncertainty cut by a factor of 1.6 against the combination of all prior experiments.</p>
+
+      <p>It's worth translating what that means. Neutrinos come in three "flavours" — electron, muon, tau — and, as they travel, they turn into one another: they oscillate. That oscillation is only possible if neutrinos have mass, and the pattern of change depends on a few mixing angles and on the differences between the squares of their masses. JUNO watches antineutrinos produced by the Yangjiang and Taishan nuclear plants, about 53 kilometres away, and reconstructs their energy with unprecedented resolution for a detector this size. That's where the two sharpened figures come from. It isn't a cosmetic record: it's proof that the apparatus works exactly as designed.</p>
+
+      <h3>What it does not yet prove</h3>
+      <p>JUNO's real prize isn't that. It's the <em>mass ordering</em>: knowing whether the third neutrino family is the heaviest ("normal" ordering) or the lightest ("inverted"), one of the last great unknowns of the sector. Settling it requires accumulating data for years — the estimate is around six. This week's result, with two months, says the experiment is on the right track to get there, not that it has arrived. That's methodological honesty, not a headline.</p>
+
+      <h3>Why it matters beyond physics</h3>
+      <p>The mass ordering is no taxonomic whim. It fixes how to interpret the search for neutrinoless double beta decay — the experiment that would say whether the neutrino is its own antiparticle — and it enters the cosmological accounting of the total neutrino mass that left its imprint on the structure of the early universe. JUNO attacks the problem from reactors; the US DUNE and Japan's Hyper-Kamiokande will do it from long-baseline accelerator beams. Three machines on three continents converging on the same question by independent routes is, precisely, how you earn an answer that lasts.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="papers">
+    <div class="sec-head"><span class="sec-num">§ 03</span><h2 class="sec-title">Papers</h2></div>
+    <p class="sec-desc">Three annotated reads of the week.</p>
+
+    <article class="paper">
+      <div class="tags"><span class="tag">Neuroscience</span><span class="tag">Connectomics</span><span class="tag">North America</span></div>
+      <h3>The first complete connectome of the fly's brain <em>and</em> "spinal cord"</h3>
+      <p class="cite">Distributed control circuits across a brain-and-cord connectome · <em>Nature</em> · June 2026</p>
+      <p>An international consortium led by labs at Harvard and Princeton maps the connections of the ~160,000 neurons of an adult fly's central nervous system, from the brain to the ventral nerve cord. The surprise: many behaviours are governed by local circuits in the body part involved, not by a command centre in the head.</p>
+      <p class="why">It's the first time anyone has the wiring of a whole-body nervous system. It shifts the model of how computation is split between brain and periphery — and it's freely available for any lab to use.</p>
+    </article>
+
+    <article class="paper">
+      <div class="tags"><span class="tag">Chemistry</span><span class="tag">Energy</span><span class="tag">Japan</span></div>
+      <h3>An electrolyser that regulates itself and drops the battery</h3>
+      <p class="cite">Battery-free artificial photosynthesis · <em>EES Solar</em> (Osaka Metropolitan Univ.) · June 2026</p>
+      <p>The device turns water, CO₂ and sunlight into formic acid. The novelty is that the electrolyser itself seeks the maximum power point: as the sun rises it heats up, its electrical resistance drops, and more current flows — without the electronics or the battery that made earlier systems expensive.</p>
+      <p class="why">The costly part of artificial photosynthesis wasn't the catalyst, it was the control. Removing the battery and stabilising output under variable sunlight brings solar fuels to an arguable cost.</p>
+    </article>
+
+    <article class="paper">
+      <div class="tags"><span class="tag">Climatology</span><span class="tag">Public health</span><span class="tag">India</span></div>
+      <h3>The first national heat-index atlas for India</h3>
+      <p class="cite">Emerging heat-stress patterns under future scenarios · <em>Scientific Reports</em> · 2026</p>
+      <p>Using state-of-the-art CMIP6 projections, the work quantifies the seasonal and spatial evolution of the heat index — which combines temperature and humidity — across all of India under different socioeconomic scenarios. It's among the first national-scale assessments to join both variables.</p>
+      <p class="why">In a country of 1.4 billion, the risk is not temperature alone but its combination with humidity, which limits the body's ability to cool. Adaptation plans need that map, not the thermometer's.</p>
+    </article>
+  </section>
+
+  <section class="sec" id="tech">
+    <div class="sec-head"><span class="sec-num">§ 04</span><h2 class="sec-title">Tech</h2></div>
+    <p class="sec-desc">What's moving in hardware, software and infrastructure this week.</p>
+
+    <div class="ti-grid">
+      <article class="ti-item">
+        <div class="ti-cat">AI<br>Google</div>
+        <div class="ti-body">
+          <h3>Gemini 3.5 Pro</h3>
+          <p>Google DeepMind announces the new iteration of its flagship model. The cadence between major versions from the leading labs is again measured in months, not years.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">AI<br>Anthropic</div>
+        <div class="ti-body">
+          <h3>Claude Fable 5 (and Mythos 5)</h3>
+          <p>Available since June 9 at USD 10/50 per million tokens. Its distinctive trait isn't power: in cybersecurity, biology, chemistry and "distillation" the model refuses to answer and falls back to Claude Opus 4.8. A product that ships with factory brakes.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">AI<br>Microsoft</div>
+        <div class="ti-body">
+          <h3>MAI-Code-1-Flash</h3>
+          <p>Microsoft's first in-house model aimed at turning natural-language descriptions into code. The industrial reading is clear: cut dependence on OpenAI and lower the cost per developer.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Materials<br>Optics</div>
+        <div class="ti-body">
+          <h3>The material that bends light the most</h3>
+          <p>The characterisation of molybdenum oxychloride reveals the strongest birefringence ever measured in a natural material. Raw stock for integrated optics: splitting and steering beams on chips smaller than today's.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="industry">
+    <div class="sec-head"><span class="sec-num">§ 05</span><h2 class="sec-title">Industry</h2></div>
+    <p class="sec-desc">Capital, supply chains and capacity.</p>
+
+    <div class="ti-grid">
+      <article class="ti-item">
+        <div class="ti-cat">Semiconductors<br>Samsung</div>
+        <div class="ti-body">
+          <h3>Korea bets big to challenge TSMC</h3>
+          <p>Samsung sustains an investment plan in the region of USD 70bn across memory, foundry and R&D. It's the biggest bet of the runner-up: high risk, high reward, if its foundry yields improve.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Foundry<br>TSMC</div>
+        <div class="ti-body">
+          <h3>2026 capex of USD 52–56bn</h3>
+          <p>The Taiwanese leader holds close to 70% of the world's contract-foundry business and restarts expansion in Longtan and Arizona. Displacing it remains brutally hard: the barrier isn't design, it's process stability at scale.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Market<br>Semiconductors</div>
+        <div class="ti-body">
+          <h3>Global sales heading for a record (~USD 975bn)</h3>
+          <p>Deloitte's 2026 forecast puts the sector at an all-time high, driven by AI infrastructure. The cycle stopped being cyclical: it's pulled by demand for accelerators, not for phones.</p>
+        </div>
+      </article>
+
+      <article class="ti-item">
+        <div class="ti-cat">Capital<br>Anthropic</div>
+        <div class="ti-body">
+          <h3>Toward an IPO at a stratospheric valuation</h3>
+          <p>Per reports, Anthropic confidentially filed the draft of its public offering after a Series H round of ~USD 65bn that valued it near USD 965bn. Frontier-model capital concentrates at software speed.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec columna" id="column">
+    <div class="sec-head"><span class="sec-num">§ 06</span><h2 class="sec-title">Column</h2></div>
+
+    <h1 class="article-title">Light instead of electrons: <em>what a valleytronic chip really does, and what it doesn't</em></h1>
+    <p class="byline"><span>By Jack Cid</span><span>June 16, 2026</span></p>
+
+    <div class="prose">
+      <p class="dropcap">This week a team at Monash University, in Australia, presented in <em>Nature Photonics</em> a tiny chip able to do three things that until now required three separate devices: generate a specialised light signal, steer it along a specific path, and convert it back into an electrical signal, all in one integrated piece. The easy headline is "computing with light". It's worth taking the part apart to see what's inside, because the promise is real but bounded.</p>
+
+      <p>Start with the problem it tries to solve. A classical processor moves electrons through metal wires; every time an electron pushes another there's resistance, and resistance is heat. At data-centre scale, that heat is the dominant energy bill of AI. Light has no such problem: photons don't collide with each other, they travel extremely fast, and they barely dissipate as they move. Hence the idea, decades old, of using photonics for the parts of computing where moving data weighs more than deciding — interconnects between chips, certain matrix multiplications at the heart of neural networks.</p>
+
+      <h3>What the "valley" is, in plain words</h3>
+      <p>The new word is <em>valleytronics</em>. In certain two-dimensional materials — sheets a single atom thick — electrons can occupy two distinct energy "valleys", two minima in the material's quantum landscape. That pair of valleys works as an extra binary label, much like spin: beyond "is there charge or not", you can ask "which valley is it in?". And here's the elegant trick: each valley responds to light of a different handedness — left- or right-circular polarisation. That lets you write information with polarised light, read it as electrical current, and route it in between. The Monash chip is notable because it closes that whole loop — generate, guide, detect — without taking the signal out of the device.</p>
+
+      <p>Why integration matters and not just each step: in photonics, the losses and the costs live in the junctions. Every time a signal jumps from one component to another it loses energy and demands micrometre alignment. Doing it all on the same substrate is what separates a lab demo from something that could be mass-produced. It isn't an engineering detail; it's almost the entire problem.</p>
+
+      <h3>Where it falls short</h3>
+      <p>Now the fine print, which the hype tends to skip. First: this does not replace the general-purpose processor. Light is excellent for transport and for massive linear operations; it's clumsy at conditional logic, dense memory and anything that needs a signal to "wait" — photons, precisely because they don't interact, are hard to store. The plausible future is hybrid: photonic islands to move and multiply, classical silicon to decide. Second: two-dimensional materials aren't yet fabricated with silicon's yield and uniformity; going from a demo wafer to millions of identical chips is a leap the industry has spent a decade failing to complete for this family of materials. And third: many of these valley properties behave better cold; sustaining them at room temperature and at scale is an open problem.</p>
+
+      <p>The technical conclusion, without the epic: Monash's work is a genuine integration advance in a line — valleytronics — that could contribute concrete pieces to low-power and quantum computing. It is not the end of the transistor. It's a new brick, well laid, in a wall still being built. And telling a brick from a finished house is, almost always, the difference between understanding a tech story and buying it.</p>
+    </div>
+  </section>
+
+  <section class="sec contraste" id="counterpoint">
+    <div class="sec-head"><span class="sec-num">§ 07</span><h2 class="sec-title">Counterpoint</h2></div>
+
+    <h1 class="article-title">Banning a model: <em>the new industrial policy dressed up as safety</em></h1>
+    <p class="byline"><span>By Passiflora Caerulea</span><span>June 16, 2026</span></p>
+
+    <blockquote class="quote">
+      "Anthropic releases its most powerful model days after warning AI is getting too dangerous." / "Italy bans DeepSeek." / "These countries are banning Chinese AI."
+      <span class="quote-attr">Variants threaded through TechCrunch, CNBC and the tech press, June 2026</span>
+    </blockquote>
+
+    <div class="prose">
+      <p>Let's pause on the coincidence, because it's delicious. On June 9 Anthropic released Claude Fable 5, its most capable model to the public, and did so with a detail the press underlined with a smirk: the company had just warned that AI is getting too dangerous. The way to square the circle is that Fable 5 ships with brakes: in cybersecurity, biology, chemistry and "distillation", the model refuses to answer and defers to an older version. In other words, Anthropic <em>bans itself</em>. The same week, the list of governments that have banned or restricted DeepSeek — Italy first, then South Korea, Australia, Taiwan, India, Canada, US agencies — read like a census. Two facts, one verb: "ban AI". And they're different things, all the way to opposite.</p>
+
+      <p>The rhetorical trick of the week is to put into one bag three policies that share neither owner, nor motive, nor effect. One: the state ban on data-sovereignty grounds — the West bans DeepSeek because its servers and jurisdiction sit in China. Two: the lab's <em>self-ban</em> on catastrophic-risk grounds — Anthropic caps its own model in sensitive domains. Three: the export control that leaves entire countries shut out of the frontier models, not for what they'd do, but for where they are on the map. Calling all three "banning AI" is like calling "closing" the act of bolting a door, firing an employee, and sealing a border. Same word; different lock.</p>
+    </div>
+
+    <div class="atlas">
+      <div class="atlas-head">Problem atlas · 7 dimensions</div>
+      <dl>
+        <dt>Countries in the headline</dt>
+        <dd><strong>United States</strong> and <strong>China</strong> (the "race"), with the <strong>European Union</strong> as regulatory referee. The headline frames AI as a duel of superpowers.</dd>
+
+        <dt>Countries in the actual story</dt>
+        <dd>Those that have restricted DeepSeek: <strong>Italy, South Korea, Australia, Taiwan, India, Canada</strong> and <strong>US</strong> agencies. And those not even in the fight: states <em>geofenced</em> by sanctions or export controls (Iran, Cuba, much of the non-Western world) that can't reach the frontier models, ban or no ban.</dd>
+
+        <dt>Who profits</dt>
+        <dd>Western labs, whose competitive moat widens every time a cheap Chinese rival is declared illegal in a rich market. The compliance and "sovereign AI" industries. The clouds that resell only "approved" models. Banning the competitor is the oldest industrial policy on earth, now with a national-security brochure.</dd>
+
+        <dt>Who pays</dt>
+        <dd>SMEs and developers in the banning countries, who lose the cheap option. Researchers who relied on open weights. And above all the global south: it makes neither the model nor the regulation, and inherits both — no sovereign compute and no voice in the rules that lock it out.</dd>
+
+        <dt>5 / 10-year horizon</dt>
+        <dd><strong>5 years</strong>: bans by <em>provenance</em> (where the model is from) rather than by <em>capability</em> (what it does) proliferate; the commercial self-ban — blocking bio, chemistry, cyber — becomes a market standard. <strong>10 years</strong>: "permitted models" by geopolitical bloc. But open weights make the ban porous: banning the API doesn't ban the model, only the front door.</dd>
+
+        <dt>Regulatory gap</dt>
+        <dd>The EU bans <em>uses</em> (the AI Act's list of prohibited practices). The US bans <em>provenances</em> (DeepSeek on public devices). China bans <em>content</em> (via its regulator). The rest of the world bans nothing because it has nothing to ban with. "Ban" means something different in each capital, and nobody is harmonising them.</dd>
+
+        <dt>Blind spot</dt>
+        <dd>That the verb "ban" hides three opposite policies. The porosity of open weights turns nearly every API ban into a symbolic gesture, while the control that actually bites — export control — rarely shows up in the debate because it has no photogenic villain. We argue about the door. The wall has been open for years.</dd>
+      </dl>
+    </div>
+
+    <div class="atlas-map-v2">
+      <div class="amap-head"><strong>Geographic atlas</strong> · who bans · who originates · who's locked out</div>
+      <figure>
+<svg viewBox="-393 0 1787 435" role="img" aria-label="Map of the geography of AI bans: countries restricting DeepSeek (blue), the US as origin of frontier models with self-imposed limits (green), the headline countries China and the EU (amber), and countries with no access to frontier models (magenta)." data-viz="map" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+ <g stroke="var(--rule)" stroke-width="0.6" stroke-linejoin="round">
+  <path d="M994,312L994,314L991,314L992,312L994,312ZM0,307L998,310L996,310L997,309L1000,307L0,307Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M595,258L606,265L610,270L609,274L611,277L610,280L610,283L611,285L612,288L610,291L607,292L605,293L602,293L599,292L597,293L596,288L594,286L592,285L588,284L586,282L585,278L583,276L583,273L582,270L585,268L586,267L586,264L587,261L586,259L590,258L595,258Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M477,165L476,171L467,171L467,179L465,179L464,186L454,186L459,185L461,182L462,178L466,174L467,170L469,167L471,167L474,167L476,167L477,165Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M196,96L192,93L188,90L188,87L190,85L187,84L188,81L187,79L190,76L192,74L189,72L189,69L189,67L188,64L184,63L181,65L180,63L178,61L176,61L191,44L201,34L204,35L206,36L211,35L215,34L217,35L222,33L226,33L228,33L230,32L233,35L237,33L235,35L238,34L242,34L245,35L249,36L251,36L254,36L255,38L251,39L255,40L261,39L263,39L267,39L268,37L271,37L274,37L278,39L281,40L284,39L287,39L291,37L293,38L292,41L294,39L299,36L298,34L296,33L298,30L302,28L305,28L307,33L304,34L307,35L306,37L310,35L311,37L309,39L310,41L314,39L317,37L319,34L322,34L325,34L327,36L324,38L323,41L318,43L315,44L311,44L308,47L303,50L299,50L297,51L296,53L293,53L289,56L285,59L282,61L280,65L283,65L283,68L283,71L286,70L290,71L292,72L296,75L298,76L301,76L304,76L302,79L302,82L302,86L305,89L307,88L309,84L310,80L313,76L317,74L319,72L320,70L319,68L318,65L322,62L322,60L323,55L325,54L329,55L331,55L333,55L337,57L341,59L340,61L339,65L342,67L346,65L350,62L352,61L352,63L354,67L355,71L354,73L356,75L358,76L362,77L363,81L365,82L365,86L363,87L360,88L356,89L352,92L348,92L343,92L339,92L337,92L334,94L330,95L325,100L322,103L324,102L329,98L335,95L339,95L341,96L338,99L338,102L338,104L341,106L345,106L348,102L348,104L346,108L340,109L337,111L333,113L332,110L337,107L333,108L330,108L329,106L330,102L327,101L324,103L323,105L320,107L314,108L310,108L306,111L304,113L302,113L299,113L298,115L294,117L291,117L288,119L287,117L289,115L290,113L291,110L291,107L289,106L289,104L286,101L282,99L280,98L278,99L274,98L272,98L270,97L267,97L265,96L259,96L251,96L242,96L235,96L227,96L220,96L212,96L210,96L203,96L196,96ZM310,55L313,53L316,53L312,55L310,55ZM336,26L335,23L340,23L343,25L341,26L339,26L336,26L336,26ZM311,20L309,21L307,21L305,20L307,19L310,18L311,20ZM316,14L312,14L316,13L316,14ZM313,11L310,13L310,10L312,10L313,11ZM321,22L318,21L313,20L315,18L310,16L314,15L319,15L321,18L324,19L327,19L330,18L335,18L338,18L339,20L334,21L332,21L325,21L321,22ZM284,12L286,12L280,14L278,13L280,12L284,12ZM286,11L288,11L285,11L282,11L285,10L286,11ZM364,88L362,90L360,93L362,92L364,95L368,95L366,97L368,98L367,103L364,103L365,100L361,102L360,100L357,100L352,100L354,98L355,95L359,90L361,88L364,87L364,88ZM315,47L317,48L319,49L321,51L318,52L315,51L312,51L308,53L305,51L307,50L309,48L311,45L314,46L315,47ZM337,27L340,26L343,27L345,28L349,29L351,31L355,32L357,36L353,37L357,39L360,39L362,42L365,42L364,44L359,47L356,46L354,43L351,44L352,47L354,48L355,52L353,54L351,53L346,51L348,53L350,55L344,55L340,53L338,52L337,50L334,48L327,49L328,46L332,46L337,46L338,44L342,41L342,39L339,37L336,36L336,34L333,33L327,34L320,33L316,33L313,32L315,30L312,30L313,27L316,25L319,24L325,23L322,25L326,24L332,23L334,26L332,28L337,27ZM308,22L312,22L315,23L311,25L308,26L304,28L302,28L302,25L305,23L308,22ZM255,17L261,15L267,14L269,14L273,13L270,15L268,16L261,17L258,18L255,17ZM181,80L184,80L181,83L181,86L180,84L179,82L180,79L181,80ZM298,9L301,10L305,11L306,13L303,12L300,12L296,12L299,11L298,9ZM193,97L188,96L187,94L185,92L185,90L187,91L191,92L191,94L193,95L193,97ZM254,21L256,22L261,22L264,24L260,25L254,26L249,28L242,31L238,28L240,27L243,25L247,23L254,21ZM285,18L287,17L286,20L279,20L272,21L269,22L275,20L266,20L263,19L269,17L271,16L276,17L278,19L281,19L281,16L283,15L285,18ZM281,25L282,29L281,31L283,32L286,33L282,35L281,37L277,36L274,36L271,36L267,37L261,37L257,37L254,35L252,36L252,33L257,33L260,33L263,32L259,32L255,32L252,32L257,30L254,30L251,29L254,27L257,26L264,24L269,25L270,27L274,25L275,29L276,28L277,25L279,25L281,25ZM293,26L295,23L297,24L301,23L298,25L301,26L298,29L294,30L292,29L288,26L293,26ZM282,24L285,23L283,26L281,24L282,24ZM305,16L305,18L302,20L299,20L295,19L296,17L298,17L302,16L305,16L305,16ZM319,6L321,6L323,6L327,5L331,7L334,7L335,9L332,10L327,12L323,12L320,12L321,9L318,9L316,7L319,6ZM330,4L334,3L336,3L340,3L343,2L346,2L350,2L352,1L356,1L362,1L368,1L372,1L375,1L380,1L384,1L387,2L381,3L376,4L374,4L378,4L373,6L369,6L364,8L360,9L352,9L355,10L352,12L348,13L343,14L346,15L340,17L335,16L329,17L326,16L323,16L327,14L329,13L333,14L332,12L329,12L332,11L336,10L335,7L340,7L345,7L341,6L335,7L332,6L330,4L330,4ZM337,40L335,41L333,41L335,38L337,38L338,40L337,40ZM295,35L294,37L292,36L288,35L290,34L292,33L295,34L295,35ZM341,93L345,93L347,95L343,94L341,93ZM340,102L342,104L344,104L343,105L339,104L340,102Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M716,95L715,97L714,101L708,101L708,107L703,109L707,114L706,117L703,115L699,115L694,115L690,114L688,116L684,115L682,117L678,120L677,122L675,121L672,121L671,118L669,115L665,112L661,113L658,113L655,110L653,109L648,107L642,108L644,120L641,118L639,117L636,118L634,115L631,114L630,111L628,110L630,110L630,108L632,107L634,108L634,104L633,102L631,103L628,102L626,103L623,104L622,102L620,100L616,98L616,95L617,91L620,93L620,91L624,87L628,87L634,89L637,91L639,89L643,89L646,91L650,90L646,86L648,85L649,83L647,81L656,79L663,77L664,76L669,76L671,80L673,79L677,80L679,81L684,78L688,82L696,90L701,90L704,89L708,91L710,92L711,93L714,93L716,95Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M644,120L642,108L648,106L653,109L655,110L658,113L661,113L665,112L669,115L670,118L672,121L675,121L677,122L678,120L681,118L683,117L681,120L684,121L689,122L686,124L684,124L682,121L679,122L679,124L676,126L678,128L679,131L678,134L676,133L674,131L670,130L667,128L665,127L662,124L660,121L656,121L654,117L650,116L648,117L646,119L644,120Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M896,264L901,266L906,268L908,269L910,271L914,275L912,277L913,279L915,281L917,285L920,287L922,289L920,290L917,289L914,288L912,286L911,284L909,281L906,280L903,281L902,282L902,284L899,285L895,285L896,274L896,264ZM929,267L930,270L928,267L925,265L923,264L926,264L928,266L929,267ZM925,274L922,276L918,275L917,273L919,273L921,271L923,273L926,271L927,269L928,271L927,273L925,274ZM935,272L937,275L937,277L935,276L934,274L934,272L935,272Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M896,264L896,274L895,285L893,282L890,281L886,282L887,280L889,279L888,275L887,273L882,270L880,270L876,267L874,268L873,266L871,264L874,263L876,263L872,262L871,260L868,260L871,257L877,258L878,264L881,266L883,263L886,261L889,261L891,262L893,263L896,264ZM850,284L848,288L846,289L847,285L850,284ZM877,278L876,275L878,273L878,275L877,278ZM831,242L830,245L832,248L835,252L831,253L830,255L830,258L828,260L828,263L826,268L823,268L822,266L820,266L815,266L812,265L810,265L809,260L807,257L806,254L807,251L808,249L809,251L811,253L814,252L816,250L820,251L822,250L824,246L825,241L829,241L831,242ZM864,264L867,265L868,268L865,266L863,266L859,266L864,264ZM856,267L855,267L857,265L856,267ZM860,248L862,250L862,254L860,256L861,258L859,256L858,252L859,249L860,248ZM846,252L849,252L852,250L850,254L848,254L845,254L840,254L838,254L838,257L840,260L842,258L847,257L844,260L842,261L844,265L846,270L846,272L843,272L845,270L842,271L842,269L840,267L840,264L838,265L838,268L838,273L835,273L836,270L836,266L834,264L835,262L835,259L837,255L840,251L842,252L846,252ZM837,288L833,286L836,286L838,288L837,288ZM840,283L845,281L840,284L836,284L838,282L840,283ZM831,282L834,283L830,284L828,285L830,283L831,282ZM804,276L810,277L816,278L817,280L821,280L824,282L821,284L818,282L815,282L813,282L810,282L807,280L805,280L799,279L796,277L798,274L801,274L803,276L804,276ZM793,259L794,261L795,263L797,263L798,265L797,269L797,274L794,274L792,271L788,269L787,267L785,264L784,262L782,257L779,254L778,252L777,249L775,247L773,244L771,243L768,239L769,237L774,238L776,241L779,243L780,245L783,248L786,248L788,251L790,253L792,255L791,257L793,259Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M334,426L335,427L337,430L341,432L344,432L342,434L339,433L336,433L334,426ZM345,354L345,356L345,360L345,363L345,366L349,370L349,373L351,374L349,380L346,381L340,382L338,382L338,384L338,386L338,389L335,389L333,388L333,392L335,393L337,394L335,395L334,397L334,400L332,402L330,404L330,406L333,408L336,409L336,412L333,414L333,417L331,419L332,423L335,425L331,424L325,424L323,422L323,420L320,419L318,416L320,414L320,412L320,408L319,404L318,402L317,399L316,397L315,393L314,388L314,385L314,382L314,378L313,375L314,373L314,370L315,367L314,364L311,357L312,354L311,351L312,348L313,345L315,343L314,340L313,335L316,333L316,330L318,326L322,327L323,329L324,327L327,327L334,333L336,333L339,336L342,337L341,344L344,344L347,345L349,344L351,342L351,339L354,340L354,343L352,345L351,346L348,349L345,354Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M334,426L336,433L339,433L338,435L335,435L333,434L331,433L327,432L324,430L319,427L321,427L326,429L329,430L330,427L332,426L334,426ZM307,312L309,315L309,317L311,318L310,321L312,325L314,330L316,330L316,333L313,335L314,340L315,343L313,345L312,348L311,351L312,354L311,357L313,363L315,367L314,370L314,373L313,375L314,378L315,381L314,385L314,388L316,392L316,397L317,399L319,401L319,404L320,408L319,411L320,414L318,416L320,419L323,420L323,422L325,424L331,424L333,425L331,425L329,427L329,430L325,429L322,427L318,425L316,423L314,419L312,414L312,410L314,408L310,407L312,404L311,399L314,400L313,393L311,393L312,397L310,391L309,385L309,383L308,380L307,376L308,371L309,366L309,361L308,356L308,353L307,349L308,345L307,339L307,332L307,325L306,319L305,315L307,312Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M582,270L583,273L583,276L585,278L586,282L581,282L580,285L580,290L579,293L582,295L583,298L581,298L580,296L576,295L574,294L572,293L569,292L567,291L564,291L562,287L561,284L562,282L561,279L558,279L554,278L554,280L552,281L549,281L548,280L547,277L546,274L538,274L535,275L535,272L536,271L540,270L543,269L544,268L545,264L546,261L547,259L549,258L550,255L550,252L550,249L551,247L552,244L552,241L555,239L557,240L559,241L561,241L563,242L564,240L569,238L571,239L574,238L577,238L579,241L581,241L583,240L587,244L587,247L586,250L585,252L584,256L583,259L582,262L582,264L582,270Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M617,261L615,258L615,246L618,242L620,241L623,239L626,239L634,229L636,226L637,224L637,219L639,217L642,216L643,219L642,222L642,225L640,229L639,233L636,238L634,241L631,246L628,248L624,252L621,254L618,258L617,261Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M610,270L606,267L596,259L595,255L597,251L598,249L597,245L596,241L597,239L599,237L601,240L604,241L607,243L609,244L612,243L615,241L618,242L615,246L615,258L617,261L615,262L613,263L613,266L611,269L610,270Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M569,228L567,227L566,225L566,222L564,220L564,218L563,215L561,213L562,210L563,206L564,204L566,204L566,191L569,190L569,183L580,183L590,183L601,183L602,187L602,191L604,194L606,196L605,198L603,199L602,202L601,207L601,211L600,214L598,216L597,218L596,220L595,224L595,227L595,224L594,221L592,218L593,215L590,216L591,219L589,221L588,223L584,222L583,223L578,225L576,224L573,222L570,222L569,226L567,227L569,228Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M566,191L566,204L564,204L563,206L562,208L562,212L561,214L563,217L564,219L561,221L559,224L556,226L553,226L552,228L547,231L543,231L542,228L541,226L539,224L541,223L543,223L542,220L542,217L542,215L540,213L539,212L539,210L539,204L542,201L542,197L543,190L543,188L542,186L541,181L543,179L555,185L566,191Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M302,191L302,194L301,196L298,196L295,196L294,194L297,195L299,195L299,193L297,191L300,190L302,191Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M301,196L302,194L302,191L305,190L307,191L309,192L311,194L309,195L306,195L303,196L302,198L301,196Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M676,5L679,5L684,6L691,8L693,10L689,11L683,10L679,9L676,7L673,7L676,5ZM697,9L704,11L694,13L694,9L697,9ZM776,17L782,17L791,19L791,20L784,20L781,21L775,19L776,17ZM798,19L803,20L799,21L794,20L798,19ZM787,24L790,23L794,24L792,25L787,24L787,24ZM585,6L588,6L591,6L594,6L597,6L594,7L590,8L588,7L585,6ZM554,79L550,79L547,79L551,76L553,77L554,79ZM609,23L613,21L616,18L622,17L628,16L631,15L634,15L636,16L629,18L624,19L619,22L617,24L615,27L616,29L621,31L613,31L608,29L609,27L611,24L609,23ZM844,81L847,84L849,87L852,90L858,96L854,95L856,99L860,102L861,105L858,103L858,105L856,103L854,99L852,96L851,94L848,89L845,86L842,82L841,79L844,81ZM836,117L834,115L834,111L832,108L837,108L837,105L836,101L836,97L832,98L827,99L824,96L820,94L815,93L812,90L810,88L808,87L805,84L802,83L798,82L795,82L792,82L793,85L794,86L793,91L791,94L788,93L785,93L783,92L779,94L776,94L774,95L771,95L768,95L766,93L763,92L760,91L757,92L755,92L751,91L750,89L746,88L744,87L741,86L740,89L741,91L740,93L736,93L734,92L731,91L729,91L726,90L723,91L719,94L717,95L714,93L711,93L710,92L708,91L706,90L701,90L697,88L688,82L684,79L679,81L677,82L673,79L671,80L669,76L664,76L663,77L657,78L648,80L649,83L647,84L646,86L651,88L647,90L643,89L639,89L637,91L634,89L628,87L624,87L620,91L620,93L617,91L616,94L616,98L618,100L622,102L623,104L623,106L620,106L618,110L621,113L621,115L625,119L623,121L620,119L618,118L614,116L612,116L608,114L604,114L602,113L598,111L595,109L593,108L596,104L595,103L598,102L596,102L597,99L599,99L598,96L599,94L595,93L592,91L587,91L586,89L583,88L582,85L579,85L577,86L576,84L578,83L576,81L573,77L573,75L571,75L567,73L566,72L564,69L564,66L565,64L567,62L564,60L569,57L570,55L567,51L565,47L566,45L563,42L565,40L561,38L563,36L566,34L568,34L572,35L578,36L587,39L589,40L588,44L584,44L574,42L576,45L578,49L581,50L583,51L581,48L588,49L588,46L592,43L594,43L596,44L597,42L595,41L593,37L599,38L601,40L599,40L601,43L604,42L608,39L615,36L618,39L623,37L626,36L629,38L631,36L628,35L635,35L638,35L648,39L645,36L642,35L640,31L642,28L643,26L650,26L650,29L654,32L655,36L658,38L656,44L659,44L661,42L662,39L660,38L658,36L656,34L657,32L653,29L655,28L654,26L657,27L657,30L660,30L658,28L661,27L665,27L670,29L666,26L665,23L668,23L673,23L677,23L674,21L675,20L678,20L681,18L686,18L691,17L693,18L696,16L700,16L700,14L704,13L708,14L706,15L711,15L713,16L720,16L725,17L728,18L727,20L723,21L725,22L729,23L733,24L736,23L743,24L744,25L753,25L752,23L756,24L760,24L764,25L767,27L771,30L776,31L775,28L780,30L782,29L787,30L792,29L788,27L810,27L813,29L821,31L829,30L834,31L837,32L839,34L842,35L845,34L848,34L853,35L857,34L863,37L861,34L868,34L872,34L880,35L115,36L118,38L120,41L118,43L121,41L126,42L127,44L124,46L120,46L117,49L113,49L110,47L107,46L108,44L105,45L102,47L898,47L894,48L898,50L902,52L903,53L905,54L900,54L896,57L893,59L892,61L887,60L883,62L881,61L877,62L878,64L878,67L882,69L886,73L884,73L885,76L887,77L884,79L886,82L883,83L885,86L884,89L881,87L877,83L870,76L868,72L867,68L870,68L871,64L872,61L874,58L871,54L869,55L870,57L867,60L862,57L857,58L856,63L859,64L855,65L851,65L850,63L846,63L844,64L837,64L830,65L827,71L823,78L827,78L830,80L832,81L836,79L842,83L844,85L844,89L846,92L848,97L847,102L848,104L846,108L845,112L844,114L842,115L838,114L836,116L836,117ZM124,29L127,29L129,30L125,31L122,31L876,31L124,29ZM584,105L587,105L588,106L592,107L589,109L586,110L585,108L582,107L585,106L584,105Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M285,168L289,168L285,169L285,168ZM289,167L291,168L290,171L290,169L289,167ZM287,173L288,176L287,178L286,175L287,173Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M351,424L353,422L356,422L359,423L356,425L353,425L351,424Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M529,8L532,8L535,8L542,10L537,11L534,13L534,15L531,15L527,14L526,12L522,10L520,9L525,8L529,8ZM566,34L563,36L562,34L559,33L556,34L555,36L553,37L551,36L548,36L545,35L543,36L539,37L536,39L535,41L533,44L530,48L530,50L528,50L527,53L527,57L529,58L528,61L527,64L524,63L520,67L516,68L513,66L512,63L511,56L513,54L519,52L523,49L527,45L532,39L535,37L541,34L545,33L549,33L551,30L555,31L559,30L566,32L563,33L566,34ZM552,8L550,9L544,9L538,9L535,8L533,7L539,6L541,7L548,7L552,8ZM548,13L544,14L541,13L544,11L548,13Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M414,2L421,1L428,1L430,0L437,0L451,0L462,2L458,3L451,3L441,3L449,3L454,4L458,3L457,5L462,4L471,3L476,4L469,6L462,7L466,7L464,9L462,11L461,13L464,15L460,15L457,16L461,17L461,19L458,20L461,22L456,22L458,23L455,24L452,24L454,26L450,26L451,28L454,29L454,31L450,32L447,29L444,33L450,33L453,33L447,35L440,37L434,38L432,38L429,40L425,42L420,44L416,45L412,46L410,48L409,50L408,52L403,54L404,56L402,59L400,62L397,62L394,59L390,59L388,58L387,55L384,51L385,47L382,44L384,42L386,38L390,37L392,33L389,34L386,35L384,34L386,31L392,32L389,30L385,29L387,26L385,23L384,21L382,20L378,17L374,17L368,17L364,17L362,16L359,15L365,14L369,14L361,13L357,12L366,10L374,9L371,7L373,7L381,5L384,5L389,3L394,3L400,3L407,2L411,3L414,3L417,4L414,3L414,2Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M671,413L675,415L673,417L670,417L671,414L671,413Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M850,284L853,283L856,282L853,285L850,286L850,284Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M544,348L546,347L547,349L550,350L554,348L554,336L557,339L556,341L559,342L560,341L562,338L565,338L568,339L570,337L572,335L574,332L577,329L581,327L583,328L586,328L587,332L587,335L587,338L585,339L583,341L585,344L587,342L589,342L588,345L588,347L585,351L583,353L581,357L577,360L575,362L573,364L570,365L568,366L566,366L563,365L560,366L557,367L555,367L553,369L551,368L549,366L549,364L548,362L549,358L547,355L546,353L544,348ZM578,350L576,349L574,351L573,353L575,355L576,354L578,352L578,350Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M578,350L578,352L576,354L575,355L573,353L574,351L576,349L578,350Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M187,149L190,149L194,148L197,151L202,153L208,153L210,153L215,151L217,154L218,157L220,160L222,161L224,158L226,158L228,159L229,161L230,165L230,168L233,170L235,171L234,174L233,176L232,180L231,184L232,188L234,190L235,194L238,195L241,195L243,195L245,194L249,192L250,190L251,188L253,186L256,185L259,185L261,186L259,189L258,191L257,196L254,197L251,197L248,197L246,199L248,201L249,203L245,203L244,205L243,208L240,204L237,202L233,204L230,203L228,203L225,201L223,201L220,199L218,198L216,197L214,196L210,192L209,190L210,188L210,185L210,183L207,178L205,175L204,173L202,172L203,169L200,166L200,164L198,162L197,160L196,157L196,155L195,152L193,151L192,154L192,157L193,160L194,162L195,164L195,166L197,168L197,171L198,174L199,176L200,179L199,181L198,179L197,177L195,175L194,172L193,169L192,168L189,167L188,165L191,163L190,160L188,157L188,154L187,152L187,149Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M345,354L350,356L354,358L356,360L358,362L358,365L357,367L355,369L353,369L348,367L345,366L345,364L345,360L345,356L345,354Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M358,365L357,363L356,360L354,358L351,356L347,353L348,349L351,346L352,345L354,343L354,340L352,338L352,335L350,333L348,333L347,329L345,327L341,327L341,323L340,321L340,318L341,314L340,312L338,310L333,308L332,304L332,302L330,299L327,298L325,297L320,296L317,293L317,291L317,287L313,287L310,290L308,291L306,291L303,291L303,286L300,288L298,288L297,286L295,284L294,282L293,280L293,278L294,275L295,272L298,270L301,269L304,269L305,260L304,257L303,253L305,253L304,252L304,250L309,250L311,251L314,253L316,253L318,251L320,249L322,248L319,247L319,245L319,243L323,243L326,242L329,240L329,238L332,239L332,241L332,243L331,246L332,249L334,251L337,250L339,249L341,249L343,247L345,247L348,248L351,248L353,245L355,242L357,243L358,249L360,252L357,254L363,256L363,259L366,257L369,258L374,260L375,262L378,263L383,265L388,264L392,267L395,271L398,272L400,272L402,277L403,279L402,284L400,286L396,291L395,295L393,298L391,300L392,306L391,311L391,313L390,319L388,323L387,327L385,328L385,330L382,330L378,331L376,333L373,334L370,336L368,339L368,342L368,347L366,350L364,356L362,359L360,360L360,363L358,365Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M306,291L308,291L310,290L312,289L317,287L317,289L317,293L320,296L324,296L327,298L330,299L332,302L332,304L333,308L338,308L338,311L341,314L341,317L340,320L337,318L334,318L329,319L328,322L328,328L324,327L323,329L322,327L318,326L316,329L312,325L310,321L311,318L309,317L309,315L307,312L309,309L307,306L307,304L308,299L308,297L306,291Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M304,269L301,269L298,270L295,272L294,275L293,278L293,280L294,282L295,284L297,286L298,288L300,288L303,286L303,291L306,291L308,296L308,299L308,302L308,305L309,309L307,312L305,315L302,313L296,308L291,305L288,303L287,300L285,295L282,289L279,282L276,278L274,276L272,275L271,270L272,268L274,266L274,268L276,270L278,271L279,270L280,268L281,265L285,264L288,260L288,258L288,256L291,257L293,259L295,263L297,263L299,263L303,264L301,267L304,269Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M312,251L310,248L304,250L304,252L305,253L303,253L303,256L305,259L304,269L302,267L303,264L301,262L298,262L295,263L293,259L291,257L289,255L287,255L285,254L282,254L278,251L279,248L281,246L282,244L283,243L283,240L282,237L283,233L282,232L283,229L283,227L287,225L289,221L291,219L293,218L295,219L297,217L300,215L301,217L298,219L296,221L296,223L295,225L296,227L297,229L298,231L302,232L305,235L308,235L311,235L310,238L309,240L310,243L309,246L311,248L312,251Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M283,227L283,229L282,232L280,229L280,227L277,226L275,228L276,231L273,232L271,230L270,228L268,229L268,226L268,224L270,225L272,226L274,225L277,224L280,224L282,226L283,227Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M269,224L268,226L267,228L265,227L265,225L263,224L261,223L260,221L260,219L263,219L265,220L267,221L269,224Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M266,219L263,219L261,219L258,217L257,215L256,213L258,212L259,210L261,210L263,208L265,207L267,207L268,208L267,211L267,213L266,216L266,219L266,219Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M269,206L266,207L264,207L262,209L259,210L258,212L256,212L255,210L253,209L252,207L253,205L255,204L257,203L260,204L262,203L265,203L267,205L269,206Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M251,208L253,210L256,210L255,212L252,212L250,211L250,209L251,208Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M243,208L244,205L245,203L249,203L248,201L246,199L248,197L251,197L253,197L253,200L252,203L255,204L252,206L251,208L249,210L246,210L243,208Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M253,197L255,195L255,198L255,201L253,203L253,200L253,197Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M329,238L329,240L326,242L324,242L321,242L318,242L319,245L319,247L322,247L320,249L318,251L316,252L314,253L312,251L311,248L309,246L311,244L309,240L310,238L311,235L308,235L306,235L303,232L298,232L297,230L297,228L296,226L296,223L296,221L298,219L301,217L299,218L300,221L298,223L299,226L301,223L300,219L304,218L305,216L306,218L309,220L312,221L315,220L316,222L318,222L320,220L324,220L327,220L325,221L328,223L330,225L330,227L333,228L330,230L331,232L328,233L328,236L329,238Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M341,249L339,249L337,250L334,251L332,249L331,246L332,243L332,241L332,239L329,238L328,236L328,233L331,232L330,230L333,228L334,229L336,231L337,233L339,235L339,239L337,240L338,244L339,246L341,249Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M347,248L344,247L343,249L339,246L338,244L337,242L337,239L340,236L343,236L346,235L349,236L347,239L347,241L348,243L347,246L347,248Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M355,242L353,245L352,247L350,248L347,248L348,245L347,241L347,239L349,236L352,237L354,240L355,242ZM515,94L520,96L519,98L519,100L517,101L515,103L517,105L518,107L518,111L519,113L517,114L512,114L508,115L505,117L502,115L496,115L496,112L497,105L494,102L493,100L489,99L489,97L492,96L496,97L495,93L498,95L503,92L504,89L506,89L509,91L511,93L514,94L515,94ZM522,116L524,115L525,118L524,120L522,117L522,116Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M288,256L288,258L288,260L285,264L281,265L280,268L279,270L278,271L276,270L274,269L275,268L276,264L272,262L272,259L274,256L275,254L276,252L278,251L281,252L285,254L287,255L288,256Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M317,195L318,196L316,197L314,195L317,195Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M285,195L289,196L286,197L283,196L285,195Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M275,179L277,180L279,180L281,181L285,182L288,184L289,186L292,187L294,188L295,189L293,190L289,190L285,190L287,189L285,188L284,185L279,184L275,183L273,181L271,183L268,184L269,182L272,180L274,180L275,179Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M586,328L583,328L581,327L579,326L577,325L576,323L572,318L571,316L570,313L573,313L577,311L579,309L582,306L584,306L587,307L588,308L591,310L591,314L590,316L590,318L590,321L589,324L586,328Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M581,327L577,329L574,332L573,334L571,336L570,338L566,339L564,337L561,340L559,342L556,341L557,339L555,336L555,326L557,326L558,315L560,314L564,313L567,313L569,313L571,315L572,318L575,322L577,325L579,326L581,327Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M554,336L554,348L551,350L548,349L547,348L544,348L542,346L541,343L541,340L540,338L539,333L539,329L538,326L537,323L535,319L535,317L533,314L533,311L536,310L539,312L551,311L553,313L559,313L564,312L567,311L569,312L567,313L565,315L560,314L558,315L557,326L555,326L554,336Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M453,211L452,208L454,204L455,201L458,201L461,202L463,203L464,205L466,207L466,210L468,212L468,215L466,215L463,214L457,214L453,215L453,212L456,212L458,211L460,212L458,210L453,211Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M468,215L468,212L466,210L466,207L468,205L470,206L473,205L485,205L485,202L484,188L482,174L487,174L496,181L505,188L507,190L509,193L512,193L512,200L510,202L510,204L508,205L504,205L501,206L499,206L494,208L492,210L490,212L488,212L488,214L485,217L485,219L484,222L481,221L479,222L477,221L476,219L475,217L474,215L472,217L470,215L468,215Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M453,187L464,186L464,181L467,179L467,171L476,171L476,166L487,174L482,174L484,188L485,202L485,205L473,205L470,206L468,205L467,207L464,205L463,203L461,202L458,201L455,201L455,199L455,196L455,193L455,190L453,187Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M508,235L505,235L505,233L505,225L504,223L502,221L503,219L505,217L507,215L510,217L511,220L510,222L509,224L508,227L508,229L508,235Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M541,181L542,186L543,188L543,190L542,197L542,201L539,204L538,208L539,212L540,213L537,211L534,213L532,212L530,212L527,213L522,212L519,212L515,210L512,210L511,213L510,217L508,215L506,216L506,214L503,213L501,210L501,206L504,205L508,205L510,204L510,202L512,200L512,193L516,191L524,185L533,179L537,180L539,182L541,181Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M508,235L508,229L508,227L508,225L510,222L511,220L510,218L510,214L511,211L515,210L518,211L520,212L525,213L528,212L531,212L534,213L536,211L539,215L541,216L538,220L537,222L536,224L536,227L534,230L533,232L531,233L529,232L527,234L525,237L524,240L521,241L519,241L517,241L515,239L514,237L512,235L510,235L508,235Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M540,213L542,215L542,217L542,220L543,223L541,223L539,224L541,226L542,228L543,230L541,234L541,237L541,240L542,241L543,244L545,247L545,249L543,249L540,248L537,248L535,248L532,248L527,248L528,245L526,243L525,241L525,237L526,234L528,232L531,233L533,232L534,230L536,227L536,224L537,222L538,220L540,217L540,214L540,213Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M503,219L503,222L504,225L505,233L505,235L503,236L502,233L502,228L501,224L501,222L500,220L503,219Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M500,219L501,222L501,224L501,227L501,231L502,235L499,238L494,240L492,239L491,235L492,231L493,228L492,224L492,221L497,219L499,219L500,219Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M478,222L481,222L483,221L485,221L487,223L489,223L492,224L493,228L492,231L491,235L492,238L489,238L484,239L482,240L479,241L479,238L478,235L476,234L476,231L477,229L477,225L477,222L478,222Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M462,214L465,215L467,215L470,215L472,217L473,215L475,217L476,219L477,221L477,223L478,227L477,230L475,231L474,229L473,227L471,228L470,226L470,224L467,222L465,224L463,226L462,224L460,222L459,220L459,218L461,217L462,214Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M453,215L456,214L462,214L462,217L460,218L458,219L456,218L454,217L453,215Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M476,230L476,233L477,235L479,237L478,241L475,239L472,237L470,235L468,233L469,231L470,229L471,228L474,229L474,231L476,230Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M463,226L464,225L466,223L469,222L470,225L471,228L469,231L468,233L465,231L464,230L463,226Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M485,221L485,218L488,214L488,212L490,212L492,210L494,209L497,206L499,206L501,208L503,212L506,214L506,216L504,218L503,219L500,219L498,219L492,219L492,224L490,223L488,224L486,222L485,221Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M577,238L574,238L572,238L570,239L565,240L563,242L561,241L559,241L557,240L555,239L552,241L552,244L548,243L546,245L545,248L545,245L542,243L541,240L541,237L541,235L543,231L545,231L550,229L553,227L556,226L559,224L561,221L564,219L566,222L566,225L567,227L569,228L570,230L572,232L574,236L576,237L577,238Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M552,244L551,247L550,249L550,252L550,255L549,258L547,259L546,261L545,264L545,267L543,269L541,271L538,270L535,270L533,271L531,268L533,266L532,264L535,263L539,263L541,259L540,257L539,255L540,251L537,251L537,248L540,248L543,249L545,249L546,245L548,243L552,244Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M532,248L535,248L537,248L537,251L539,251L539,255L540,257L541,259L540,262L537,263L535,261L533,263L533,266L531,268L528,265L526,262L525,259L525,257L526,254L527,252L532,252L532,248Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M527,248L532,248L532,252L528,252L527,248Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M586,282L588,284L592,285L594,289L593,293L593,296L591,300L584,303L584,306L582,306L580,307L577,311L575,314L570,313L567,311L564,312L563,310L561,307L561,297L567,297L567,295L567,292L569,292L572,293L574,294L576,293L579,295L581,298L583,298L583,295L580,294L580,290L580,286L581,283L585,282L586,282Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M592,285L594,286L596,288L597,293L596,295L596,299L598,300L599,303L599,307L597,310L595,308L595,305L596,303L593,301L592,297L593,293L593,290L593,287L592,285Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M597,293L599,292L602,293L605,293L607,292L610,291L613,289L613,293L613,296L613,301L613,305L611,308L609,310L607,311L604,312L600,316L597,319L596,322L597,324L597,327L597,330L597,332L596,335L593,336L590,338L589,340L587,342L587,339L587,335L587,332L586,328L589,324L590,322L590,319L590,316L591,314L591,310L588,308L587,307L584,307L584,303L593,301L594,302L596,304L595,308L597,310L598,308L599,303L598,300L596,299L596,295L597,293Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M587,342L585,344L583,342L584,340L587,339L587,342Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M536,271L535,272L535,270L536,271ZM535,275L537,275L546,274L547,277L547,279L549,281L552,281L554,280L554,278L556,278L561,279L561,281L561,284L561,286L562,291L566,290L567,293L567,296L561,297L561,307L563,310L564,312L559,313L553,313L551,311L539,312L537,310L534,311L532,309L533,307L534,304L535,299L537,296L538,292L537,289L537,287L536,285L537,283L536,280L536,278L534,276L535,275Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M586,263L586,265L585,268L582,270L582,266L584,263L586,263Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M595,148L594,151L595,154L594,159L592,153L593,150L593,148L595,146L595,148Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M595,146L594,144L595,142L597,143L595,146Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M638,296L640,299L640,303L640,306L638,309L637,311L637,314L636,317L634,322L632,328L630,333L629,336L626,337L624,339L620,337L620,332L619,329L619,327L620,325L621,323L622,320L623,318L622,315L622,312L623,310L623,308L626,307L629,306L630,305L633,303L633,300L636,298L637,294L638,296Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M595,152L594,149L595,151L595,152Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M453,211L456,211L459,211L461,211L459,212L457,212L453,212L453,211Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M525,156L524,150L523,149L520,146L520,144L522,142L522,139L522,136L525,133L527,135L529,134L528,136L529,139L529,141L527,143L529,145L531,147L531,149L528,151L527,153L527,155L525,156Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M476,166L477,161L481,159L484,158L486,157L490,154L490,152L493,150L497,150L495,144L494,140L497,138L500,138L501,137L504,136L508,135L513,135L516,134L519,134L522,134L522,139L522,142L520,144L520,146L522,148L524,150L525,156L526,159L526,163L526,167L526,169L527,172L528,176L532,177L533,179L524,185L516,191L512,193L509,193L509,191L506,189L496,181L487,174L476,166Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M595,149L598,150L603,146L605,150L599,152L602,156L601,157L599,158L597,160L594,159L595,154L595,151L595,149Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M641,176L644,176L646,176L649,174L651,172L653,170L654,174L653,176L652,178L651,181L643,180L641,177L641,176Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M639,174L638,172L640,170L641,173L640,175L639,174Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M629,157L630,159L631,162L628,160L626,160L627,157L629,157Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M605,150L603,146L609,143L609,139L609,136L611,134L615,133L618,134L620,138L622,139L621,142L621,144L623,147L626,149L628,152L628,154L629,156L631,157L627,157L626,160L621,160L612,153L608,151L605,150Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M651,181L652,178L653,176L653,174L655,176L657,177L659,178L662,180L664,182L663,184L662,186L661,189L659,191L660,193L657,195L656,197L653,198L652,200L649,201L646,199L644,193L652,190L653,183L651,181Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M964,306L964,303L965,306L964,306Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M786,215L785,211L787,209L790,208L793,209L795,210L796,208L799,209L800,211L800,215L796,217L797,219L794,220L792,221L789,220L788,219L786,215Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M793,209L790,208L787,209L785,211L786,215L784,214L781,214L782,211L779,211L779,215L778,220L777,223L778,225L781,228L782,231L783,233L787,235L784,237L781,233L779,231L778,229L776,228L775,226L776,223L777,219L778,216L777,213L776,210L774,207L774,205L775,202L773,200L771,198L769,195L771,191L775,189L777,190L778,192L780,195L780,198L783,196L785,197L788,196L790,198L791,202L794,204L794,207L793,209Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M799,209L796,208L795,210L793,209L794,204L791,202L790,198L788,196L786,195L784,197L780,198L780,195L780,192L777,190L776,187L778,185L780,186L779,182L783,184L784,187L788,187L789,190L787,192L791,194L794,198L796,201L798,203L799,206L799,209Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M776,189L773,191L771,194L771,198L773,200L775,202L774,205L774,207L776,210L777,213L778,216L777,219L776,223L775,220L776,218L775,216L775,212L773,211L772,207L771,203L770,200L768,202L765,204L762,203L762,199L761,196L758,192L757,190L755,188L754,185L756,182L756,180L755,177L758,177L758,175L759,170L762,166L764,167L763,165L765,163L766,165L768,168L769,171L767,173L767,177L770,177L771,180L773,183L775,184L778,184L776,187L776,189Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M792,221L794,220L797,219L796,217L800,215L800,211L799,209L799,206L798,203L796,201L794,198L791,194L787,192L789,190L788,187L784,187L783,184L780,182L784,181L787,181L789,179L793,181L794,184L797,185L794,188L792,191L792,193L795,196L798,201L801,203L803,205L805,211L805,217L803,219L800,221L798,224L795,227L793,225L794,223L792,221Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M835,117L834,119L835,122L833,124L831,125L833,128L835,129L832,130L830,132L828,132L826,131L826,128L826,126L822,125L824,123L826,121L826,119L830,120L829,118L832,117L835,117Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M717,95L719,94L723,91L726,90L729,91L731,91L734,92L736,93L740,93L741,91L740,89L741,86L744,87L746,88L750,89L751,91L755,92L757,92L760,91L763,92L766,93L768,95L771,95L774,95L776,94L779,94L781,92L785,93L788,93L788,95L788,98L790,99L793,100L797,100L800,102L798,103L795,103L793,106L789,107L788,109L785,108L783,110L785,112L783,115L780,116L776,116L773,118L770,119L766,118L761,116L758,116L755,116L750,116L747,116L745,114L742,111L737,108L733,108L730,107L728,102L725,100L721,99L719,97L717,95Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M755,183L755,186L755,188L753,186L752,183L751,181L748,181L748,184L746,183L744,181L742,178L741,175L743,173L740,171L741,169L743,170L745,173L748,173L750,173L751,176L750,178L751,180L752,178L755,183Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M748,164L750,168L748,168L745,167L741,167L742,164L746,164L748,164Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M739,164L739,168L737,169L734,168L732,168L730,166L726,166L722,164L719,162L716,161L717,158L718,157L721,157L725,159L727,161L730,162L732,163L735,164L739,164Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M706,139L704,142L701,142L697,142L697,146L699,148L701,150L699,152L700,154L698,157L697,161L694,164L691,164L689,167L691,169L691,171L693,173L694,176L688,176L687,178L685,177L683,175L681,172L676,173L672,173L668,173L668,170L672,168L670,166L670,163L667,161L666,159L664,158L669,159L671,159L673,159L679,158L678,155L679,153L682,152L684,152L685,151L685,149L686,147L686,144L688,144L688,142L689,139L689,136L692,135L695,135L697,134L700,135L701,138L706,139Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M674,133L678,134L681,133L684,132L685,129L686,131L688,134L690,134L692,133L697,133L695,135L692,135L689,136L689,139L688,142L688,144L686,144L687,146L685,149L685,151L684,152L682,152L679,153L678,155L679,158L675,159L673,159L669,159L664,158L666,155L665,153L663,152L663,150L661,147L661,145L661,143L662,139L665,140L667,138L669,138L670,134L672,133L674,133Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M678,134L679,131L678,128L676,127L678,126L679,122L682,121L683,124L680,124L683,126L687,127L692,126L693,129L696,130L697,133L694,133L691,134L689,135L687,131L685,129L684,132L682,134L679,134L678,134Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M682,117L684,115L688,116L690,114L694,115L699,115L703,115L704,116L702,119L699,121L698,123L695,123L692,125L687,127L683,126L681,126L683,125L686,124L689,122L685,120L681,120L683,117L682,117Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M635,119L639,117L641,118L643,120L647,120L648,117L650,116L654,117L655,120L659,120L662,124L665,127L667,128L670,130L674,131L674,133L672,132L670,134L670,137L667,138L665,140L662,139L661,136L655,133L653,133L650,131L647,131L644,133L642,134L641,131L640,128L638,127L638,125L637,122L639,122L641,121L639,119L638,118L636,118L636,121L635,119Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M595,148L596,145L597,142L595,139L596,137L597,135L600,135L604,135L607,134L611,134L610,136L609,139L609,143L603,146L598,150L595,148Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M621,129L619,127L617,125L613,124L612,121L616,120L618,122L619,124L620,126L621,129Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M526,65L528,61L529,58L527,57L527,53L528,50L530,50L530,48L533,44L535,41L536,39L538,39L543,38L544,36L547,37L551,39L552,43L549,45L547,47L544,51L540,54L539,58L541,60L543,62L541,65L539,66L539,71L538,74L535,73L534,76L531,76L530,73L528,69L526,65Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M567,73L569,74L573,75L573,77L575,80L578,81L576,83L577,86L575,86L575,88L571,88L569,88L564,87L562,86L559,87L556,85L558,83L556,80L559,80L561,79L563,76L564,75L567,73Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M577,86L579,85L582,85L584,87L586,89L587,91L590,92L594,93L599,94L598,96L599,99L597,99L596,102L592,103L590,103L588,104L585,104L580,104L577,103L575,107L573,107L572,105L573,104L575,104L574,102L573,100L571,98L568,97L566,98L563,99L561,99L558,98L555,97L556,95L558,91L557,88L560,87L564,87L567,87L570,88L574,88L575,86L577,86Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M556,80L558,83L556,85L557,88L559,90L556,94L553,94L550,94L548,94L545,92L543,91L541,92L538,90L536,87L535,84L534,81L539,78L542,77L545,78L547,79L550,79L554,79L556,80Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M542,98L541,100L541,102L538,103L535,104L531,103L528,102L525,102L524,100L526,101L529,100L532,100L532,98L534,96L536,97L538,95L540,96L542,97L542,98Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M555,97L557,99L554,102L553,104L551,105L547,105L544,105L542,104L541,102L541,100L542,98L545,100L547,99L549,98L551,97L554,98L555,97Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M566,98L568,97L570,98L573,99L574,102L575,104L573,104L572,106L571,104L569,101L567,98L566,98Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M571,107L574,107L574,109L573,113L569,111L566,112L561,112L559,112L558,111L555,109L553,107L551,105L553,104L554,102L555,100L558,98L561,99L563,99L565,98L568,99L571,103L571,105L571,107Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M563,75L562,77L559,80L556,80L554,79L553,77L551,76L550,74L552,73L556,73L559,73L563,75Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M564,69L566,72L567,73L564,75L560,74L556,73L552,73L550,74L550,71L551,70L553,69L555,71L557,68L560,68L562,69L564,69Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M565,63L564,66L565,68L562,69L560,68L557,68L555,66L557,63L560,63L562,63L565,63Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M558,111L559,112L561,112L565,113L569,111L571,112L571,116L572,118L570,118L567,119L565,121L563,119L561,120L559,118L558,116L559,114L557,112L558,111Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M569,140L565,141L562,140L566,139L568,140L569,140ZM559,120L563,119L565,121L567,120L566,122L561,122L563,124L561,125L559,123L559,126L561,127L561,129L563,132L560,131L560,133L561,136L557,135L556,132L555,130L553,127L553,124L554,122L557,121L559,120Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M618,134L615,133L612,133L608,134L604,135L602,135L597,136L596,137L595,135L591,135L590,137L586,137L583,135L581,135L578,137L576,135L573,135L571,132L569,130L570,128L568,126L571,123L575,123L575,121L580,121L583,119L586,118L590,118L595,120L599,121L602,121L604,121L607,120L610,119L612,121L613,124L615,125L616,130L618,134ZM567,119L570,118L572,118L575,120L571,121L568,124L567,122L569,119L567,119Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M554,122L553,124L552,126L550,124L550,120L550,117L551,116L553,118L553,121L554,122Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M542,104L544,105L547,106L549,108L547,108L543,108L540,108L541,110L543,113L545,115L548,116L545,115L541,113L539,111L538,108L535,109L535,107L537,106L540,106L542,104Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M524,100L525,102L523,104L521,105L518,106L516,104L517,101L519,100L521,100L524,100Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M515,90L515,92L514,94L512,93L509,91L507,90L508,88L512,88L514,89L515,90Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M517,82L517,85L515,87L515,90L512,88L510,88L511,83L515,81L517,82Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M477,118L479,117L481,119L484,120L482,123L482,125L482,128L481,130L480,133L479,135L477,135L477,132L477,130L475,129L475,126L477,124L477,122L477,120L477,118Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M480,134L481,132L482,128L481,126L482,124L482,121L483,118L479,119L477,118L477,116L480,112L483,113L486,113L489,113L491,113L495,113L501,116L505,117L508,116L505,121L502,121L500,124L499,127L500,129L499,130L498,132L496,133L494,135L491,135L489,135L487,136L485,137L483,134L480,134Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M485,80L485,83L484,85L479,87L476,87L478,84L477,80L480,78L482,77L482,80L485,80Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M956,324L958,326L958,328L955,326L954,324L953,322L955,322L956,324Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M953,286L950,284L951,282L952,285L953,286ZM950,287L947,287L949,286L950,287Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M959,386L957,388L954,390L951,391L954,387L952,384L955,382L957,379L958,377L958,375L958,370L958,368L959,369L960,373L960,377L961,374L961,378L964,379L966,378L965,381L963,383L960,384L959,386ZM933,397L936,395L939,394L941,391L944,389L947,387L947,390L949,389L948,391L946,393L943,395L941,397L939,398L936,399L934,401L930,405L927,406L925,407L923,407L919,406L923,402L928,399L930,398L933,397Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M729,231L729,234L726,236L724,233L723,228L724,223L726,225L728,227L729,231Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M524,77L520,77L519,72L522,70L525,69L524,71L526,72L523,75L524,77ZM529,74L529,78L526,76L529,74Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M485,80L482,80L482,77L484,76L486,78L485,80ZM493,82L491,78L488,78L489,75L487,76L487,73L486,68L488,66L493,66L490,69L493,69L495,69L495,71L493,74L495,74L497,78L500,82L504,84L504,86L504,88L501,90L498,90L494,91L491,92L489,91L487,93L489,89L492,88L488,87L490,85L488,84L489,82L493,82Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M468,43L470,47L467,49L460,51L458,52L455,51L449,50L452,49L447,48L451,47L446,46L448,44L452,43L455,45L458,44L461,44L465,43L468,43Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M619,118L622,121L625,119L627,120L628,123L631,124L628,124L628,126L627,128L625,128L625,126L621,129L621,126L618,125L617,123L616,120L619,121L619,118ZM620,129L617,127L619,126L620,129Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M602,113L604,114L608,114L612,116L614,116L617,116L619,118L620,121L617,120L612,121L610,119L607,120L606,116L605,115L602,113Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M837,214L835,211L838,211L839,215L837,214ZM843,223L844,220L845,222L847,219L847,222L845,225L843,223L843,223ZM854,228L855,230L854,235L853,231L852,233L853,235L849,235L848,233L847,230L844,231L842,233L843,229L846,227L849,227L851,226L851,223L853,225L854,228ZM832,225L828,228L830,226L831,224L833,221L834,218L835,221L833,223L832,225ZM839,196L840,199L839,202L838,206L839,208L842,208L845,210L846,213L844,213L843,211L840,210L838,211L836,209L834,206L833,202L834,198L834,195L838,196L839,196ZM841,218L844,217L843,220L841,220L841,218ZM850,215L852,219L849,218L850,221L849,220L847,218L847,214L850,214L850,215Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M781,234L784,235L786,236L789,237L790,239L791,241L791,244L792,247L793,250L791,251L788,249L785,246L783,242L782,240L781,238L782,235L781,234ZM831,242L829,241L825,241L825,245L822,250L820,251L817,250L814,252L811,253L809,251L808,249L810,250L813,249L813,246L818,245L819,242L821,240L822,242L824,241L824,239L826,235L827,233L830,234L832,237L835,237L833,239L831,242Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M824,237L824,241L822,242L821,240L824,237Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M535,104L537,104L540,103L540,106L538,107L535,107L535,104Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M561,36L565,40L563,42L566,45L565,47L568,50L571,53L569,57L564,60L560,61L556,62L553,62L551,61L549,60L549,57L548,54L550,51L555,48L556,46L552,44L551,39L547,37L544,36L548,36L551,36L553,37L555,36L556,34L559,33L562,34L561,36Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M556,95L555,97L552,97L549,98L547,99L545,100L542,98L542,96L544,96L546,94L549,95L552,95L556,95Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M537,89L540,90L543,91L545,92L547,94L545,95L542,96L540,96L538,95L536,97L534,96L532,95L531,93L532,91L534,90L537,89Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M601,208L602,202L602,200L605,198L606,196L608,200L609,203L611,205L615,208L616,210L618,212L620,214L618,214L616,211L614,209L611,208L609,207L605,206L605,209L601,208Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M869,127L868,130L870,134L870,136L871,138L871,140L868,142L864,142L861,146L859,145L858,142L854,143L851,144L848,144L852,147L852,152L849,153L848,150L846,149L845,146L847,145L847,143L849,142L850,139L855,138L858,139L859,133L861,135L863,132L864,126L862,123L862,121L864,120L868,125L869,127ZM868,112L872,114L869,115L868,118L863,116L863,119L860,119L858,116L858,114L861,114L859,109L859,107L863,110L866,111L868,112ZM852,146L853,144L855,143L857,144L857,147L855,146L853,147L852,146Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M340,321L341,323L341,327L344,328L347,328L348,332L349,333L351,333L352,337L351,342L349,344L347,345L344,344L341,344L343,339L339,336L336,333L334,333L328,328L329,324L329,319L334,318L337,318L339,320L340,321Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M644,193L646,199L647,201L645,202L645,204L642,206L638,207L636,210L634,209L632,211L628,212L626,213L623,214L621,212L620,209L619,207L619,204L619,202L620,199L622,198L625,198L629,199L630,200L633,196L636,194L644,193Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M594,159L597,160L599,158L601,157L602,156L599,152L604,151L608,151L612,153L621,160L626,160L628,160L631,162L632,165L634,167L636,168L636,170L638,172L639,174L641,176L643,180L651,182L653,183L652,190L644,193L636,194L633,196L632,199L630,199L626,199L622,198L620,199L619,202L617,199L616,197L614,194L613,192L611,189L608,186L607,183L605,178L602,176L601,174L601,172L599,168L597,166L595,164L594,162L594,159Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M587,140L589,140L591,139L590,140L587,141L587,140Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M587,140L589,141L586,142L587,140Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M494,140L495,142L496,148L493,150L490,152L490,154L487,156L484,158L481,159L477,161L477,165L474,167L472,167L469,167L468,170L466,174L462,178L461,182L459,185L453,185L454,183L455,180L456,178L458,176L460,173L461,169L463,168L464,165L468,163L471,161L474,157L474,153L475,151L477,147L480,145L482,144L483,140L484,138L488,140L490,140L493,140L494,140Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M601,183L590,183L580,183L569,183L568,171L567,160L566,157L567,155L567,152L571,152L574,153L576,154L580,153L583,152L586,154L589,154L591,154L594,158L593,160L593,163L592,165L590,162L587,158L588,161L590,165L593,170L594,172L595,173L598,177L597,180L601,183L601,183Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M569,183L569,190L566,190L555,185L543,179L541,181L539,182L537,180L533,179L532,177L529,175L527,174L525,170L526,167L526,163L527,161L525,156L527,154L528,151L531,149L531,147L534,148L537,148L541,150L542,153L545,153L548,155L551,156L554,154L553,151L556,148L561,149L563,150L567,151L567,154L566,157L567,160L568,171L569,183Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M634,229L626,239L623,239L620,241L618,242L615,241L612,243L609,244L607,243L604,241L601,240L599,237L597,234L596,232L594,230L593,228L595,227L595,224L596,220L597,218L598,216L600,214L601,211L601,208L605,209L605,206L607,208L610,208L614,209L616,211L617,213L617,216L617,218L619,219L620,222L622,225L632,229L634,229Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M618,214L620,214L621,216L620,220L617,219L617,216L618,214Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M637,218L637,223L636,226L634,229L632,229L622,225L620,222L619,221L621,218L622,220L625,221L627,220L630,220L633,219L635,218L637,218Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M595,258L590,258L587,258L584,260L583,257L584,253L586,250L588,248L587,244L590,244L592,243L596,241L597,244L598,249L597,251L596,253L595,258Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M586,259L587,261L586,263L583,265L582,263L582,260L586,259Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M548,116L545,115L543,113L541,110L540,109L542,108L545,108L548,109L550,111L549,113L548,116Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M557,117L559,120L557,121L554,122L553,120L555,117L557,117Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M547,105L549,105L552,106L554,108L556,110L557,113L558,115L556,117L555,115L553,114L551,114L549,113L549,110L549,108L547,105Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M551,116L550,117L547,116L548,114L550,114L552,115L551,116Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M553,118L551,116L553,114L555,115L555,117L553,118L553,118Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M328,220L330,220L329,222L327,223L328,220Z" class="map-base" fill="var(--paper-2)"/>
+  <path d="M587,244L584,242L582,241L580,241L577,238L574,236L574,234L570,231L569,228L567,227L569,226L569,223L572,221L574,224L578,224L581,225L583,222L586,223L589,221L591,219L590,216L591,215L592,218L593,220L595,223L595,227L593,228L592,230L596,232L597,234L599,237L597,239L596,241L594,243L590,244L587,244Z" class="map-base" fill="var(--paper-2)"/>
+ </g>
+ <g stroke="var(--paper)" stroke-width="0.8" stroke-linejoin="round">
+  <path d="M196,96L203,96L210,96L212,96L220,96L227,96L235,96L242,96L251,96L259,96L264,96L265,94L265,96L267,97L270,97L272,98L274,98L277,99L280,98L282,99L284,100L286,101L287,102L288,103L289,105L291,107L291,110L290,113L289,115L287,117L286,118L287,119L291,117L294,117L298,115L298,114L299,113L302,113L304,113L305,112L309,109L310,108L314,108L319,108L320,107L321,107L323,105L324,103L327,101L329,101L330,102L329,106L330,108L327,111L324,112L321,113L319,115L318,117L319,119L320,118L320,119L318,120L317,120L315,120L312,121L310,121L314,121L310,122L309,122L307,125L305,128L304,126L304,128L304,130L303,131L301,134L302,131L301,130L301,127L300,129L300,131L299,130L300,131L300,134L300,136L300,139L298,141L295,142L293,144L291,145L290,146L289,147L286,149L284,151L282,152L281,155L281,157L282,160L282,162L282,164L283,167L282,170L282,171L281,173L279,173L278,171L277,168L276,165L276,164L277,162L276,160L275,157L271,158L269,157L268,156L265,156L262,156L260,156L259,157L259,159L258,159L257,160L255,160L253,158L251,159L249,158L247,158L245,159L242,161L239,163L237,164L236,166L235,168L235,170L234,171L233,170L231,169L230,168L230,165L229,163L229,161L228,159L226,158L224,158L222,161L220,160L218,159L218,157L218,155L217,154L216,153L215,151L210,151L210,153L208,153L202,153L197,151L193,149L190,149L187,149L187,147L186,145L185,144L184,144L181,143L181,140L179,137L179,132L179,131L178,128L178,125L178,123L180,121L181,118L181,116L184,113L185,110L187,107L189,102L190,100L190,98L193,99L193,102L194,101L195,98L196,96ZM71,190L72,192L71,192L70,193L69,192L69,191L70,190L71,190ZM70,187L69,188L68,187L70,187L70,187ZM66,184L66,186L65,186L66,184ZM118,61L119,61L119,62L117,63L115,61L118,61ZM142,68L143,68L140,70L137,72L137,69L140,68L142,68ZM201,34L191,44L176,61L178,61L180,62L180,63L181,65L184,63L188,62L188,64L188,65L189,67L189,69L189,72L192,74L190,76L188,78L188,76L186,75L187,73L186,70L187,67L185,67L181,67L179,66L177,63L175,63L172,62L169,62L165,60L164,59L160,60L159,62L158,62L154,63L152,64L148,64L150,63L153,60L157,59L152,60L149,62L144,64L144,65L140,67L136,69L133,70L131,71L126,72L124,74L121,75L119,75L116,76L113,77L110,78L105,79L109,77L112,76L116,74L119,74L122,73L127,71L128,70L130,69L133,67L135,65L132,66L129,67L129,65L128,66L128,65L125,66L123,66L125,64L126,63L122,62L122,61L122,59L122,57L125,56L128,54L130,53L132,52L137,51L138,52L141,51L142,49L144,48L142,48L139,49L138,49L137,49L133,49L131,48L130,45L135,44L141,43L143,43L141,44L146,44L146,42L144,41L144,40L144,39L142,38L145,36L148,36L153,35L155,34L158,32L161,32L166,31L168,31L173,30L175,30L175,31L177,31L180,31L182,32L185,32L188,33L192,33L193,33L197,33L199,34L201,34ZM116,51L119,51L120,52L122,52L119,53L118,52L115,52L116,51Z" class="map-hl map-c2" fill="var(--map-c2)"><title>United States of America</title></path>
+  <path d="M830,132L832,132L832,130L834,130L835,129L839,133L840,135L842,139L842,141L839,141L838,143L835,143L835,141L834,139L832,135L833,135L830,132Z" class="map-hl map-c1" fill="var(--map-c1)"><title>South Korea</title></path>
+  <path d="M763,163L764,164L764,167L762,166L759,168L759,170L758,173L758,175L758,177L755,177L756,180L756,182L755,183L752,178L751,180L750,178L750,177L751,176L752,174L750,173L748,173L745,173L745,170L743,170L741,169L740,171L743,173L741,174L741,175L742,176L742,178L744,181L745,183L744,184L743,184L739,185L740,187L739,189L735,192L732,195L730,198L728,200L728,201L727,202L724,203L723,203L723,206L724,210L724,213L723,216L723,221L722,222L721,224L722,225L719,226L718,228L717,229L715,226L713,222L712,218L711,217L709,214L708,210L707,207L704,203L702,197L701,193L701,189L700,185L696,187L694,187L690,183L691,182L690,181L687,178L688,176L694,176L693,173L691,171L691,169L689,167L691,164L694,164L697,161L698,157L700,154L699,152L701,150L699,148L697,146L696,143L697,142L701,142L704,142L706,139L709,143L710,146L711,147L711,149L709,149L711,152L714,154L718,157L717,158L716,161L719,162L722,164L726,166L730,166L732,168L734,168L737,169L739,169L739,168L739,166L739,164L740,163L741,166L744,168L745,167L748,168L750,168L750,166L748,164L751,164L752,162L755,160L758,160L759,159L761,161L760,162L763,163Z" class="map-hl map-c1" fill="var(--map-c1)"><title>India</title></path>
+  <path d="M631,157L629,156L629,154L628,152L626,149L623,147L621,144L621,142L622,141L622,139L620,138L618,134L616,131L615,126L616,125L617,127L618,128L620,129L624,126L626,127L625,128L627,130L629,132L632,133L634,135L637,135L641,134L644,133L645,131L647,131L648,131L650,131L653,133L655,133L659,136L661,136L662,139L661,143L661,145L662,146L661,147L663,150L663,152L665,153L666,155L664,158L666,159L667,161L670,163L670,166L672,166L672,168L668,170L668,173L663,172L659,172L656,171L655,167L653,167L651,167L649,169L645,168L642,165L640,164L637,161L635,157L633,157L632,156L631,157Z" class="map-hl map-c4" fill="var(--map-c4)"><title>Iran</title></path>
+  <path d="M534,81L535,82L535,84L536,86L537,89L535,89L533,90L530,92L531,94L532,95L534,96L533,97L533,100L530,100L529,100L526,100L525,100L521,99L519,100L519,98L520,96L516,95L515,94L515,93L515,90L515,87L516,87L517,85L517,83L517,81L519,81L521,80L521,79L520,77L522,77L524,77L526,79L529,79L530,79L533,80L534,81Z" class="map-hl map-c3" fill="var(--map-c3)"><title>Germany</title></path>
+  <path d="M882,388L883,388L881,392L880,393L878,396L875,397L873,397L873,394L873,392L873,389L874,388L876,388L878,389L879,389L882,388ZM837,360L834,362L831,363L830,364L829,366L826,366L825,366L822,365L820,366L818,366L816,368L814,369L812,370L810,369L809,369L807,367L805,367L806,365L807,364L808,362L809,360L810,358L809,355L809,353L810,351L810,349L809,347L809,344L808,342L808,340L809,342L809,339L810,340L811,341L811,339L810,337L810,335L811,333L812,330L812,328L814,326L814,328L815,326L818,325L819,324L822,323L823,322L826,321L828,321L829,320L831,320L834,319L835,318L836,316L838,314L839,313L839,311L842,309L842,311L844,311L843,309L844,308L845,308L846,306L848,304L848,303L850,302L851,302L853,301L854,300L856,302L857,303L859,304L861,304L860,302L862,299L863,299L865,296L866,295L868,295L870,295L870,293L868,292L870,291L872,292L873,293L875,294L878,295L880,294L881,294L882,295L881,297L880,298L879,300L878,301L877,303L879,306L881,307L882,308L884,310L886,311L888,313L891,312L891,310L892,308L893,307L894,304L894,302L894,300L895,297L896,295L896,294L897,292L899,290L899,291L899,293L900,295L900,297L900,299L900,300L901,302L903,301L903,303L904,304L904,305L904,308L904,310L905,313L904,315L905,317L907,319L909,320L910,322L911,324L911,328L912,327L913,329L913,332L915,334L916,335L917,337L917,340L916,342L915,344L916,347L914,350L913,351L912,354L911,356L909,358L907,361L904,363L902,365L901,367L899,370L897,372L895,374L894,376L891,378L888,379L885,380L883,381L881,383L880,381L878,381L880,379L878,379L874,382L873,381L871,380L870,380L868,379L867,377L868,375L868,373L867,372L865,371L866,370L867,367L864,370L862,370L864,368L865,367L867,365L867,362L864,365L862,366L860,369L859,368L859,366L859,364L858,362L856,360L854,359L852,358L847,358L843,359L840,360L837,360Z" class="map-hl map-c1" fill="var(--map-c1)"><title>Australia</title></path>
+  <path d="M803,196L801,195L800,192L801,191L804,190L806,190L806,191L805,192L805,194L803,196ZM706,117L705,115L707,114L703,109L707,107L708,107L708,101L713,102L714,101L713,97L715,97L716,95L719,97L721,99L725,100L728,102L729,106L730,107L733,108L737,108L741,110L742,111L745,114L747,116L750,116L755,116L758,116L761,116L766,118L769,118L770,119L773,118L776,116L780,116L783,115L784,113L785,112L784,111L783,110L783,108L785,108L788,109L789,107L793,106L793,104L795,103L798,103L800,103L797,100L794,99L793,100L790,99L789,100L788,98L788,95L788,93L791,94L794,92L793,91L793,87L794,86L793,85L791,84L792,82L795,82L798,82L802,83L805,84L808,87L810,88L812,90L815,93L820,94L824,96L827,99L831,99L832,98L836,97L836,100L837,105L837,108L833,107L832,108L834,111L836,115L834,115L835,117L833,115L832,117L829,118L830,120L828,120L826,119L826,121L824,123L822,125L819,126L818,127L815,128L816,127L815,125L816,123L814,121L812,123L810,125L810,127L807,127L806,129L809,131L811,131L812,133L814,134L816,131L819,133L821,133L822,135L818,135L818,137L816,139L815,141L819,143L821,146L824,149L826,152L827,154L826,155L827,157L829,158L829,160L829,163L828,163L827,167L826,171L824,175L821,178L818,181L815,181L814,183L812,182L811,183L808,185L805,185L805,189L803,189L802,187L802,185L798,184L797,185L794,184L793,183L793,181L790,180L789,179L787,181L784,181L782,181L780,182L779,182L780,186L779,186L778,184L776,185L775,184L773,183L773,180L771,180L770,177L767,177L767,173L769,171L768,168L768,165L766,165L765,163L763,163L760,162L761,161L759,159L758,160L755,160L752,162L751,164L748,164L747,164L746,164L743,163L742,164L741,166L740,163L739,164L735,164L732,163L730,162L727,161L726,159L725,159L721,157L719,156L718,157L714,154L711,152L709,149L711,149L711,147L710,146L709,143L706,139L701,138L700,135L697,134L696,131L696,130L694,129L692,126L692,125L694,123L695,123L698,123L699,121L702,121L702,119L706,118L706,117Z" class="map-hl map-c3" fill="var(--map-c3)"><title>China</title></path>
+  <path d="M833,176L832,181L832,183L830,181L829,178L830,175L831,173L833,174L833,176Z" class="map-hl map-c1" fill="var(--map-c1)"><title>Taiwan</title></path>
+  <path d="M526,102L528,103L530,102L531,103L535,104L535,105L535,106L533,106L531,107L531,109L532,111L535,113L536,116L539,118L541,118L541,120L543,121L545,122L548,123L547,125L546,124L544,123L543,125L545,126L544,128L542,131L541,130L541,129L541,126L540,124L538,123L536,122L535,121L533,120L531,119L529,117L527,115L526,112L525,111L523,110L521,111L520,112L519,111L518,111L517,108L518,107L517,106L518,106L520,106L521,105L523,105L523,104L525,104L526,104L526,102ZM539,131L541,130L540,133L540,136L538,134L536,134L533,132L533,131L536,131L539,131ZM523,122L524,121L525,123L525,127L524,127L523,128L522,127L522,123L521,121L523,122Z" class="map-hl map-c1" fill="var(--map-c1)"><title>Italy</title></path>
+ </g>
+ <g class="map-anno">
+  <polyline points="265,130 -8,130" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="265" cy="130" r="3.6" fill="var(--map-c2)"/>
+  <text y="130" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="-385" fill="var(--ink)" font-weight="600">US</tspan><tspan x="-304" fill="var(--map-c2)"> · labs + federal ban</tspan></text>
+  <polyline points="526,89 1008,84" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="526" cy="89" r="3.6" fill="var(--map-c3)"/>
+  <text y="84" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">EU</tspan><tspan x="1092" fill="var(--map-c3)"> · bans uses</tspan></text>
+  <polyline points="532,115 1008,131" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="532" cy="115" r="3.6" fill="var(--map-c1)"/>
+  <text y="131" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">Italy</tspan><tspan x="1141" fill="var(--map-c1)"> · first ban</tspan></text>
+  <polyline points="775,133 1008,177" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="775" cy="133" r="3.6" fill="var(--map-c3)"/>
+  <text y="177" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">China</tspan><tspan x="1141" fill="var(--map-c3)"> · DeepSeek origin</tspan></text>
+  <polyline points="835,135 1008,223" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="835" cy="135" r="3.6" fill="var(--map-c1)"/>
+  <text y="223" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">South Korea</tspan><tspan x="1238" fill="var(--map-c1)"> · state ban</tspan></text>
+  <polyline points="642,146 1008,269" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="642" cy="146" r="3.6" fill="var(--map-c4)"/>
+  <text y="269" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">Iran</tspan><tspan x="1124" fill="var(--map-c4)"> · no access</tspan></text>
+  <polyline points="728,177 1008,315" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="728" cy="177" r="3.6" fill="var(--map-c1)"/>
+  <text y="315" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">India</tspan><tspan x="1141" fill="var(--map-c1)"> · restricts</tspan></text>
+  <polyline points="831,177 1008,362" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="831" cy="177" r="3.6" fill="var(--map-c1)"/>
+  <text y="362" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">Taiwan</tspan><tspan x="1157" fill="var(--map-c1)"> · ban</tspan></text>
+  <polyline points="863,333 1008,408" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-linejoin="round"/>
+  <circle cx="863" cy="333" r="3.6" fill="var(--map-c1)"/>
+  <text y="408" text-anchor="start" font-family="var(--mono), monospace" font-size="27" dominant-baseline="middle"><tspan x="1010" fill="var(--ink)" font-weight="600">Australia</tspan><tspan x="1206" fill="var(--map-c1)"> · state ban</tspan></text>
+ </g>
+</svg>
+      </figure>
+      <ul class="amap-stats" style="flex-direction:row;flex-wrap:wrap;gap:1rem 1.4rem;margin-top:1rem">
+          <li class="c1" style="grid-template-columns:14px auto"><span class="swatch"></span><span class="who">Restrict DeepSeek (state ban)</span></li>
+          <li class="c2" style="grid-template-columns:14px auto"><span class="swatch"></span><span class="who">Origin of frontier models with self-bans (US)</span></li>
+          <li class="c3" style="grid-template-columns:14px auto"><span class="swatch"></span><span class="who">Headline countries (China / EU)</span></li>
+      </ul>
+      <div class="amap-foot">Geography of AI bans · Natural Earth projection · scripts/make-map.py. Magenta marks the <em>geofenced</em>: shut out of the frontier models, ban or no ban.</div>
+    </div>
+
+    <div class="chart">
+      <div class="chart-head">
+        <span><strong>Jurisdictions restricting DeepSeek</strong> · by region · cumulative to June 2026</span>
+        <span>n = 4 regions</span>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bar-lbl">Asia-Pacific</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">Korea, Australia, Taiwan, India</span></div>
+        <div class="bar-row"><span class="bar-lbl">North America</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="bar-val">US (federal/state), Canada</span></div>
+        <div class="bar-row"><span class="bar-lbl">Europe</span><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div><span class="bar-val">Italy + EU framework (AI Act)</span></div>
+        <div class="bar-row"><span class="bar-lbl">Rest of world</span><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div><span class="bar-val">framework barely exists</span></div>
+      </div>
+      <p class="chart-foot">Aggregation of public restriction lists (demandsage, aitechtonic, press, 2026). A count of jurisdictions, not capability: almost every ban reaches the API and the enterprise offering, not the open weights.</p>
+    </div>
+
+    <div class="prose">
+      <p>Let me be clear about what I'm <em>not</em> saying. I'm not defending DeepSeek: an app sending your prompts and your data to servers under another jurisdiction is a legitimate risk, and a state has every right to decide what runs on its officials' phones. Nor am I mocking Anthropic's self-ban: capping capabilities in biology or cybersecurity is, probably, the most responsible thing a lab that believes its own warning can do today. My objection is to the <em>framing</em>: when the press melts the three things into "banning AI", it hands industrial policy a safety alibi and the citizen a confusion that's useful to whoever is already winning.</p>
+
+      <p>Because the interesting question isn't "should this model be banned?", but "what does banning a model achieve when its weights are already downloaded across half the world?". The uncomfortable answer: it protects a market, not a user. The API ban is a toll, not a wall. And while we argue about tolls with Chinese names, the control that really distributes the planet's compute power — who can buy the chips, who can use the frontier models, who's left watching — keeps operating in silence, with no headline and no villain. It's worth learning to read the difference. Starting sources: <a href="https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/" target="_blank" rel="noopener">TechCrunch</a>, <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank" rel="noopener">Anthropic</a> and <a href="https://www.demandsage.com/deepseek-banned-countries/" target="_blank" rel="noopener">the DeepSeek-ban census</a>.</p>
+
+      <p style="text-align:right;font-style:italic;color:var(--ink-3)">— P. C.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="datum">
+    <div class="sec-head"><span class="sec-num">§ 08</span><h2 class="sec-title">Datum of the week</h2></div>
+
+    <div class="dato">
+      <p class="dato-num">0&nbsp;→&nbsp;12<span style="font-size:0.42em;vertical-align:0.5em">&nbsp;jurisdictions</span></p>
+      <p class="dato-lbl">Countries and agencies that have restricted DeepSeek · from zero in 2024 to more than a dozen by June 2026</p>
+      <p class="dato-body">The trajectory is dizzying: <strong>0 (2024) → first bans in early 2025 → Italy opens the European floodgates in early 2026 → South Korea, Australia, Taiwan, India, Canada and US agencies in the first half of 2026</strong>. The detail that turns it into a datum and not an anecdote: it's <em>the same model</em> that barely a year earlier was celebrated as the symbol of the global south's "open AI". In twelve months it went from flagship to contraband — without a single line of its weights changing. <em>Source</em>: aggregation of public restriction lists (demandsage, aitechtonic, specialist press, 2026).</p>
+    </div>
+  </section>
+
+  <section class="sec" id="appendix">
+    <div class="sec-head"><span class="sec-num">§ 09</span><h2 class="sec-title">Appendix · technical notes</h2></div>
+    <p class="sec-desc">Detail on the three papers from section 03.</p>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 01</span>Connectome of the fly's central nervous system</h3>
+      <div class="appendix-meta">
+        <div>Discipline<strong>Neuroscience, connectomics</strong></div>
+        <div>Region<strong>North America (Harvard, Princeton) + international collaboration</strong></div>
+        <div>Publication<strong>Nature · June 2026</strong></div>
+      </div>
+      <dl>
+        <dt>Summary</dt><dd>Map of the connections of the ~160,000 neurons of the adult <em>Drosophila melanogaster</em> central nervous system, from brain to ventral nerve cord. It finds distributed control circuits in the periphery, not centralised in the brain.</dd>
+        <dt>Methodology</dt><dd>Volume electron microscopy + machine-learning-assisted reconstruction + large-scale manual proofreading. Connectome released open-access.</dd>
+        <dt>Limitations</dt><dd>It's a single individual: it doesn't capture fly-to-fly variability. Synaptic structure alone doesn't determine dynamic function; the connectome is the blueprint, not the activity.</dd>
+        <dt>Link</dt><dd><a href="https://www.nature.com/" target="_blank" rel="noopener">nature.com</a></dd>
+      </dl>
+    </article>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 02</span>Battery-free artificial photosynthesis</h3>
+      <div class="appendix-meta">
+        <div>Discipline<strong>Chemistry, solar fuels</strong></div>
+        <div>Region<strong>Japan (Osaka Metropolitan University)</strong></div>
+        <div>Publication<strong>EES Solar · June 2026</strong></div>
+      </div>
+      <dl>
+        <dt>Summary</dt><dd>Photo-assisted electrolyser that produces formic acid from water, CO₂ and light, and that performs maximum-power-point tracking (MPPT) through its own thermal and impedance properties, with no battery or control electronics.</dd>
+        <dt>Methodology</dt><dd>Coupling of photoabsorber and electrolyser in a design where solar heating lowers internal resistance; validated by producing formate under variable irradiation.</dd>
+        <dt>Limitations</dt><dd>Small-scale demonstration (it powered a diorama). Efficiency and durability at industrial scale untested; formic acid is a useful carrier but of modest energy density.</dd>
+        <dt>Link</dt><dd><a href="https://pubs.rsc.org/" target="_blank" rel="noopener">pubs.rsc.org</a></dd>
+      </dl>
+    </article>
+
+    <article class="appendix-paper">
+      <h3><span class="pnum">Paper 03</span>Heat stress in India under future scenarios</h3>
+      <div class="appendix-meta">
+        <div>Discipline<strong>Climatology, public health</strong></div>
+        <div>Region<strong>India (national scale)</strong></div>
+        <div>Publication<strong>Scientific Reports · 2026</strong></div>
+      </div>
+      <dl>
+        <dt>Summary</dt><dd>Quantifies the seasonal and spatial evolution of the heat index (temperature + humidity) across India using CMIP6 projections under different shared socioeconomic pathways (SSP). One of the first national assessments to combine both variables.</dd>
+        <dt>Methodology</dt><dd>CMIP6 multi-model ensemble, Heat Index computation, seasonal and spatial breakdown under low- to high-emissions SSPs.</dd>
+        <dt>Limitations</dt><dd>Global-model resolution limits local detail. The physiological response to humid heat depends on acclimatisation and infrastructure, not modelled here.</dd>
+        <dt>Link</dt><dd><a href="https://www.nature.com/srep/" target="_blank" rel="noopener">nature.com/srep</a></dd>
+      </dl>
+    </article>
+
+  </section>
+
+  <footer class="colofon">
+    <p><strong>SINAPSE</strong> — weekly review of science, technology and industry.</p>
+    <p>No. 005 · Edition of June 16, 2026 · Editor: Jack Cid · Next issue: June 23, 2026.</p>
+    <p style="margin-top:1rem;font-style:italic;text-transform:none;letter-spacing:0;font-family:var(--serif);color:var(--ink-3)">Figures and authorship cited are based on public notes and press releases available at edition close.</p>
+    <p style="margin-top:1.5rem"><a href="#top">↑ Back to top</a></p>
+  </footer>
+
+</main>
+
+<script src="../../assets/reader-preferences.js?v=20260616a" defer></script>
+<script src="../../assets/listen-mode.js?v=20260616a" defer></script>
+<script>(function(){const bar=document.getElementById("progBar");if(!bar)return;function upd(){const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;bar.style.width=(max>0?(h.scrollTop/max)*100:0)+"%";}window.addEventListener("scroll",upd,{passive:true});upd();})();</script>
+</body>
+</html>

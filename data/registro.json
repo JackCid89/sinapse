@@ -76,6 +76,24 @@
           }
         }
       }
+    },
+    {
+      "numero": 5,
+      "fecha": "2026-06-16",
+      "archivo": "n005-junio-2026.html",
+      "portada": {
+        "titulo": "JUNO ya mide los neutrinos mejor que nadie: ahora va por el orden de sus masas",
+        "disciplina": "Física de partículas / Neutrinos"
+      },
+      "i18n": {
+        "en": {
+          "archivo": "n005-june-2026.html",
+          "portada": {
+            "titulo": "JUNO already measures neutrinos better than anyone: now it goes after the order of their masses",
+            "disciplina": "Particle physics / Neutrinos"
+          }
+        }
+      }
     }
   ]
 }
