@@ -229,12 +229,12 @@
     // voz clonada de Jack (data-audio). NO se cae a la voz del navegador: en
     // producción suena mal. El TTS del navegador queda como herramienta de
     // prueba, activable con <body data-audio-tts="1">.
-    if (src && /^https?:/.test(src)) {
-      mountAudio(src);                 // Release MP3 (streaming con range)
-    } else if (src) {
-      fetch(src, { method: "HEAD" }).then(function (r) {
-        if (r.ok) mountAudio(src); else maybeTTS();
-      }).catch(maybeTTS);
+    // Montar directo si hay data-audio (absoluto o relativo). Antes se hacía
+    // un fetch HEAD previo para URLs relativas, pero ese chequeo fallaba en el
+    // navegador aun con el MP3 sirviendo 200 (caía a catch → sin reproductor).
+    // El <audio> ya tiene su propio manejador de error como red de seguridad.
+    if (src) {
+      mountAudio(src);
     } else {
       maybeTTS();
     }
