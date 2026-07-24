@@ -1003,13 +1003,13 @@
   @media (max-width:560px){ .lb-chip{left:.75rem;bottom:.75rem} }
   @media print{ .lb-chip{display:none} }
 
-  /* ── v2.4 · TOC pegajoso (desktop) + sección activa ───────────────────
-     Progressive enhancement: sin JS el TOC sigue siendo un índice normal. */
-  @media (min-width:1100px){
-    .toc.toc-sticky{
-      position:sticky; top:1.25rem; z-index:5;
-      background:var(--paper); }
-  }
+  /* ── v2.4 · TOC · resaltado de sección activa (sin sticky) ────────────
+     El sticky se retiró: como el índice es un bloque ancho, al fijarse tapaba
+     el contenido que pasaba por debajo. Queda como índice estático arriba; el
+     observer sólo marca la sección activa mientras el índice está a la vista.
+     Las secciones llevan scroll-margin para que los saltos de ancla no queden
+     pegados al borde superior. */
+  section.sec{ scroll-margin-top:1.25rem; }
   .toc a[aria-current="true"]{
     color:var(--ink); border-bottom-color:var(--accent); }
   .toc a[aria-current="true"] .num{ color:var(--accent) }
