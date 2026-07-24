@@ -1,1 +1,5 @@
+# SINAPSE · Git LFS — los MP3 de narración se almacenan como punteros LFS.
+# Motivo: los binarios de audio (varios MB por número, regenerados a veces)
+# hinchaban la historia del repo. Con LFS, git guarda un puntero y el binario
+# vive en el almacén LFS de GitHub (soportado nativamente en repos y en Pages).
 assets/audio/*.mp3 filter=lfs diff=lfs merge=lfs -text

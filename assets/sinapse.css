@@ -1002,3 +1002,136 @@
   .lb-chip:hover{color:var(--accent);border-color:var(--accent)}
   @media (max-width:560px){ .lb-chip{left:.75rem;bottom:.75rem} }
   @media print{ .lb-chip{display:none} }
+
+  /* ── v2.4 · TOC pegajoso (desktop) + sección activa ───────────────────
+     Progressive enhancement: sin JS el TOC sigue siendo un índice normal. */
+  @media (min-width:1100px){
+    .toc.toc-sticky{
+      position:sticky; top:1.25rem; z-index:5;
+      background:var(--paper); }
+  }
+  .toc a[aria-current="true"]{
+    color:var(--ink); border-bottom-color:var(--accent); }
+  .toc a[aria-current="true"] .num{ color:var(--accent) }
+
+  /* ── v2.4 · Vocabulario visual (HTML/CSS puro, sin SVG para charts) ───
+     No repetir el mismo formato de viz dos números seguidos (regla de
+     rotación, análoga al tono de columna). */
+
+  /* Slope chart — ideal para la trayectoria YoY del Dato (2 puntos). */
+  .slope{
+    display:grid; grid-template-columns:auto 1fr auto;
+    align-items:stretch; gap:0 1rem;
+    font-family:var(--mono); font-size:12px;
+    margin:1.25rem 0; }
+  .slope .slope-axis{
+    display:flex; flex-direction:column; justify-content:space-between;
+    color:var(--ink-3); text-align:right; padding:.2rem 0; }
+  .slope .slope-plot{
+    position:relative; min-height:9rem;
+    border-left:1px solid var(--rule-2); border-right:1px solid var(--rule-2); }
+  .slope .slope-line{ position:absolute; inset:0; }
+  .slope .slope-line svg{ width:100%; height:100%; display:block }
+  .slope .slope-cap{
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:.2rem 0; }
+  .slope .slope-cap b{ font-family:var(--serif); font-size:15px; color:var(--ink) }
+  .slope .slope-cap span{ color:var(--ink-3) }
+  .slope-note{ font-family:var(--mono); font-size:11px; color:var(--ink-3);
+    margin:.4rem 0 0; }
+
+  /* Small multiples — repetir un mini-chart por región (regla ≥3 regiones). */
+  .smx{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));
+    gap:1rem 1.5rem; margin:1.25rem 0; }
+  .smx .smx-cell h4{
+    font-family:var(--mono); font-size:11px; font-weight:500;
+    letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3);
+    margin:0 0 .5rem; }
+  .smx .smx-bars{ display:flex; align-items:flex-end; gap:4px; height:4.5rem;
+    border-bottom:1px solid var(--rule); }
+  .smx .smx-bars i{ flex:1; background:var(--accent-soft);
+    border-top:2px solid var(--accent); display:block; }
+  .smx .smx-val{ font-family:var(--serif); font-size:18px; color:var(--ink);
+    margin:.4rem 0 0; }
+  .smx .smx-val small{ font-family:var(--mono); font-size:11px; color:var(--ink-3) }
+
+  /* ── v2.4 · Respetar prefers-reduced-motion ──────────────────────────── */
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration:.001ms !important; animation-iteration-count:1 !important;
+      transition-duration:.001ms !important; scroll-behavior:auto !important; }
+    .progress{ display:none }
+    html{ scroll-behavior:auto !important }
+  }
+
+  /* ══ v2.5 · Librería de dataviz (FT Visual Vocabulary) ═══════════════════
+     Familia CSS/HTML pura (barras, waffle, bullet, diverging, heat-strip).
+     Los formatos de línea/punto (slope, line, sparkline, lollipop, dumbbell,
+     scatter) se GENERAN con scripts/make-chart.py → <svg data-viz="chart">.
+     Chrome común (título, nota-anotación, leyenda) compartido por ambos. */
+
+  .chart-wrap{ margin:1.5rem 0; }
+  .chart-wrap svg[data-viz="chart"]{ width:100%; height:auto; display:block; }
+  .chart-title{ font-family:var(--serif); font-size:1.05rem; color:var(--ink);
+    margin:0 0 .2rem; }
+  .chart-note{ font-family:var(--mono); font-size:11px; color:var(--ink-3);
+    margin:.5rem 0 0; padding-left:.9rem; border-left:2px solid var(--accent); }
+  .viz-legend{ display:flex; flex-wrap:wrap; gap:.4rem 1rem; font-family:var(--mono);
+    font-size:11px; color:var(--ink-3); margin:.5rem 0 0; }
+  .viz-legend span{ display:inline-flex; align-items:center; gap:.35rem; }
+  .viz-legend span::before{ content:""; width:10px; height:10px; border-radius:2px;
+    background:var(--accent); }
+  .viz-legend .c1::before{ background:var(--map-c1) } .viz-legend .c2::before{ background:var(--map-c2) }
+  .viz-legend .c3::before{ background:var(--map-c3) } .viz-legend .c4::before{ background:var(--map-c4) }
+
+  /* Magnitud · barras horizontales (categorías con etiqueta directa) */
+  .barh{ font-family:var(--mono); font-size:12px; margin:1.25rem 0; }
+  .barh .row{ display:grid; grid-template-columns:8rem 1fr auto; align-items:center;
+    gap:.7rem; padding:.28rem 0; }
+  .barh .row .lbl{ color:var(--ink-2); text-align:right; }
+  .barh .row .track{ background:var(--rule-2); border-radius:3px; height:.85rem; overflow:hidden; }
+  .barh .row .fill{ height:100%; background:var(--accent); border-radius:3px 0 0 3px; }
+  .barh .row .val{ color:var(--ink); font-variant-numeric:tabular-nums; }
+  .barh .row .fill.c1{background:var(--map-c1)} .barh .row .fill.c2{background:var(--map-c2)}
+  .barh .row .fill.c3{background:var(--map-c3)} .barh .row .fill.c4{background:var(--map-c4)}
+
+  /* Parte-todo · waffle 10×10 (cada celda = 1%) */
+  .waffle{ display:grid; grid-template-columns:repeat(10,1fr); gap:3px;
+    width:min(15rem,60%); aspect-ratio:1; margin:1.25rem 0; }
+  .waffle i{ background:var(--rule-2); border-radius:2px; }
+  .waffle i.on{ background:var(--accent) }
+  .waffle i.c1{background:var(--map-c1)} .waffle i.c2{background:var(--map-c2)}
+  .waffle i.c3{background:var(--map-c3)} .waffle i.c4{background:var(--map-c4)}
+
+  /* Magnitud vs objetivo · bullet (barra compacta contra un target) */
+  .bullet{ font-family:var(--mono); font-size:12px; margin:1.1rem 0; display:grid;
+    grid-template-columns:9rem 1fr; align-items:center; gap:.7rem; }
+  .bullet .lbl{ color:var(--ink-2); text-align:right; }
+  .bullet .track{ position:relative; background:var(--rule-2); height:1.1rem; border-radius:3px; }
+  .bullet .qual{ position:absolute; inset:0; background:var(--accent-soft); border-radius:3px; }
+  .bullet .meas{ position:absolute; top:.3rem; bottom:.3rem; left:0; background:var(--ink);
+    border-radius:2px; }
+  .bullet .target{ position:absolute; top:0; bottom:0; width:2px; background:var(--map-c4); }
+
+  /* Desviación · barras divergentes desde un cero central */
+  .diverge{ font-family:var(--mono); font-size:12px; margin:1.25rem 0; }
+  .diverge .row{ display:grid; grid-template-columns:8rem 1fr 1fr; align-items:center;
+    gap:0; padding:.26rem 0; }
+  .diverge .lbl{ color:var(--ink-2); text-align:right; padding-right:.7rem; }
+  .diverge .neg{ display:flex; justify-content:flex-end;
+    border-right:1px solid var(--rule); }
+  .diverge .pos{ display:flex; justify-content:flex-start;
+    border-left:1px solid var(--rule); }
+  .diverge .neg i{ height:.85rem; background:var(--map-c4); border-radius:3px 0 0 3px; }
+  .diverge .pos i{ height:.85rem; background:var(--map-c2); border-radius:0 3px 3px 0; }
+
+  /* Distribución/patrón · heat-strip (una fila de celdas por intensidad) */
+  .heatstrip{ display:flex; gap:2px; margin:1.1rem 0; }
+  .heatstrip i{ flex:1; height:1.4rem; border-radius:2px; background:var(--accent);
+    opacity:calc(var(--v, 50) / 100); }
+  @media (max-width:560px){
+    .barh .row{ grid-template-columns:5.5rem 1fr auto }
+    .bullet{ grid-template-columns:6rem 1fr }
+    .diverge .row{ grid-template-columns:5.5rem 1fr 1fr }
+  }

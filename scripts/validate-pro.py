@@ -211,6 +211,107 @@ def layer_a11y(site: Path):
         report("A11Y", "ok", "WCAG 2.1 AA sin errores en los últimos números")
 
 
+
+# ── Capa 6 · PARIDAD ES/EN (conteo de items) ───────────────────────
+
+def _count(html_txt, needle):
+    return html_txt.count(needle)
+
+def layer_parity(site: Path):
+    reg = site / "data" / "registro.json"
+    try:
+        data = json.loads(reg.read_text(encoding="utf-8"))
+    except Exception:
+        report("PARITY", "skip", "registro.json ilegible")
+        return
+    bad = []
+    for n in data.get("numeros", []):
+        es = site / "issues" / n["archivo"]
+        en_file = (n.get("i18n", {}).get("en", {}) or {}).get("archivo")
+        en = site / "en" / "issues" / en_file if en_file else None
+        if not (es.exists() and en and en.exists()):
+            continue
+        es_t, en_t = es.read_text(encoding="utf-8"), en.read_text(encoding="utf-8")
+        for label, needle in (("pulso-item", 'class="pulso-item"'),
+                              ("appendix-paper", 'class="appendix-paper"')):
+            a, b = _count(es_t, needle), _count(en_t, needle)
+            if a != b:
+                bad.append(f"N°{n['numero']}: {label} ES={a} EN={b}")
+    if bad:
+        report("PARITY", "fail", f"desajuste de conteo ES/EN en {len(bad)} caso(s):")
+        print("\n".join("      " + b for b in bad[:12]))
+    else:
+        report("PARITY", "ok", "conteo de Pulso y Apéndice simétrico ES/EN")
+
+
+# ── Capa 7 · AUDIO (data-audio → MP3 existe) ──────────────────────
+
+def layer_audio(site: Path):
+    missing = []
+    checked = 0
+    for f in sorted((site / "en" / "issues").glob("n*.html")):
+        html_txt = f.read_text(encoding="utf-8")
+        m = re.search(r'data-audio="([^"]+)"', html_txt)
+        if not m:
+            continue
+        checked += 1
+        rel = m.group(1).split("?")[0]
+        target = (f.parent / rel).resolve()
+        if not target.exists() or target.stat().st_size == 0:
+            missing.append(f"{f.name} → {rel}")
+    if not checked:
+        report("AUDIO", "skip", "ningún número declara data-audio")
+    elif missing:
+        report("AUDIO", "fail", f"{len(missing)} MP3 declarado(s) pero ausente(s):")
+        print("\n".join("      " + b for b in missing))
+    else:
+        report("AUDIO", "ok", f"{checked} MP3 de narración presentes")
+
+
+# ── Capa 8 · ROTACIÓN (lint editorial, OPCIONAL) ─────────────────
+
+def layer_rotation(site: Path):
+    ed = site.parent / "editorial" / "registro-editorial.json"
+    if not ed.exists():
+        report("ROTATION", "skip", "registro-editorial.json no accesible (privado; no en CI)")
+        return
+    try:
+        nums = json.loads(ed.read_text(encoding="utf-8")).get("numeros", [])
+    except Exception as e:
+        report("ROTATION", "warn", f"registro-editorial ilegible: {e}")
+        return
+    nums = sorted(nums, key=lambda n: n["numero"])
+    if not nums:
+        report("ROTATION", "skip", "sin números en el registro editorial")
+        return
+    last = nums[-1]
+    prev = nums[-2] if len(nums) > 1 else None
+    prev2 = nums[-3] if len(nums) > 2 else None
+    issues = []
+    # regla dura: ≥3 regiones
+    nreg = len(last.get("regiones_fuente", []))
+    if nreg < 3:
+        report("ROTATION", "fail", f"N°{last['numero']}: solo {nreg} regiones (regla ≥3)")
+    else:
+        report("ROTATION", "ok", f"N°{last['numero']}: {nreg} regiones fuente")
+    # blandas (warn): disciplina de portada y tono de columna repetidos
+    disc = last.get("portada", {}).get("disciplina")
+    for tag, pn in (("N-1", prev), ("N-2", prev2)):
+        if pn and disc and pn.get("portada", {}).get("disciplina") == disc:
+            issues.append(f"disciplina de portada repite la de {tag} ({disc})")
+    tono = last.get("columna", {}).get("tono")
+    if prev and tono and prev.get("columna", {}).get("tono") == tono:
+        issues.append(f"tono de columna repite el de N-1 ({tono})")
+    # formato de viz: no repetir el mismo formato dos números seguidos
+    vlast = set(last.get("viz_formatos", []) or [])
+    vprev = set(prev.get("viz_formatos", []) or []) if prev else set()
+    dup = vlast & vprev
+    if dup:
+        issues.append(f"formato(s) de viz repiten N-1: {', '.join(sorted(dup))}")
+    for msg in issues:
+        report("ROTATION", "warn", f"N°{last['numero']}: {msg}")
+
+
 # ── Resumen ─────────────────────────────────────────────────────────────────
 
 def main():
@@ -227,6 +328,9 @@ def main():
     layer_data(site)
     layer_links(site, args.external)
     layer_a11y(site)
+    layer_parity(site)
+    layer_audio(site)
+    layer_rotation(site)
 
     fails = [r for r in results if r[1] == "fail"]
     warns = [r for r in results if r[1] == "warn"]

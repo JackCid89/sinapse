@@ -41,6 +41,21 @@ jobs:
       - name: Pipeline de validación (STANDARDS + EDITORIAL + DATA + LINKS)
         run: python3 scripts/validate-pro.py --site .
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar pa11y (A11Y · WCAG 2.1 AA)
+        run: npm i -g pa11y
+
+      - name: Accesibilidad (pa11y · último número ES+EN)
+        run: |
+          set -e
+          for f in "$(ls -1 issues/n*.html | tail -1)" "$(ls -1 en/issues/n*.html | tail -1)"; do
+            echo "pa11y → $f"
+            pa11y --standard WCAG2AA "$f"
+          done
+
       # No bloqueante: URLs externas caídas no frenan el número
       - name: Enlaces externos (lychee)
         uses: lycheeverse/lychee-action@v2
@@ -56,8 +71,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (con binarios LFS reales, no punteros)
         uses: actions/checkout@v5
+        with:
+          lfs: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SINAPSE</title>
+  <subtitle>revista semanal de ciencia, tecnología e industria</subtitle>
+  <link href="https://jackcid89.github.io/sinapse/" />
+  <link rel="self" href="https://jackcid89.github.io/sinapse/feed.xml" />
+  <id>https://jackcid89.github.io/sinapse/</id>
+  <updated>2026-06-16T12:00:00+00:00</updated>
+  <author><name>Jack Cid</name></author>
+  <entry>
+    <title>JUNO ya mide los neutrinos mejor que nadie: ahora va por el orden de sus masas</title>
+    <link href="https://jackcid89.github.io/sinapse/issues/n005-junio-2026.html" />
+    <id>https://jackcid89.github.io/sinapse/issues/n005-junio-2026.html</id>
+    <updated>2026-06-16T12:00:00+00:00</updated>
+    <published>2026-06-16T12:00:00+00:00</published>
+    <category term="Física de partículas / Neutrinos" />
+    <author><name>Jack Cid</name></author>
+    <summary>Física de partículas / Neutrinos</summary>
+  </entry>
+  <entry>
+    <title>La vacuna RTS,S funciona en el mundo real: ahora hay que pagarla</title>
+    <link href="https://jackcid89.github.io/sinapse/issues/n004-mayo-2026.html" />
+    <id>https://jackcid89.github.io/sinapse/issues/n004-mayo-2026.html</id>
+    <updated>2026-05-19T12:00:00+00:00</updated>
+    <published>2026-05-19T12:00:00+00:00</published>
+    <category term="Salud global / Inmunización" />
+    <author><name>Jack Cid</name></author>
+    <summary>Salud global / Inmunización</summary>
+  </entry>
+  <entry>
+    <title>La tensión de Hubble ya no es ruido: el modelo estándar tiene que cambiar</title>
+    <link href="https://jackcid89.github.io/sinapse/issues/n003-mayo-2026.html" />
+    <id>https://jackcid89.github.io/sinapse/issues/n003-mayo-2026.html</id>
+    <updated>2026-05-12T12:00:00+00:00</updated>
+    <published>2026-05-12T12:00:00+00:00</published>
+    <category term="Cosmología" />
+    <author><name>Jack Cid</name></author>
+    <summary>Cosmología</summary>
+  </entry>
+  <entry>
+    <title>El primer CRISPR in vivo cruza la Fase 3: qué demuestra y qué deja abierto el ensayo HAELO</title>
+    <link href="https://jackcid89.github.io/sinapse/issues/n002-mayo-2026.html" />
+    <id>https://jackcid89.github.io/sinapse/issues/n002-mayo-2026.html</id>
+    <updated>2026-05-05T12:00:00+00:00</updated>
+    <published>2026-05-05T12:00:00+00:00</published>
+    <category term="Genética / Biomedicina" />
+    <author><name>Jack Cid</name></author>
+    <summary>Genética / Biomedicina</summary>
+  </entry>
+  <entry>
+    <title>22 años después: el reactor reproductor rápido de Kalpakkam llega a la criticidad</title>
+    <link href="https://jackcid89.github.io/sinapse/issues/n001-abril-2026.html" />
+    <id>https://jackcid89.github.io/sinapse/issues/n001-abril-2026.html</id>
+    <updated>2026-04-28T12:00:00+00:00</updated>
+    <published>2026-04-28T12:00:00+00:00</published>
+    <category term="Energía / Ingeniería nuclear" />
+    <author><name>Jack Cid</name></author>
+    <summary>Energía / Ingeniería nuclear</summary>
+  </entry>
+</feed>

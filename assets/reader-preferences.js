@@ -66,12 +66,22 @@
   function save(state){
     try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch{}
   }
+  // Lexend se carga SOLO al activar el modo dislexia (ahorra una familia de
+  // fuentes completa en el ~95% de las cargas). Idempotente.
+  function ensureLexend(){
+    if (document.getElementById('sinapse-lexend')) return;
+    const l = document.createElement('link');
+    l.id = 'sinapse-lexend'; l.rel = 'stylesheet';
+    l.href = 'https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap';
+    document.head.appendChild(l);
+  }
   function apply(state){
     const html = document.documentElement;
     html.setAttribute('data-palette', state.palette);
     html.setAttribute('data-theme',   state.theme);
     html.setAttribute('data-density', state.density);
     html.setAttribute('data-dyslexia', state.dyslexia || 'off');
+    if ((state.dyslexia || 'off') === 'on') ensureLexend();
     html.style.setProperty('--fs-body', state.fontSize + 'px');
     html.style.setProperty('--measure', state.measure + 'rem');
   }

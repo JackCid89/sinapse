@@ -221,9 +221,9 @@ def check_data_integrity(html: str, file_label: str):
     for i, svg in enumerate(svg_blocks):
         # 0) Mapas geográficos (data-viz="map"): exentos de la heurística de
         #    porcentajes — sus cifras viven en HTML adyacente, no en el SVG.
-        if re.search(r'<svg\b[^>]*data-viz="map"', svg):
+        if re.search(r'<svg\b[^>]*data-viz="(?:map|chart)"', svg):
             results.append(Result(
-                f"[DATA INTEGRITY/{label}] SVG #{i+1} es mapa (data-viz=\"map\") — exento de suma de %"
+                f"[DATA INTEGRITY/{label}] SVG #{i+1} data-viz (map/chart) — exento de suma de %"
             ))
             continue
         # 1) Atributo declarativo (preferido)
