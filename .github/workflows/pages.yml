@@ -49,10 +49,9 @@ jobs:
         run: npm i -g pa11y
 
       - name: Accesibilidad (pa11y · último número ES+EN)
-        # No bloqueante por ahora: pa11y reporta hallazgos WCAG en el log pero no
-        # frena el deploy (los números aún no pasaron una auditoría a11y formal).
-        # Pasar a gate duro (quitar esta línea) cuando el reporte dé 0 errores.
-        continue-on-error: true
+        # Gate duro (2026-07-24): tras auditoría de contraste WCAG (tokens ink-3
+        # oscurecidos a ≥4.5:1) y labels en controles de formulario. Si falla,
+        # NO se despliega.
         run: |
           set -e
           for f in "$(ls -1 issues/n*.html | tail -1)" "$(ls -1 en/issues/n*.html | tail -1)"; do

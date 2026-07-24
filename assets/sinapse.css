@@ -23,7 +23,7 @@
     --paper-2: oklch(0.948 var(--paper-c) var(--hue));
     --ink: oklch(0.20 var(--ink-c) var(--hue));
     --ink-2: oklch(0.40 var(--ink-c) var(--hue));
-    --ink-3: oklch(0.58 calc(var(--ink-c) * 0.7) var(--hue));
+    --ink-3: oklch(0.53 calc(var(--ink-c) * 0.7) var(--hue));  /* a11y: 4.5:1 sobre paper */
     --rule: oklch(0.84 calc(var(--ink-c) * 0.6) var(--hue));
     --rule-2: oklch(0.91 calc(var(--ink-c) * 0.5) var(--hue));
 
@@ -72,7 +72,7 @@
     --paper-2: oklch(0.90 0.032 var(--hue));
     --ink: oklch(0.27 0.025 var(--hue));
     --ink-2: oklch(0.43 0.022 var(--hue));
-    --ink-3: oklch(0.58 0.018 var(--hue));
+    --ink-3: oklch(0.50 0.018 var(--hue));  /* a11y */
     --rule: oklch(0.78 0.025 var(--hue));
     --rule-2: oklch(0.84 0.020 var(--hue));
   }

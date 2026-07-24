@@ -112,7 +112,7 @@
     var progWrap = el("span", { class: "lb-progress", role: "progressbar" }, [el("i", {})]);
     var rate = el("button", { class: "lb-rate", title: "velocidad", text: RATES[ri] + "×" });
     var gear = el("button", { class: "lb-gear", title: T.voice, "aria-label": T.voice, text: "⚙" });
-    var voice = el("select", {});
+    var voice = el("select", { "aria-label": T.voice });
     var pop = el("div", { class: "lb-pop" }, [
       el("label", { text: T.voice }), voice,
       el("label", { class: "lb-hint", text: T.hint })

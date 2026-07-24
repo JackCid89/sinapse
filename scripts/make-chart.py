@@ -63,7 +63,7 @@ def _frame(title="", note="", h=None):
     foot = ""
     if note:
         foot += (f'<text x="{M["l"]}" y="{hh-16}" font-size="12" '
-                 f'fill="var(--ink-3, #7a7a90)">{_esc(note)}</text>')
+                 f'fill="var(--ink-3, #6b6b7d)">{_esc(note)}</text>')
     return head, foot
 
 
@@ -89,9 +89,9 @@ def chart_slope(spec):
     p.append(f'<line x1="{xR}" y1="{M["t"]-8}" x2="{xR}" y2="{H-M["b"]}" '
              f'stroke="var(--rule, #cfcfda)" stroke-width="1"/>')
     p.append(f'<text x="{xL}" y="{M["t"]-16}" font-size="12" text-anchor="middle" '
-             f'fill="var(--ink-3, #7a7a90)">{_esc(spec.get("left_label",""))}</text>')
+             f'fill="var(--ink-3, #6b6b7d)">{_esc(spec.get("left_label",""))}</text>')
     p.append(f'<text x="{xR}" y="{M["t"]-16}" font-size="12" text-anchor="middle" '
-             f'fill="var(--ink-3, #7a7a90)">{_esc(spec.get("right_label",""))}</text>')
+             f'fill="var(--ink-3, #6b6b7d)">{_esc(spec.get("right_label",""))}</text>')
     for s in xs:
         c = CAT.get(s.get("cat", 0), CAT[0])
         yl, yr = y(s["l"]), y(s["r"])
@@ -123,7 +123,7 @@ def chart_line(spec):
     for i, lab in enumerate(xlab):
         if i % max(1, len(xlab)//6) == 0 or i == len(xlab)-1:
             p.append(f'<text x="{x(i):.1f}" y="{H-M["b"]+18}" font-size="11" '
-                     f'text-anchor="middle" fill="var(--ink-3, #7a7a90)">{_esc(lab)}</text>')
+                     f'text-anchor="middle" fill="var(--ink-3, #6b6b7d)">{_esc(lab)}</text>')
     for s in series:
         c = CAT.get(s.get("cat", 0), CAT[0])
         pts = " ".join(f'{x(i):.1f},{y(v):.1f}' for i, v in enumerate(s["values"]))
@@ -192,7 +192,7 @@ def chart_dumbbell(spec):
     p = [head]
     ca, cb = CAT[3], CAT[1]
     p.append(f'<text x="{W-M["r"]}" y="{M["t"]-16}" font-size="11" text-anchor="end" '
-             f'fill="var(--ink-3, #7a7a90)"><tspan fill="{ca}">●</tspan> {_esc(spec.get("a_label","A"))} '
+             f'fill="var(--ink-3, #6b6b7d)"><tspan fill="{ca}">●</tspan> {_esc(spec.get("a_label","A"))} '
              f'<tspan fill="{cb}">●</tspan> {_esc(spec.get("b_label","B"))}</text>')
     for k, it in enumerate(items):
         yc = M["t"] + rowh * (k + 0.5)
@@ -221,10 +221,10 @@ def chart_scatter(spec):
     p.append(f'<line x1="{M["l"]}" y1="{H-M["b"]}" x2="{W-M["r"]}" y2="{H-M["b"]}" stroke="var(--rule, #cfcfda)"/>')
     p.append(f'<line x1="{M["l"]}" y1="{M["t"]}" x2="{M["l"]}" y2="{H-M["b"]}" stroke="var(--rule, #cfcfda)"/>')
     p.append(f'<text x="{(M["l"]+W-M["r"])/2:.0f}" y="{H-14}" font-size="12" text-anchor="middle" '
-             f'fill="var(--ink-3, #7a7a90)">{_esc(spec.get("x_label",""))}</text>')
+             f'fill="var(--ink-3, #6b6b7d)">{_esc(spec.get("x_label",""))}</text>')
     p.append(f'<text x="16" y="{(M["t"]+H-M["b"])/2:.0f}" font-size="12" '
              f'transform="rotate(-90 16 {(M["t"]+H-M["b"])/2:.0f})" text-anchor="middle" '
-             f'fill="var(--ink-3, #7a7a90)">{_esc(spec.get("y_label",""))}</text>')
+             f'fill="var(--ink-3, #6b6b7d)">{_esc(spec.get("y_label",""))}</text>')
     for pt in pts:
         c = CAT.get(pt.get("cat", 0), CAT[0])
         p.append(f'<circle cx="{x(pt["x"]):.1f}" cy="{y(pt["y"]):.1f}" r="5" fill="{c}" opacity="0.85"/>')

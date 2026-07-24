@@ -308,6 +308,7 @@
     gF.appendChild(lF);
     const sF = document.createElement('input');
     sF.type = 'range'; sF.min = 15; sF.max = 22; sF.step = 1; sF.value = state.fontSize;
+    sF.setAttribute('aria-label', 'Tamaño de letra');
     sF.addEventListener('input', e => setKey('fontSize', parseInt(e.target.value, 10)));
     gF.appendChild(sF);
     panel.appendChild(gF);
@@ -319,6 +320,7 @@
     gM.appendChild(lM);
     const sM = document.createElement('input');
     sM.type = 'range'; sM.min = 32; sM.max = 52; sM.step = 1; sM.value = state.measure;
+    sM.setAttribute('aria-label', 'Ancho de columna');
     sM.addEventListener('input', e => setKey('measure', parseInt(e.target.value, 10)));
     gM.appendChild(sM);
     panel.appendChild(gM);
