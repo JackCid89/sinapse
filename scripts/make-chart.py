@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 
 # Lienzo base (coordenadas de usuario; el SVG escala por viewBox).
-W, H = 760, 420
+W, H = 760, 340
 M = {"t": 46, "r": 130, "b": 52, "l": 64}   # márgenes (r ancho: etiquetas directas)
 
 
@@ -45,14 +45,16 @@ def _esc(s):
             .replace('"', "&quot;"))
 
 
-def _svg_open(aria):
+def _svg_open(aria, h=None):
+    hh = h if h is not None else H
     return (f'<svg data-viz="chart" role="img" aria-label="{_esc(aria)}" '
-            f'viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" '
+            f'viewBox="0 0 {W} {hh}" xmlns="http://www.w3.org/2000/svg" '
             f'font-family="var(--mono, monospace)">')
 
 
-def _frame(title="", note=""):
+def _frame(title="", note="", h=None):
     """ejes mínimos; devuelve (header_svg, footer_svg)."""
+    hh = h if h is not None else H
     head = ""
     if title:
         head += (f'<text x="{M["l"]}" y="24" font-size="15" '
@@ -60,7 +62,7 @@ def _frame(title="", note=""):
                  f'{_esc(title)}</text>')
     foot = ""
     if note:
-        foot += (f'<text x="{M["l"]}" y="{H-16}" font-size="12" '
+        foot += (f'<text x="{M["l"]}" y="{hh-16}" font-size="12" '
                  f'fill="var(--ink-3, #7a7a90)">{_esc(note)}</text>')
     return head, foot
 
@@ -158,8 +160,9 @@ def chart_lollipop(spec):
     items = spec["items"]
     vmax = max(i["value"] for i in items)
     x = _scale(0, vmax, M["l"] + 120, W - M["r"])
-    rowh = (H - M["t"] - M["b"]) / max(1, len(items))
-    head, foot = _frame(spec.get("title", ""), spec.get("note", ""))
+    Hd = M["t"] + M["b"] + max(1, len(items)) * 56
+    rowh = (Hd - M["t"] - M["b"]) / max(1, len(items))
+    head, foot = _frame(spec.get("title", ""), spec.get("note", ""), h=Hd)
     p = [head]
     x0 = M["l"] + 120
     for k, it in enumerate(items):
@@ -173,7 +176,7 @@ def chart_lollipop(spec):
         p.append(f'<text x="{x(it["value"])+10:.1f}" y="{yc+4:.1f}" font-size="12" '
                  f'fill="var(--ink, #222230)">{_esc(it["value"])}</text>')
     p.append(foot)
-    return _svg_open(spec.get("aria", spec.get("title", "lollipop chart"))) + "".join(p) + "</svg>"
+    return _svg_open(spec.get("aria", spec.get("title", "lollipop chart")), h=Hd) + "".join(p) + "</svg>"
 
 
 # ── dumbbell · desviación / brecha entre dos valores por categoría ──────────
@@ -183,8 +186,9 @@ def chart_dumbbell(spec):
     items = spec["items"]
     vals = [v for it in items for v in (it["a"], it["b"])]
     x = _scale(min(vals), max(vals), M["l"] + 120, W - M["r"])
-    rowh = (H - M["t"] - M["b"]) / max(1, len(items))
-    head, foot = _frame(spec.get("title", ""), spec.get("note", ""))
+    Hd = M["t"] + M["b"] + max(1, len(items)) * 74
+    rowh = (Hd - M["t"] - M["b"]) / max(1, len(items))
+    head, foot = _frame(spec.get("title", ""), spec.get("note", ""), h=Hd)
     p = [head]
     ca, cb = CAT[3], CAT[1]
     p.append(f'<text x="{W-M["r"]}" y="{M["t"]-16}" font-size="11" text-anchor="end" '
@@ -200,7 +204,7 @@ def chart_dumbbell(spec):
         p.append(f'<circle cx="{xa:.1f}" cy="{yc:.1f}" r="5" fill="{ca}"/>')
         p.append(f'<circle cx="{xb:.1f}" cy="{yc:.1f}" r="5" fill="{cb}"/>')
     p.append(foot)
-    return _svg_open(spec.get("aria", spec.get("title", "dumbbell chart"))) + "".join(p) + "</svg>"
+    return _svg_open(spec.get("aria", spec.get("title", "dumbbell chart")), h=Hd) + "".join(p) + "</svg>"
 
 
 # ── scatter · correlación ───────────────────────────────────────────────────
