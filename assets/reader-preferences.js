@@ -225,6 +225,9 @@
     panel.setAttribute('role','dialog');
     panel.setAttribute('aria-label','Preferencias de lectura');
     parent.appendChild(panel);
+    // Los clicks dentro del panel no deben burbujear al handler global de
+    // "click afuera" (render() reconstruye el panel y desprende el target).
+    panel.addEventListener('click', function(e){ e.stopPropagation(); });
 
     // Close on outside click
     document.addEventListener('click', (e) => {
@@ -272,6 +275,13 @@
     const h = document.createElement('h2');
     h.textContent = 'Preferencias de lectura';
     panel.appendChild(h);
+
+    const xBtn = document.createElement('button');
+    xBtn.textContent = '\u2715';
+    xBtn.setAttribute('aria-label', 'Cerrar preferencias');
+    xBtn.style.cssText = 'position:absolute;top:10px;right:12px;border:none;background:none;color:var(--ink-3,#888);font-size:16px;line-height:1;cursor:pointer;padding:4px';
+    xBtn.addEventListener('click', function(){ panel.classList.remove('open'); });
+    panel.appendChild(xBtn);
 
     // Palette
     const gP = document.createElement('div'); gP.className = 'group';

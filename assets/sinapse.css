@@ -593,11 +593,13 @@
     font-family:var(--display);
     font-style:italic;
     font-weight:400;
-    font-size:clamp(9rem, 24vw, 18rem);
+    font-size:clamp(5rem, 20vw, 17rem);
     line-height:0.85;
     letter-spacing:-0.03em;
     color:var(--accent);
     margin:0;
+    white-space:nowrap;          /* nunca partir la cifra (p.ej. "1 050 TWh") */
+    max-width:100%;
   }
   .dato-lbl{
     font-family:var(--mono);
