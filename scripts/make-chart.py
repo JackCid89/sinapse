@@ -20,7 +20,7 @@ Uso:
     python3 scripts/make-chart.py --spec editorial/chart-006.json --out /tmp/chart.svg
     python3 scripts/make-chart.py --demo slope --out /tmp/demo.svg
 
-Tipos: slope · line · sparkline · lollipop · dumbbell · scatter
+Tipos: slope · line · sparkline · lollipop · dumbbell · scatter · flow
 Cada uno se define con un JSON pequeño (ver --demo <tipo> para un ejemplo).
 """
 
@@ -235,8 +235,51 @@ def chart_scatter(spec):
     return _svg_open(spec.get("aria", spec.get("title", "scatter plot"))) + "".join(p) + "</svg>"
 
 
+# ── flow · flujo entre estados (sankey simple de 2 columnas) ────────────────
+
+def chart_flow(spec):
+    """spec: {title,note, sources:[{name,cat?}], targets:[{name}], links:[{s,t,value}]}
+    s/t son índices en sources/targets. Ancho de cinta ∝ value."""
+    sources = spec["sources"]; targets = spec["targets"]; links = spec["links"]
+    total = sum(lk["value"] for lk in links) or 1
+    xL = M["l"] + 96; xR = W - M["r"] - 40; nodeW = 12
+    top = M["t"] + 16; bot = H - M["b"]
+    scaleS = (bot - top - 12 * max(0, len(sources) - 1)) / total
+    scaleT = (bot - top - 12 * max(0, len(targets) - 1)) / total
+    sy = []; y = top
+    for i in range(len(sources)):
+        h = sum(lk["value"] for lk in links if lk["s"] == i) * scaleS
+        sy.append([y, y + h, y]); y += h + 12
+    ty = []; y = top
+    for j in range(len(targets)):
+        h = sum(lk["value"] for lk in links if lk["t"] == j) * scaleT
+        ty.append([y, y + h, y]); y += h + 12
+    head, foot = _frame(spec.get("title", ""), spec.get("note", ""))
+    p = [head]
+    for lk in links:
+        i, j = lk["s"], lk["t"]
+        c = CAT.get(lk.get("cat", sources[i].get("cat", 0)), CAT[0])
+        hS = lk["value"] * scaleS; hT = lk["value"] * scaleT
+        y0 = sy[i][2]; y1 = ty[j][2]; sy[i][2] += hS; ty[j][2] += hT
+        xa = xL + nodeW; xb = xR; mx = (xa + xb) / 2
+        p.append(f'<path d="M{xa:.1f},{y0:.1f} C{mx:.1f},{y0:.1f} {mx:.1f},{y1:.1f} {xb:.1f},{y1:.1f} '
+                 f'L{xb:.1f},{y1+hT:.1f} C{mx:.1f},{y1+hT:.1f} {mx:.1f},{y0+hS:.1f} {xa:.1f},{y0+hS:.1f} Z" '
+                 f'fill="{c}" opacity="0.32"/>')
+    for i, sv in enumerate(sources):
+        c = CAT.get(sv.get("cat", 0), CAT[0])
+        p.append(f'<rect x="{xL}" y="{sy[i][0]:.1f}" width="{nodeW}" height="{max(1,sy[i][1]-sy[i][0]):.1f}" fill="{c}"/>')
+        p.append(f'<text x="{xL-8}" y="{(sy[i][0]+sy[i][1])/2+4:.1f}" font-size="12" text-anchor="end" '
+                 f'fill="var(--ink-2, #45455a)">{_esc(sv["name"])}</text>')
+    for j, tv in enumerate(targets):
+        p.append(f'<rect x="{xR}" y="{ty[j][0]:.1f}" width="{nodeW}" height="{max(1,ty[j][1]-ty[j][0]):.1f}" fill="var(--ink-3, #6b6b7d)"/>')
+        p.append(f'<text x="{xR+nodeW+8}" y="{(ty[j][0]+ty[j][1])/2+4:.1f}" font-size="12" '
+                 f'fill="var(--ink, #222230)">{_esc(tv["name"])}</text>')
+    p.append(foot)
+    return _svg_open(spec.get("aria", spec.get("title", "flow chart"))) + "".join(p) + "</svg>"
+
+
 BUILDERS = {"slope": chart_slope, "line": chart_line, "sparkline": chart_sparkline,
-            "lollipop": chart_lollipop, "dumbbell": chart_dumbbell, "scatter": chart_scatter}
+            "lollipop": chart_lollipop, "dumbbell": chart_dumbbell, "scatter": chart_scatter, "flow": chart_flow}
 
 DEMOS = {
     "slope": {"type": "slope", "title": "Coste por MWh solar, 2019 → 2025",
@@ -259,6 +302,12 @@ DEMOS = {
                  "items": [{"name": "Región A", "a": 20, "b": 62},
                            {"name": "Región B", "a": 35, "b": 41},
                            {"name": "Región C", "a": 10, "b": 55}]},
+    "flow": {"type": "flow", "title": "Cadena del litio (demo)",
+             "note": "producción → refino → celda",
+             "sources": [{"name": "Chile", "cat": 2}, {"name": "Australia", "cat": 1}],
+             "targets": [{"name": "China refino"}, {"name": "Otros"}],
+             "links": [{"s": 0, "t": 0, "value": 30}, {"s": 0, "t": 1, "value": 6},
+                       {"s": 1, "t": 0, "value": 40}, {"s": 1, "t": 1, "value": 10}]},
     "scatter": {"type": "scatter", "title": "Correlación demo",
                 "x_label": "PIB per cápita", "y_label": "Patentes/millón",
                 "points": [{"x": 20, "y": 15, "name": "A", "cat": 1},
