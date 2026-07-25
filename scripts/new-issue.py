@@ -183,10 +183,16 @@ def render_contraste(c, lang):
             '      <dl>\n' + rows + '\n      </dl>\n    </div>\n  </section>')
 
 
+def _nch(num_html):
+    import re as _re
+    t=_re.sub(r"<[^>]+>","",str(num_html)).replace("\u00a0"," ").replace("&nbsp;"," ").replace("&amp;","&")
+    return len(t.strip())
+
+
 def render_dato(d, lang):
     return (f'  <section class="sec" id="{SEC_IDS[lang][7]}">\n' + sec_head(8, SEC_TITLES[lang][7]) + "\n\n"
             '    <div class="dato">\n'
-            f'      <p class="dato-num">{raw(d["num_html"])}</p>\n'
+            f'      <p class="dato-num" style="--ch:{_nch(d["num_html"])}">{raw(d["num_html"])}</p>\n'
             f'      <p class="dato-lbl">{raw(d["lbl"])}</p>\n'
             f'      <p class="dato-body">{raw(d["body_html"])}</p>\n'
             '    </div>\n  </section>')

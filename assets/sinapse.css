@@ -586,6 +586,7 @@
 
   /* ───────── Dato ───────── */
   .dato{
+    container-type:inline-size;
     text-align:center;
     padding:3rem 0 2.5rem;
     border-top:1px solid var(--ink);
@@ -595,12 +596,14 @@
     font-family:var(--display);
     font-style:italic;
     font-weight:400;
-    font-size:clamp(5rem, 20vw, 17rem);
+    /* la cifra se ajusta al ancho del contenedor según su nº de caracteres
+       (--ch): las cortas quedan enormes, las largas se achican para caber. */
+    font-size:clamp(3rem, calc(160cqi / var(--ch, 8)), 15rem);
     line-height:0.85;
     letter-spacing:-0.03em;
     color:var(--accent);
     margin:0;
-    white-space:nowrap;          /* nunca partir la cifra (p.ej. "1 050 TWh") */
+    white-space:nowrap;
     max-width:100%;
   }
   .dato-lbl{
