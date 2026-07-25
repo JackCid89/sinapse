@@ -56,7 +56,7 @@ SEC_IDS = {
     "en": ["pulse", "cover", "papers", "tech", "industry", "column",
            "counterpoint", "datum", "appendix"],
 }
-CSSV = "20260723a"
+CSSV = "20260724f"
 
 
 def e(s):

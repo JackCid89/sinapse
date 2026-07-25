@@ -94,6 +94,24 @@
           }
         }
       }
+    },
+    {
+      "numero": 6,
+      "fecha": "2026-07-21",
+      "archivo": "n006-julio-2026.html",
+      "portada": {
+        "titulo": "El laboratorio que corrige embriones humanos: lo difícil ya no es técnico",
+        "disciplina": "Genética / Edición del genoma"
+      },
+      "i18n": {
+        "en": {
+          "archivo": "n006-july-2026.html",
+          "portada": {
+            "titulo": "The lab that corrects human embryos: the hard part is no longer technical",
+            "disciplina": "Genetics / Genome editing"
+          }
+        }
+      }
     }
   ]
 }
