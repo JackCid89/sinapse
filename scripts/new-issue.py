@@ -165,7 +165,9 @@ def render_contraste(c, lang):
     vals = c.get("atlas", [])
     rows = "\n".join(f'        <dt>{e(dims[i])}</dt>\n        <dd>{raw(vals[i])}</dd>'
                      for i in range(min(len(dims), len(vals))))
-    body = "\n\n".join(f'      <p>{raw(b["p"])}</p>' for b in c.get("cuerpo", []))
+    body = "\n\n".join(
+        (f'      <h3>{raw(b["h3"])}</h3>' if "h3" in b else f'      <p>{raw(b["p"])}</p>')
+        for b in c.get("cuerpo", []))
     map_block = ""
     if c.get("geografico"):
         map_block = (
