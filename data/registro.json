@@ -112,6 +112,24 @@
           }
         }
       }
+    },
+    {
+      "numero": 7,
+      "fecha": "2026-08-04",
+      "archivo": "n007-agosto-2026.html",
+      "portada": {
+        "titulo": "El primer planeta rocoso de zona habitable con atmósfera confirmada: y se midió desde Atacama",
+        "disciplina": "Astronomía / Exoplanetas"
+      },
+      "i18n": {
+        "en": {
+          "archivo": "n007-august-2026.html",
+          "portada": {
+            "titulo": "The first habitable-zone rocky planet with a confirmed atmosphere: and it was measured from Atacama",
+            "disciplina": "Astronomy / Exoplanets"
+          }
+        }
+      }
     }
   ]
 }
